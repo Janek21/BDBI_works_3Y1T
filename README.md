@@ -1,4 +1,4 @@
-# Bioinfo_share 2nd Term
+# Bioinfo_share 1rst Term
 
 This repository is to be used for sharing and working in community in projects and assignments
 

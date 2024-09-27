@@ -121,16 +121,17 @@ What happens if you map a continuous variable such as `qsec`, instead of `cyl`, 
 ##### &emsp;<i class="fas fa-comment-dots"></i> Answer:
 ```{r answer1.2, fig.align='center'}
 mtcars$cyl_f <- factor(mtcars$qsec)
-ggplot(data = mtcars, mapping = aes(x = wt, y = mpg, color = cyl_f)) + 
+ggplot(data = mtcars, mapping = aes(x = wt, y = mpg, color = qsec)) + 
   geom_point()+ggtitle("Color-based")
 
-ggplot(data = mtcars, mapping = aes(x = wt, y = mpg, shape = cyl_f)) + 
-  geom_point()+ggtitle("Shape-based")
+#ggplot(data = mtcars, mapping = aes(x = wt, y = mpg, shape = qsec)) + 
+  #geom_point()+ggtitle("Shape-based")
 
 ```
 
 ```{r answer1.2 part2, fig.align='center', echo=FALSE, comment= ""}
-cat("A diferent category is generated for each data entry, as each data point is a different number")
+cat("A diferent category is generated for each data entry, as each data point is a different number.
+For the mapping to a shape the plot produces an Error, as qsec is a continuous variable")
 ```
 &emsp;
 </div>
@@ -363,7 +364,7 @@ plot4+labs(title = "Iris sepal variation", x = "Sepal width", fill = "Species na
 ```
 
 ```{r answer 4.1 part2.2, fig.align='center', echo=FALSE, comment= ""}
-cat("They are used to add extra information to plots")
+cat("They are used to give additional info to plots")
 ```
 
 &emsp;

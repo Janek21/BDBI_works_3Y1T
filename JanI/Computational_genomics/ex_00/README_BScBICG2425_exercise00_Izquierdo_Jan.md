@@ -41,7 +41,7 @@ author-meta: !!str 'Jan Izquierdo @ BScBI Computational Genomics'
 #
 # authors to appear on the title page...
 author:
-- name: Jan Izquierdo
+- name: Jan Izquierdo Ramos
   myemail: jan.izquierdo
   mydomain: alum.esci.upf.edu
 # you can follow the example below
@@ -51,7 +51,7 @@ author:
 #   mydomain: ub.edu  # the real complete email address was in this case: jabril@ub.edu
 #
 # authorshort defines a brief list of authors for headings, i.e.: Abril, JF
-authorshort: Izquierdo, J
+authorshort: Jan Izquierdo
 #
 # template formating variables...
 papersize: a4paper
@@ -63,7 +63,7 @@ lot: false
 colorlinks: true
 urlcolor: blue
 citecolor: green
-linkcolor: red
+linkcolor: black
 #
 # LaTeX definitions (available for the main document)
 further-defs:

@@ -58,8 +58,8 @@ papersize: a4paper
 fontsize: 10pt
 geometry: margin=1.5cm
 toc: true
-lof: true
-lot: true
+lof: false
+lot: false
 colorlinks: true
 urlcolor: blue
 citecolor: green
@@ -78,7 +78,7 @@ include any piece of text, code, etc, but it wil not be included into
 the final PDF report when compiling the \texttt{MarkDown} file. You
 can open/close one of such environments at any time if you need them.
 \end{comment}
-
+\newpage
 
 # Introduction
 
@@ -492,14 +492,19 @@ summary(data_animals)
 Now, let's make an histogram of total lengths for the animal genomes:
 
 ```{.r}
-png(file="images/genome_length_animals.png");
+png(file="images/genome_length_animals.png", width=800, height=600, res=150);
 hist(data_animals$GenomeSize);
 dev.off();
 ```
 
 
 
-![Showing animals genome length distribution](images/genome_length_animals.png "Showing animals genome length distribution")
+<!-- ![Showing animals genome length distribution](images/genome_length_animals.png "Showing animals genome length distribution") -->
+\begin{center}
+    \includegraphics[width=0.8\textwidth]{images/genome_length_animals.png}
+    \label{fig:genome_length_distribution}
+\end{center}
+
 
 
 
@@ -548,14 +553,18 @@ data_plants <- read.table("stats/genomes.plants_only.tbl",
                     header=FALSE, comment.char='#',
                     col.names=c("SpeciesName","Superkingdom","TaxonGroup",
                                 "GenomeSize","ChromNum"));
-png(file="images/genome_length_plants.png");
+png(file="images/genome_length_plants.png", width=800, height=600, res=150);
 hist(data_plants$GenomeSize);
 dev.off();
 ```
 
 
 
-![Showing plant genome length distribution](images/genome_length_plants.png "Showing plant genome length distribution")
+<!-- ![Showing plant genome length distribution]("images/PNG.png" "Showing plant genome length distribution") -->
+\begin{center}
+    \includegraphics[width=0.8\textwidth]{images/genome_length_plants.png}
+    \label{fig:genome_length_distribution}
+\end{center}
 
 
 
@@ -567,14 +576,19 @@ data_bacteria <- read.table("stats/genomes.bacteria_only.tbl",
                     col.names=c("SpeciesName","Superkingdom","TaxonGroup",
                                 "GenomeSize","ChromNum"));
 #As there were parts that created errors, we used a bash command to fix the data
-png(file="images/genome_length_bacteria.png");
+png(file="images/genome_length_bacteria.png", width=800, height=600, res=150);
 hist(data_bacteria$GenomeSize);
 dev.off();
 ```
 
 
 
-![Showing bacteria genome length distribution](images/genome_length_bacteria.png "Showing bacteria genome length distribution")
+<!-- ![Showing bacteria genome length distribution](images/genome_length_bacteria.png "Showing bacteria genome length distribution") -->
+\begin{center}
+    \includegraphics[width=0.8\textwidth]{images/genome_length_bacteria.png}
+    \label{fig:genome_length_distribution}
+\end{center}
+
 
 
 
@@ -586,17 +600,18 @@ data_virus <- read.table("stats/genomes.virus_only.tbl",
                     col.names=c("SpeciesName","Superkingdom","TaxonGroup",
                                 "GenomeSize","ChromNum"));
 #As there were parts that created errors, we used a bash command to fix the data
-png(file="images/genome_length_virus.png");
+png(file="images/genome_length_virus.png", width=800, height=600, res=150);
 hist(data_virus$GenomeSize);
 dev.off();
-<div style="text-align: center;">
-  <img src="images/genome_length_bacteria.png" alt="Showing virus genome length distribution" title="Showing bacteria genome length distribution"/>
-</div>
 ```
 
 
 
-![Showing virus genome length distribution](images/genome_length_virus.png "Showing virus genome length distribution")
+<!-- ![Showing virus genome length distribution](images/genome_length_virus.png "Showing virus genome length distribution") -->
+\begin{center}
+    \includegraphics[width=0.8\textwidth]{images/genome_length_virus.png}
+    \label{fig:genome_length_distribution}
+\end{center}
 
 
 
@@ -616,7 +631,12 @@ ggsave(file="images/genome_boxplot_comparison.png", width = 9, height = 7)
 
 
 
-![Showing general genome length comparison](images/genome_boxplot_comparison.png "Showing general genome length comparison")
+<!-- ![Showing general genome length comparison](images/genome_boxplot_comparison.png "Showing general genome length comparison") -->
+\begin{center}
+    \includegraphics[width=0.8\textwidth]{images/genome_boxplot_comparison.png}
+    \label{fig:genome_length_distribution}
+\end{center}
+
 
 
 
@@ -630,7 +650,7 @@ exercise `bin` folder using the `loadfile` macro.
 
 From the histograms of each individual group we can see that there is a high frequency of short genome sizes in all the organism groups. In the box plots we can also observe that the eukaryotes (plants and animals) have larger genome sizes than bacteria and virus. It can also bee seen that among all the groups plants are the ones that have the highest frequency of large genomes, however the largest genome sizes belong to animals.
 
-(https://en.wikipedia.org/wiki/Bacterial_genome)
+<!--(https://en.wikipedia.org/wiki/Bacterial_genome)-->
 
 \clearpage
 

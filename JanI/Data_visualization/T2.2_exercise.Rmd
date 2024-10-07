@@ -1,0 +1,442 @@
+---
+title: "**T2.2** | Tools for data visualization"
+subtitle: "In bioinformatics"
+author: "<b>Marta Coronado Zamora</b>"
+date: "2 October 2024"
+output:
+  xaringan::moon_reader:
+    css: ["default", "rutgers", "metropolis-fonts", "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css", "https://use.fontawesome.com/releases/v5.10.1/css/all.css"]
+    lib_dir: libs
+    self_contained: yes
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+      
+---
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+# Animations: https://github.com/daneden/animate.css#animations
+# pagedown::chrome_print("T2.2_slides.html")
+knitr::opts_chunk$set(echo = FALSE, eval = TRUE, fig.width = 4.5, fig.height = 3.5, fig.show = 'hold', message = FALSE, warning = FALSE)
+library(ggplot2)
+```
+
+class: center, middle, animated, bounceInDown
+
+<style>
+.title-slide {
+  background-image: url(img/logoesci-fons-blanc.png);
+  background-size: 150px;
+}
+</style>
+
+# Keep in touch
+#### Theory lessons <br>
+
+| Marta Coronado Zamora | Jose F. Sánchez | 
+|:-:|:-:|
+| <a href="mailto:marta.coronado@prof.esci.upf.edu"><i class="fa fa-paper-plane fa-fw"></i> marta.coronado@prof.esci.upf.edu</a> | <a href="mailto:jose.sanchez@prof.esci.upf.edu"><i class="fa fa-paper-plane fa-fw"></i>&nbsp; jose.sanchez@prof.esci.upf.edu</a> | 
+| <a href="https://twitter.com/geneticament"><i class="fab fa-twitter fa-fw"></i>&nbsp; @geneticament</a> |                 <a href="https://twitter.com/JFSanchezBioinf"><i class="fab fa-twitter fa-fw"></i>&nbsp; @JFSanchezBioinf</a> |
+| <a href="https://www.ibb.csic.es/ca/"><i class="fa fa-map-marker fa-fw"></i>&nbsp; Institut Botànic de Barcelona (CSIC-CMCNB)</a> |    <a href="http://www.germanstrias.org/technology-services/genomica-bioinformatica/"> <i class="fa fa-map-marker fa-fw"></i>Germans Trias i Pujol Research Institute (IGTP)</a> |
+
+#### Practical lessons <br>
+
+| Adrià Auladell |
+|:-:|
+| <a href="mailto:adria.auladell@ibe.upf-csic.es"><i class="fa fa-paper-plane fa-fw"></i> adria.auladell@ibe.upf-csic.es </a> | 
+|  <a href="https://www.ibe.upf-csic.es/"><i class="fa fa-map-marker fa-fw"></i>&nbsp; Institut de Biologia Evolutiva (UPF-CSIC) </a> | 
+
+
+---
+layout: true
+class: animated, fadeIn
+
+---
+
+# Session content
+
+- Biological data
+- General statistical graphics used in bioinformatics
+- Specialized libraries and software
+    + Static
+    + Interactive
+- Solve doubts
+
+---
+layout: false
+class: left, bottom, inverse, animated, bounceInDown
+
+# Get started!
+## **Tools for data visualization in bioinformatics**
+
+---
+
+layout: true
+class: animated, fadeIn
+
+---
+# Biological data
+
+- __Quantitative and qualitative data__: scatterplots, barplots, boxplots, heatplots, ...
+- __Molecular sequences__: alignments, motifs, genome browsers, ...
+- __Species relationships__: trees, networks
+- __Molecular pathways and interactions__: cell diagrams, networks, ...
+- __Molecular structures__: 3D molecular viewers, ...
+- __Anatomical structures__: anatograms, ...
+- __...__
+
+--
+
+#### <i class="fas fa-pencil-alt"></i> **Exercise** | Go to the latest research biology articles from [Nature Communications](https://www.nature.com/search?subject=biological-sciences&journal=ncomms) journal and describe the types of visualizations used. How far can you enlarge the previous list?
+
+<div style="background-color:#F0F0F0">
+&emsp;<i class="fas fa-comment-dots"></i>
+Answer:
+```{r Ex1, echo=F}
+cat("Boxplot, statistical test, pairwise comparison, Manhattan plot, and many others\n")
+```
+
+&emsp;
+</div>
+
+---
+
+# General statistical graphics
+
+## Biological example
+
+Gene expression data from [GTEx project](https://gtexportal.org/home/):
+
+```{r echo=TRUE}
+data <- read.table(file = "https://raw.githubusercontent.com/marta-coronado/data/refs/heads/main/expression_data.txt", #expression_data.txt
+                   header = TRUE, sep ="\t",
+                   stringsAsFactors = FALSE)
+data[1:4,1:4]
+```
+
+---
+
+## Biological example
+
+The `data` data frame contains the expression of `r length(unique(data$gene_name))` genes in `r length(table(data$tissue))` tissues.
+
+```{r echo=TRUE}
+table(data$gene_type, data$tissue)
+```
+
+---
+
+## Biological example
+
+#### <i class="fas fa-pencil-alt"></i> **Exercise** |  Use `ggplot2` to answer the following questions:
+
+- Which type of gene is more expressed on average?
+
+
+<div style="background-color:#F0F0F0">
+&emsp;<i class="fas fa-comment-dots"></i>
+Answer:
+```{r Ex2.1}
+library(ggplot2)
+
+ggplot(data=data, aes(x=gene_type, y=median_expression))+
+  geom_boxplot()+scale_y_log10()+
+  stat_summary(fun.y="mean", geom="point", color="blue")
+```
+&emsp;
+</div>
+
+- Which tissue has more expressed genes?
+
+
+<div style="background-color:#F0F0F0">
+&emsp;<i class="fas fa-comment-dots"></i>
+Answer:
+```{r Ex2.2}
+data$expressed <- data$median_expression > 0
+
+ggplot(data[data$expressed,], aes(tissue))+geom_bar()
+
+```
+&emsp;
+</div>
+
+- Where is HLA-B gene expressed the most? Is its expression low, high or average compared to other genes?
+
+
+<div style="background-color:#F0F0F0">
+&emsp;<i class="fas fa-comment-dots"></i>
+Answer:
+```{r Ex2.3}
+data_gene <- data[ data$gene_name %in% "HLA-B", ]
+
+#ggplot(data=data, aes(x=tissue, y=median_expression))+
+  #geom_col()+
+  #scale_y_log10()+
+  #geom_col(data=data_gene, color="red") #Very low expression points for data_gene
+
+ggplot(data=data, aes(tissue, median_expression))+
+  geom_boxplot()+ #Better than col, it shows the distribution
+  scale_y_log10()+
+  geom_point(data=data_gene, color="red")
+
+```
+&emsp;
+</div>
+
+- Where are located the genes highly expressed in brain (median\_expression >20,000)?
+
+
+<div style="background-color:#F0F0F0">
+&emsp;<i class="fas fa-comment-dots"></i>
+Answer:
+```{r Ex2.4}
+data_brain <- data[ data$tissue %in% "Brain" & data$expressed, ]
+data_brain$gene_chr <- factor(data_brain$gene_chr, levels = c(as.character(1:22), "X", "Y", "MT"))
+
+ggplot(data=data_brain, aes(x=gene_chr, y=median_expression, color=median_expression>20000))+
+  geom_point()
+
+```
+```{r Ex2.4.1, echo=FALSE}
+cat("At the mitochondrial genome.\n")
+```
+
+&emsp;
+</div>
+
+---
+
+# Specialised libraries and software
+
+- Integrated software suites
+- Javascript
+    + [BioJS](https://biojs.net)
+- R libraries
+    + Specialised repositories [bioconductor](https://bioconductor.org)
+    + [`ggplot2` extensions](https://exts.ggplot2.tidyverse.org/gallery/)
+    + [`htmlwidgets`](http://gallery.htmlwidgets.org/), some using BioJS libraries
+
+--
+
+#### <i class="fas fa-pencil-alt"></i> **Exercise** |  Which `ggplot2` extensions and `htmlwidgets` are designed to cover specific needs of biological data?
+
+<div style="background-color:#F0F0F0">
+&emsp;<i class="fas fa-comment-dots"></i>
+Answer:
+```{r Ex3, echo=FALSE}
+cat("We can see different extensions in ggplot such as gganimate, ggseqlogo, ggupset, gganatogram, gggenes, ggQC, gg3D, ggtree and ggedit.
+For htmlwidgets we can use plotly, heatmaply, diagrammeR, networkD3")
+```
+
+
+&emsp;
+</div>
+
+---
+
+# Static visualizations: `ggplot2` extensions
+
+## Phylogenetic trees: `ggtree`
+
+```{r}
+# Install ggtree from Bioconductor!
+#if (!requireNamespace("BiocManager", quietly = TRUE))
+#    install.packages("BiocManager")
+
+#BiocManager::install("ggtree")
+#remotes::install_github('YuLab-SMU/ggtree')
+```
+
+```{r echo =TRUE, fig.height=3, fig.width=3.5, warning=F}
+library(ggtree)
+set.seed(10); tr <- rtree(20)
+ggtree(tr)
+ggtree(tr, colour = "darkgreen", alpha = 0.8, size = 1.5)+
+    scale_y_continuous(breaks = 1:20, position = "right", name = "edges") + 
+    annotate(geom = "text", x = 0.5, y = 19, label = "It's a ggplot!") + 
+    theme_gray() 
+```
+
+---
+
+## Anatomical structures: `gganatogram`
+
+```{r}
+# Install from github
+# devtools::install_github("jespermaag/gganatogram")
+# sample data set
+organ_df <- data.frame(organ = c("heart", "leukocyte", "nerve", "brain", "liver", "stomach", "colon"), 
+ type = c("circulation", "circulation",  "nervous system", "nervous system", "digestion", "digestion", "digestion"), 
+ colour = c("red", "red", "purple", "purple", "orange", "orange", "orange"), 
+ value = c(10, 5, 1, 8, 2, 5, 5),
+ stringsAsFactors=F)
+```
+
+```{r echo=TRUE, fig.height=3.75, fig.width=7}
+library(gganatogram)
+gganatogram(data=organ_df, fillOutline='#a6bddb', organism='human',
+            sex='male', fill="value") +
+    scale_fill_gradient(low = "white", high = "red") + 
+    facet_wrap(~ type) 
+```
+
+---
+
+## Sequence logos: `ggseqlogo`
+
+```{r, warning=F}
+# Install from CRAN
+# install.packages("ggseqlogo")
+## Or install from github
+## devtools::install_github("omarwagih/ggseqlogo")
+
+library(ggseqlogo)
+# Sample data
+data(ggseqlogo_sample)
+# str(seqs_dna)
+```
+
+```{r echo=TRUE, fig.height=2.5, fig.width=3.5, warning=F}
+library(ggseqlogo)
+ggplot() + geom_logo(seqs_dna$MA0002.1) +
+    theme_logo() + labs(title = "My TFBS profile")
+ggplot() +
+    annotate(geom = "rect", xmin = 2.5, xmax = 4.5,
+             ymin = -Inf, ymax = Inf, alpha = 0.2) +
+    geom_logo(seqs_dna$MA0008.1, method = "probability") +
+    theme_logo() 
+```
+
+---
+## Gene structures: `gggenes` y `gggenomes`
+
+.pull-left[
+```{r eval = F, echo = T}
+library(gggenes)
+ggplot(example_genes, aes(xmin = start, xmax = end, y = molecule, fill = gene)) +
+  geom_feature(
+    data = example_features,
+    aes(x = position, y = molecule, forward = forward)
+    ) +
+  geom_feature_label(
+    data = example_features,
+    aes(x = position, y = molecule, label = name, forward = forward)
+    ) +
+  geom_gene_arrow() +
+  geom_blank(data = example_dummies) +
+  facet_wrap(~ molecule, scales = "free", ncol = 1) +
+  scale_fill_brewer(palette = "Set3") +
+  theme_genes()
+
+```
+]
+
+.pull-right[
+```{r eval = T, echo = F, fig.height=7,fig.width=8}
+library(gggenes)
+ggplot(example_genes, aes(xmin = start, xmax = end, y = molecule, fill = gene)) +
+  geom_feature(
+    data = example_features,
+    aes(x = position, y = molecule, forward = forward)
+    ) +
+  geom_feature_label(
+    data = example_features,
+    aes(x = position, y = molecule, label = name, forward = forward)) +
+  geom_gene_arrow() +
+  geom_blank(data = example_dummies) +
+  facet_wrap(~ molecule, scales = "free", ncol = 1) +
+  scale_fill_brewer(palette = "Set3") +
+  theme_genes()
+
+```
+]
+
+---
+
+## Show intersections: `UpSetR`
+
+```{r, warning=F}
+# Install from CRAN
+# install.packages("UpSetR")
+library(UpSetR)
+```
+
+```{r echo=TRUE, fig.height=5, fig.width=7.5, warning=F}
+library(UpSetR)
+
+mutations <- read.csv( system.file("extdata", "mutations.csv", package = "UpSetR"), header=T, sep = ",")
+
+upset(mutations, sets = c("PTEN", "TP53", "EGFR", "PIK3R1", "RB1"), sets.bar.color = "#56B4E9",
+order.by = "freq", empty.intersections = "on")
+```
+
+---
+
+# Interactive visualizations
+
+## Multiple alignment: `msaR`
+
+```{r}
+# Install from CRAN
+# install.packages("msaR")
+```
+
+
+```{r echo=TRUE, out.width="50%"}
+library(msaR)
+seqfile <- system.file("sequences","AHBA.aln", package="msaR")
+msaR(seqfile)
+```
+
+---
+
+## Protein structure
+
+[Example](http://www.rcsb.org/3d-view/4hhb/1) using [NGL](https://github.com/arose/ngl): a web application for molecular visualization: display molecules like proteins and DNA/RNA with a variety of representations.
+
+<center>
+<img src="https://cdn.rcsb.org/news/2020/4hhb.jpg" width="45%">
+
+---
+
+## Genome browsers
+
+Examples by González lab at Institute of Evolutionary Biology: [DrosOmics](https://www.biologiaevolutiva.org/gonzalez_lab/drosomics/?session=local-953bZ0HN-) 
+
+<center>
+<img src="img/DrosOmics.JPG" width="75%">
+
+Coronado-Zamora M, Salces-Ortiz J, González J. 2023. DrosOmics: A Browser to Explore -omics Variation Across High-Quality Reference Genomes From Natural Populations of *Drosophila melanogaster*. Mol Biol Evol 40:msad075.
+
+---
+
+
+## Shiny applications
+
+Example by my group at UAB: [PopHumanVar](https://pophumanvar.uab.cat)
+
+<center>
+<img src="img/pophumanvar.JPG" width="75%">
+
+Colomer-Vilaplana A, Murga-Moreno J, Canalda-Baltrons A, Inserte C, Soto D, Coronado-Zamora M, Barbadilla A, Casillas S. PopHumanVar: an interactive application for the functional characterization and prioritization of adaptive genomic variants in humans. Nucleic Acids Res. 2022;50(D1):D1069-D1076.
+
+---
+
+# Wrap-up
+
+- Most basic exploratory and communication graphs in Bioinformatics can be achieved with general-purpose statistical graphics tools
+- The complexity and characteristics of some biological data requires specialized tools
+    + If static requirements, `ggplot2` extensions may help
+    + If interactive requirements, `htmlwidgets` may help
+    + Check tools used in similar studies 
+
+
+---
+
+layout: false
+class: inverse, center, middle, animated, bounceInDown
+
+### Upload `T2.2_slides.Rmd` with the completed exercises (text included) to [aul@-ESCI](https://aula.esci.upf.edu/course/view.php?id=8592)

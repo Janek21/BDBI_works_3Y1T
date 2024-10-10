@@ -1,0 +1,351 @@
+\documentclass[$if(fontsize)$$fontsize$,$endif$$if(lang)$$lang$,$endif$$if(papersize)$$papersize$,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
+
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%   BScBI_CompGenomics_template.tex
+%%
+%%   A LaTeX template for MarkDown reports to submit as BScBI-CG practical exercises.
+%%
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%                 CopyLeft 2024 (CC:BY-NC-SA) --- Josep F Abril
+%%
+%%   This file should be considered under the Creative Commons BY-NC-SA License
+%%   (Attribution-Noncommercial-ShareAlike). The material is provided "AS IS", 
+%%   mainly for teaching purposes, and is distributed in the hope that it will
+%%   be useful, but WITHOUT ANY WARRANTY; without even the implied warranty
+%%   of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+%%
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[pdftex]{graphicx}
+\usepackage{xcolor} %%% FIX %%%
+\usepackage{fancyvrb}
+\usepackage{comment}
+\usepackage{fancyhdr} % Do not use \usepackage{fancybox} -> TOCs disappear
+\usepackage{multirow}
+\usepackage[nottoc,notlof,notlot,numbib]{tocbibind}
+
+$if(fontfamily)$
+\usepackage{$fontfamily$}
+$else$
+\usepackage{lmodern}
+$endif$
+$if(linestretch)$
+\usepackage{setspace}
+\setstretch{$linestretch$}
+$endif$
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+$if(euro)$
+  \usepackage{eurosym}
+$endif$
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+    \usepackage{xltxtra,xunicode}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+$if(mainfont)$
+    \setmainfont{$mainfont$}
+$endif$
+$if(sansfont)$
+    \setsansfont{$sansfont$}
+$endif$
+$if(monofont)$
+    \setmonofont[Mapping=tex-ansi]{$monofont$}
+$endif$
+$if(mathfont)$
+    \setmathfont(Digits,Latin,Greek){$mathfont$}
+$endif$
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+$if(geometry)$
+\usepackage[$for(geometry)$$geometry$$sep$,$endfor$]{geometry}
+$endif$
+$if(lang)$
+\ifxetex
+  \usepackage{polyglossia}
+  \setmainlanguage{$mainlang$}
+\else
+  \usepackage[shorthands=off,$lang$]{babel}
+\fi
+$endif$
+$if(natbib)$
+\usepackage{natbib}
+\bibliographystyle{$if(biblio-style)$$biblio-style$$else$plainnat$endif$}
+$endif$
+$if(biblatex)$
+\usepackage{biblatex}
+$if(biblio-files)$
+\bibliography{$biblio-files$}
+$endif$
+$endif$
+$if(listings)$
+\usepackage{listings}
+$endif$
+$if(lhs)$
+\lstnewenvironment{code}{\lstset{language=Haskell,basicstyle=\small\ttfamily}}{}
+$endif$
+$if(highlighting-macros)$
+$highlighting-macros$
+$endif$
+$if(verbatim-in-note)$
+\VerbatimFootnotes
+$endif$
+$if(tables)$
+\usepackage{longtable,booktabs}
+$endif$
+% .if(graphics).
+% \usepackage{graphicx}
+% \makeatletter
+% \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+% \def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+% \makeatother
+% % Scale images if necessary, so that they will not overflow the page
+% % margins by default, and it is still possible to overwrite the defaults
+% % using explicit options in \includegraphics[width, height, ...]{}
+% \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% .endif.
+\ifxetex
+  \usepackage[setpagesize=false, % page size defined by xetex
+              unicode=false, % unicode breaks when used with xetex
+              xetex]{hyperref}
+\else
+  \usepackage[unicode=true]{hyperref}
+\fi
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={$author-meta$},
+            pdftitle={$title-meta$},
+            colorlinks=$if(colorlinks)$$colorlinks$$else$true$endif$,
+            citecolor=$if(citecolor)$$citecolor$$else$blue$endif$,
+            urlcolor=$if(urlcolor)$$urlcolor$$else$blue$endif$,
+            linkcolor=$if(linkcolor)$$linkcolor$$else$blue$endif$,
+            pdfborder={0 0 0}}
+\urlstyle{same}  % don't use monospace font for urls
+$if(links-as-notes)$
+% Make links footnotes instead of hotlinks:
+\renewcommand{\href}[2]{#2\footnote{\url{#1}}}
+$endif$
+$if(strikeout)$
+\usepackage[normalem]{ulem}
+% avoid problems with \sout in headers with hyperref:
+\pdfstringdefDisableCommands{\renewcommand{\sout}{}}
+$endif$
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+$if(numbersections)$
+\setcounter{secnumdepth}{5}
+$else$
+\setcounter{secnumdepth}{0}
+$endif$
+$if(verbatim-in-note)$
+\VerbatimFootnotes % allows verbatim text in footnotes
+$endif$
+
+%%% Sequence units
+\usepackage{siunitx}
+\DeclareSIUnit\molar{\mole\per\cubic\deci\metre}
+\DeclareSIUnit\Molar{\textsc{m}}
+\DeclareSIUnit\bp{bp}
+\DeclareSIUnit\kbp{\kilo\bp}
+\DeclareSIUnit\Mbp{\mega\bp}
+\DeclareSIUnit\Gbp{\giga\bp}
+\DeclareSIUnit\X{{\footnotesize\textsf{X}}}
+
+%%% Compute current time using 24Hr. notation
+{\count1=\time \divide\count1 by 60 \multiply\count1 by 60 %
+ \count2=\time \advance\count2 by -\count1 %
+ \divide\count1 by 60 %
+ \xdef\currenttime{\the\count1:\ifnum\count2<10 0\fi\the\count2}}
+\newcommand{\tstamp}{\textbf{\today\ /\ \currenttime}}
+
+%%% Header/Footer Stuff
+\def\thylab{\textbf{BSc BI --- Computational Genomics}}
+\def\thylogo{\phantom{x}\raisebox{-2mm}{\includegraphics[height=6.5mm, width=6.5mm]{{docs/ESCI_logo}.png}}} %%% FIX %%%
+%
+\fancyhead{} % clear all fields
+\fancyfoot{} % clear all fields
+\fancyhead[RO,LE]{\thepage}
+%\fancyhead[LO,RE]{\shorttit\quad\rightmark}
+$if(runtitle)$\fancyhead[LO]{\small{}$runtitle$}$endif$
+\fancyhead[RE]{\small{}\rightmark}
+\fancyfoot[LO,LE]{\small\textbf{\thylab}}
+$if(authorshort)$\fancyfoot[CO,CE]{\small\textsl{$authorshort$}}$endif$
+\fancyfoot[RO,RE]{\small\textbf{\today}\thylogo}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1.5pt}
+
+%.if(title).
+%\title{.title..if(subtitle).\\\vspace{0.5em}{\large .subtitle.}.endif.}
+%.endif.
+$if(author)$
+\author{$for(author)$$author$$sep$ \and $endfor$}
+$endif$
+\date{$date$}
+$for(header-includes)$
+$header-includes$
+$endfor$
+
+%% smaller font for code blocs...
+\makeatletter
+\newcommand{\verbatimfont}[1]{\renewcommand{\verbatim@font}{\ttfamily#1}}
+\makeatother
+\verbatimfont{\footnotesize}%
+
+%% embedding external files
+\newcommand{\loadfile}[3]{% BOXLABEL (escape "_") // ./relativepathtofile/FILENAME // REFLABEL
+  \phantomsection\label{#3}\VerbatimInput[frame=single,framesep=5mm,fontsize=\footnotesize,label=\fbox{#1}]{#2}
+}%
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+$if(further-defs)$
+$for(further-defs)$
+$further-defs$
+$endfor$
+$endif$
+
+\begin{document}
+
+$if(title)$
+%
+\thispagestyle{empty}
+%
+\begin{titlepage}
+\begin{center}
+%
+\ \vfill
+%
+$if(subtitle)$
+\textbf{\Huge $title$}\\[3ex]
+\textbf{\Large $subtitle$}\\[6ex]
+$else$
+\textbf{\Huge $title$}\\[6ex]
+$endif$
+%
+$for(author)$
+\textbf{\Large%
+$if(author.name)$
+$if(author.myemail)$
+\href{mailto:$author.myemail$@$author.mydomain$$if(title-meta)$?subject=[$title-meta$]$endif$}{$author.name$}%
+$else$
+$author.name$
+$endif$
+$else$
+$author$
+$endif$
+}\\$endfor$
+%
+$if(thyexercise)$
+\vskip 8ex
+\textbf{\huge Exercise $thyexercise$}
+$endif$
+\vskip 8ex
+\textbf{\large --- \today ---}
+%
+\end{center}
+\vfill
+%
+%\begin{raggedright}
+\hfill\begin{tabular}{r@{\hspace{1em}}l}
+\includegraphics[height=2cm, width=4cm]{{docs/ESCI_logo}.png}
+& %
+\shortstack{%
+\textbf{\textsc{\large Computational Genomics 2024--25}}\\[1ex]
+\textsc{BSc in Bioinformatics}\\[1.25ex]
+% {\large \href{http://www.upf.edu/en/}{UPF} -- \href{http://www.fib.upc.edu/en/bioinformatica.html}{UPC} -- \href{http://www.ub.edu/web/ub/en/estudis/oferta_formativa/graus/fitxa/B/G1091/index.html?}{UB}}%
+{\large \href{https://www.esci.upf.edu/en/bachelors-degree-in-bioinformatics/bachelors-degree-bioinformatics}{UPF/ESCI} -- \href{https://www.upc.edu/en/bachelors/bioinformatics-interuniversity-upf-upc-ub-uab-degree-barcelona-fib}{UPC} -- \href{https://web.ub.edu/en/web/estudis/w/bachelordegree-g1134}{UB} -- \href{https://www.uab.cat/web/estudiar/ehea-degrees/general-information/bioinformatics-uab/upf/ub/upc-1216708259085.html?param1=1345746721560}{UAB}}%
+}%shortstack
+\\[2ex]
+\end{tabular}
+%\end{raggedright}
+%
+\end{titlepage}
+%
+%\maketitle
+$if(abstract)$
+\newpage
+\begin{center}\textbf{\large $if(runtitle)$$runtitle$$else$ABSTRACT$endif$}\end{center}\vskip 2ex%
+\begin{abstract}
+$abstract$
+\end{abstract}
+\newpage
+$else$
+\newpage
+$endif$
+$endif$
+%thytitle
+
+$for(include-before)$
+$include-before$
+
+$endfor$
+$if(toc)$
+{
+%\hypersetup{linkcolor=black}
+\pagenumbering{roman}
+\setcounter{page}{1}
+\setcounter{tocdepth}{$toc-depth$}
+\tableofcontents
+%
+\vfill
+%\newpage
+}
+$endif$
+$if(lot)$
+\listoftables
+\vfill
+$endif$
+$if(lof)$
+\listoffigures
+\vfill
+%
+\newpage
+$endif$
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\pagestyle{fancy}
+
+$body$
+
+$if(natbib)$
+$if(biblio-files)$
+$if(biblio-title)$
+$if(book-class)$
+\renewcommand\bibname{$biblio-title$}
+$else$
+\renewcommand\refname{$biblio-title$}
+$endif$
+$endif$
+\bibliography{$biblio-files$}
+
+$endif$
+$endif$
+$if(biblatex)$
+\printbibliography$if(biblio-title)$[title=$biblio-title$]$endif$
+
+$endif$
+$for(include-after)$
+$include-after$
+
+$endfor$
+
+\end{document}

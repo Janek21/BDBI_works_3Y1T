@@ -11,7 +11,10 @@ zcat data/$1_mrna.fa.gz | \
 
 echo "Working on all $1 files"
 
-zcat data/$1_all_mrna.txt.gz|cut -f10,11,15 > data/$1_chr_data.txt
+zcat data/$1_all_mrna.txt.gz|sed 's/chrX_/chrUn/'|sed 's/chrY_/chrUn/'|gzip > data/$1_mrna_file.txt.gz
+
+zcat data/$1_mrna_file.txt.gz|cut -f10,11,15 > data/$1_chr_data.txt
+
 
 splitCHR=$2 
 

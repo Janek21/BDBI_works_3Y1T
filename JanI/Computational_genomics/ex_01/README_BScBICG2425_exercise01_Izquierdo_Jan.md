@@ -820,14 +820,11 @@ dev.off()
 # Discussion
 \label{sec:discussion}
 
-__IMPORTANT__ Discuss your results here (around 300 words). And
-remember to include in the Appendices section (see page
-\pageref{sec:appendices}), any extra script you wrote from this
-exercise `bin` folder using the `loadfile` macro. We can take
-advantage of the \LaTeX\ referencing capabilities, for instance:
-Figure \ref{fig:histograms} on page \pageref{fig:histograms} shows the
-GC and sequence lengths histograms distribution for the set of \dmel\
-mRNA sequences.
+We merged GC content and mRNA length data with chromosomal information to visualize their distributions across chromosomes using ggplot2. The resulting boxplots revealed distinct variations in mRNA lengths and GC content across chromosomes. Notable outliers include chrM and chr4 that have a much lower CG content than the rest (specially M) and chrU and chrY whose mRNA read lengths are much shorter (chrM also presents some anomalies).
+
+We repeated the analysis for Apis mellifera to compare species, and observed that the GC contents and lengths were much similar across all groups. 
+
+In the comparison we saw that Drosophila showed more variability in GC content (as already seen above, chromosomes M and 4), while Apis was more stable. In the length plots we observed that, again, Drosophila showed more variability (as we observed previously) and Apis was more stable.
 
 
 \clearpage

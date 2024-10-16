@@ -1,0 +1,5 @@
+Cbot 15
+Unique:    3216404
+Distinct:  3489254
+Total:     3903232
+Max_count: 62

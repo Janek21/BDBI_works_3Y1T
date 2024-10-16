@@ -1,0 +1,5 @@
+Ecol 25
+Unique:    4516906
+Distinct:  4548910
+Total:     4641628
+Max_count: 75

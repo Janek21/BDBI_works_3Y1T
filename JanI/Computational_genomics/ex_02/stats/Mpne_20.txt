@@ -1,0 +1,5 @@
+Mpne 20
+Unique:    757793
+Distinct:  778224
+Total:     816375
+Max_count: 15

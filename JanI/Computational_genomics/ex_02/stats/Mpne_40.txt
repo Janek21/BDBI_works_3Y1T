@@ -1,0 +1,5 @@
+Mpne 40
+Unique:    779921
+Distinct:  794536
+Total:     816355
+Max_count: 14

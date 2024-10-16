@@ -1,0 +1,5 @@
+Cbot 10
+Unique:    81674
+Distinct:  356387
+Total:     3903242
+Max_count: 867

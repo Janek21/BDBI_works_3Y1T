@@ -1,0 +1,5 @@
+Mgen 35
+Unique:    569477
+Distinct:  573915
+Total:     580042
+Max_count: 8

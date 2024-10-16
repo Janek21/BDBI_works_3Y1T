@@ -1,0 +1,5 @@
+Ecol 30
+Unique:    4522959
+Distinct:  4553477
+Total:     4641623
+Max_count: 48

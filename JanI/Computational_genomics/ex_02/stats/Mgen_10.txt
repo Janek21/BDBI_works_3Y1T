@@ -1,0 +1,5 @@
+Mgen 10
+Unique:    87099
+Distinct:  192529
+Total:     580067
+Max_count: 122

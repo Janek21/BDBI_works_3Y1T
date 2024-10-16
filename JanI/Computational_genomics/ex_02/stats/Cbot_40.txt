@@ -1,0 +1,5 @@
+Cbot 40
+Unique:    3832046
+Distinct:  3850192
+Total:     3903182
+Max_count: 20

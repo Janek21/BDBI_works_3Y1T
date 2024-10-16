@@ -1,0 +1,5 @@
+Mgen 30
+Unique:    567957
+Distinct:  572877
+Total:     580047
+Max_count: 11

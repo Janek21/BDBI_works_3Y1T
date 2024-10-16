@@ -1,0 +1,5 @@
+Mpne 30
+Unique:    770702
+Distinct:  787967
+Total:     816365
+Max_count: 14

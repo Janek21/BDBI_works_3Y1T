@@ -1,0 +1,5 @@
+Ecol 40
+Unique:    4531656
+Distinct:  4559993
+Total:     4641613
+Max_count: 12

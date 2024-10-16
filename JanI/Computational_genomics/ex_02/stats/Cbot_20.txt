@@ -1,0 +1,5 @@
+Cbot 20
+Unique:    3798425
+Distinct:  3828717
+Total:     3903222
+Max_count: 30

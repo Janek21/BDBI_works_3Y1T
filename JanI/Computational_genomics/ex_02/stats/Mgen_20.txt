@@ -1,0 +1,5 @@
+Mgen 20
+Unique:    564076
+Distinct:  569990
+Total:     580057
+Max_count: 31

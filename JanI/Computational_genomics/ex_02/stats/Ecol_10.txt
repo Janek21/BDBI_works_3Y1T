@@ -1,0 +1,5 @@
+Ecol 10
+Unique:    40625
+Distinct:  490389
+Total:     4641643
+Max_count: 284

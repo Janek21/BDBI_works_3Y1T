@@ -1,0 +1,5 @@
+Mpne 25
+Unique:    764947
+Distinct:  783662
+Total:     816370
+Max_count: 15

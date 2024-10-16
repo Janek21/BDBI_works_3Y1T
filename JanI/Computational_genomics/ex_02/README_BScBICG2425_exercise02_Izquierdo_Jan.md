@@ -858,22 +858,13 @@ large *k*-mer sizes as they may require large amount of disk space and
 CPU time). You can take "`docs/tbl_genbank_summary_info_genomes.tex`" as
 example to create this table.
 
-#Jan:
-
-#Get kmer output in text file
-
-#Use regular PANDOC txt to tex converter for the tables
-
-#small tutorial/example
-
-#https://tex.stackexchange.com/questions/342235/someone-provide-a-tutorial-link-for-pandoc-txt-to-tex
 
 Kmer composition analysis
 
 ``` sh
 #%
 #kmer composition analysis
-### repeat the commands for the other three genomes ###
+### repeat the commands for the other three genomes
 
 function jellyfish_on_kmer () {
   THYSPC=$1;
@@ -884,30 +875,32 @@ function jellyfish_on_kmer () {
                 -o ./stats/${THYSPC}_jellyfish_k${KMERSZ}.counts;
   jellyfish stats ./stats/${THYSPC}_jellyfish_k${KMERSZ}.counts;
 }
-#for Cbot
-jellyfish_on_kmer Cbot 10 #function specie kmer_size
-jellyfish_on_kmer Cbot 20
-jellyfish_on_kmer Cbot 30
-jellyfish_on_kmer Cbot 40
 
-#for Ecol
-jellyfish_on_kmer Ecol 10
-jellyfish_on_kmer Ecol 20
-jellyfish_on_kmer Ecol 30
-jellyfish_on_kmer Ecol 40
+sizeList="10 15 20 25 30 35 40"
+specieList="Cbot Ecol Mgen Mpne"
 
-#for Mgen
-jellyfish_on_kmer Mgen 10
-jellyfish_on_kmer Mgen 20
-jellyfish_on_kmer Mgen 30
-jellyfish_on_kmer Mgen 40
+for specie in $specieList; do
+	for size in $sizeList; do
+	  echo "$specie $size"> ./stats/"$specie"_"$size.txt"
+		jellyfish_on_kmer $specie $size | cat >> ./stats/"$specie"_"$size.txt"
+	done
+done
 
-#for Mpne
-jellyfish_on_kmer Mpne 10
-jellyfish_on_kmer Mpne 20
-jellyfish_on_kmer Mpne 30
-jellyfish_on_kmer Mpne 40
+#Get the results and copy them to a table
+cat ./stats/Cbot_*.txt
+cat ./stats/Ecol_*.txt
+cat ./stats/Mgen_*.txt
+cat ./stats/Mpne_*.txt
+
 ```
+
+Copy the results from the cast commands manually to example table (change column names to match) and unrotate the columns
+
+
+
+\input{docs/kmer_table}
+
+
 
 # Discussion
 

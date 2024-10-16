@@ -1,0 +1,5 @@
+Ecol 20
+Unique:    4507760
+Distinct:  4542190
+Total:     4641633
+Max_count: 82

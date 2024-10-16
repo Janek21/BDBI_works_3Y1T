@@ -1,0 +1,5 @@
+Mpne 35
+Unique:    775615
+Distinct:  791523
+Total:     816360
+Max_count: 14

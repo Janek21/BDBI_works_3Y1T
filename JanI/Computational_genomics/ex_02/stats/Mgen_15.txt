@@ -1,0 +1,5 @@
+Mgen 15
+Unique:    550161
+Distinct:  562149
+Total:     580062
+Max_count: 39

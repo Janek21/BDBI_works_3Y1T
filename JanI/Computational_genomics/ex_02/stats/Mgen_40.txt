@@ -1,0 +1,5 @@
+Mgen 40
+Unique:    570718
+Distinct:  574743
+Total:     580037
+Max_count: 7

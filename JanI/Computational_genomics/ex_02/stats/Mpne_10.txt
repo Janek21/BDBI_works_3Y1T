@@ -1,0 +1,5 @@
+Mpne 10
+Unique:    123499
+Distinct:  292158
+Total:     816385
+Max_count: 58

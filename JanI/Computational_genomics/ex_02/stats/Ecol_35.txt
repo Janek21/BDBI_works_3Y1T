@@ -1,0 +1,5 @@
+Ecol 35
+Unique:    4527791
+Distinct:  4557129
+Total:     4641618
+Max_count: 42

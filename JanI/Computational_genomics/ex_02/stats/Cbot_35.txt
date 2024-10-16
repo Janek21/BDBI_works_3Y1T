@@ -1,0 +1,5 @@
+Cbot 35
+Unique:    3828308
+Distinct:  3847684
+Total:     3903192
+Max_count: 20

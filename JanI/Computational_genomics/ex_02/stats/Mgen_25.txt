@@ -1,0 +1,5 @@
+Mgen 25
+Unique:    566174
+Distinct:  571601
+Total:     580052
+Max_count: 20

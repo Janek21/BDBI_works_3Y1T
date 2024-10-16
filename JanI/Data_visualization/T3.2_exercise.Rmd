@@ -1,0 +1,387 @@
+---
+title: "**T3.2** | Interactive plots in Shiny"
+subtitle: "Shiny interactions"
+author: "<b>Marta Coronado Zamora</b>"
+date: "16 October 2024"
+output:
+  xaringan::moon_reader:
+    css: ["default", "rutgers", "metropolis-fonts", "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css", "https://use.fontawesome.com/releases/v5.10.1/css/all.css"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+      
+---
+```{r setup, include=FALSE}
+# Animations: https://github.com/daneden/animate.css#animations
+# pagedown::chrome_print("T3.2_slides.html")
+library(knitr)
+knitr::opts_chunk$set(echo = FALSE, eval = TRUE, fig.width = 2.5, fig.height = 2.5, message = FALSE, warning = F)
+```
+
+class: center, middle, animated, bounceInDown
+
+<style>
+.title-slide {
+  background-image: url(img/logoesci-fons-blanc.png);
+  background-size: 150px;
+}
+</style>
+
+# Keep in touch
+#### Theory lessons <br>
+
+| Marta Coronado Zamora | Jose F. Sánchez | 
+|:-:|:-:|
+| <a href="mailto:marta.coronado@prof.esci.upf.edu"><i class="fa fa-paper-plane fa-fw"></i> marta.coronado@prof.esci.upf.edu</a> | <a href="mailto:jose.sanchez@prof.esci.upf.edu"><i class="fa fa-paper-plane fa-fw"></i>&nbsp; jose.sanchez@prof.esci.upf.edu</a> | 
+| <a href="https://twitter.com/geneticament"><i class="fab fa-twitter fa-fw"></i>&nbsp; @geneticament</a> |                 <a href="https://twitter.com/JFSanchezBioinf"><i class="fab fa-twitter fa-fw"></i>&nbsp; @JFSanchezBioinf</a> |
+| <a href="https://www.ibb.csic.es/ca/"><i class="fa fa-map-marker fa-fw"></i>&nbsp; Institut Botànic de Barcelona (CSIC-CMCNB)</a> |    <a href="http://www.germanstrias.org/technology-services/genomica-bioinformatica/"> <i class="fa fa-map-marker fa-fw"></i>Germans Trias i Pujol Research Institute (IGTP)</a> |
+
+#### Practical lessons <br>
+
+| Adrià Auladell |
+|:-:|
+| <a href="mailto:adria.auladell@ibe.upf-csic.es"><i class="fa fa-paper-plane fa-fw"></i> adria.auladell@ibe.upf-csic.es </a> | 
+|  <a href="https://www.ibe.upf-csic.es/"><i class="fa fa-map-marker fa-fw"></i>&nbsp; Institut de Biologia Evolutiva (UPF-CSIC) </a> | 
+
+---
+
+layout: true
+class: animated, fadeIn
+
+---
+
+# Content
+
+- Interactive plots in Shiny:
+  + Interactive controls with `*Input` widgets
+  + `htmlwidgets` as `*Output`
+  + Built-in interactive visualization `plotOutput` options: `click`, `hover`, `brush`, `nearPoints`, `brushedPoints`
+- Sharing your apps
+- Project group questions
+
+---
+layout: false
+class: left, bottom, inverse, animated, bounceInDown
+
+# Get started!
+## **Interactive plots in Shiny**
+
+---
+layout: true
+class: animated, fadeIn
+
+---
+## Interactive controls with `*Input` widgets
+
+```{r eval=T, echo = TRUE}
+library(shiny)
+
+    ui = fluidPage(
+        # Select variables
+        selectInput(inputId = "x_input", label = "Choose x variable", 
+                    choices = c("mpg", "disp", "hp", "wt", "qsec")),
+        radioButtons(inputId = "y_input", label = "Choose y variable",
+                     choices = c("mpg", "disp", "hp", "wt", "qsec")),
+        # Plot
+        plotOutput("mtcars_plot")
+    )
+    server = function(input, output){
+        library(ggplot2)
+        # Plot using the chosen variables
+        output$mtcars_plot <- renderPlot({
+            #ggplot(mtcars, aes_string(input$x_input, input$y_input)) +
+            ggplot(mtcars, aes(.data[[input$x_input]], .data[[input$y_input]])) +
+                geom_point()
+        })
+    }
+
+shinyApp(ui = ui, server = server)
+```
+
+---
+
+## `htmlwidgets` in `*Output`
+
+```{r eval=T, echo = TRUE}
+library(shiny)
+library(plotly)
+
+ui = fluidPage(
+        # Plotly!
+        plotlyOutput("mtcars_plot")
+    )
+server = function(input, output){
+        library(ggplot2)
+        library(plotly)
+        # Plotly
+        output$mtcars_plot <- renderPlotly({
+            p <- ggplot(mtcars, aes(mpg, hp)) +
+                geom_point()
+            ggplotly(p)
+        })
+    }
+
+shinyApp(ui = ui, server = server)
+```
+
+
+---
+
+## `htmlwidgets` in `*Output`
+
+We have the output function `plotlyOutput` and its companion reactive function `renderPlotly` to add a plotly graph to a `shiny app`. What if we want to add some others?
+
+
+#### <i class="fas fa-pencil-alt"></i> **Exercise** | Make a quick search to find the corresponding output function and render function for the following `htmlwidgets`:
+- [leaflet](http://rstudio.github.io/leaflet/)
+- [dygraphs](http://rstudio.github.io/dygraphs/)
+- [networkD3](http://christophergandrud.github.io/networkD3/)
+
+<div style="background-color:#F0F0F0">
+&emsp;<i class="fas fa-comment-dots"></i>
+Answer:
+```{r Ex1}
+```
+leaflet: renderLeaflet and leafletOutput
+dygraphs: renderDygraph and dygraphOutput
+networkD3: renderForceNetwork and forceNetworkOutput
+
+&emsp;
+</div>
+
+---
+## Built-in interactive visualization
+
+Shiny has built-in support for interacting with static plots generated with `ggplot2`.
+
+This makes it easy to add features like **selecting points** and **regions**, as well as **zooming in** and **out of images**.
+
+---
+
+## Built-in interactive visualization
+
+```{r eval=T, echo = TRUE}
+library(shiny)
+
+ui <- basicPage(
+  plotOutput("plot1", click = "plot_click"),
+  verbatimTextOutput("info")
+)
+
+server <- function(input, output) {
+  output$plot1 <- renderPlot({
+    plot(mtcars$wt, mtcars$mpg)
+  })
+
+  output$info <- renderText({
+    paste0("x=", input$plot_click$x, "\ny=", input$plot_click$y)
+  })
+}
+
+shinyApp(ui, server)
+```
+
+---
+## Built-in interactive visualization
+
+Other types of interactions:
+- Double-clicking (`dblclick`)
+- Hovering (`hover`)
+- Brushing (brushing is clicking and dragging a selection box, `brush`)
+
+---
+## Built-in interactive visualization
+
+```{r eval=T, echo = TRUE}
+library(shiny)
+
+ui <- basicPage(
+  plotOutput("plot1",
+    click = "plot_click",
+    dblclick = "plot_dblclick",
+    hover = "plot_hover",
+    brush = "plot_brush"
+  ),
+  verbatimTextOutput("info")
+)
+
+server <- function(input, output) {
+  output$plot1 <- renderPlot({
+    plot(mtcars$wt, mtcars$mpg)
+  })
+
+  output$info <- renderText({
+    xy_str <- function(e) {
+      if(is.null(e)) return("NULL\n")
+      paste0("x=", round(e$x, 1), " y=", round(e$y, 1), "\n")
+    }
+    xy_range_str <- function(e) {
+      if(is.null(e)) return("NULL\n")
+      paste0("xmin=", round(e$xmin, 1), " xmax=", round(e$xmax, 1), 
+             " ymin=", round(e$ymin, 1), " ymax=", round(e$ymax, 1))
+    }
+
+    paste0(
+      "click: ", xy_str(input$plot_click),
+      "dblclick: ", xy_str(input$plot_dblclick),
+      "hover: ", xy_str(input$plot_hover),
+      "brush: ", xy_range_str(input$plot_brush)
+    )
+  })
+}
+
+shinyApp(ui, server)
+```
+---
+
+## Built-in interactive visualization
+
+What if we want to select rows of data, and not a point in the plot?
+
+--
+
+Shiny provides two convenience functions for selecting rows of data:
+
+- `nearPoints()`: uses the `x` and `y` value from the interaction data, to be used with `click`, `dblclick` and `hover`
+
+- `brushedPoints()`: uses the `xmin`, `xmax`, `ymin`, and `ymax` values from the interaction data; to be used with `brush`. 
+
+---
+## Built-in interactive visualization
+
+```{r eval=T, echo = TRUE}
+# Basic example of near points
+library(shiny)
+
+ui <- basicPage(
+  plotOutput("plot1", click = "plot_click"),
+  verbatimTextOutput("info")
+)
+
+server <- function(input, output) {
+  output$plot1 <- renderPlot({
+    plot(mtcars$wt, mtcars$mpg)
+  })
+
+  output$info <- renderPrint({
+    # With base graphics, need to tell it what the x and y variables are.
+    nearPoints(mtcars, input$plot_click, xvar = "wt", yvar = "mpg")
+    # nearPoints() also works with hover and dblclick events
+  })
+}
+
+shinyApp(ui, server)
+
+```
+
+---
+
+## Built-in interactive visualization
+
+- By default, `nearPoints()` will return all rows of data that are within 5 pixels of the mouse event, and they will be sorted by distance, with the nearest first
+
+- The radius can be customized with `threshold`
+
+- The number of rows returned can be customized with `maxpoints`
+
+---
+## Built-in interactive visualization
+
+```{r eval=T, echo = TRUE}
+# Basic example of brushed points
+
+library(shiny)
+
+ui <- basicPage(
+  plotOutput("plot1", brush = "plot_brush"),
+  verbatimTextOutput("info")
+)
+
+server <- function(input, output) {
+  output$plot1 <- renderPlot({
+    plot(mtcars$wt, mtcars$mpg)
+  })
+
+  output$info <- renderPrint({
+    # With base graphics, need to tell it what the x and y variables are.
+    brushedPoints(mtcars, input$plot_brush, xvar = "wt", yvar = "mpg")
+  })
+}
+
+shinyApp(ui, server)
+
+```
+
+
+---
+layout: false
+class: left, bottom, inverse, animated, bounceInDown
+
+# Sharing `Shiny` apps
+
+---
+layout: true
+class: animated, fadeIn
+
+---
+
+## Sharing `Shiny` apps
+
+Shiny apps are easy to share, and there are several options to choose from. 
+
+--
+
+Two basic ways to do it:
+
+1. Share your Shiny app as two files: `server.R` and `ui.R` (or `app.R`).
+  + Simplest way to share an app
+  + Only works if your users have R on their own computer (and know how to use it)
+
+  Shiny provides three built-in commands that make it easy to use files that are hosted online: `runUrl`, `runGitHub`, and `runGist`. 
+--
+
+2. Share your Shiny app as a web page. 
+  +  Most user friendly way to share a Shiny app
+  +  Users can navigate to your app through the internet with a web browser: app is fully rendered, up to date, and ready to go
+  
+---
+### Sharing `Shiny` apps as a web page
+
+RStudio offers three ways to host your Shiny app as a web page:
+
+- Shinyapps.io
+- Shiny Server
+- Shiny Server Pro
+
+---
+
+#### Shinyapps.io
+
+RStudio’s hosting service for Shiny apps: [shinyapps.io](shinyapps.io) lets you upload your app straight from your R session to a server hosted by RStudio.
+<center>
+<img src="img/how-to-deploy-a-shiny-app-an-example-with-shinyapps-io2023_10_16D9_7_5.png" width=65%>
+
+
+---
+
+# Project questions
+
+- First assignment (parts A and B)
+  + **Part A** | Understand the origin of our data set and the meaning of the variables
+  + **Part B** | Visually describe our data set
+- Second assignment (part C)
+  + **Part C** | Make your figures interactive in three different ways
+  + Make an interactive visualization using some `htmlwidget`
+  + Add __interactive controls__ with `shiny` input widgets to show some useful information (e.g. focus on a subset, add a summary layer...)
+  + Make an __interactive visualization__ using `shiny` built-in interactive options in order to print the information of the individual observations
+- Decide which figure would benefit from each type of interactivity and justify your choice
+  
+---
+
+layout: false
+class: inverse, center, middle, animated, bounceInDown
+
+### Upload `T3.2_slides.Rmd` with the completed exercises (text included) to [aul@-ESCI](https://aula.esci.upf.edu/course/view.php?id=8592)

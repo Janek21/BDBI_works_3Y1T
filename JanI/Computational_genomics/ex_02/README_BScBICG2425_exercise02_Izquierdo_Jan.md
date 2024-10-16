@@ -9,7 +9,7 @@ title: |
 #subtitle:
 runtitle: |
   BScBI-CG Exercise 02 Report
-author-meta: !!str 'Name SURNAME @ BScBI Computational Genomics'
+author-meta: !!str 'Jan Izquierdo @ BScBI Computational Genomics'
 author:
 - name: Jan Izquierdo
   myemail: jan.izquierdo
@@ -333,7 +333,7 @@ Mgen GCF/000/027/325/GCF_000027325.1_ASM2732v1/GCF_000027325.1_ASM2732v1
 Mpne GCF/000/027/345/GCF_000027345.1_ASM2734v1/GCF_000027345.1_ASM2734v1
 EOF
 
-### IMPORTANT NOTE ###
+### IMPORTANT NOTE
 #
 # If the firewall does not allow you to connect to the NCBI https site
 # then you can run the following commands to download files from
@@ -358,7 +358,7 @@ Mgen GCF_000027325.1_ASM2732v1
 Mpne GCF_000027345.1_ASM2734v1
 EOF
 
-### YET ANOTHER WAY TO GET THE SEQUENCE FILES ###
+### YET ANOTHER WAY TO GET THE SEQUENCE FILES
 #
 # Using curl command we can download same datasets as zip files.
 # This zip file will contain a folder "ncbi_dataset/data/GCF_0000xxxxx.x/"
@@ -374,6 +374,8 @@ for GFL in GCF_000005845.2 GCF_000063585.1 GCF_000027325.1 GCF_000027345.1;
   }; done;
 popd;
 ```
+
+#### Exercise 1
 
 File download
 
@@ -392,6 +394,7 @@ wget https://ftp.ncbi.nlm.nih.gov/genomes/all/$dr -O data/$file
 dr=GCF/000/027/345/GCF_000027345.1_ASM2734v1/GCF_000027345.1_ASM2734v1_genomic.gbff.gz
 file=Mpne_referencegenome.gb.gz
 wget https://ftp.ncbi.nlm.nih.gov/genomes/all/$dr -O data/$file
+#-%#
 ```
 
 ## Retrieving the sequences
@@ -416,13 +419,15 @@ zcat $DT/${SPC}_referencegenome.fa.gz | \
 # Display basic information about sequences
 # NC_000913      4641652 50.79
 
-### repeat the commands for the other three genomes ###
+### repeat the commands for the other three genomes
 #
 ### --- IMPORTANT ---
 ###
 ### Take care that the Cbot genbank file provides the cromosome 
 ###   and a plasmid sequence, you should discard the later.
 ```
+
+#### Exercise 2
 
 Sequence extraction
 
@@ -437,6 +442,7 @@ SPC=Mgen
 zcat data/${SPC}_referencegenome.gb.gz|seqret -sequence genbank::stdin -outseq fasta::stdout | gzip -9c - > data/${SPC}_referencegenome.fa.gz
 SPC=Mpne
 zcat data/${SPC}_referencegenome.gb.gz|seqret -sequence genbank::stdin -outseq fasta::stdout | gzip -9c - > data/${SPC}_referencegenome.fa.gz
+#-%#
 ```
 
 From the output of the two commands, we can conclude that fasta sequence
@@ -448,6 +454,8 @@ difference is due to rounding to one decimal position).
 ## Summary of sequence content
 
 ### Chaos-plot
+
+#### Exercise 3
 
 \emboss suite has a command to calculate [chaos
 plots](http://emboss.sourceforge.net/apps/cvs/emboss/apps/chaos.html), a
@@ -464,8 +472,8 @@ SPC=Mgen
 zcat data/${SPC}_referencegenome.fa.gz | chaos -sequence fasta::stdin -verbose -graph png -gtitle "$SPC chaos plot" -goutfile ./images/${SPC}_chaosplot
 SPC=Mpne
 zcat data/${SPC}_referencegenome.fa.gz | chaos -sequence fasta::stdin -verbose -graph png -gtitle "$SPC chaos plot" -goutfile ./images/${SPC}_chaosplot
+#-%#
 ```
-#%
 
 You **must** include here a \LaTeX figure, defined as a table of two
 rows and two columns containing the four `png` plots, using `input` to
@@ -474,7 +482,6 @@ already examples on the previous exercise, see for instance
 "`exercise_01/docs/fig_histograms.tex`").
 
 \input{docs/Chaos_plotcombo}
-
 
 ### Computing GC content variation across the genome
 
@@ -587,6 +594,8 @@ ls -1 $WDR/stats/${SPC}_genomegcanalysis_wlen*.tbl.gz | \
 #> >NC_000913 10000 50.8
 ```
 
+#### Exercise 4
+
 Creation of files for the various window lengths
 
 ``` sh
@@ -634,7 +643,7 @@ File check
 ``` sh
 #%
 #Checking file conversion
-### repeat the commands for the other three genomes ###
+### repeat the commands for the other three genomes
 
 SPC=Cbot
 ls -1 ./stats/${SPC}_genomegcanalysis_wlen*.tbl.gz | \
@@ -667,6 +676,7 @@ ls -1 ./stats/${SPC}_genomegcanalysis_wlen*.tbl.gz | \
       echo $FL;
       zcat $FL | head -2;
     }; done;
+#-%#
 ```
 
 We can plot each of those tables using the nucleotide positions on the
@@ -675,7 +685,7 @@ five times wider than taller that will allow us to stack them for
 comparing the results of the different window lengths.
 
 ``` r
-R
+#In R
 # then assuming you use R command-line shell from the terminal...
 
 # example here for Ecol and window length equal to 100bp
@@ -709,6 +719,8 @@ ggsave("images/Ecol_genomegcanalysis_wlen100.png",
        plot=G, width=25, height=8, units="cm", dpi=600);
 ```
 
+#### Exercise 5
+
 Plots for all window sizes of Ecol
 
 ``` r
@@ -735,6 +747,7 @@ for (size in c(100, 200, 500, 1000, 2000, 5000, 10000)){
   ggsave(paste0("images/Ecol_genomegcanalysis_wlen", size, ".png"),
          plot=G, width=25, height=8, units="cm", dpi=600);
 }
+#-%#
 ```
 
 Include here a figure combining the plots for the set of window lengths
@@ -743,10 +756,11 @@ those windows lengths** and provide the commands to analyze the other
 three genomic sequences. After that, you can include another figure
 stacking the results for that window length on all the genomes.
 
-
 \input{docs/Allsizes_Ecol}
 
 \newpage
+
+#### Exercise 6
 
 Analysis for 5000 window length
 
@@ -778,6 +792,7 @@ for (org in c("Cbot", "Ecol", "Mgen", "Mpne")){
   ggsave(paste0("images/", org, "_genomegcanalysis_wlen5000.png"),
          plot=G, width=25, height=8, units="cm", dpi=600);
 }
+#-%#
 ```
 
 \input{docs/Allspecies_1size}
@@ -851,13 +866,14 @@ for SPC in Ecol Cbot;
 # that perform single tasks into shell scripts instead of functions.
 ```
 
+#### Exercise 7
+
 Try different *k*-mer sizes (i.e. 10, 15, 20, 25, 30, 35, and 40), on
 the genomic sequences of the four species and summarize them into
 another \LaTeX table to include below (**IMPORTANT:** take caution with
 large *k*-mer sizes as they may require large amount of disk space and
 CPU time). You can take "`docs/tbl_genbank_summary_info_genomes.tex`" as
 example to create this table.
-
 
 Kmer composition analysis
 
@@ -880,10 +896,10 @@ sizeList="10 15 20 25 30 35 40"
 specieList="Cbot Ecol Mgen Mpne"
 
 for specie in $specieList; do
-	for size in $sizeList; do
-	  echo "$specie $size"> ./stats/"$specie"_"$size.txt"
-		jellyfish_on_kmer $specie $size | cat >> ./stats/"$specie"_"$size.txt"
-	done
+    for size in $sizeList; do
+      echo "$specie $size"> ./stats/"$specie"_"$size.txt"
+        jellyfish_on_kmer $specie $size | cat >> ./stats/"$specie"_"$size.txt"
+    done
 done
 
 #Get the results and copy them to a table
@@ -891,16 +907,13 @@ cat ./stats/Cbot_*.txt
 cat ./stats/Ecol_*.txt
 cat ./stats/Mgen_*.txt
 cat ./stats/Mpne_*.txt
-
+#-%#
 ```
 
-Copy the results from the cast commands manually to example table (change column names to match) and unrotate the columns
-
-
+Copy the results from the cat commands manually to example table (change
+column names and unrotate them to match) and fix the caption
 
 \input{docs/kmer_table}
-
-
 
 # Discussion
 

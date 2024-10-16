@@ -231,8 +231,8 @@ Run the code of the `sliderInput()` in the R console and see what it returns: ca
 ```{r Ex4}
 ```
 ``` r
-sliderInput("expressionInput", "Median expression (log)", min = -6, max = 12,
-                             value = c(1, 5))
+sliderInput("expressionInput", "Median expression (log)", 
+                  min = -6, max = 12, value = c(1, 5))
 ```
 It outputs html code.
 
@@ -284,7 +284,7 @@ Add a new input; for example for selecting a chromosome, or the gene status, etc
 <div style="background-color:#F0F0F0">
 ##### &emsp;<i class="fas fa-comment-dots"></i> Answer:
 
-Added strand and gene span selection
+Added strand and gene span selection, an option to choose the 2nd plot type and a button to activate/deactivate the table
 ```{r Ex5}
 #Strand
 checkboxGroupInput("strandInput", "Gene strand",
@@ -509,7 +509,7 @@ With all the knowledge that you've acquired in this practical, add a new output.
              #strand
              gene_strand %in% input$strandInput
       )
-    
+    #Plot type
     if (input$typePlotInput=="Box plot"){
       
       #Load the box plots in the app
@@ -526,6 +526,29 @@ With all the knowledge that you've acquired in this practical, add a new output.
         scale_fill_manual(values=c("-"="deepskyblue4", "+"="brown4"))+
         theme(axis.text=element_text(size=12))  
     }
+  })
+
+  output$results <- renderTable({
+    
+    #Table (yes/no) filter
+    req(input$TdecInput)
+    
+    filtered <-
+      expressionData %>%
+      filter(
+        median_expression >= input$expressionInput[1],
+        median_expression <= input$expressionInput[2],
+        tissue %in% input$tissueInput,
+        gene_annotation %in% input$geneAnnotInput,
+        gene_type %in% input$geneTypeInput,
+        #My filters
+        #Gene span
+        gene_start >= input$spanInput[1],
+        gene_start <= input$spanInput[2],
+        #strand
+        gene_strand %in% input$strandInput
+      )
+    filtered
   })
 ```
 

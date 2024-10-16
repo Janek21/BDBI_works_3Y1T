@@ -106,7 +106,7 @@ server <- function(input, output) {
              #strand
              gene_strand %in% input$strandInput
       )
-    
+    #Plot type
     if (input$typePlotInput=="Box plot"){
       
       #Load the box plots in the app
@@ -128,7 +128,10 @@ server <- function(input, output) {
   
   #Table out
   output$results <- renderTable({
+    
+    #Table (yes/no) filter
     req(input$TdecInput)
+    
     filtered <-
       expressionData %>%
       filter(

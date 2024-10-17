@@ -1,0 +1,186 @@
+---
+title: "Prostate Cancer Classification"
+author: "Your Name"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+# Objectives
+Introduce basic validation methodologies and hyperparameter optimization.
+
+- Nearest-Centroid Classifier does not require any parameter optimization
+- k-Nearest Neighbours classifiers (kNN): k needs to be optimized
+- Data Partition for external validation: Hold-out
+- Data Partition for internal validation: k-fold
+
+Apply those algorithms to spectra from prostate tissues measured with Surface-Enhanced Laser Desorption/Ionization (SELDI) Mass Spectrometry.
+
+# Dataset
+The dataset is provided as an external file. It was originally part of the 'ChemometricsWithR' package.
+
+The `Prostate2000Raw` data contains 654 mass spectra, belonging to 327 subjects (two replicates per subject). Each subject belongs to one the following groups:
+
+- patients with prostate cancer
+- patients with benign prostatic hyperplasia
+- control subjects
+
+This data was made public in the following papers:
+
+- Adam et al., *Cancer Res.* 63, 3609-3614, 2002.
+- Qu et al., *Clinical Chemistry*, 48, 1835-1843, 2002.
+
+# Procedure
+
+We start by loading all the needed packages and the data.
+
+```{r}
+# run `install.packages` only if packages are not already installed!
+#install.packages(c("MASS", "e1071", "sfsmisc", "class", "caret"))
+#remotes::install_github("rwehrens/ChemometricsWithR", force=TRUE)
+#install.packages("remotes")
+```
+
+
+```{r}
+# Load libraries
+library("ChemometricsWithR")
+library("MASS")
+library("pls")
+library("sfsmisc")
+library("e1071")
+library("class")
+library("caret")
+library("lolR")
+library("ggplot2")
+```
+
+## Loading the data
+
+```{r}
+load("Prostate2000Raw.rda")
+
+mz_prost <- Prostate2000Raw$mz
+intensity_with_replicates <- Prostate2000Raw$intensity
+medical_cond <- Prostate2000Raw$type
+```
+
+## Preprocessing
+
+The spectra from the `Prostate2000Raw` dataset are already baseline corrected and normalized. We will perform two additional preprocessing steps:
+
+- Replicate averaging
+- Log transformation
+
+### Replicate averaging
+
+```{r}
+num_subjects <- ncol(intensity_with_replicates)/2
+intensity_avg <- matrix(0, nrow = nrow(intensity_with_replicates), ncol = num_subjects)
+for (i in seq(1, num_subjects)) {
+  intensity_avg[, i] <- rowMeans(intensity_with_replicates[, c(2*i - 1, 2*i)])
+}
+
+subject_type <- medical_cond[seq(from = 1, to = 654, by = 2)]
+```
+
+Plot some examples of the data:
+
+```{r}
+plot(mz_prost ,intensity_avg[,1], type="l", lty="solid", lwd=1.5, col="blue")
+lines(mz_prost,intensity_avg[,100], type="l",lty="solid",lwd=1.5,col="red")
+```
+
+### Log transformation
+
+```{r}
+intensity_log <- intensity_avg
+intensity_log[intensity_log < 5e-3] <- 5e-3
+intensity_log <- log10(intensity_log)
+```
+
+Check the histogram before and after log transformation:
+
+```{r}
+hist(intensity_avg[2000,], breaks = 200, xlab = "Intensity (a.u.)",
+     main = sprintf("Histogram of 327 raw intensities with m/z = %f Da", mz_prost[2000]))
+
+hist(intensity_log[2000,], breaks = 200, xlab = "log-Intensity (a.u.)",
+     main = sprintf("Histogram of 327 log intensities with m/z = %f Da", mz_prost[2000]))
+```
+
+## Train/Test Split
+
+```{r}
+pca_idx <- which(subject_type == "pca")
+bph_idx <- which(subject_type == "bph")
+ctrl_idx <- which(subject_type == "control")
+
+pca_idx_train <- sample(pca_idx, round(0.8*length(pca_idx)))
+bph_idx_train <- sample(bph_idx, round(0.8*length(bph_idx)))
+ctrl_idx_train <- sample(ctrl_idx, round(0.8*length(ctrl_idx)))
+
+train_idx <- c(pca_idx_train, bph_idx_train, ctrl_idx_train)
+test_idx <- setdiff(1:nrow(intensity_log), train_idx)
+
+intensity_trn <- intensity_log[train_idx, ]
+intensity_tst <- intensity_log[test_idx, ]
+subject_type_trn <- subject_type[train_idx]
+subject_type_tst <- subject_type[test_idx]
+```
+
+## k-NN Classifier
+
+```{r}
+subject_type_tst_knn_pred <- class::knn(train = intensity_trn, test = intensity_tst, cl = subject_type_trn, k = 10)
+
+confmat_knn <- table(subject_type_tst, subject_type_tst_knn_pred)
+print(confmat_knn)
+
+CR_knn <- sum(diag(confmat_knn)) / sum(confmat_knn)
+message("The classification rate for kNN is: ", 100*round(CR_knn, 2), "%")
+```
+
+## Nearest Centroid Classifier
+
+```{r}
+classifier <- lol.classify.nearestCentroid(intensity_trn, subject_type_trn)
+subject_type_tst_NC_pred <- predict(classifier, intensity_tst)
+confmat_NC <- table(subject_type_tst, subject_type_tst_NC_pred)
+print(confmat_NC)
+
+CR_NC <- sum(diag(confmat_NC)) / sum(confmat_NC)
+message("The classification rate for NC is: ", 100*round(CR_NC, 2), "%")
+```
+
+## k-NN Optimization
+
+```{r}
+max_k <- 25
+kfolds <- 4
+
+classification_rates <- matrix(0, nrow = kfolds, ncol = max_k)
+
+# Creating folds and running cross-validation
+pca_idx_cv <- caret::createFolds(y = pca_idx_train, k = kfolds, returnTrain = TRUE)
+
+for (iter in 1:kfolds) {
+  for (k1 in seq(from=1, to=max_k, by=1)) {
+    # Perform k-NN and store classification rate
+  }
+}
+```
+
+## Plotting Classification Rates
+
+```{r}
+matplot(x = 1:max_k, y = t(classification_rates), type = "l", col = "blue", lty = "solid", xlab = "Number of Neighbours", ylab = "Classification Rate")
+```
+
+## Conclusion
+
+```{r}
+# Write your final conclusion and discussions
+```
+
+# Further Questions
+- Build a model without benign prostatic hypertrophy and characterize the performance with 2 classes only.

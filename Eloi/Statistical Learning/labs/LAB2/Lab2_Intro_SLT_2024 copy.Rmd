@@ -1,0 +1,376 @@
+---
+title: "Prostate Cancer Classification"
+author: "Your Name"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+# Objectives
+Introduce basic validation methodologies and hyperparameter optimization.
+
+- Nearest-Centroid Classifier does not require any parameter optimization
+- k-Nearest Neighbours classifiers (kNN): k needs to be optimized
+- Data Partition for external validation: Hold-out
+- Data Partition for internal validation: k-fold
+
+Apply those algorithms to spectra from prostate tissues measured with Surface-Enhanced Laser Desorption/Ionization (SELDI) Mass Spectrometry.
+
+# Dataset
+The dataset is provided as an external file. It was originally part of the 'ChemometricsWithR' package.
+
+The `Prostate2000Raw` data contains 654 mass spectra, belonging to 327 subjects (two replicates per subject). Each subject belongs to one the following groups:
+
+- patients with prostate cancer
+- patients with benign prostatic hyperplasia
+- control subjects
+
+This data was made public in the following papers:
+
+- Adam et al., *Cancer Res.* 63, 3609-3614, 2002.
+- Qu et al., *Clinical Chemistry*, 48, 1835-1843, 2002.
+
+# Procedure
+
+We start by loading all the needed packages and the data.
+
+```{r}
+# run `install.packages` only if packages are not already installed!
+#install.packages(c("MASS", "e1071", "sfsmisc", "class", "caret"))
+#remotes::install_github("rwehrens/ChemometricsWithR", force=TRUE)
+#install.packages("remotes")
+```
+
+
+```{r}
+# Load libraries
+library("ChemometricsWithR")
+library("MASS")
+library("pls")
+library("sfsmisc")
+library("e1071")
+library("class")
+library("caret")
+library("lolR")
+library("ggplot2")
+```
+
+## Loading the data
+
+```{r}
+load("Prostate2000Raw.rda")
+
+mz_prost <- Prostate2000Raw$mz
+intensity_with_replicates <- Prostate2000Raw$intensity
+medical_cond <- Prostate2000Raw$type
+```
+
+## Preprocessing
+
+The spectra from the `Prostate2000Raw` dataset are already baseline corrected and normalized. We will perform two additional preprocessing steps:
+
+- Replicate averaging
+- Log transformation
+
+### Replicate averaging
+
+```{r}
+num_subjects <- ncol(intensity_with_replicates)/2
+intensity_avg <- matrix(0, nrow = nrow(intensity_with_replicates), ncol = num_subjects)
+for (i in seq(1, num_subjects)) {
+  intensity_avg[, i] <- rowMeans(intensity_with_replicates[, c(2*i - 1, 2*i)])
+}
+
+subject_type <- medical_cond[seq(from = 1, to = 654, by = 2)]
+```
+
+Plot some examples of the data:
+
+```{r}
+plot(mz_prost ,intensity_avg[,1], type="l", lty="solid", lwd=1.5, col="blue")
+lines(mz_prost,intensity_avg[,100], type="l",lty="solid",lwd=1.5,col="red")
+```
+
+### Log transformation
+
+```{r}
+intensity_log <- intensity_avg
+intensity_log[intensity_log < 5e-3] <- 5e-3
+intensity_log <- log10(intensity_log)
+```
+
+Check the histogram before and after log transformation:
+
+```{r}
+hist(intensity_avg[2000,], breaks = 200, xlab = "Intensity (a.u.)",
+     main = sprintf("Histogram of 327 raw intensities with m/z = %f Da", mz_prost[2000]))
+
+hist(intensity_log[2000,], breaks = 200, xlab = "log-Intensity (a.u.)",
+     main = sprintf("Histogram of 327 log intensities with m/z = %f Da", mz_prost[2000]))
+```
+
+
+```{r}
+
+```
+
+
+#' Let's just check the dimensionality to confirm:
+message("Number of samples: ", nrow(intensity))
+message("Number of variables: ", ncol(intensity))
+
+#'
+#' The balance of sample types in the dataset is important to many algorithms:
+#' If we had very few samples of a particular class (for instance very few
+#' benign prostatic hyperplasia subjects), we would have to consider either
+#' (i) looking for more samples of that class, (ii) drop all the hyperplasia
+#' samples and simplify the experiment or (iii) use algorithms able to work
+#' with unbalanced datasets.
+
+table(subject_type)
+
+#' Is the dataset balanced? What is the percentage of samples of each class?
+#' 
+
+
+#' As you may see the dimensionality of the raw data is pretty high. The usual
+#' procedure to reduce this type of data consist of finding common peaks and
+#' integrating their area (aside from smoothing, binning, peak alignment,
+#' normalization and other signal processing steps to enhance signal quality).
+#' 
+#' However, here to simplify we will follow a brute force strategy (not 
+#' optimal but easy): We will consider every single point in the spectra as a
+#' distinctive feature. This brute force strategy is sometimes used in
+#' bioinformatics, but generally does not provide the best results.
+#' 
+#'
+#' Train/test division (test == external validation)
+#' ---------------------
+#' 
+#' In order to estimate how our trained model will perform, we need to split the
+#' dataset into a `training` subset and a `external validation` subset. The train subset
+#' will be used to train the model and the test subset will be used to estimate
+#' the performance of the model.
+#' 
+#' We will use 80% of the samples for training and 20% of samples for test,
+#' having the training and test subsets balanced for each subject condition.
+#'
+
+pca_idx <- which(subject_type == "pca")
+pca_idx_train <- sample(pca_idx, round(0.8*length(pca_idx)))
+pca_idx_test <- setdiff(pca_idx, pca_idx_train)
+
+bph_idx <- which(subject_type == "bph")
+bph_idx_train <- sample(bph_idx, round(0.8*length(bph_idx)))
+bph_idx_test <- setdiff(bph_idx, bph_idx_train)
+
+ctrl_idx <- which(subject_type == "control")
+ctrl_idx_train <- sample(ctrl_idx, round(0.8*length(ctrl_idx)))
+ctrl_idx_test <- setdiff(ctrl_idx, ctrl_idx_train)
+
+train_idx <- c(pca_idx_train, bph_idx_train, ctrl_idx_train)
+test_idx <- c(pca_idx_test, bph_idx_test, ctrl_idx_test)
+
+# use the indexes to split the matrix into train and test
+intensity_trn <- intensity[train_idx,]
+intensity_tst <- intensity[test_idx,]
+
+# use the indexes to split the labels
+subject_type_trn <- subject_type[train_idx]
+subject_type_tst <- subject_type[test_idx]
+
+message("Number of samples in training: ", nrow(intensity_trn))
+message("Number of samples in test: ", nrow(intensity_tst))
+
+# lets implement k-nn in the full input space without optimizing the k (we just guess a value)
+
+subject_type_tst_knn_pred <- class::knn(train = intensity_trn,
+                                            test = intensity_tst,
+                                            cl = subject_type_trn, k = 10)
+
+confmat_knn <- table(subject_type_tst, subject_type_tst_knn_pred)
+print(confmat_knn)
+
+CR_knn <- sum(diag(confmat_knn))/sum(confmat_knn)
+message("The classification rate for kNN is: ", 100*round(CR_knn, 2), "%")
+
+# Calculation of the uncertainty
+
+binom.test(sum(diag(confmat_knn)),sum(confmat_knn))
+
+# Let us visualize some arbitrary scoreplot using two random features. 
+
+X<-intensity_trn
+Y<-subject_type_trn
+
+datalab1<-data.frame(x1=(X[,2000]),x2=X[,2010],y=Y)
+datalab1$y<-factor(datalab1$y)
+ggplot(datalab1, aes(x=x1,y=x2, color=y))+
+  geom_point(size=3)+
+  xlab("x1")+
+  ylab("x2")+
+  ggtitle("Prostate data")
+# +
+#   xlim(-3,1)+
+#   ylim(-3,1)
+
+# We estimate the centers with the NearestCentroid Classifier
+classifier<-lol.classify.nearestCentroid(X,Y)
+
+datalab1<-cbind(datalab1,data.frame(size=1))
+# datalab1<-rbind(datalab1,data.frame(x1=classifier$centroids[,30],x2=classifier$centroids[,31], y="center",size=5))
+datalab1<-rbind(datalab1,data.frame(x1=classifier$centroids[,2000],x2=classifier$centroids[,2010], y=classifier[["ylabs"]], size=5))
+
+
+ggplot(datalab1, aes(x=x1,y=x2, color=y))+
+  geom_point(size=datalab1$size)+
+  xlab("x1")+
+  ylab("x2")+
+  ggtitle("Data with estimated Centers")+
+  guides(size=FALSE)
+
+
+# Let us now predict training data with the nearest centroid classifier
+Yhat <- predict(classifier, X)
+datalab1$Yhat <- as.factor(c(Yhat, classifier[["ylabs"]]))
+ggplot(datalab1,aes(x=x1,y=x2, color=Yhat,size=size))+
+  geom_point()+
+  xlab("x1")+
+  ylab("x2")+
+  ggtitle("Training Data with Predictions")+
+  guides(size=FALSE)
+
+subject_type_tst_NC_pred<-predict(classifier,intensity_tst)
+confmat_NC <- table(subject_type_tst, subject_type_tst_NC_pred)
+print(confmat_NC)
+
+CR_NC <- sum(diag(confmat_NC))/sum(confmat_NC)
+message("The classification rate for NC is: ", 100*round(CR_NC, 2), "%")
+
+binom.test(sum(diag(confmat_NC)),sum(confmat_NC))
+
+#' 
+#' Parameter optimization for k-NN.
+#' ------------------------
+#'
+#' In this section we are goint to optimize the value of k in internal validation
+#' and then we will check the final performance in external validation 
+#' 
+
+# We will try using 1 to 25 neighbours:
+max_k <- 25
+
+
+
+#' Partition the train subset into 4 groups:
+#' Please experiment with other values of k.
+
+kfolds <- 4
+pca_idx_cv <- caret::createFolds(y = pca_idx_train, k = kfolds, returnTrain = TRUE)
+bph_idx_cv <- caret::createFolds(y = bph_idx_train, k = kfolds, returnTrain = TRUE)
+ctrl_idx_cv <- caret::createFolds(y = ctrl_idx_train, k = kfolds, returnTrain = TRUE)
+
+classification_rates <- matrix(0, nrow = kfolds, ncol = max_k)
+
+for (iter in 1:kfolds) {
+  cv_train_idx <- c(pca_idx_train[pca_idx_cv[[iter]]],
+                    bph_idx_train[bph_idx_cv[[iter]]],
+                    ctrl_idx_train[ctrl_idx_cv[[iter]]])
+  cv_test_idx <- setdiff(train_idx, cv_train_idx)
+  
+  # Get the cv_train and cv_test matrices, with their labels:
+  intensity_cv_trn <- intensity[cv_train_idx,]
+  intensity_cv_tst <- intensity[cv_test_idx,]
+  
+  subject_type_cv_trn <- subject_type[cv_train_idx]
+  subject_type_cv_tst <- subject_type[cv_test_idx]
+  
+
+  
+  for (k1 in seq(from=1, to=max_k, by=1)) {
+
+  
+    
+    subject_type_tst_cv_knn_pred <- class::knn(train = intensity_cv_trn,
+                                                test = intensity_cv_tst,
+                                                cl = subject_type_cv_trn, k = k1)
+    
+    
+    confmat_cv_knn <- table(subject_type_cv_tst, subject_type_tst_cv_knn_pred)
+
+    
+    CR_knn_cv <- sum(diag(confmat_cv_knn))/sum(confmat_cv_knn)
+    message("The classification rate for kNN is: ", 100*round(CR_knn_cv, 2), "% fot k=",k1)
+    
+      # Store the classification rate for this k-fold iteration and this number of
+    # neighbours
+    classification_rates[iter, k1] <- CR_knn_cv
+  }
+}
+
+# Plot the classification rates obtained on each k-fold iteration for all
+# the neigbours tested
+matplot(x = 1:max_k, y = t(classification_rates), type = "l",
+        col = c("red", "darkgreen"),
+        lty = "solid",
+        xlab = "Number of neighbours", ylab = "Classification rate (%)",ylim=c(0.5,0.8))
+
+
+CR_K<-colMeans(classification_rates)
+
+lines(x=1:max_k,y=t(CR_K),type="l", lty="solid", lwd=3, col="blue" )
+
+
+# lets implement k-nn in the full input space with the optimum k
+
+subject_type_tst_knn_pred <- class::knn(train = intensity_trn,
+                                        test = intensity_tst,
+                                        cl = subject_type_trn, k = 8)
+
+confmat_knn <- table(subject_type_tst, subject_type_tst_knn_pred)
+print(confmat_knn)
+
+CR_knn_opt <- sum(diag(confmat_knn))/sum(confmat_knn)
+message("The classification rate for kNN is: ", 100*round(CR_knn_opt, 2), "%")
+
+# Calculation of the uncertainty
+
+binom.test(sum(diag(confmat_knn)),sum(confmat_knn))
+
+# Our estimation of the model performance choosing k=8 can
+# be represented as a single point in the plot:
+points(x = 8, y = CR_knn_opt, col = "black", cex = 2, pch = 21, bg = "black")
+# We can plot also the performance of our original guessing. 
+
+points(x = 1, y = CR_knn, col = "red", cex = 2, pch = 21, bg = "red")
+
+# The final classification rate in external validation is bigger than in internal validation. This
+# is a bit counter_intuitive. Can you give an explanation for this finding?
+
+#' 
+#' Further questions and exercises
+#' ------------------
+#' 
+#' Build a model without benign prostatic hypertrophy and characterize the performance with 2 classes only. 
+#' Now see what happens when you try to classify these patients that are not present in the training set. 
+#' 
+#' Prepare a report with the results of this investigation following the instructions in aula.
+#' Pay attention to the structure, the format, the length (papers longer than 4 pages are NOT accepted)
+#' Strucuture must follow: 
+#' Title
+#' Authors
+#' Abstract
+#' Introduction
+#' Dataset description and methods
+#' Results and Discussion
+#' Conclusions
+#' Pay attention to the quality and size of the figures. 
+#' 
+
+## Conclusion
+
+```{r}
+# Write your final conclusion and discussions
+```
+
+# Further Questions
+- Build a model without benign prostatic hypertrophy and characterize the performance with 2 classes only.

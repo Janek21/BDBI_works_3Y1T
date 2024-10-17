@@ -1,0 +1,30 @@
+Column	Description
+Tissue	Body part in which the chimeric transcript was detected
+Strain	Strain in which the chimeric transcript was detected
+Transcript	ID of the transcript according to FlyBase
+Transcript Trinity	ID according to Trinity
+TEfamily	Family of the TE
+TE coordinate	Coordinates where the TE was detected in the assembled region
+Transcript Stringtie	ID of the transcript according to the reference-guided assembly. Most genes have a FBtr ID; those starting with MSTRG are transcripts not found in the reference annotation
+Class	Transcript type code according to the reference-guided assembly
+Gene	ID of the gene in FBgn format
+Length transcript	Length of the assembled transcript in bp
+Total number of exons	Number of exons detected in the transcript after alignment to the genome with minimap2
+Expon position	Position in which the TE was detected (number)
+Exon position description	Position in which the TE is detected: first, last or middle exon (3'/5' UTR, internal exon classification) or (TE inside) when detected within
+Type	Types include: exon_within_TE, exon_within_TE_3, exon_within_TE_5, TE_overlap_3, TE_overlap_5, TE_within_exon
+TE consensus	Name of the TE according to the MCTE library
+TE superfamily	Superfamily of the TE
+TE order	Order of the TE
+TE class	Class of the TE
+length TE incorporated	Length of the TE fragment detected in the chimeric transcripts in bp
+Length TE total	Length of the TE insertion in bp
+CP	Coding potential according to CPAT
+status	Type of transcript according to FlyBase annotations (RNA, ncRNA, pseudogene, pre_miRNA, tRNA, snoRNA)
+avgExpr	Average level of expression (in TMM, averaging the expression level of three replicates)
+SS	Code specifying the meaning of FIMOenrichment column
+FIMOenrichment	Motif and p-value if a motif was found with FIMO
+group	1: overlap and AS insertions group, 2: internal insertions group
+score	Score of the TE according to RepeatMasker (not used for downstream analyses)
+position of roo	Position in the roo in which there's a match (low complexity region)
+roo type	Match of the roo fragment in the consensus (low complexity region [repeat] or LTR)

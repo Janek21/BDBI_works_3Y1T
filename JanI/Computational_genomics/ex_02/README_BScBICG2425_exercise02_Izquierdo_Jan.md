@@ -786,7 +786,7 @@ for (org in c("Cbot", "Ecol", "Mgen", "Mpne")){
           geom_line(colour = "blue") +
           theme_bw() +
           geom_hline(yintercept=GC_avg, colour="red", linetype="dashed", size=1.5) +
-          ggtitle(paste0(org, "GC content over the genome (window length = 5000bp)")) +
+          ggtitle(paste0(org, " GC content over the genome (window length = 5000bp)")) +
           labs(x="Genomic Coords (bp)", y="%GC Content");
   
   ggsave(paste0("images/", org, "_genomegcanalysis_wlen5000.png"),
@@ -917,12 +917,12 @@ column names and unrotate them to match) and fix the caption
 
 # Discussion
 
-**IMPORTANT** Discuss your results here (around 300 words). And remember
-to include in the Appendices section (see page
-\pageref{sec:appendices}), any extra script you wrote from this exercise
-`bin` folder using the `loadfile` macro. We can take advantage of the
-\LaTeX referencing capabilities, as described in the first exercise
-template.
+The results that can be interpreted from the the chaos plots are that the GC content is highest in E. coli and lowest in C. botilium, with M. genitalium and M. pneumoniae have an intermediate density, we can observe that in the C and G percentages.
+
+In the window size plots in different species we can corroborate this observation, as GC content in Cbot is indeed the lowest (<30%) and in Ecol its the highest (>50%), we can also see that the graphs of Mpne and Mgen have much less noise and better defined peaks.
+
+The k-mer table shows us that as size increases unique and distinct k-mers increase, longer k-mers repeat less often and max count also experience a reduction. Unique and distinct k-mers show a clear increase when k-mer sizes are small, and plateau when k-mer sizes are big.
+Ecol presents the most total k-mers and Mgen the least, meaning the greatest and simplest genetic structure variation respectively.
 
 \clearpage
 

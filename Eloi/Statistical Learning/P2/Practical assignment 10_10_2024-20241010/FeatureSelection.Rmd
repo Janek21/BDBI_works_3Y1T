@@ -1,0 +1,218 @@
+# Feature selection using en Evolutionary Strategies algorithm.
+# Comment each line of code, including the parameters that you use in the functions
+
+
+```{r}
+rm(list=ls())
+```
+
+# Task 1) Create a dummy dataset of 400 items and 1000 features for KNN classification.
+```{r}
+library(class)
+
+n_samples <- 400
+n_features <- 1000
+
+X <- matrix(runif(n_samples * n_features, min = 0, max = 1), nrow = n_samples, ncol = n_features)
+y <- sample(0:1, n_samples, replace = TRUE)
+
+data <- data.frame(X)
+data$target <- as.factor(y)
+
+str(data)
+
+train_indices <- sample(1:n_samples, size = 0.7 * n_samples)
+
+X_train <- data[train_indices, 1:n_features]
+y_train <- data[train_indices, "target"]
+
+X_test <- data[-train_indices, 1:n_features]
+y_test <- data[-train_indices, "target"]
+
+k <- 5
+y_pred <- knn(train = X_train, test = X_test, cl = y_train, k = k)
+
+head(y_pred)
+
+
+```
+
+```{r}
+library(MASS)
+library(class)
+
+```
+
+# Each item can belong to one of the two categories: A and B, each present at ~50% in your dataset.
+```{r}
+n_samples <- 400
+n_features <- 10
+n_patterns <- 10
+
+class_label <- as.factor(sample(c("A","B"), n_samples,replace = T,))
+```
+
+# Only 10 features are interesting for KNN classification (i.e. it allows to classify the individuals in a KNN framework).
+```{r}
+categories <- levels(class_label)
+
+m <-  matrix(nrow = n_samples, ncol = n_features)
+
+for (cate in categories){
+  ids_cate <- which(class_label == cate)
+  pattern <- sample(1:n_patterns, length(ids_cate), replace = T)
+  for (pat in 1:n_patterns){
+    n_ids_cate_with_pattern <- sum(pattern==pat)
+    mus <- rnorm(n_features, mean = 0, sd = 5)
+    X <- mvrnorm(n_ids_cate_with_pattern, mu = mus, Sigma = diag(n_features))
+    m[ids_cate[pattern==pat],]<- X
+  }
+}
+```
+
+
+# All the remaining 990 features are useless for classification (contain noise). Make sure the noise has a bigger variance compared to the features that are interesting
+```{r}
+random_features <- 1000 - n_features
+random_mean <- mean(m)
+random_sd <- sd(m)
+for (n in 1:random_features){
+  random_feature <- rnorm(n_samples, random_mean, random_sd)
+  m <- cbind(m, random_feature)
+}
+```
+
+# Divide your dataset in two. First will be use as training. Second as replication.
+```{r}
+train_indices <- sample(1:n_samples, size = 0.8 * n_samples)
+
+X_train <- m[train_indices, 1:n_features]
+y_train <- class_label[train_indices]
+
+X_test <- m[-train_indices, 1:n_features]
+y_test <- class_label[-train_indices]
+```
+
+# Task 2) Run KNN with all the features. What happens?
+```{r}
+y_pred <- knn(train = X_train, test = X_test, cl = y_train, k = 5)
+table(y_pred == y_test)
+
+```
+
+
+
+
+
+
+
+
+
+# Task 3) Create the mutation operation required for this implementation of ES. The mutation must pick one element at random from the chromosome
+# and replace it by another element. BEWARE that the new element MUST NOT BE included in the set of already present elements
+# in the chromosome!
+
+
+
+
+
+
+
+
+
+
+
+# Task 4) Implement the phenotype function. 
+# Given the features selected in the chromosome, pick these in the training dataset.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Task 5) Implement the fitness function.
+# Given the phenotype of a solution, run the KNN. The fitness is how good is the classification. The better the classification, the better the answer
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Task 6) Implement the ES algorithm:
+# At each iteration, pick one of the existing N (population size) solutions, each containing its own chromosome
+# Allow this solution to create K new solutions by copying and mutating it.
+# Add the new solutions to the pool of solutions. Now your population has N+K solutions.
+# Rank the solutions given its fitness
+# Pick the best N solutions. Remove the remaining ones.
+# The iteration is finished
+# At the end of the M iterations, report the solution with the best fitness over all the solutions
+# Think about the hyperparameters you will need to do this implementation.
+
+
+
+
+# Task 7) Apply the ES-KNN algorithm to the dataset. Does it work?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+library(MASS)
+
+# Set seed for reproducibility
+set.seed(42)
+
+# Create a dummy regression dataset with 100 samples and 5 features
+n_samples <- 100
+n_features <- 2
+
+# Generate random feature matrix (normally distributed data)
+X <- mvrnorm(n_samples, mu = rep(0, n_features), Sigma = diag(n_features))
+
+# Generate random target values with some noise
+y <- X %*% runif(n_features) + rnorm(n_samples, sd = 0.1)
+
+# Combine into a data frame
+dummy_regression_data <- data.frame(X)
+dummy_regression_data$Target <- y
+
+# Print first few rows of the dataset
+head(dummy_regression_data)
+
+plot(dummy_regression_data$X1,dummy_regression_data$X2)
+
+library(class)
+
+# Split the dataset into training and testing sets (70% train, 30% test)
+set.seed(42)
+train_index <- createDataPartition(dummy_classification_data$Class, p = 0.7, list = FALSE)
+train_data <- dummy_classification_data[train_index,]
+test_data <- dummy_classification_data[-train_index,]
+
+
+

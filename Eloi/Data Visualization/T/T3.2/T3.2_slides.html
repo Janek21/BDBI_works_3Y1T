@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>T3.2 | Interactive plots in Shiny</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Marta Coronado Zamora" />
+    <meta name="date" content="2024-10-16" />
+    <script src="libs/header-attrs-2.28/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/rutgers.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# <strong>T3.2</strong> | Interactive plots in Shiny
+]
+.subtitle[
+## Shiny interactions
+]
+.author[
+### <b>Marta Coronado Zamora</b>
+]
+.date[
+### 16 October 2024
+]
+
+---
+
+
+
+class: center, middle, animated, bounceInDown
+
+&lt;style&gt;
+.title-slide {
+  background-image: url(img/logoesci-fons-blanc.png);
+  background-size: 150px;
+}
+&lt;/style&gt;
+
+# Keep in touch
+#### Theory lessons &lt;br&gt;
+
+| Marta Coronado Zamora | Jose F. Sánchez | 
+|:-:|:-:|
+| &lt;a href="mailto:marta.coronado@prof.esci.upf.edu"&gt;&lt;i class="fa fa-paper-plane fa-fw"&gt;&lt;/i&gt; marta.coronado@prof.esci.upf.edu&lt;/a&gt; | &lt;a href="mailto:jose.sanchez@prof.esci.upf.edu"&gt;&lt;i class="fa fa-paper-plane fa-fw"&gt;&lt;/i&gt;&amp;nbsp; jose.sanchez@prof.esci.upf.edu&lt;/a&gt; | 
+| &lt;a href="https://twitter.com/geneticament"&gt;&lt;i class="fab fa-twitter fa-fw"&gt;&lt;/i&gt;&amp;nbsp; @geneticament&lt;/a&gt; |                 &lt;a href="https://twitter.com/JFSanchezBioinf"&gt;&lt;i class="fab fa-twitter fa-fw"&gt;&lt;/i&gt;&amp;nbsp; @JFSanchezBioinf&lt;/a&gt; |
+| &lt;a href="https://www.ibb.csic.es/ca/"&gt;&lt;i class="fa fa-map-marker fa-fw"&gt;&lt;/i&gt;&amp;nbsp; Institut Botànic de Barcelona (CSIC-CMCNB)&lt;/a&gt; |    &lt;a href="http://www.germanstrias.org/technology-services/genomica-bioinformatica/"&gt; &lt;i class="fa fa-map-marker fa-fw"&gt;&lt;/i&gt;Germans Trias i Pujol Research Institute (IGTP)&lt;/a&gt; |
+
+#### Practical lessons &lt;br&gt;
+
+| Adrià Auladell |
+|:-:|
+| &lt;a href="mailto:adria.auladell@ibe.upf-csic.es"&gt;&lt;i class="fa fa-paper-plane fa-fw"&gt;&lt;/i&gt; adria.auladell@ibe.upf-csic.es &lt;/a&gt; | 
+|  &lt;a href="https://www.ibe.upf-csic.es/"&gt;&lt;i class="fa fa-map-marker fa-fw"&gt;&lt;/i&gt;&amp;nbsp; Institut de Biologia Evolutiva (UPF-CSIC) &lt;/a&gt; | 
+
+---
+
+layout: true
+class: animated, fadeIn
+
+---
+
+# Content
+
+- Interactive plots in Shiny:
+  + Interactive controls with `*Input` widgets
+  + `htmlwidgets` as `*Output`
+  + Built-in interactive visualization `plotOutput` options: `click`, `hover`, `brush`, `nearPoints`, `brushedPoints`
+- Sharing your apps
+- Project group questions
+
+---
+layout: false
+class: left, bottom, inverse, animated, bounceInDown
+
+# Get started!
+## **Interactive plots in Shiny**
+
+---
+layout: true
+class: animated, fadeIn
+
+---
+## Interactive controls with `*Input` widgets
+
+
+``` r
+library(shiny)
+
+    ui = fluidPage(
+        # Select variables
+        selectInput(inputId = "x_input", label = "Choose x variable", 
+                    choices = c("mpg", "disp", "hp", "wt", "qsec")),
+        radioButtons(inputId = "y_input", label = "Choose y variable",
+                     choices = c("mpg", "disp", "hp", "wt", "qsec")),
+        # Plot
+        plotOutput("mtcars_plot")
+    )
+    server = function(input, output){
+        library(ggplot2)
+        # Plot using the chosen variables
+        output$mtcars_plot &lt;- renderPlot({
+            #ggplot(mtcars, aes_string(input$x_input, input$y_input)) +
+            ggplot(mtcars, aes(.data[[input$x_input]], .data[[input$y_input]])) +
+                geom_point()
+        })
+    }
+
+shinyApp(ui = ui, server = server)
+```
+
+<div style="width: 100% ; height: 400px ; text-align: center; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;" class="muted well">Shiny applications not supported in static R Markdown documents</div>
+
+---
+
+## `htmlwidgets` in `*Output`
+
+
+``` r
+library(shiny)
+library(plotly)
+
+ui = fluidPage(
+        # Plotly!
+        plotlyOutput("mtcars_plot")
+    )
+server = function(input, output){
+        library(ggplot2)
+        library(plotly)
+        # Plotly
+        output$mtcars_plot &lt;- renderPlotly({
+            p &lt;- ggplot(mtcars, aes(mpg, hp)) +
+                geom_point()
+            ggplotly(p)
+        })
+    }
+
+shinyApp(ui = ui, server = server)
+```
+
+<div style="width: 100% ; height: 400px ; text-align: center; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;" class="muted well">Shiny applications not supported in static R Markdown documents</div>
+
+
+---
+
+## `htmlwidgets` in `*Output`
+
+We have the output function `plotlyOutput` and its companion reactive function `renderPlotly` to add a plotly graph to a `shiny app`. What if we want to add some others?
+
+
+#### &lt;i class="fas fa-pencil-alt"&gt;&lt;/i&gt; **Exercise** | Make a quick search to find the corresponding output function and render function for the following `htmlwidgets`:
+- [leaflet](http://rstudio.github.io/leaflet/)
+- [dygraphs](http://rstudio.github.io/dygraphs/)
+- [networkD3](http://christophergandrud.github.io/networkD3/)
+
+&lt;div style="background-color:#F0F0F0"&gt;
+&amp;emsp;&lt;i class="fas fa-comment-dots"&gt;&lt;/i&gt;
+Answer:
+
+&amp;emsp;
+&lt;/div&gt;
+
+---
+## Built-in interactive visualization
+
+Shiny has built-in support for interacting with static plots generated with `ggplot2`.
+
+This makes it easy to add features like **selecting points** and **regions**, as well as **zooming in** and **out of images**.
+
+---
+
+## Built-in interactive visualization
+
+
+``` r
+library(shiny)
+
+ui &lt;- basicPage(
+  plotOutput("plot1", click = "plot_click"),
+  verbatimTextOutput("info")
+)
+
+server &lt;- function(input, output) {
+  output$plot1 &lt;- renderPlot({
+    plot(mtcars$wt, mtcars$mpg)
+  })
+
+  output$info &lt;- renderText({
+    paste0("x=", input$plot_click$x, "\ny=", input$plot_click$y)
+  })
+}
+
+shinyApp(ui, server)
+```
+
+<div style="width: 100% ; height: 400px ; text-align: center; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;" class="muted well">Shiny applications not supported in static R Markdown documents</div>
+
+---
+## Built-in interactive visualization
+
+Other types of interactions:
+- Double-clicking (`dblclick`)
+- Hovering (`hover`)
+- Brushing (brushing is clicking and dragging a selection box, `brush`)
+
+---
+## Built-in interactive visualization
+
+
+``` r
+library(shiny)
+
+ui &lt;- basicPage(
+  plotOutput("plot1",
+    click = "plot_click",
+    dblclick = "plot_dblclick",
+    hover = "plot_hover",
+    brush = "plot_brush"
+  ),
+  verbatimTextOutput("info")
+)
+
+server &lt;- function(input, output) {
+  output$plot1 &lt;- renderPlot({
+    plot(mtcars$wt, mtcars$mpg)
+  })
+
+  output$info &lt;- renderText({
+    xy_str &lt;- function(e) {
+      if(is.null(e)) return("NULL\n")
+      paste0("x=", round(e$x, 1), " y=", round(e$y, 1), "\n")
+    }
+    xy_range_str &lt;- function(e) {
+      if(is.null(e)) return("NULL\n")
+      paste0("xmin=", round(e$xmin, 1), " xmax=", round(e$xmax, 1), 
+             " ymin=", round(e$ymin, 1), " ymax=", round(e$ymax, 1))
+    }
+
+    paste0(
+      "click: ", xy_str(input$plot_click),
+      "dblclick: ", xy_str(input$plot_dblclick),
+      "hover: ", xy_str(input$plot_hover),
+      "brush: ", xy_range_str(input$plot_brush)
+    )
+  })
+}
+
+shinyApp(ui, server)
+```
+
+<div style="width: 100% ; height: 400px ; text-align: center; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;" class="muted well">Shiny applications not supported in static R Markdown documents</div>
+---
+
+## Built-in interactive visualization
+
+What if we want to select rows of data, and not a point in the plot?
+
+--
+
+Shiny provides two convenience functions for selecting rows of data:
+
+- `nearPoints()`: uses the `x` and `y` value from the interaction data, to be used with `click`, `dblclick` and `hover`
+
+- `brushedPoints()`: uses the `xmin`, `xmax`, `ymin`, and `ymax` values from the interaction data; to be used with `brush`. 
+
+---
+## Built-in interactive visualization
+
+
+``` r
+# Basic example of near points
+library(shiny)
+
+ui &lt;- basicPage(
+  plotOutput("plot1", click = "plot_click"),
+  verbatimTextOutput("info")
+)
+
+server &lt;- function(input, output) {
+  output$plot1 &lt;- renderPlot({
+    plot(mtcars$wt, mtcars$mpg)
+  })
+
+  output$info &lt;- renderPrint({
+    # With base graphics, need to tell it what the x and y variables are.
+    nearPoints(mtcars, input$plot_click, xvar = "wt", yvar = "mpg")
+    # nearPoints() also works with hover and dblclick events
+  })
+}
+
+shinyApp(ui, server)
+```
+
+<div style="width: 100% ; height: 400px ; text-align: center; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;" class="muted well">Shiny applications not supported in static R Markdown documents</div>
+
+---
+
+## Built-in interactive visualization
+
+- By default, `nearPoints()` will return all rows of data that are within 5 pixels of the mouse event, and they will be sorted by distance, with the nearest first
+
+- The radius can be customized with `threshold`
+
+- The number of rows returned can be customized with `maxpoints`
+
+---
+## Built-in interactive visualization
+
+
+``` r
+# Basic example of brushed points
+
+library(shiny)
+
+ui &lt;- basicPage(
+  plotOutput("plot1", brush = "plot_brush"),
+  verbatimTextOutput("info")
+)
+
+server &lt;- function(input, output) {
+  output$plot1 &lt;- renderPlot({
+    plot(mtcars$wt, mtcars$mpg)
+  })
+
+  output$info &lt;- renderPrint({
+    # With base graphics, need to tell it what the x and y variables are.
+    brushedPoints(mtcars, input$plot_brush, xvar = "wt", yvar = "mpg")
+  })
+}
+
+shinyApp(ui, server)
+```
+
+<div style="width: 100% ; height: 400px ; text-align: center; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;" class="muted well">Shiny applications not supported in static R Markdown documents</div>
+
+
+---
+layout: false
+class: left, bottom, inverse, animated, bounceInDown
+
+# Sharing `Shiny` apps
+
+---
+layout: true
+class: animated, fadeIn
+
+---
+
+## Sharing `Shiny` apps
+
+Shiny apps are easy to share, and there are several options to choose from. 
+
+--
+
+Two basic ways to do it:
+
+1. Share your Shiny app as two files: `server.R` and `ui.R` (or `app.R`).
+  + Simplest way to share an app
+  + Only works if your users have R on their own computer (and know how to use it)
+
+  Shiny provides three built-in commands that make it easy to use files that are hosted online: `runUrl`, `runGitHub`, and `runGist`. 
+--
+
+2. Share your Shiny app as a web page. 
+  +  Most user friendly way to share a Shiny app
+  +  Users can navigate to your app through the internet with a web browser: app is fully rendered, up to date, and ready to go
+  
+---
+### Sharing `Shiny` apps as a web page
+
+RStudio offers three ways to host your Shiny app as a web page:
+
+- Shinyapps.io
+- Shiny Server
+- Shiny Server Pro
+
+---
+
+#### Shinyapps.io
+
+RStudio’s hosting service for Shiny apps: [shinyapps.io](shinyapps.io) lets you upload your app straight from your R session to a server hosted by RStudio.
+&lt;center&gt;
+&lt;img src="img/how-to-deploy-a-shiny-app-an-example-with-shinyapps-io2023_10_16D9_7_5.png" width=65%&gt;
+
+
+---
+
+# Project questions
+
+- First assignment (parts A and B)
+  + **Part A** | Understand the origin of our data set and the meaning of the variables
+  + **Part B** | Visually describe our data set
+- Second assignment (part C)
+  + **Part C** | Make your figures interactive in three different ways
+  + Make an interactive visualization using some `htmlwidget`
+  + Add __interactive controls__ with `shiny` input widgets to show some useful information (e.g. focus on a subset, add a summary layer...)
+  + Make an __interactive visualization__ using `shiny` built-in interactive options in order to print the information of the individual observations
+- Decide which figure would benefit from each type of interactivity and justify your choice
+  
+---
+
+layout: false
+class: inverse, center, middle, animated, bounceInDown
+
+### Upload `T3.2_slides.Rmd` with the completed exercises (text included) to [aul@-ESCI](https://aula.esci.upf.edu/course/view.php?id=8592)
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

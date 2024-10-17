@@ -1,0 +1,188 @@
+---
+title: "Transposons contribute to the functional diversification of the head, gut, and ovary transcriptomes across Drosophila natural strains"
+author: "Sergi Ocana, Eloi Vilella, Jaume Jurado & Adrià Navarro"
+date: "Patata"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    number_sections: true
+---
+
+```{r}
+data <- read.csv2("chimerics_v2.tsv", sep = "\t")
+```
+
+### [Where and why was the information collected?]{.underline}
+
+The data was extracted from the head, gut, and ovary of five natural strains of Drosophila melanogaster and it was use for gene expression understanding, identify chimeric transcripts and the role of transposable elements.
+
+### [Which is the meaning of each variable?]{.underline}
+
+**Here is a list of each variable with its meaning:**
+
+Here is the tidied-up text following your requested format:
+
+**Tissue:**\
+Body part in which the chimeric transcript was detected.
+
+**Strain:**\
+Strain in which the chimeric transcript was detected.
+
+**Transcript:**\
+ID of the transcript according to FlyBase.
+
+**Transcript Trinity:**\
+ID according to Trinity.
+
+**TEfamily:**\
+Family of the TE.
+
+**TE coordinate:**\
+Coordinates where the TE was detected in the assembled region.
+
+**Transcript Stringtie:**\
+ID of the transcript according to the reference-guided assembly. Most genes have a FlyBase ID (FBtr); those starting with MSTRG are transcripts not found in the reference annotation.
+
+**Class:**\
+Transcript type code according to the reference-guided assembly.
+
+**Gene:**\
+ID of the gene in FBgn format.
+
+**Length transcript:**\
+Length of the assembled transcript in base pairs (bp).
+
+**Total number of exons:**\
+Number of exons detected in the transcript after alignment to the genome with minimap2.
+
+**Expon position:**\
+Position in which the TE was detected (number).
+
+**Exon position description:**\
+Position in which the TE is detected: first, last, or middle exon (3'/5' UTR, internal exon classification), or within the TE when detected inside.
+
+**Type:**\
+Types include exon_within_TE, exon_within_TE_3, exon_within_TE_5, TE_overlap_3, TE_overlap_5, TE_within_exon.
+
+**TE consensus:**\
+Name of the TE according to the MCTE library.
+
+**TE superfamily:**\
+Superfamily of the TE.
+
+**TE order:**\
+Order of the TE.
+
+**TE class:**\
+Class of the TE.
+
+**Length TE incorporated:**\
+Length of the TE fragment detected in the chimeric transcript in bp.
+
+**Length TE total:**\
+Length of the TE insertion in bp.
+
+**CP:**\
+Coding potential according to CPAT.
+
+**Status:**\
+Type of transcript according to FlyBase annotations (RNA, ncRNA, pseudogene, pre_miRNA, tRNA, snoRNA).
+
+**AvgExpr:**\
+Average level of expression (in TMM), averaging the expression level across three replicates.
+
+**SS:**\
+Code specifying the meaning of the FIMOenrichment column.
+
+**FIMOenrichment:**\
+Motif and p-value if a motif was found with FIMO.
+
+**Group:**\
+1: overlap and AS insertions group, 2: internal insertions group.
+
+**Score:**\
+Score of the TE according to RepeatMasker (not used for downstream analyses).
+
+**Position of roo:**\
+Position in the roo where there is a match (low complexity region).
+
+**Roo type:**\
+Match of the roo fragment in the consensus (low complexity region [repeat] or LTR).
+
+```{r}
+#Know type of variable
+print(sapply(data, class))
+```
+
+### [Do the variables have unit? Which one?]{.underline}
+
+Length transcript: measured in base pairs (bp).
+
+Total number of exons: a count.
+
+Length TE incorporated: measured in base pairs (bp).
+
+Length TE total: measured in base pairs (bp).
+
+avgExpr: It's as TMM (Trimmed Mean of M-values) so it's normalized.
+
+### [Does the data set have a long format?]{.underline}
+
+It is in long format, no need of reshape
+
+Plots for variables in data
+
+```{r}
+
+library(ggplot2)
+
+
+ggplot(data, aes(x = lengthTranscript)) +
+  geom_histogram(binwidth = 50, fill = "skyblue", color = "green") +
+  labs(
+    title = "Distribution of Length of Transcripts",
+    x = "Length of Transcript (bp)",
+    y = "Frequency"
+  ) +
+  theme_classic()
+
+```
+
+```{r}
+
+ggplot(data, aes(x = strain, fill = strain)) +  
+  geom_bar(color = "black") +  
+  labs(
+    title = "Count of Transcripts by Strain",
+    x = "Strain",
+    y = "Count of Transcripts"
+  ) +
+  scale_fill_brewer(palette = "Set1") +  
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))  
+
+library(dplyr)
+
+
+strain_counts <- data %>%
+  count(strain) %>%
+  mutate(
+    Percentage = n / sum(n) * 100,  
+    ypos = cumsum(Percentage) - 0.5 * Percentage, 
+    Label = paste(round(Percentage, 1), "% (", n, ")", sep = "")  
+  )
+
+
+ggplot(strain_counts, aes(x = "", y = Percentage, fill = strain)) + 
+  geom_bar(stat = "identity", width = 1, color = "black") +  
+  coord_polar("y") +
+  labs(
+    title = "Distribution of Transcripts by Strain",
+    fill = "Strain"
+  ) +
+  geom_text(aes(y = ypos, label = Label),  
+            color = "white", size = 4) +  
+  scale_fill_brewer(palette = "Set2") +  
+  theme_void()  
+```

@@ -1,0 +1,10 @@
+```{r}
+data_c <- read_tsv("data.csv")
+
+for (i in names(table)) {
+  print(class(table$i))
+}
+
+ggplot(mtcars,
+       mapping = aes(x = disp, y =hp)) + geom_point(mapping=aes(color = gear))+ geom_smooth()
+```

@@ -1,0 +1,498 @@
+---
+title: "**Interactive and dynamic visualization:**<br><font color='#A8A8A8' size='5'>`Shiny` interactive visualizations</font><img src='https://www.construction21.org/espana/data/sources/users/8/images/logoesci-fons-blanc.png' style='position:absolute;top:0px;left:0px;' width='10%'/>"
+author: "Marta Coronado Zamora"
+date: "20 October 2023"
+output:
+  prettydoc::html_pretty:
+    theme: leonids
+    highlight: github
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, fig.width = 6, fig.height = 4, fig.align='center')
+# install.packages("prettydoc")
+library(prettydoc)
+```
+
+<style>
+  @import url(https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,500,500i,700,700i);
+  @import url(https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css);
+  @import url("https://use.fontawesome.com/releases/v5.10.1/css/all.css");
+  
+  body {
+    font-family: 'Fira Sans','Droid Serif', 'Palatino Linotype', 'Book Antiqua', Palatino, 'Microsoft YaHei', 'Songti SC', serif;
+  }
+  
+  /* Make bold syntax compile to RU-red */
+  strong {
+    color: #cc0033;
+  }
+
+</style>
+
+
+## Introduction
+
+```{r, echo = FALSE}
+library(ggplot2)
+library(shiny)
+```
+
+The following examples illustrate how to use the built-in capabilities of `shiny` to create interactive visualizations. They may need some more work compared to a `ggplotly` call, but they are highly customisable. Some examples below are adapted from official `shiny` [reference articles](http://shiny.rstudio.com/articles/#graphics) and [tutorials](https://www.rstudio.com/resources/webinars/interactive-graphics-with-shiny/).
+
+### Organization of the practical
+
+You will see different icons through the document, the meaning of which is:
+
+&emsp;<i class="fas fa-info-circle"></i>: additional or useful information<br>
+&emsp;<i class="fas fa-search"></i>: a worked example<br>
+&emsp;<i class="fa fa-cogs"></i>: a practical exercise<br>
+&emsp;<i class="fas fa-comment-dots"></i>: a space to answer the exercise<br>
+&emsp;<i class="fa fa-key"></i>: a hint to solve an exercise<br>
+&emsp;<i class="fa fa-rocket"></i>: a more challenging exercise<br><br>
+
+----------------------------------------------------------------------------------
+
+## **<i class="fas fa-search"></i> Example 1** | Reading user interaction with a plot
+
+`plotOutput` function has `click`, `dblclick`, `hover` and `brush` arguments that allow the recording of actions from the user in the plot area. The syntax is `click = clickOpts(id = "Some_name", ...)`. Each `*Opts` function has its relevant arguments, and all have the `id` argument, that creates a variable accessible as `input$Some_name` from within the `server` function. This is the same behaviour that we saw with other input elements. `click = "Some_name"` is a shorthand for `click = clickOpts(id = "some_name")`. 
+
+We saw an example with `click` on Wednesday theory session. Let's see a more complete one with both `click` and `brush`.
+
+```{r eval=TRUE}
+shinyApp(
+    
+    # UI PART
+    ui = fluidPage(
+        plotOutput("mtcars_plot", click = "click_action", brush = "brush_action"),
+        fluidRow(
+            column(width = 6, verbatimTextOutput("click_info")), # <- We are going to print the information from "click_action" variable
+            column(width = 6, verbatimTextOutput("brush_info"))  # <- And some information from "brush_action" variable
+        )
+    ),
+    
+    # SERVER PART
+    server = function(input, output) {
+        library(ggplot2)
+        # Plot
+        output$mtcars_plot <- renderPlot({
+            ggplot(mtcars, aes(mpg, hp, colour = factor(cyl))) +
+            geom_point()
+        })
+    
+        # Click info
+        output$click_info <- renderText({
+            paste0("Mouse click:\n",
+            "x=", input$click_action$x, "\n",
+            "y=", input$click_action$y)
+        })
+        
+        # Brush info
+        output$brush_info <- renderText({
+            paste0("Brush area:\n",
+            "xmin=", input$brush_action$xmin, "\n",
+            "xmax=", input$brush_action$xmax, "\n",
+            "ymin=", input$brush_action$ymin, "\n",
+            "ymax=", input$brush_action$ymax)
+        })
+    }
+)
+```
+
+You may have noticed that `input$click_action` and `input$brush_action` are themselves a list with different bits of information. To see the complete data structure stored from each click and brush actions we can call `str` function on them.
+
+```{r eval=TRUE}
+shinyApp(
+# -------------------------- SAME -------------------------- 
+    # UI PART
+    ui = fluidPage(
+        plotOutput("mtcars_plot", click = "click_action", brush = "brush_action"),
+        fluidRow(
+            column(width = 6, verbatimTextOutput("click_info")),
+            column(width = 6, verbatimTextOutput("brush_info"))
+        )
+    ),
+    
+    # SERVER PART
+    server = function(input, output) {
+        library(ggplot2)
+        # Plot
+        output$mtcars_plot <- renderPlot({
+            ggplot(mtcars, aes(mpg, hp, colour = factor(cyl))) +
+            geom_point()
+        })
+# ^-------------------------- SAME --------------------------^ 
+        # Click info
+        output$click_info <- renderPrint({
+            cat("str(input$click_action):")
+            str(input$click_action)
+        })
+        
+        # Brush info
+        output$brush_info <- renderPrint({
+            cat("str(input$brush_action):")
+            str(input$brush_action)
+        })
+    }
+)
+```
+
+
+### <i class="fa fa-cogs"></i> Exercise
+
+What other information is stored from each `click` and `brush` action?
+
+<div style="background-color:#F0F0F0">
+##### &emsp;<i class="fas fa-comment-dots"></i> Answer:
+```{r Ex1}
+str(input$click_action)
+```
+From the click action: 
+
+x and y coordinates in the graph
+
+x and y variables for css, image, mapping and image to css ratio.
+
+And x and y variables for domain, range and log (which are null in our example)
+
+
+
+For the brush action:
+
+Xmin, Xmax, Ymin and Ymax for position coordinates
+
+Xmin, Xmax, Ymin and Ymax as variables for coords_css and coords_img
+
+x and y as variables for img_css_ratio, mapping and log (which are NULL in our case)
+
+left, right, bottom and top, which are variables used for the domain and range options
+
+And direction, brushID and outputID which have no sub-variables.
+
+
+&emsp;
+</div>
+
+----------------------------------------------------------------------------------
+
+## **<i class="fas fa-search"></i> Example 2** |  Selecting points, `nearPoints()` and `brushedPoints()`
+
+Knowing the positions where the user is pointing to is not so useful. It would be better to know, for instance, which points are being selected. Shiny developers provide us with two useful functions `nearPoints` and `brushedPoints`. They read the information in the brush and click (or double click or hover) input variables.
+
+```{r eval=TRUE}
+shinyApp(
+# -------------------------- SAME -------------------------- 
+    # UI PART
+    ui = fluidPage(
+        plotOutput("mtcars_plot", click = "click_action", brush = "brush_action"),
+        fluidRow(
+            column(width = 6, verbatimTextOutput("click_info")),
+            column(width = 6, verbatimTextOutput("brush_info"))
+        )
+    ),
+    
+    # SERVER PART
+    server = function(input, output) {
+        library(ggplot2)
+        # Plot
+        output$mtcars_plot <- renderPlot({
+            ggplot(mtcars, aes(mpg, hp, colour = factor(cyl))) +
+            geom_point()
+        })
+# ^-------------------------- SAME --------------------------^ 
+        # Points near the pointer
+        output$click_info <- renderPrint({
+            mpg_subset_point <- nearPoints(mtcars, input$click_action, 
+                              threshold = 5, maxpoints = 1)
+            cat("Nearest point:\n")
+            print(mpg_subset_point)
+        })
+        
+        # Brush info
+        output$brush_info <- renderPrint({
+            mpg_subset_area <- brushedPoints(mtcars, input$brush_action)
+            cat("Brushed points:\n")
+            print(mpg_subset_area)
+        })
+    }
+)
+
+```
+
+### <i class="fa fa-cogs"></i> Exercise
+
+What happens if you change `maxpoint` argument in `nearPoints`?
+
+<div style="background-color:#F0F0F0">
+##### &emsp;<i class="fas fa-comment-dots"></i> Answer:
+```{r Ex2}
+```
+
+Increases the number of possible point selections within the threshold distance.
+
+&emsp;
+</div>
+
+Printing the rows in verbatim text is a bit ugly, we can use a special output format to print tables using `tableOutput` and its companion reactive function `renderTable`.
+
+```{r eval=TRUE}
+shinyApp(
+
+    ui = fluidPage(
+        plotOutput("mtcars_plot", click = "click_action", brush = "brush_action"),
+        fluidRow(
+            column(width = 6, tableOutput("click_info")),                      # <- tableOutput
+            column(width = 6, tableOutput("brush_info"))                       # <- tableOutput
+        )
+    ),
+    
+    server = function(input, output) {
+        library(ggplot2)
+        # Plot
+        output$mtcars_plot <- renderPlot({
+            ggplot(mtcars, aes(mpg, hp, colour = factor(cyl))) +
+            geom_point()
+        })
+
+        # Points near the pointer
+        output$click_info <- renderTable({                                     # <- renderTable
+            mpg_subset_point <- nearPoints(mtcars, input$click_action, 
+                              threshold = 5, maxpoints = 1)
+            mpg_subset_point[, c("mpg","hp","cyl")]                            # <- Display some variables
+        }, rownames = TRUE)                                                    # <- Display row names
+        
+        # Brush info
+        output$brush_info <- renderTable({                                     # <- renderTable
+            mpg_subset_area <- brushedPoints(mtcars, input$brush_action)
+            mpg_subset_area[, c("mpg","hp","cyl")]                             # <- Display some variables
+        }, rownames = TRUE)                                                    # <- Display row names
+    }
+)
+
+```
+
+
+----------------------------------------------------------------------------------
+
+## <i class="fas fa-search"></i> **Example 3** | Selecting boxplots
+
+All these actions seem to work very well for points. But what happens if we have another geometrical object, maybe in a discrete scale? The following example shows how to round the `x` axis value to find the which level from a factor variable is being selected.
+
+```{r eval=TRUE}
+shinyApp(
+    
+    ui = fluidPage(
+        fluidRow(
+            column(6,
+                plotOutput("tooth_plot", click = "click_action")
+            ),
+            column(5,
+                htmlOutput(outputId = "x_value"),                                # <- html output
+                tableOutput("selected_rows")
+            )
+        )
+    ),
+    
+    server = function(input, output) {
+        library(ggplot2)
+        output$tooth_plot <- renderPlot({
+            ggplot(ToothGrowth, aes(supp, len, fill = supp)) +
+                geom_boxplot()
+        })
+        
+        var_levels <- levels(ToothGrowth$supp)
+        
+        # Print the name of the x value
+        output$x_value <- renderText({
+            if (is.null(input$click_action$x)){
+                return("")        
+            } else {
+                selected_level <- var_levels[round(input$click_action$x)]        # <- Levels are stored as integers! so 1 is OJ and 2 is VC
+                HTML("You've selected <code>", selected_level, "</code>",        # <- You can add html code to print nicer text :)
+                       "<br><br>Here are the first 10 rows that ",
+                       "match that category:")
+            }
+        })
+      
+        # Print the rows of the data frame which match the x value
+        output$selected_rows <- renderTable({
+            if (is.null(input$click_action$x)) {
+                return()
+            } else {
+                selected_level <- var_levels[round(input$click_action$x)]
+                head(ToothGrowth[ToothGrowth$supp %in% selected_level, ], 10)
+            }
+        })
+    }
+)
+```
+
+### <i class="fa fa-cogs"></i> Exercise
+
+Change the `ui` output to an interactive table with `dataTableOutput`. What `render*` function do you need?
+
+<div style="background-color:#F0F0F0">
+##### &emsp;<i class="fas fa-comment-dots"></i> Answer:
+
+Changes:
+
+options(shiny.legacy.datatable = TRUE)
+
+tableOutput-> dataTableOutput
+
+renderTable-> renderDataTable
+```{r Ex3}
+#new
+options(shiny.legacy.datatable = TRUE)
+
+shinyApp(
+    
+    ui = fluidPage(
+        fluidRow(
+            column(6,
+                plotOutput("tooth_plot", click = "click_action")
+            ),
+            column(5,
+                htmlOutput(outputId = "x_value"),                                # <- html output
+                #new
+                dataTableOutput("selected_rows")
+            )
+        )
+    ),
+    
+    server = function(input, output) {
+        library(ggplot2)
+        output$tooth_plot <- renderPlot({
+            ggplot(ToothGrowth, aes(supp, len, fill = supp)) +
+                geom_boxplot()
+        })
+        
+        var_levels <- levels(ToothGrowth$supp)
+        
+        # Print the name of the x value
+        output$x_value <- renderText({
+            if (is.null(input$click_action$x)){
+                return("")        
+            } else {
+                selected_level <- var_levels[round(input$click_action$x)]        # <- Levels are stored as integers! so 1 is OJ and 2 is VC
+                HTML("You've selected <code>", selected_level, "</code>",        # <- You can add html code to print nicer text :)
+                       "<br><br>Here are the first 10 rows that ",
+                       "match that category:")
+            }
+        })
+      
+        # Print the rows of the data frame which match the x value
+        #new
+        output$selected_rows <- renderDataTable({
+            if (is.null(input$click_action$x)) {
+                return()
+            } else {
+                selected_level <- var_levels[round(input$click_action$x)]
+                head(ToothGrowth[ToothGrowth$supp %in% selected_level, ], 10)
+            }
+        })
+    }
+)
+```
+
+&emsp;
+</div>
+
+----------------------------------------------------------------------------------
+
+## <i class="fas fa-search"></i> **Example 4** | Linking plots
+
+Recording the actions of the user opens a universe of possibilities. We can recreate the effects of pairing plots or zooming in using the same basic functions.
+
+### Example of pairing plots
+
+```{r eval=TRUE}
+shinyApp(
+    
+    ui = fluidPage(
+        fluidRow(
+            column(width = 6,
+                plotOutput("first_scatter",
+                    brush = "brush_action"                              # <- brush in the first plot
+                )
+            ),
+            column(width = 6,
+                plotOutput("second_scatter", brush = "brush_action" )
+            )
+        )
+    ), 
+    
+    server = function(input, output) {
+        library(ggplot2)
+        
+        output$first_scatter <- renderPlot({
+            brushed <- brushedPoints(mtcars, input$brush_action)
+            
+            ggplot(mtcars, aes(disp, hp)) +
+                geom_point(size = 3, shape = 21, fill = "white", colour = "black") +
+                geom_point(data = brushed, colour = "darkorange", size = 3)
+        })
+        
+        output$second_scatter <- renderPlot({
+            
+           brushed <- brushedPoints(mtcars, input$brush_action)
+            ggplot(mtcars, aes(wt, mpg)) +
+                geom_point(size = 3, shape = 21, fill = "white", colour = "black") +
+                geom_point(data = brushed, colour = "darkred", size = 3)
+        })
+    }
+)
+```
+
+### Example of zooming
+
+```{r eval=TRUE}
+shinyApp(
+    
+    ui = fluidPage(
+        plotOutput("zoom", height = "350px"),
+        plotOutput("overall", height = "150px",
+            brush =  brushOpts(id = "brush_action", direction = "x")      # <- direction = "x" sets the brush selection to x-axis only
+        )
+    ), 
+    
+    server = function(input, output) {
+        # Convert a time-series into a data frame
+        sunspots_df <- data.frame(n = as.numeric(sunspots),
+                                  year = as.numeric(time(sunspots)))
+        
+        # basic plot
+        library(ggplot2)
+        p <- ggplot(sunspots_df, aes(year, n)) +
+            geom_line()
+        
+        # Zoomed version
+        output$zoom <- renderPlot({
+            if (!is.null(input$brush_action)) {
+                p <- p + 
+                    scale_x_continuous(limits = c(input$brush_action$xmin, input$brush_action$xmax))
+            }
+            p
+        })
+        
+        # Full version
+        output$overall <- renderPlot(p)
+    }
+)
+```
+
+### <i class="fa fa-cogs"></i> Exercise
+
+Could you select the `x` axis limits by using interactive controls? Which input widget would you use?
+
+<div style="background-color:#F0F0F0">
+##### &emsp;<i class="fas fa-comment-dots"></i> Answer:
+```{r Ex4}
+```
+
+Yes you can interactively select the X axis limits I would use a slider input, as it allows to select all values between x1 and x2.
+
+&emsp;
+</div>
+

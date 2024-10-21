@@ -5,8 +5,29 @@ date: "2024-10-17"
 output: pdf_document
 ---
 
+```{r wrap-hook, include=FALSE}
+#output_wrapper
+library(knitr)
+hook_output = knit_hooks$get('output')
+knit_hooks$set(output = function(x, options) {
+  # this hook is used only when the linewidth option is not NULL
+  if (!is.null(n <- options$linewidth)) {
+    x = xfun::split_lines(x)
+    # any lines wider than n should be wrapped
+    if (any(nchar(x) > n)) x = strwrap(x, width = n)
+    x = paste(x, collapse = '\n')
+  }
+  hook_output(x, options)
+})
+
+#Credit to:
+#https://github.com/yihui/knitr-examples/blob/master/077-wrap-output.Rmd
+```
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(tidy=TRUE, tidy.opts=list(width.cutoff=75), linewidth=75)
+knitr::opts_chunk$set(comment = "")
 ```
 
 
@@ -19,8 +40,10 @@ Only 10 features are interesting for KNN classification (i.e. it allows to class
 ```{r T1.1}
 library(MASS)
 set.seed(2)
-n_samples <- 400 # 400 items, what we want to predict 
-n_features <- 10 # simple to see if it is working or not , ind variables, variables we use to predict the independent values 
+n_samples <- 400 
+#400 items, what we want to predict 
+n_features <- 10 
+#simple to see if it is working or not , ind variables, variables we use to predict the independent values 
 n_patterns <- 2 #clusters per label
 class_label <- as.factor(sample(c("A", "B"), n_samples, replace = T))
 categories <- levels(class_label) #wich options for discrete variable
@@ -31,9 +54,12 @@ for (cat in categories) {
   ids_cate <- which(class_label==cat) #indexes for each category
   pattern <- sample(1:n_patterns, length(ids_cate), replace = T)
   for (pat in 1:n_patterns) {
-    n_ids_cate_with_pattern <- sum(pattern==pat) #count num equal patterns to find important
-    mus <- rnorm(n_features, mean = 0, sd= 5 ) # the sd is large because that way the knn will be confused and will focus on the ones we want 
-    X <- mvrnorm(n_ids_cate_with_pattern, mu = mus, Sigma = diag(n_features)) #covariance matrix of 0s and 1s
+    #count number of equal patterns to find important
+    n_ids_cate_with_pattern <- sum(pattern==pat)
+    mus <- rnorm(n_features, mean = 0, sd= 5 ) 
+    #the sd is large because that way the knn will be confused and will focus on the ones we want 
+    X <- mvrnorm(n_ids_cate_with_pattern, mu = mus, Sigma = diag(n_features)) 
+    #covariance matrix of 0s and 1s
     m[ids_cate[pattern==pat],] <- X #place new points in matrix
   }
 }
@@ -48,7 +74,8 @@ safe_m<-m #save m in a backup variable just in case
 All the remaining 990 features are useless for classification (contain noise). Make sure the noise has a bigger variance compared to the features that are interesting
 ```{r T1.2}
 m<-safe_m #get m just in case it's been modified
-random_features <- 1000 - n_features #take 990 -> 1000-10, we want to add 990 cols to the existing matrix
+random_features <- 1000 - n_features 
+#take 990 -> 1000-10, we want to add 990 cols to the existing matrix
 random_mean <- mean(m)
 random_sd <- sd(m) #you need a mean and sd to generate the data
 
@@ -76,10 +103,13 @@ test_dLabels<-class_label[test_index]
 ## Task 2)
 
 Run KNN with all the features. What happens?
-```{r T2}
+```{r T2.1}
 #use the knn predictor and get the accuracy of the model
 pred_knn<-knn(train=train_data, test=test_data, cl=train_dLabels)
+```
 
+
+```{r T2.2, echo=FALSE}
 cat("Predicted classes\n");print(summary(pred_knn))
 cat("Actual classes\n"); print(table(test_dLabels))
 cat("Accuracy of: ", mean(pred_knn==test_dLabels))
@@ -128,8 +158,7 @@ phenotype<-function(chr_index, traing_data){
 }
 
 example_vec_Phe<-phenotype(example_vec, train_data)
-example_vec_Phe
-
+head(example_vec_Phe)
 ```
 
 ## Task 5) 
@@ -182,8 +211,10 @@ total_chr_ind<-1:1000 #what example_vec was previously
 create_population<-function(N, chr_len, total_chr_ind){
   population<-list() #will be list of lists
   for (i in 1:N){ #create the population
-    chr<-sample(total_chr_ind, chr_len)#get chr_len number of chromosomes from the total
-    population[[i]]<-chr #save the chromosomes in a list in the total population list
+    #get chr_len number of chromosomes from the total
+    chr<-sample(total_chr_ind, chr_len)
+    #save the chromosomes in a list in the total population list
+    population[[i]]<-chr
   }
   return(population)
 }
@@ -252,7 +283,7 @@ cat("Best total fitness:", Test_fit)
 cat("\nBest total population(its chr indexes):", Tbest_pop)
 ```
 
-# Task 7) 
+## Task 7) 
 
 Apply the ES-KNN algorithm to the dataset. Does it work?
 ```{r T7}
@@ -272,11 +303,14 @@ pred_knn<-knn(train=train_best, test=test_best, cl=train_dLabels)
 ```{r T7.1, echo=F}
 #Accuracy
 cat("Accuracy for the best case is",mean(pred_knn==test_dLabels))
-cat("\nIt deos work")
+cat("\nThe ES-KNN algorithm can be applied to the dataset.\n")
 ```
 
 
-```{r Extra}
+## Appendices
+
+Extra information for performing the exercises
+```{r Extra, eval=FALSE}
 library(MASS)
 
 # Set seed for reproducibility

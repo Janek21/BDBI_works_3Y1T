@@ -1,0 +1,270 @@
+---
+title: "P1_group_project"
+author: "Bruno and Ismael"
+date: "2024-09-26"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Where and why was the information collected?
+
+So the data set we are study mainly contains information from 79 wild and captive born ape individuals, these represent 6 great ape species and 7 subspecies. The study from where the data comes from centered on studying great ape genetic diversity, this in order to better understand the structure of their populations, its gene flow and evolutionary processes(recombination rate, susceptibility to disease, etc) among great apes. The end purpose of the research is to provide more information about the genetic diversity, population histories, and the implications for conservation of these endangered species.
+All this data as previously said comes from captive individuals that come from wild-born origin and individuals that come from protected areas across Africa. The reason for the collection of all this data was to sequence great ape genomes and identify genetic variations that could help to understand their evolutionary history and aid in the conservation of their species.
+
+### Which is the meaning of each variable?
+
+Now lets dive inside of the data set and look into the meaning of each one of the 15 variables:
+
+##### Species: 
+the scientific name of the ape specie or subspecie
+
+##### Common name: 
+the common name given to that specie
+
+##### Studbook ID: 
+the unique identifier for each individual in the studbook system (record-keeping system used primarily in zoos, wildlife parks, and conservation programs to track the pedigree and breeding history of animals)
+
+##### ID2: 
+secondary identifier for tracking
+
+##### Sex: 
+gender of the individual (Male or Female)
+
+##### Source: 
+the type of sample from where the genetic informatin was retrieved (eg. blood, fibroblast)
+
+##### Geographic Origin: 
+the region from where the biological parents of the individual are from
+
+##### Birth origin: 
+states if the individual was wild-born or captive-born
+
+##### Sequencing center: 
+the name of the research center that is responsible for sequencing the individuals genome
+
+##### Read length: 
+the legth of the DNA fragments used for sequencing 
+
+##### Sequenced coverage: 
+the depth of the sequencing coverage, so in other words, how many times the genome has been sequenced to ensure accuracy
+
+##### Sequenced Coverage PE (Paired-End): 
+coverage using paired-end sequencing, this way gives more accurate reads
+
+##### Sequenced Gbp: 
+the number of Gigabases of DNA sequenced for each individual
+
+##### Comments: 
+any extra information about the individual, this information could be about its lineage, ancestry, or an specific note
+
+#### Do the variables have unit? Which one?
+
+Not all variables in our data set have units, for example the variable specie. However some of them do, these ones are Read Length, measured in base pairs (bp); Sequenced Coverage and Sequenced Coverage PE, number of times a particular region of the genome was sequenced (commonly used as ratio); Sequenced Gbp, measured in gigabases.
+
+#### Does the data set have a long format?
+
+No, for instance the data has a wide format. Each individul has only 1 row with all of its genomic, geographic, and lineage attributes represented in different columns. So there are no repeated rows for different variables, this means all the information of an specific individual is spread horizontally, in other words it's in a wide format.
+
+#### Read it into R
+
+```{r,echo=FALSE}
+library(readxl)
+library(tidyr)
+library(janitor)
+library(tidyverse)
+library(dplyr)
+library(sf)
+library(tidygeocoder)
+library(rnaturalearth)
+library(rnaturalearthdata)
+library(plotly)
+library(stringr)
+library(shiny)
+library(plotly)
+library(ggplot2)
+```
+
+```{r}
+# Reading the data from an Excel file
+dataset <- read_excel("monke_data.xlsx")
+
+# Display the first few rows to check
+head(dataset)
+```
+
+#### Reshape the data if necessary into long format
+
+```{r}
+
+#cleaning the names of the variables so instead of "\n" etc it has "_" 
+dataset <- dataset %>%
+  clean_names()
+
+#checking if the process went correctly
+colnames(dataset)
+
+#reshaping data set to long format
+#first we pass al the columns to the same type, character in this case
+dataset <- dataset %>%
+  mutate(across(c(read_length, sequenced_coverage, sequenced_coverage_pe, sequenced_gbp), as.character))
+
+#now we reshape it into the long format by colliding the columns
+dataset_long <- dataset %>%
+  pivot_longer(cols = c(read_length, sequenced_coverage, sequenced_coverage_pe, sequenced_gbp),
+               names_to = "Variable",
+               values_to = "Value")
+
+#checking if the process went correctly
+head(dataset_long)
+
+
+```
+
+#### Check the variable classes and update them if necessary
+
+So first of all, the column id2 has the wrong format, instead of 'spaces' it has '\r\n' so we will clean it using the clean() function
+
+```{r}
+library(dplyr)
+library(stringr)
+
+dataset <- dataset_long %>%
+  mutate(id2 = str_replace_all(id2, "[\r\n]", " "),  # Remove \r and \n
+         id2 = str_replace_all(id2, "\\s+", " "),   # Remove all whitespace (including spaces and tabs)
+         id2 = str_trim(id2))                       # Trim leading and trailing whitespace
+
+#checking if the process went correctly
+head(dataset)
+
+```
+
+Now we change the values that are numerical (not the IDs) from character to numerical, these values are all stored in the column (value)
+
+```{r}
+#check type of variable
+class(dataset$Value)
+
+#changing the variable from character to numeric
+dataset$Value <- as.numeric(dataset$Value)
+
+#checking if the process went correctly
+class(dataset$Value)
+```
+
+```{r,echo=FALSE}
+monke <- read_xlsx("monke_data.xlsx",sheet=1)
+
+monke <- monke %>%
+  geocode(`Geographic origin`, method = "osm", lat = latitude, long = longitude)
+
+geo_data = na.omit(monke[, c('Birth Origin','Species','Name','latitude','longitude')])
+sex_clean <- na.omit(monke[, c('Sex')])
+sex_source_clean <- na.omit(monke[, c('Source', 'Sex')])
+
+monke_clean <- na.omit(monke[, c('Birth Origin', 'Sequenced Coverage')])
+
+```
+In our case the data haven to be changed from long format but in the data there are some NA values that we have to take care of, to get consistent results.
+
+```{r fig1_with_plotly, echo=FALSE}
+p <- ggplot(sex_clean, aes(x = Sex)) +
+  geom_bar() +
+  labs(title = "Sex Distribution",
+       x = "Sex",
+       y = NULL, caption = "Fig. 1 Sex distribution across all samples") +
+  theme_minimal()
+
+ggplotly(p)
+
+```
+
+
+In the figure one we can see the deistribution of males and females across all the dataset, we can see that the datast is not evently distributed in genders, there are 70% of the samples that are female.
+
+```{r fig2_shiny, echo=FALSE, eval=TRUE}
+shinyApp(
+  ui = fluidPage(
+    #checkbox group input for selecting multiple species
+    checkboxGroupInput("species", "Choose Species:", choices = unique(geo_data$Species), 
+                       selected = unique(geo_data$Species)[1]),
+    plotlyOutput("map_plot")
+  ),
+  server = function(input, output) {
+    output$map_plot <- renderPlotly({
+      #filter data for selected species
+      filtered_data <- geo_data[geo_data$Species %in% input$species, ]
+
+      p <- ggplot(data = world) +
+        geom_sf(fill = "lightgray") +
+        geom_point(data = filtered_data, aes(x = longitude, y = latitude), color = "red", size = 3) +
+        theme_minimal() +
+        labs(title = "Gorilla Locations on World Map", caption = "Fig. 2 Distribution of samples across the world") +
+        coord_sf()
+      #convert to plotly for interactivity
+      ggplotly(p)
+    })
+  }
+)
+
+```
+
+In the figure 2 we can say that all the majority of the samples are from Africa.
+```{r fig3_plotly, echo=FALSE}
+
+p <- ggplot(monke_clean, aes(x = `Birth Origin`, y = `Sequenced Coverage`, fill = `Birth Origin`)) +
+  geom_boxplot() +
+  labs(title = "Sequenced Coverage by Birth Origin",
+       x = "Birth Origin",
+       y = "Sequenced Coverage", caption = "Fig. 3 Difference in sequencing coverage between birth origin") +
+  scale_fill_brewer(palette = "Accent") +
+  theme_minimal()
+
+#ggplot to plotly for interactivity
+ggplotly(p)
+
+```
+
+Observing the plots of figure 3 we can say that the coverage of the sequences are better in captive born than in wild animals, we can conclude that that is because with the captive, the samples are easy to take and the preparation of the samples that would translate in better sequence coverage, we also think that depending on the sequencing technique used the sequence coverage will vary.
+
+```{r fig4_shiny_filter_select, echo=FALSE, eval=TRUE}
+shinyApp(
+  ui = fluidPage(
+    #checkbox group for selecting Source and Sex
+    checkboxGroupInput("source_filter", "Select Source(s):", choices = unique(sex_source_clean$Source), 
+                       selected = unique(sex_source_clean$Source)),
+    checkboxGroupInput("sex_filter", "Select Sex(es):", choices = unique(sex_source_clean$Sex), 
+                       selected = unique(sex_source_clean$Sex)),
+    plotlyOutput("bar_plot")
+  ),
+  server = function(input, output) {
+    output$bar_plot <- renderPlotly({
+      #filter data based on selected Source and Sex
+      filtered_data <- sex_source_clean %>%
+        filter(Source %in% input$source_filter, Sex %in% input$sex_filter)
+      #create the ggplot with filtered data
+      p <- ggplot(filtered_data, aes(x = Source, fill = Sex)) +
+        geom_bar(position = "stack") +
+        labs(title = "Source of Sample vs. Sex",
+             x = "Source of Sample",
+             y = NULL,
+             fill = "Sex", caption = "Fig. 4 Distribution of sex between samples") +
+        scale_fill_brewer(palette = "Accent") +
+        theme_minimal()
+      #convert ggplot to plotly for interactivity
+      ggplotly(p)
+    })
+  }
+)
+
+
+```
+
+
+In the figure 4 we can see that certain sample types might have more total samples (taller bars overall), which can reflect the preferred methods of sample collection or availability. If specific sample types, like fibroblast or blood, show a heavy skew towards one sex, it could indicate biases in how the samples were collected or limitations in the availability of one sex for certain sample types.
+
+In conclusion the dataset is not balanced at all so we recoment to take more samples to aquire more data and take out thee bies of the sex for example because if you have 70% of Female the results are going to ve for female populatons because the Males are underrapresented in the dataset. Else we have these problem in the Sample source, the sources of the samples are very diferent and they aren't balanced aswell.

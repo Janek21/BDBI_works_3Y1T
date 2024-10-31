@@ -1,0 +1,67 @@
+
+Version 2.04: released on July 13th, 2012
+Compile Oct 12 2021	09:03:05
+
+********************
+Pregraph
+********************
+
+Parameters: pregraph -s /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_03/soapdenovo/SRR7548448/SRR7548448_soap.conf -K 63 -R -p 8 -o /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_03/soapdenovo/SRR7548448/SRR7548448_k63_graph 
+
+In /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_03/soapdenovo/SRR7548448/SRR7548448_soap.conf, 1 lib(s), maximum read length 100, maximum name length 256.
+
+8 thread(s) initialized.
+Import reads from file:
+ /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_03/seqs/SRR7548448/SRR7548448_1.trimmo_pe.fastq.gz
+Import reads from file:
+ /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_03/seqs/SRR7548448/SRR7548448_2.trimmo_pe.fastq.gz
+Time spent on hashing reads: 183s, 70746750 read(s) processed.
+LIB(s) information:
+ [LIB] 0, avg_ins 450, reverse 0.
+77894269 node(s) allocated, 2573253225 kmer(s) in reads, 2573253225 kmer(s) processed.
+done hashing nodes
+72489895 linear node(s) marked.
+Time spent on marking linear nodes: 1s.
+Time spent on pre-graph construction: 185s.
+
+Start to remove frequency-one-kmer tips shorter than 126.
+Total 2344791 tip(s) removed.
+8 thread(s) initialized.
+1146582 linear node(s) marked.
+Start to remove tips with minority links.
+758543 tip(s) removed in cycle 1.
+21093 tip(s) removed in cycle 2.
+35 tip(s) removed in cycle 3.
+0 tip(s) removed in cycle 4.
+Total 779671 tip(s) removed.
+8 thread(s) initialized.
+0 linear node(s) marked.
+Time spent on removing tips: 36s.
+
+758414 (379207) edge(s) and 57373 extra node(s) constructed.
+Time spent on constructing edges: 7s.
+
+In file: /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_03/soapdenovo/SRR7548448/SRR7548448_soap.conf, max seq len 100, max name len 256.
+8 thread(s) initialized.
+Import reads from file:
+ /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_03/seqs/SRR7548448/SRR7548448_1.trimmo_pe.fastq.gz
+Import reads from file:
+ /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_03/seqs/SRR7548448/SRR7548448_2.trimmo_pe.fastq.gz
+70746750 read(s) processed.
+Time spent on:
+ importing reads: 65s,
+ chopping reads to kmers: 26s,
+ searching kmers: 73s,
+ aligning reads to edges: 11s,
+ searching (K+1)mers: 29s,
+ adding pre-arcs: 13s,
+ recording read paths: 11s.
+977394941 marker(s) output.
+Reads alignment done, 5802031 read(s) deleted, 579643 pre-arc(s) added.
+LIB(s) information:
+ [LIB] 0, avg_ins 450, reverse 0.
+Time spent on aligning reads: 232s.
+
+301992 vertex(es) output.
+Overall time spent on constructing pre-graph: 7m.
+

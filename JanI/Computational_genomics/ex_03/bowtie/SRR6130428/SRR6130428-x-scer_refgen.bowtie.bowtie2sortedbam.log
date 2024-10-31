@@ -1,0 +1,5 @@
+[samopen] SAM header is present: 17 sequences.
+[bam_sort_core] merging from 3 files...
+renamed '/home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_03/tmpsort/SRR6130428-x-scer_refgen.bowtie.sorted.bam' -> '/home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_03/bowtie/SRR6130428/SRR6130428-x-scer_refgen.bowtie.sorted.bam'
+removed '/home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_03/tmpsort/SRR6130428-x-scer_refgen.bowtie.sam'
+removed '/home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_03/tmpsort/SRR6130428-x-scer_refgen.bowtie.bam'

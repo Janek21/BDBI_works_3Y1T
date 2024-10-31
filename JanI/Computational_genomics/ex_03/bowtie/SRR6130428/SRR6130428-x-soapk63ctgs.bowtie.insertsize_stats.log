@@ -1,0 +1,29 @@
+INFO	2024-10-31 10:41:42	CollectInsertSizeMetrics	
+
+********** NOTE: Picard's command line syntax is changing.
+**********
+********** For more information, please see:
+********** https://github.com/broadinstitute/picard/wiki/Command-Line-Syntax-Transition-For-Users-(Pre-Transition)
+**********
+********** The command line looks like this in the new syntax:
+**********
+**********    CollectInsertSizeMetrics -HISTOGRAM_FILE /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_03/bowtie/SRR6130428/SRR6130428-x-soapk63ctgs.bowtie.insertsize.hist.pdf -INPUT /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_03/bowtie/SRR6130428/SRR6130428-x-soapk63ctgs.bowtie.sorted.bam -OUTPUT /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_03/bowtie/SRR6130428/SRR6130428-x-soapk63ctgs.bowtie.insertsize_stats.txt -ASSUME_SORTED true -DEVIATIONS 25
+**********
+
+
+INFO	2024-10-31 10:41:43	RExecutor	Executing R script via command: Rscript /tmp/script17739728669787476036.R
+INFO	2024-10-31 10:41:43	ProcessExecutor	[1] "Checking if R is installed"
+10:41:43.284 INFO  NativeLibraryLoader - Loading libgkl_compression.so from jar:file:/usr/share/java/gkl.jar!/com/intel/gkl/native/libgkl_compression.so
+[Thu Oct 31 10:41:43 CET 2024] CollectInsertSizeMetrics HISTOGRAM_FILE=/home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_03/bowtie/SRR6130428/SRR6130428-x-soapk63ctgs.bowtie.insertsize.hist.pdf DEVIATIONS=25.0 INPUT=/home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_03/bowtie/SRR6130428/SRR6130428-x-soapk63ctgs.bowtie.sorted.bam OUTPUT=/home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_03/bowtie/SRR6130428/SRR6130428-x-soapk63ctgs.bowtie.insertsize_stats.txt ASSUME_SORTED=true    MINIMUM_PCT=0.05 METRIC_ACCUMULATION_LEVEL=[ALL_READS] INCLUDE_DUPLICATES=false STOP_AFTER=0 VERBOSITY=INFO QUIET=false VALIDATION_STRINGENCY=STRICT COMPRESSION_LEVEL=5 MAX_RECORDS_IN_RAM=500000 CREATE_INDEX=false CREATE_MD5_FILE=false GA4GH_CLIENT_SECRETS=client_secrets.json USE_JDK_DEFLATER=false USE_JDK_INFLATER=false
+[Thu Oct 31 10:41:43 CET 2024] Executing as jj@jj-laptop on Linux 6.8.0-47-generic amd64; OpenJDK 64-Bit Server VM 17.0.3-internal+0-adhoc..src; Deflater: Intel; Inflater: Intel; Provider GCS is available; Picard version: 2.26.10
+INFO	2024-10-31 10:41:45	SinglePassSamProgram	Processed     1,000,000 records.  Elapsed time: 00:00:02s.  Time for last 1,000,000:    2s.  Last read position: ref|NC_001136|:856,420
+INFO	2024-10-31 10:41:46	SinglePassSamProgram	Processed     2,000,000 records.  Elapsed time: 00:00:03s.  Time for last 1,000,000:    1s.  Last read position: ref|NC_001139|:628,994
+INFO	2024-10-31 10:41:48	SinglePassSamProgram	Processed     3,000,000 records.  Elapsed time: 00:00:05s.  Time for last 1,000,000:    1s.  Last read position: ref|NC_001142|:636,255
+INFO	2024-10-31 10:41:49	SinglePassSamProgram	Processed     4,000,000 records.  Elapsed time: 00:00:06s.  Time for last 1,000,000:    1s.  Last read position: ref|NC_001144|:536,959
+INFO	2024-10-31 10:41:51	SinglePassSamProgram	Processed     5,000,000 records.  Elapsed time: 00:00:07s.  Time for last 1,000,000:    1s.  Last read position: ref|NC_001146|:672,471
+INFO	2024-10-31 10:41:52	SinglePassSamProgram	Processed     6,000,000 records.  Elapsed time: 00:00:09s.  Time for last 1,000,000:    1s.  Last read position: ref|NC_001224|:1,638
+INFO	2024-10-31 10:41:53	RExecutor	Executing R script via command: Rscript /tmp/script10674694089740594076.R /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_03/bowtie/SRR6130428/SRR6130428-x-soapk63ctgs.bowtie.insertsize_stats.txt /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_03/bowtie/SRR6130428/SRR6130428-x-soapk63ctgs.bowtie.insertsize.hist.pdf SRR6130428-x-soapk63ctgs.bowtie.sorted.bam
+INFO	2024-10-31 10:41:53	ProcessExecutor	null device 
+INFO	2024-10-31 10:41:53	ProcessExecutor	          1 
+[Thu Oct 31 10:41:53 CET 2024] picard.analysis.CollectInsertSizeMetrics done. Elapsed time: 0.17 minutes.
+Runtime.totalMemory()=402653184

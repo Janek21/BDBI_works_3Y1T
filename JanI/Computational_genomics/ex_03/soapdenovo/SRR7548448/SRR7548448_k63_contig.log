@@ -1,0 +1,188 @@
+
+Version 2.04: released on July 13th, 2012
+Compile Oct 12 2021	09:03:05
+
+********************
+Contig
+********************
+
+Parameters: contig -g /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_03/soapdenovo/SRR7548448/SRR7548448_k63_graph -R -p 8 
+
+There are 301992 kmer(s) in vertex file.
+There are 758414 edge(s) in edge file.
+Kmers sorted.
+758414 edge(s) input.
+906642 pre-arcs loaded.
+11698612 markers overall.
+11698612 markers loaded.
+189521 none-palindrome edge(s) swapped, 0 palindrome edge(s) processed.
+758414 edge(s) sorted.
+Arcs sorted.
+293 repeat(s) are solvable, 586 more edge(s).
+1172 dead arc(s) removed.
+Time spent on solving repeat: 0s.
+Start to pinch bubbles, cutoff 0.100000, MAX NODE NUM 3, MAX DIFF NUM 2.
+124201 start points, 255299 dheap nodes.
+49492 pair(s) found, 707 pair of path(s) compared, 655 pair(s) merged.
+Sequence comparison failed:
+ Path crossing deleted edge                         0
+ Length difference of two paths greater than two    21
+ Mismatch score greater than cutoff (2)             11
+ Mismatch score ratio greater than cutoff (0.1)     0
+ Path length shorter than (Kmer-1)                  20
+DFibHeap: 16226 node(s) allocated.
+4731 edge(s) concatenated in cycle 1.
+49 edge(s) concatenated in cycle 2.
+0 edge(s) concatenated in cycle 3.
+Time spent on pinching bubbles: 0s.
+Start to destroy weak inner edges.
+59261 weak inner edge(s) destroyed in cycle 1.
+43 weak inner edge(s) destroyed in cycle 2.
+0 weak inner edge(s) destroyed in cycle 3.
+118522 dead arc(s) removed.
+6487 inner edge(s) with coverage lower than or equal to 1 destroyed.
+13169 dead arc(s) removed.
+82161 edge(s) concatenated in cycle 1.
+883 edge(s) concatenated in cycle 2.
+0 edge(s) concatenated in cycle 3.
+Before compacting, 759000 edge(s) existed.
+After compacting, 450422 edge(s) left.
+
+Strict: 0, cutoff length: 126.
+104892 tips cut in cycle 1.
+16026 tips cut in cycle 2.
+2237 tips cut in cycle 3.
+878 tips cut in cycle 4.
+478 tips cut in cycle 5.
+300 tips cut in cycle 6.
+217 tips cut in cycle 7.
+148 tips cut in cycle 8.
+134 tips cut in cycle 9.
+107 tips cut in cycle 10.
+84 tips cut in cycle 11.
+71 tips cut in cycle 12.
+60 tips cut in cycle 13.
+52 tips cut in cycle 14.
+61 tips cut in cycle 15.
+46 tips cut in cycle 16.
+38 tips cut in cycle 17.
+42 tips cut in cycle 18.
+38 tips cut in cycle 19.
+31 tips cut in cycle 20.
+23 tips cut in cycle 21.
+19 tips cut in cycle 22.
+19 tips cut in cycle 23.
+17 tips cut in cycle 24.
+22 tips cut in cycle 25.
+18 tips cut in cycle 26.
+22 tips cut in cycle 27.
+20 tips cut in cycle 28.
+19 tips cut in cycle 29.
+22 tips cut in cycle 30.
+12 tips cut in cycle 31.
+14 tips cut in cycle 32.
+15 tips cut in cycle 33.
+15 tips cut in cycle 34.
+20 tips cut in cycle 35.
+10 tips cut in cycle 36.
+9 tips cut in cycle 37.
+11 tips cut in cycle 38.
+10 tips cut in cycle 39.
+10 tips cut in cycle 40.
+18 tips cut in cycle 41.
+11 tips cut in cycle 42.
+11 tips cut in cycle 43.
+5 tips cut in cycle 44.
+13 tips cut in cycle 45.
+13 tips cut in cycle 46.
+11 tips cut in cycle 47.
+10 tips cut in cycle 48.
+7 tips cut in cycle 49.
+15 tips cut in cycle 50.
+7 tips cut in cycle 51.
+7 tips cut in cycle 52.
+4 tips cut in cycle 53.
+7 tips cut in cycle 54.
+4 tips cut in cycle 55.
+7 tips cut in cycle 56.
+5 tips cut in cycle 57.
+5 tips cut in cycle 58.
+4 tips cut in cycle 59.
+6 tips cut in cycle 60.
+6 tips cut in cycle 61.
+7 tips cut in cycle 62.
+11 tips cut in cycle 63.
+10 tips cut in cycle 64.
+13 tips cut in cycle 65.
+6 tips cut in cycle 66.
+5 tips cut in cycle 67.
+7 tips cut in cycle 68.
+11 tips cut in cycle 69.
+3 tips cut in cycle 70.
+8 tips cut in cycle 71.
+3 tips cut in cycle 72.
+7 tips cut in cycle 73.
+3 tips cut in cycle 74.
+5 tips cut in cycle 75.
+9 tips cut in cycle 76.
+5 tips cut in cycle 77.
+6 tips cut in cycle 78.
+3 tips cut in cycle 79.
+6 tips cut in cycle 80.
+10 tips cut in cycle 81.
+10 tips cut in cycle 82.
+6 tips cut in cycle 83.
+4 tips cut in cycle 84.
+6 tips cut in cycle 85.
+7 tips cut in cycle 86.
+4 tips cut in cycle 87.
+5 tips cut in cycle 88.
+7 tips cut in cycle 89.
+5 tips cut in cycle 90.
+8 tips cut in cycle 91.
+10 tips cut in cycle 92.
+12 tips cut in cycle 93.
+9 tips cut in cycle 94.
+15 tips cut in cycle 95.
+9 tips cut in cycle 96.
+6 tips cut in cycle 97.
+11 tips cut in cycle 98.
+8 tips cut in cycle 99.
+5 tips cut in cycle 100.
+4 tips cut in cycle 101.
+7 tips cut in cycle 102.
+4 tips cut in cycle 103.
+5 tips cut in cycle 104.
+7 tips cut in cycle 105.
+5 tips cut in cycle 106.
+6 tips cut in cycle 107.
+6 tips cut in cycle 108.
+9 tips cut in cycle 109.
+6 tips cut in cycle 110.
+3 tips cut in cycle 111.
+9 tips cut in cycle 112.
+4 tips cut in cycle 113.
+5 tips cut in cycle 114.
+7 tips cut in cycle 115.
+5 tips cut in cycle 116.
+5 tips cut in cycle 117.
+1 tips cut in cycle 118.
+3 tips cut in cycle 119.
+2 tips cut in cycle 120.
+2 tips cut in cycle 121.
+4 tips cut in cycle 122.
+0 tips cut in cycle 123.
+44581 dead arc(s) removed.
+23271 edge(s) concatenated in cycle 1.
+2070 edge(s) concatenated in cycle 2.
+71 edge(s) concatenated in cycle 3.
+0 edge(s) concatenated in cycle 4.
+Before compacting, 450422 edge(s) existed.
+After compacting, 145924 edge(s) left.
+
+There are 40228 contig(s) longer than 100, sum up 9243800 bp, with average length 229.
+The longest length is 3721 bp, contig N50 is 276 bp,contig N90 is 127 bp.
+72962 contig(s) longer than 64 output.
+
+Time spent on constructing contig: 0m.
+

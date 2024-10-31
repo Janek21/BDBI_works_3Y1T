@@ -1,0 +1,18 @@
+%\input{docs/tbl_genbank_summary_info_genomes}
+
+% here we have an example of a latex formatted table
+\begin{table}[!h]
+
+\begin{tabular}{lcllrrrrrrrr} \footnotesize % to get a small font and fit table within the margins...
+ Species  & Type  & RefSeq ID      & INSDC       & Size (Mb) & GC\%    & Protein  & rRNA  & tRNA  & Other RNA & Gene   & Pseudogene \\ \hline\hline
+ \Ecol    & Chr   & NC\_000913.3   & U00096.3    & 4.64      & 50.8    & 4,140    & 22    & 89    &  67       & 4,498  & 184        \\
+ \Bsub    & Chr   & NC\_000964.3   & AL009126.3  & 4.22      & 43.5    & 4,174    & 30    & 86    &  62       & 4,420  &  68        \\
+ \Mgen    & Chr   & NC\_000908.2   & L43967.2    & 0.58      & 31.7    &   515    &  3    & 36    &   3       &   566  &   9        \\
+ \Mpne    & Chr   & NC\_000912.1   & U00089.2    & 0.82      & 40.0    &   691    &  3    & 37    & 315       & 1,061  &  15        \\ \hline
+\end{tabular}
+
+\caption[Genome sequence information for four bacteria species downloaded from \GB]{%
+\label{tbl:genbankgenomesinfo}\textbf{Genome sequence information for four bacteria species downloaded from \GB.} Whole-genome summary table showing number of annotated features, such genes and proteins, along with sequence characteristics, such as size and average GC content. 
+}%caption
+
+\end{table}

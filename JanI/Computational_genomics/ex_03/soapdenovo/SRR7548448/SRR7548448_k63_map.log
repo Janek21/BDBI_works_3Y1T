@@ -1,0 +1,44 @@
+
+Version 2.04: released on July 13th, 2012
+Compile Oct 12 2021	09:03:05
+
+********************
+Map
+********************
+
+Parameters: map -s /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_03/soapdenovo/SRR7548448/SRR7548448_soap.conf -p 8 -g /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_03/soapdenovo/SRR7548448/SRR7548448_k63_graph 
+
+Kmer size: 63.
+Contig length cutoff: 65.
+
+72962 contig(s), maximum sequence length 3721, minimum sequence length 64, maximum name length 10.
+Time spent on parsing contigs file: 0s.
+8 thread(s) initialized.
+Time spent on hashing contigs: 1s.
+6920439 node(s) allocated, 6980188 kmer(s) in contigs, 6980188 kmer(s) processed.
+Time spent on graph construction: 1s.
+
+Time spent on aligning long reads: 0s.
+
+In file: /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_03/soapdenovo/SRR7548448/SRR7548448_soap.conf, max seq len 100, max name len 256
+8 thread(s) initialized.
+145924 edge(s) in the graph.
+Import reads from file:
+ /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_03/seqs/SRR7548448/SRR7548448_1.trimmo_pe.fastq.gz
+Import reads from file:
+ /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_03/seqs/SRR7548448/SRR7548448_2.trimmo_pe.fastq.gz
+Current insert size is 450, map_len is 32.
+
+Total reads         70746750
+Reads in gaps       15290851
+Ratio               21.6%
+Reads on contigs    45368029
+Ratio               64.1%
+1 pe insert size, the largest boundary is 70746750.
+
+LIB(s) information:
+ [LIB] 0, avg_ins 450, reverse 0.
+Time spent on aligning reads: 239s.
+
+Overall time spent on alignment: 4m.
+

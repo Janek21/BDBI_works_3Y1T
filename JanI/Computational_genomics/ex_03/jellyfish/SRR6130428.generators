@@ -1,0 +1,2 @@
+gunzip -c /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_03/seqs/SRR6130428/SRR6130428_1.fastq.gz
+gunzip -c /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_03/seqs/SRR6130428/SRR6130428_2.fastq.gz

@@ -1,0 +1,14 @@
+
+Version 2.04: released on July 13th, 2012
+Compile Oct 12 2021	09:03:05
+
+********************
+Scaff
+********************
+
+Parameters: scaff -F -p 8 -N 12157105 -g /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_03/soapdenovo/SRR7548448/SRR7548448_k63_graph_prefix 
+
+/home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_03/soapdenovo/SRR7548448/SRR7548448_k63_graph_prefix.Arc: no such file or empty file!
+
+Can not open file /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_03/soapdenovo/SRR7548448/SRR7548448_k63_graph_prefix.peGrads.
+Cannot open /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_03/soapdenovo/SRR7548448/SRR7548448_k63_graph_prefix.preGraphBasic. Now exit to system...

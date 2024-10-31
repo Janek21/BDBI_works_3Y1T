@@ -1,0 +1,638 @@
+---
+title: "**Practical Session PCA<br><font color='#F48225' size='5'>Data visualization (Course 2023/2024)**</font>"
+author: "<font color='#A8A8A8' size='3'>Bachelor’s Degree in Bioinformatics</font>"
+date: "<font color='#A8A8A8' size='3'>October 2023</font>"
+output:
+  html_document:
+    theme: yeti
+    css: https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css
+    self_contained: yes
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, fig.width = 6, fig.height = 4, fig.align = "center")
+```
+
+```{=html}
+<style>
+  .fig {width: 50%}
+  @import url(https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,500,500i,700,700i);
+  @import url(https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css);
+
+.center {
+  text-align: center;
+}
+
+.code_box {
+  padding: 1em 1em 1em 1em;
+  background: white;
+  color: #222222;
+  border: 2px solid #222222;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.alternative_box {
+  padding: 1em;
+  background: white;
+  color: red4;
+  border: 2px solid red;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.question_box {
+  padding: 1em;
+  background: white;
+  color: red4;
+  border: 2px solid blue;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+</style>
+```
+Please, complete all the code proposed and answer to questions. You will
+find these on the slides as (\#) and (Q).
+
+You are not expected to include your answer to the check questions (C)
+or (K) knowledge thoughts. These are only to guide your progress.
+
+Change the code appropriately or add new lines if necessary.
+
+Provide code alternatives if any.
+
+Add additional interactive plots or additional plots to better interpret
+results and generate conclusions.
+
+There are several blocks of code (n=5) to create and several questions
+to answer (n=12). Take into account that also a 20% of your grade will
+depend on other things: mistakes, clean and neat code, easy to follow,
+new elements not covered in this particular class, etc. Check grading
+template for details,
+
+::: {.code_box data-latex=""}
+**CODE #1: Load, adapt the data and create metadata [2.5 points]**
+
+Load the 2 different replicates provided as separate files into separate
+data frames. Check data is correctly loaded and all samples have the
+same dimensions. Each file corresponds to a single sample with many
+genes (rows) and individual cells (columns).
+
+Column names are single cells ID names corresponding each to a the same
+sample.
+
+Load the meta data file (*treatment.txt*) containing information
+regarding type of samples for each replicate. The order of the
+*treatment.txt* file corresponds to the original order in the
+*P1.tsv.gz* and *P2.tsv.gz* files.
+
+Remember to adapt the data accordingly. We need columns of the tables to
+represent variables (genes) and rows to be cells. Also, we need to merge
+all tables of observations.
+
+What are column names in each dataframe?
+
+Provide code alternatives if any.
+:::
+
+### Load data into variables:
+
+First of all, you can use applications external to R to inspect what
+type of data you are going to be using and how to deal with it.
+
+Once you have inspected and decided, go for it!
+
+```{r message=FALSE, cache=TRUE}
+# --------------------------
+## [#1] Read the data
+# --------------------------
+## Read data into separate variables
+P1_data <- read.table(gzfile("./data/P1.tsv.gz"), header = T)
+P2_data <- read.table(gzfile("./data/P2.tsv.gz"), header = T)
+```
+
+
+### Check the data
+
+Once loaded into R, check if the data matches what you expected and take
+a brief view of the data.
+
+```{r results, include=TRUE, cache=TRUE}
+# just print a small head of the data
+head(P1_data, n=2)
+
+head(P2_data, n=2)
+```
+
+::: {.question_box data-latex=""}
+**Q1: What are column names for each original dataframe? Are there
+duplicates?**
+:::
+
+::: {.question_box data-latex=""}
+ANSWER Q1: 
+```{r Ex1, echo=F}
+cat("Column names of P1:\n")
+colnames(P1_data)
+
+cat("Column names of P2:\n")
+colnames(P2_data)
+
+cat("Are there any duplicates?\n")
+any(duplicated(colnames(P1_data)))
+any(duplicated(colnames(P2_data)))
+```
+
+:::
+
+### Adapt the data accordingly and merge both tables of observations
+
+Since we need columns of the tables to represent variables and rows to
+be samples, individuals, we need to **transpose** the data of the
+matrices. Then, we merged experiments into a single data.frame.
+
+```{r, cache=TRUE}
+# --------------------------
+## [#2] Adapt the data
+# --------------------------
+
+#Assign features(genes) to rownames, so that when transposed they are column names and remove the column that contains gene names
+##colnames(X1) <- P1_data[,1]
+##X1<-X1[-c(1),]
+
+##colnames(X2) <- P2_data[,1]
+##X2<-X2[-c(1),]
+
+rownames(P1_data)<-P1_data$gene
+P1_data$gene<-NULL
+
+rownames(P2_data)<-P2_data$gene
+P2_data$gene<-NULL
+
+#Transposing
+X1 <- t(P1_data)
+X2 <- t(P2_data)
+
+## Merge
+X <- rbind(X1, X2)
+```
+
+Now, check that we transformed the data correctly:
+
+```{r results_transform, include=TRUE, cache=TRUE}
+dim(X)
+```
+
+### Get metadata associated:
+
+Create a dataframe with metadata. We might like to include the names of
+the samples as rows, the replicates IDs (1,2 or A,B,...) and the type of
+sample as described in the treatment file: T: treated, U: untreated, N:
+non-treated.
+
+```{r get_data, eval=TRUE}
+# --------------------------
+## [#3] Load the metadata
+# --------------------------
+## Read metadata file and create a factor
+treat_file <- as.vector(t(read.table("./data/treatment.txt")))
+#treat_file <- as.factor(readLines("./data/treatment.txt")
+
+## create dataframe: add rownames, experiment A & B, and treatment for each cell
+
+## HINT:
+## create a vector with 96 treatment types
+treatment<-rep(treat_file, 2)
+
+## HINT:
+## create a vector with 96 As and 96 Bs
+exp_label<-rep(c("A","B"), each=96)
+
+metadata<-cbind(treatment, exp_label)
+
+rownames(metadata)<-rownames(X)
+```
+
+::: {.code_box data-latex=""}
+**CODE #2: Create a PCA - NOT SCALED: 2.5 points]**
+
+Create PCA and check plots generated to check results:
+
+Perform a PCA on your merged data and plot the results according to the
+treatment received, the replicate ID, etc.
+
+*IMPORTANT*: USE `scale=FALSE`.
+
+Use `stats::prcomp` function and remember the PC values are stored
+within the 'x' object.
+
+Use several packages (`ggfortify`, base `plot`, `factoextra`) and color
+according to treatment and/or experiment.
+
+Provide code alternatives if any.
+:::
+
+```{r pca_gen.1, cache=TRUE}
+# ------------------------
+## [#4] Create PCA results and plot results
+# ------------------------
+
+library(ggplot2)
+library(ggfortify)
+library(factoextra)
+
+#rm("P1_data", "P2_data", "X1", "X2", "exp_label", "treat_file", "treatment")
+
+metadata<-data.frame(metadata)
+
+saveRDS(X, "X_data.rds")
+saveRDS(metadata, "metadata.rds")
+
+X <- readRDS("X_data.rds")
+metadata <- readRDS("metadata.rds")
+
+dim(X)
+
+pca <- stats::prcomp(X, scale=F, center=T)
+show(pca)
+names(pca)
+
+
+dim(pca$x)
+head(pca$x)
+
+dim(pca$rotation)
+head(pca$rotation)
+
+# Color by treatment and replicate ID. Use several packages
+plot(pca$x, pch=19)
+autoplot(pca$x)
+fviz_pca_ind(pca)
+
+ggplot(pca$x, aes(x=PC1, y=PC2)) + geom_point()
+```
+
+
+
+::: {.question_box data-latex=""}
+**Q2. According to the PCA plot, explain how samples are distributed.
+Justify whether you think that there is any batch effect in our samples
+or not associated to the replicate ID.**
+:::
+
+::: {.question_box data-latex=""}
+**ANSWER Q2** I belive there are two 2 main batch or group of data points, since they form a linear path but differently, one of them is found in the negative values and forms an straight line and the other group declines progressively and is found in the positive values of x axis.
+...
+
+:::
+
+### Plot variance explained by each principal component
+
+```{r var_explained, cache=TRUE}
+# ------------------------
+## [#5] Plot variance for each PC
+# ------------------------
+# Use several packages
+#plot()
+#factoextra()
+
+#calculate the proportion of variance explained
+pca_var <- pca$sdev^2  
+pca_var_percent <- pca_var / sum(pca_var) * 100 
+
+
+plot(pca_var_percent, type = "b", xlab = "Principal Component", 
+     ylab = "Variance Explained (%)", main = "Scree Plot",
+     pch = 19, col = "blue")
+
+
+fviz_screeplot(pca, addlabels = TRUE, ylim = c(0, 100)) + 
+  ggtitle("Variance Explained by Each Principal Component") +
+  theme_minimal()
+
+
+var_data <- data.frame(PC = paste0("PC", 1:length(pca_var_percent)), 
+                       Variance = pca_var_percent)
+ggplot(var_data, aes(x = PC, y = Variance)) + 
+  geom_bar(stat = "identity", fill = "skyblue", color = "black") +
+  geom_text(aes(label = round(Variance, 1)), vjust = -0.5) +
+  labs(title = "Variance Explained by Each Principal Component", 
+       x = "Principal Components", y = "Variance Explained (%)") +
+  theme_minimal()
+
+
+```
+
+::: {.code_box data-latex=""}
+**CODE #3: Create a PCA - SCALED [2.5 points]**
+
+Create PCA and check plots generated to check results:
+
+Perform a PCA on your merged data and plot the results according to the
+treatment received, the replicate ID, etc.
+
+*IMPORTANT*: USE `scale=TRUE`.
+
+Use `stats::prcomp` function and remember the PC values are stored
+within the 'x' object.
+
+Use several packages (`ggfortify`, base `plot`, `factoextra`) and color
+according to treatment and/or experiment.
+
+Provide code alternatives if any.
+:::
+
+### Create scaled PCA
+
+```{r scaled_pca, message=TRUE, error=TRUE, cache=TRUE}
+# ------------------------
+## [#6] Create a scaled PCA
+# ------------------------
+
+pca_scaled <- stats::prcomp(X, scale = TRUE, center = TRUE)
+
+
+
+
+
+```
+
+::: {.question_box data-latex=""}
+**Q3: Did it work? Why? What does this error mean?**
+:::
+
+::: {.question_box data-latex=""}
+**ANSWER Q3** No, it did not work, I've searched the error in the internet and I found the following definition: "indicates that there’s at least one column in the dataset X with either constant values (all values in that column are the same) or zeros. When scale = TRUE is specified in prcomp, it attempts to standardize each variable by subtracting the mean and dividing by the standard deviation. However, a column with constant values has a standard deviation of zero, which makes it impossible to rescale (division by zero is undefined)."
+...
+:::
+
+### Fix data and create scaled PCA
+
+Remove those genes that have not been expressed at all in our samples
+and try again.
+
+Plot using the scaled dataset the plots using several packages and
+treatment and experiment as colouring variables.
+
+```{r fix_scaled_pca, cache=TRUE}
+# ------------------------
+## [#7] Fix and create a scaled PCA
+# ------------------------
+
+## HINT: Remove zero columns (genes not expressed in a cell!)
+
+#remove zero-variance columns (genes not expressed in any sample)
+X_filtered <- X[, apply(X, 2, var) != 0]
+
+#perform PCA
+pca_scaled <- stats::prcomp(X_filtered, scale = TRUE, center = TRUE)
+
+
+#ensure treatment is a factor and map it to numeric colors
+metadata$treatment <- as.factor(metadata$treatment)
+color_map <- as.numeric(metadata$treatment)  # Assigns numeric values as colors
+
+#R Plot
+plot(pca_scaled$x[,1], pca_scaled$x[,2], col = color_map, pch = 19,
+     xlab = "PC1", ylab = "PC2", main = "Scaled PCA Plot (Base R)")
+
+#add a legend using treatment levels and the color mapping
+legend("topright", legend = levels(metadata$treatment), col = 1:length(levels(metadata$treatment)), pch = 19)
+
+
+#ggfortify
+# Use ggfortify with exp_label as shape
+autoplot(pca_scaled, data = metadata, colour = 'treatment', shape = 'exp_label') +
+  labs(title = "Scaled PCA Plot (ggfortify)", x = "PC1", y = "PC2") +
+  theme_minimal()
+
+
+
+#factoextra
+fviz_pca_ind(pca_scaled, geom.ind = "point", col.ind = metadata$treatment,
+             addEllipses = TRUE, legend.title = "Treatment") +
+  ggtitle("Scaled PCA Plot (factoextra)") +
+  theme_minimal()
+
+#ggplot2
+# Create pca_df with both PC scores and metadata
+pca_df <- as.data.frame(pca_scaled$x)
+pca_df$treatment <- metadata$treatment
+pca_df$exp_label <- metadata$exp_label  # Use exp_label instead of experiment
+
+# Now, plot using ggplot2
+ggplot(pca_df, aes(x = PC1, y = PC2, color = treatment, shape = exp_label)) +
+  geom_point(size = 3) +
+  labs(title = "Scaled PCA Plot (ggplot2)", x = "PC1", y = "PC2") +
+  theme_minimal() +
+  theme(legend.position = "right")
+
+
+
+```
+
+::: {.question_box data-latex=""}
+**Q4. Has the batch effect observed been corrected?**\
+**If not, is there a clear distinction between batches in any of the
+axes (PC1 and PC2)?**
+:::
+
+::: {.question_box data-latex=""}
+**ANSWER Q4**  It seems so since now we have 3 differenciated clearly groups or clusters
+...
+:::
+
+::: {.code_box data-latex=""}
+**CODE #4: Understanding the batch effect [2.5 points]**
+
+So, the question, "What does it mean for a sample to have a positive
+value for this PC?"
+
+We need to find a variable that highly correlates with PC1. We would
+check for the total gene expression per cell. In RNA-seq experiments the
+data is normalized using different factors such as library size (number
+of genes) or gene length.
+:::
+
+```{r total_gene, cache=TRUE}
+# ------------------------
+## [#7] Check the total expression per sample:
+# ------------------------
+
+## HINT: The summatory of the rows adds the total expression
+
+# Calculate total expression per sample
+total_expression <- rowSums(X_filtered)
+
+# Display the first few values
+head(total_expression)
+
+# Calculate correlation between total expression and PC1
+correlation <- cor(total_expression, pca_scaled$x[, 1])
+
+# Print the correlation coefficient
+print(paste("Correlation between total expression and PC1:", round(correlation, 4)))
+
+# Create a scatter plot
+plot(total_expression, pca_scaled$x[, 1], 
+     xlab = "Total Expression", 
+     ylab = "PC1", 
+     main = "Total Expression vs PC1")
+abline(lm(pca_scaled$x[, 1] ~ total_expression), col = "red")
+
+
+
+
+
+
+```
+
+::: {.question_box data-latex=""}
+**Q5. Is there any difference between experiments? Is there any
+difference inside the same treated/untreated group? Do you expect cells
+with a high value of total expression to have a positive or negative
+PC1?**
+:::
+
+::: {.question_box data-latex=""}
+**ANSWER Q5** There is a very strong negative correlation between total gene expression and PC1. Cells with high total expression values are expected to have negative PC1 values, while cells with low total expression will have positive PC1 values. 
+Finally, based on the correlation coefficient obtained: -0.9905, we can arrive to the conclusion that the total expression is expected to have a negative PC1 value when there ate high values.
+
+...
+:::
+
+#### Check if there are significant correlations
+
+We need to test for significance.
+
+```{r get_correlations, cache=TRUE}
+# ------------------------
+## [#9] Create a linear regression analysis
+# ------------------------
+
+# Calculate total expression per sample
+total_expression <- rowSums(X_filtered)
+
+# Create a data frame with total expression and PC scores
+pc_data <- data.frame(total_expression = total_expression, pca_scaled$x)
+
+# Perform linear regression for each PC
+num_pcs <- ncol(pca_scaled$x)
+correlations <- numeric(num_pcs)
+p_values <- numeric(num_pcs)
+
+for (i in 1:num_pcs) {
+  pc_col <- paste0("PC", i)
+  model <- lm(pc_data[[pc_col]] ~ total_expression, data = pc_data)
+  correlations[i] <- cor(pc_data$total_expression, pc_data[[pc_col]])
+  p_values[i] <- summary(model)$coefficients[2, 4]  # p-value for total_expression coefficient
+}
+
+# Create a summary data frame
+correlation_summary <- data.frame(
+  PC = paste0("PC", 1:num_pcs),
+  Correlation = correlations,
+  P_value = p_values
+)
+
+# Display the summary
+print(correlation_summary)
+
+# Plot correlations
+plot(1:num_pcs, correlations, type = "b", 
+     xlab = "Principal Component", ylab = "Correlation with Total Expression",
+     main = "Correlation of PCs with Total Expression")
+abline(h = 0, col = "red", lty = 2)
+
+# Plot -log10(p-values)
+plot(1:num_pcs, -log10(p_values), type = "b",
+     xlab = "Principal Component", ylab = "-log10(p-value)",
+     main = "Significance of Correlations")
+abline(h = -log10(0.05), col = "red", lty = 2)  # Add line for p = 0.05
+
+
+```
+
+::: {.question_box data-latex=""}
+**Q6. Are PC1 and total gene expression significantly correlated?** **An
+important number of samples seem to have very low or no expression. What
+do you think this is due to?**
+:::
+
+::: {.question_box data-latex=""}
+**ANSWER Q6** Indeed, there is a significant correlation between PC1 and total gene expression. -9.904810e-01 (roughly -0.9905) is the correlation coefficient for PC1, indicating a very strong negative correlation. This correlation's p-value, 1.359367e-165, is incredibly small—much smaller than the traditional significance level of 0.05. This indicates that there is statistical significance in the correlation.
+...
+:::
+
+::: {.code_box data-latex=""}
+**CODE #5: Normalized data accordingly: [2 points]**
+
+After this initial exploration we have realized that we should normalize
+each cell by the total expression. We can also use `scale=TRUE` in the
+`stats::prcomp` function call.
+
+In RNA-seq experiments the data is normalized using different factors
+such as library size (number of genes) or gene length. We could think of
+total expression per sample as the factor to use to normalize the data.
+:::
+
+```{r norm_data, cache=TRUE}
+
+
+```
+
+```{r, cache=TRUE}
+# ------------------------
+## [#10] Create a final representation with the normalized PCA results,
+##       using:
+##       - color for total expression: Green - Low; Red - High
+##       - shape for experiment 
+##       - add some additional information: treatment
+# ------------------------
+
+# Normalize data by total expression
+total_expression <- rowSums(X_filtered)
+X_normalized <- t(t(X_filtered) / total_expression)
+
+# Perform PCA on normalized data
+pca_normalized <- prcomp(X_normalized, scale = TRUE)
+
+# Create a data frame for plotting
+pca_df <- data.frame(
+  PC1 = pca_normalized$x[,1],
+  PC2 = pca_normalized$x[,2],
+  TotalExpression = total_expression,
+  Experiment = metadata$exp_label,
+  Treatment = metadata$treatment
+)
+
+# Create the plot
+ggplot(pca_df, aes(x = PC1, y = PC2, color = TotalExpression, shape = Experiment)) +
+  geom_point(size = 3) +
+  scale_color_gradient(low = "green", high = "red") +
+  facet_wrap(~ Treatment) +
+  labs(title = "Normalized PCA Plot",
+       x = "PC1", y = "PC2",
+       color = "Total Expression",
+       shape = "Experiment") +
+  theme_minimal()
+
+
+
+```
+
+::: {.question_box data-latex=""}
+**Q7. According to the resulting plots, explain what groups can be
+distinguished and what the main variables represented by the PC1 and PC2
+are and the variance explain by each.**
+:::
+
+::: {.question_box data-latex=""}
+**ANSWER Q7** First of all we have three categories N T U in each one we can segregate into two groups, A which has a high total expression and B which has a low total expression.
+...
+
+:::

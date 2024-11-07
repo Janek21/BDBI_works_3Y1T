@@ -1,0 +1,11097 @@
+%!PS-Adobe-2.0
+%%Title: /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/blast/chrI-x-SRR6130428/chrI-x-SRR6130428_megablast.dnadiff.ps
+%%Creator: gnuplot 5.4 patchlevel 2
+%%CreationDate: Mon Nov  4 20:32:29 2024
+%%DocumentFonts: (atend)
+%%BoundingBox: -958 50 554 2210
+%%Orientation: Landscape
+%%Pages: (atend)
+%%EndComments
+%%BeginProlog
+/gnudict 256 dict def
+gnudict begin
+%
+% The following true/false flags may be edited by hand if desired.
+% The unit line width and grayscale image gamma correction may also be changed.
+%
+/Color true def
+/Blacktext false def
+/Solid false def
+/Dashlength 1 def
+/Landscape true def
+/Level1 false def
+/Level3 false def
+/Rounded false def
+/ClipToBoundingBox false def
+/SuppressPDFMark false def
+/TransparentPatterns false def
+/gnulinewidth 5.000 def
+/userlinewidth gnulinewidth def
+/Gamma 1.0 def
+/BackgroundColor {-1.000 -1.000 -1.000} def
+%
+/vshift -26 def
+/dl1 {
+  10.0 Dashlength userlinewidth gnulinewidth div mul mul mul
+  Rounded { currentlinewidth 0.75 mul sub dup 0 le { pop 0.01 } if } if
+} def
+/dl2 {
+  10.0 Dashlength userlinewidth gnulinewidth div mul mul mul
+  Rounded { currentlinewidth 0.75 mul add } if
+} def
+/hpt_ 31.5 def
+/vpt_ 31.5 def
+/hpt hpt_ def
+/vpt vpt_ def
+/doclip {
+  ClipToBoundingBox {
+    newpath -958 50 moveto 554 50 lineto 554 2210 lineto -958 2210 lineto closepath
+    clip
+  } if
+} def
+%
+% Gnuplot Prolog Version 5.2 (Dec 2017)
+%
+%/SuppressPDFMark true def
+%
+/M {moveto} bind def
+/L {lineto} bind def
+/R {rmoveto} bind def
+/V {rlineto} bind def
+/N {newpath moveto} bind def
+/Z {closepath} bind def
+/C {setrgbcolor} bind def
+/f {rlineto fill} bind def
+/g {setgray} bind def
+/Gshow {show} def   % May be redefined later in the file to support UTF-8
+/vpt2 vpt 2 mul def
+/hpt2 hpt 2 mul def
+/Lshow {currentpoint stroke M 0 vshift R 
+	Blacktext {gsave 0 setgray textshow grestore} {textshow} ifelse} def
+/Rshow {currentpoint stroke M dup stringwidth pop neg vshift R
+	Blacktext {gsave 0 setgray textshow grestore} {textshow} ifelse} def
+/Cshow {currentpoint stroke M dup stringwidth pop -2 div vshift R 
+	Blacktext {gsave 0 setgray textshow grestore} {textshow} ifelse} def
+/UP {dup vpt_ mul /vpt exch def hpt_ mul /hpt exch def
+  /hpt2 hpt 2 mul def /vpt2 vpt 2 mul def} def
+/DL {Color {setrgbcolor Solid {pop []} if 0 setdash}
+ {pop pop pop 0 setgray Solid {pop []} if 0 setdash} ifelse} def
+/BL {stroke userlinewidth 2 mul setlinewidth
+	Rounded {1 setlinejoin 1 setlinecap} if} def
+/AL {stroke userlinewidth 2 div setlinewidth
+	Rounded {1 setlinejoin 1 setlinecap} if} def
+/UL {dup gnulinewidth mul /userlinewidth exch def
+	dup 1 lt {pop 1} if 10 mul /udl exch def} def
+/PL {stroke userlinewidth setlinewidth
+	Rounded {1 setlinejoin 1 setlinecap} if} def
+3.8 setmiterlimit
+% Classic Line colors (version 5.0)
+/LCw {1 1 1} def
+/LCb {0 0 0} def
+/LCa {0 0 0} def
+/LC0 {1 0 0} def
+/LC1 {0 1 0} def
+/LC2 {0 0 1} def
+/LC3 {1 0 1} def
+/LC4 {0 1 1} def
+/LC5 {1 1 0} def
+/LC6 {0 0 0} def
+/LC7 {1 0.3 0} def
+/LC8 {0.5 0.5 0.5} def
+% Default dash patterns (version 5.0)
+/LTB {BL [] LCb DL} def
+/LTw {PL [] 1 setgray} def
+/LTb {PL [] LCb DL} def
+/LTa {AL [1 udl mul 2 udl mul] 0 setdash LCa setrgbcolor} def
+/LT0 {PL [] LC0 DL} def
+/LT1 {PL [2 dl1 3 dl2] LC1 DL} def
+/LT2 {PL [1 dl1 1.5 dl2] LC2 DL} def
+/LT3 {PL [6 dl1 2 dl2 1 dl1 2 dl2] LC3 DL} def
+/LT4 {PL [1 dl1 2 dl2 6 dl1 2 dl2 1 dl1 2 dl2] LC4 DL} def
+/LT5 {PL [4 dl1 2 dl2] LC5 DL} def
+/LT6 {PL [1.5 dl1 1.5 dl2 1.5 dl1 1.5 dl2 1.5 dl1 6 dl2] LC6 DL} def
+/LT7 {PL [3 dl1 3 dl2 1 dl1 3 dl2] LC7 DL} def
+/LT8 {PL [2 dl1 2 dl2 2 dl1 6 dl2] LC8 DL} def
+/SL {[] 0 setdash} def
+/Pnt {stroke [] 0 setdash gsave 1 setlinecap M 0 0 V stroke grestore} def
+/Dia {stroke [] 0 setdash 2 copy vpt add M
+  hpt neg vpt neg V hpt vpt neg V
+  hpt vpt V hpt neg vpt V closepath stroke
+  Pnt} def
+/Pls {stroke [] 0 setdash vpt sub M 0 vpt2 V
+  currentpoint stroke M
+  hpt neg vpt neg R hpt2 0 V stroke
+ } def
+/Box {stroke [] 0 setdash 2 copy exch hpt sub exch vpt add M
+  0 vpt2 neg V hpt2 0 V 0 vpt2 V
+  hpt2 neg 0 V closepath stroke
+  Pnt} def
+/Crs {stroke [] 0 setdash exch hpt sub exch vpt add M
+  hpt2 vpt2 neg V currentpoint stroke M
+  hpt2 neg 0 R hpt2 vpt2 V stroke} def
+/TriU {stroke [] 0 setdash 2 copy vpt 1.12 mul add M
+  hpt neg vpt -1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt 1.62 mul V closepath stroke
+  Pnt} def
+/Star {2 copy Pls Crs} def
+/BoxF {stroke [] 0 setdash exch hpt sub exch vpt add M
+  0 vpt2 neg V hpt2 0 V 0 vpt2 V
+  hpt2 neg 0 V closepath fill} def
+/TriUF {stroke [] 0 setdash vpt 1.12 mul add M
+  hpt neg vpt -1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt 1.62 mul V closepath fill} def
+/TriD {stroke [] 0 setdash 2 copy vpt 1.12 mul sub M
+  hpt neg vpt 1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt -1.62 mul V closepath stroke
+  Pnt} def
+/TriDF {stroke [] 0 setdash vpt 1.12 mul sub M
+  hpt neg vpt 1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt -1.62 mul V closepath fill} def
+/DiaF {stroke [] 0 setdash vpt add M
+  hpt neg vpt neg V hpt vpt neg V
+  hpt vpt V hpt neg vpt V closepath fill} def
+/Pent {stroke [] 0 setdash 2 copy gsave
+  translate 0 hpt M 4 {72 rotate 0 hpt L} repeat
+  closepath stroke grestore Pnt} def
+/PentF {stroke [] 0 setdash gsave
+  translate 0 hpt M 4 {72 rotate 0 hpt L} repeat
+  closepath fill grestore} def
+/Circle {stroke [] 0 setdash 2 copy
+  hpt 0 360 arc stroke Pnt} def
+/CircleF {stroke [] 0 setdash hpt 0 360 arc fill} def
+/C0 {BL [] 0 setdash 2 copy moveto vpt 90 450 arc} bind def
+/C1 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 0 90 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C2 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 90 180 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C3 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 0 180 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C4 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 180 270 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C5 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 0 90 arc
+	2 copy moveto
+	2 copy vpt 180 270 arc closepath fill
+	vpt 0 360 arc} bind def
+/C6 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 90 270 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C7 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 0 270 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C8 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 270 360 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C9 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 270 450 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C10 {BL [] 0 setdash 2 copy 2 copy moveto vpt 270 360 arc closepath fill
+	2 copy moveto
+	2 copy vpt 90 180 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C11 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 0 180 arc closepath fill
+	2 copy moveto
+	2 copy vpt 270 360 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C12 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 180 360 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C13 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 0 90 arc closepath fill
+	2 copy moveto
+	2 copy vpt 180 360 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C14 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 90 360 arc closepath fill
+	vpt 0 360 arc} bind def
+/C15 {BL [] 0 setdash 2 copy vpt 0 360 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/Rec {newpath 4 2 roll moveto 1 index 0 rlineto 0 exch rlineto
+	neg 0 rlineto closepath} bind def
+/Square {dup Rec} bind def
+/Bsquare {vpt sub exch vpt sub exch vpt2 Square} bind def
+/S0 {BL [] 0 setdash 2 copy moveto 0 vpt rlineto BL Bsquare} bind def
+/S1 {BL [] 0 setdash 2 copy vpt Square fill Bsquare} bind def
+/S2 {BL [] 0 setdash 2 copy exch vpt sub exch vpt Square fill Bsquare} bind def
+/S3 {BL [] 0 setdash 2 copy exch vpt sub exch vpt2 vpt Rec fill Bsquare} bind def
+/S4 {BL [] 0 setdash 2 copy exch vpt sub exch vpt sub vpt Square fill Bsquare} bind def
+/S5 {BL [] 0 setdash 2 copy 2 copy vpt Square fill
+	exch vpt sub exch vpt sub vpt Square fill Bsquare} bind def
+/S6 {BL [] 0 setdash 2 copy exch vpt sub exch vpt sub vpt vpt2 Rec fill Bsquare} bind def
+/S7 {BL [] 0 setdash 2 copy exch vpt sub exch vpt sub vpt vpt2 Rec fill
+	2 copy vpt Square fill Bsquare} bind def
+/S8 {BL [] 0 setdash 2 copy vpt sub vpt Square fill Bsquare} bind def
+/S9 {BL [] 0 setdash 2 copy vpt sub vpt vpt2 Rec fill Bsquare} bind def
+/S10 {BL [] 0 setdash 2 copy vpt sub vpt Square fill 2 copy exch vpt sub exch vpt Square fill
+	Bsquare} bind def
+/S11 {BL [] 0 setdash 2 copy vpt sub vpt Square fill 2 copy exch vpt sub exch vpt2 vpt Rec fill
+	Bsquare} bind def
+/S12 {BL [] 0 setdash 2 copy exch vpt sub exch vpt sub vpt2 vpt Rec fill Bsquare} bind def
+/S13 {BL [] 0 setdash 2 copy exch vpt sub exch vpt sub vpt2 vpt Rec fill
+	2 copy vpt Square fill Bsquare} bind def
+/S14 {BL [] 0 setdash 2 copy exch vpt sub exch vpt sub vpt2 vpt Rec fill
+	2 copy exch vpt sub exch vpt Square fill Bsquare} bind def
+/S15 {BL [] 0 setdash 2 copy Bsquare fill Bsquare} bind def
+/D0 {gsave translate 45 rotate 0 0 S0 stroke grestore} bind def
+/D1 {gsave translate 45 rotate 0 0 S1 stroke grestore} bind def
+/D2 {gsave translate 45 rotate 0 0 S2 stroke grestore} bind def
+/D3 {gsave translate 45 rotate 0 0 S3 stroke grestore} bind def
+/D4 {gsave translate 45 rotate 0 0 S4 stroke grestore} bind def
+/D5 {gsave translate 45 rotate 0 0 S5 stroke grestore} bind def
+/D6 {gsave translate 45 rotate 0 0 S6 stroke grestore} bind def
+/D7 {gsave translate 45 rotate 0 0 S7 stroke grestore} bind def
+/D8 {gsave translate 45 rotate 0 0 S8 stroke grestore} bind def
+/D9 {gsave translate 45 rotate 0 0 S9 stroke grestore} bind def
+/D10 {gsave translate 45 rotate 0 0 S10 stroke grestore} bind def
+/D11 {gsave translate 45 rotate 0 0 S11 stroke grestore} bind def
+/D12 {gsave translate 45 rotate 0 0 S12 stroke grestore} bind def
+/D13 {gsave translate 45 rotate 0 0 S13 stroke grestore} bind def
+/D14 {gsave translate 45 rotate 0 0 S14 stroke grestore} bind def
+/D15 {gsave translate 45 rotate 0 0 S15 stroke grestore} bind def
+/DiaE {stroke [] 0 setdash vpt add M
+  hpt neg vpt neg V hpt vpt neg V
+  hpt vpt V hpt neg vpt V closepath stroke} def
+/BoxE {stroke [] 0 setdash exch hpt sub exch vpt add M
+  0 vpt2 neg V hpt2 0 V 0 vpt2 V
+  hpt2 neg 0 V closepath stroke} def
+/TriUE {stroke [] 0 setdash vpt 1.12 mul add M
+  hpt neg vpt -1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt 1.62 mul V closepath stroke} def
+/TriDE {stroke [] 0 setdash vpt 1.12 mul sub M
+  hpt neg vpt 1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt -1.62 mul V closepath stroke} def
+/PentE {stroke [] 0 setdash gsave
+  translate 0 hpt M 4 {72 rotate 0 hpt L} repeat
+  closepath stroke grestore} def
+/CircE {stroke [] 0 setdash 
+  hpt 0 360 arc stroke} def
+/Opaque {gsave closepath 1 setgray fill grestore 0 setgray closepath} def
+/DiaW {stroke [] 0 setdash vpt add M
+  hpt neg vpt neg V hpt vpt neg V
+  hpt vpt V hpt neg vpt V Opaque stroke} def
+/BoxW {stroke [] 0 setdash exch hpt sub exch vpt add M
+  0 vpt2 neg V hpt2 0 V 0 vpt2 V
+  hpt2 neg 0 V Opaque stroke} def
+/TriUW {stroke [] 0 setdash vpt 1.12 mul add M
+  hpt neg vpt -1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt 1.62 mul V Opaque stroke} def
+/TriDW {stroke [] 0 setdash vpt 1.12 mul sub M
+  hpt neg vpt 1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt -1.62 mul V Opaque stroke} def
+/PentW {stroke [] 0 setdash gsave
+  translate 0 hpt M 4 {72 rotate 0 hpt L} repeat
+  Opaque stroke grestore} def
+/CircW {stroke [] 0 setdash 
+  hpt 0 360 arc Opaque stroke} def
+/BoxFill {gsave Rec 1 setgray fill grestore} def
+/Density {
+  /Fillden exch def
+  currentrgbcolor
+  /ColB exch def /ColG exch def /ColR exch def
+  /ColR ColR Fillden mul Fillden sub 1 add def
+  /ColG ColG Fillden mul Fillden sub 1 add def
+  /ColB ColB Fillden mul Fillden sub 1 add def
+  ColR ColG ColB setrgbcolor} def
+/BoxColFill {gsave Rec PolyFill} def
+/PolyFill {gsave Density fill grestore grestore} def
+/h {rlineto rlineto rlineto closepath gsave fill grestore stroke} bind def
+%
+% PostScript Level 1 Pattern Fill routine for rectangles
+% Usage: x y w h s a XX PatternFill
+%	x,y = lower left corner of box to be filled
+%	w,h = width and height of box
+%	  a = angle in degrees between lines and x-axis
+%	 XX = 0/1 for no/yes cross-hatch
+%
+/PatternFill {gsave /PFa [ 9 2 roll ] def
+  PFa 0 get PFa 2 get 2 div add PFa 1 get PFa 3 get 2 div add translate
+  PFa 2 get -2 div PFa 3 get -2 div PFa 2 get PFa 3 get Rec
+  TransparentPatterns {} {gsave 1 setgray fill grestore} ifelse
+  clip
+  currentlinewidth 0.5 mul setlinewidth
+  /PFs PFa 2 get dup mul PFa 3 get dup mul add sqrt def
+  0 0 M PFa 5 get rotate PFs -2 div dup translate
+  0 1 PFs PFa 4 get div 1 add floor cvi
+	{PFa 4 get mul 0 M 0 PFs V} for
+  0 PFa 6 get ne {
+	0 1 PFs PFa 4 get div 1 add floor cvi
+	{PFa 4 get mul 0 2 1 roll M PFs 0 V} for
+ } if
+  stroke grestore} def
+%
+/languagelevel where
+ {pop languagelevel} {1} ifelse
+dup 2 lt
+	{/InterpretLevel1 true def
+	 /InterpretLevel3 false def}
+	{/InterpretLevel1 Level1 def
+	 2 gt
+	    {/InterpretLevel3 Level3 def}
+	    {/InterpretLevel3 false def}
+	 ifelse }
+ ifelse
+%
+% PostScript level 2 pattern fill definitions
+%
+/Level2PatternFill {
+/Tile8x8 {/PaintType 2 /PatternType 1 /TilingType 1 /BBox [0 0 8 8] /XStep 8 /YStep 8}
+	bind def
+/KeepColor {currentrgbcolor [/Pattern /DeviceRGB] setcolorspace} bind def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop 0 0 M 8 8 L 0 8 M 8 0 L stroke} 
+>> matrix makepattern
+/Pat1 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop 0 0 M 8 8 L 0 8 M 8 0 L stroke
+	0 4 M 4 8 L 8 4 L 4 0 L 0 4 L stroke}
+>> matrix makepattern
+/Pat2 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop 0 0 M 0 8 L
+	8 8 L 8 0 L 0 0 L fill}
+>> matrix makepattern
+/Pat3 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop -4 8 M 8 -4 L
+	0 12 M 12 0 L stroke}
+>> matrix makepattern
+/Pat4 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop -4 0 M 8 12 L
+	0 -4 M 12 8 L stroke}
+>> matrix makepattern
+/Pat5 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop -2 8 M 4 -4 L
+	0 12 M 8 -4 L 4 12 M 10 0 L stroke}
+>> matrix makepattern
+/Pat6 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop -2 0 M 4 12 L
+	0 -4 M 8 12 L 4 -4 M 10 8 L stroke}
+>> matrix makepattern
+/Pat7 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop 8 -2 M -4 4 L
+	12 0 M -4 8 L 12 4 M 0 10 L stroke}
+>> matrix makepattern
+/Pat8 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop 0 -2 M 12 4 L
+	-4 0 M 12 8 L -4 4 M 8 10 L stroke}
+>> matrix makepattern
+/Pat9 exch def
+/Pattern1 {PatternBgnd KeepColor Pat1 setpattern} bind def
+/Pattern2 {PatternBgnd KeepColor Pat2 setpattern} bind def
+/Pattern3 {PatternBgnd KeepColor Pat3 setpattern} bind def
+/Pattern4 {PatternBgnd KeepColor Landscape {Pat5} {Pat4} ifelse setpattern} bind def
+/Pattern5 {PatternBgnd KeepColor Landscape {Pat4} {Pat5} ifelse setpattern} bind def
+/Pattern6 {PatternBgnd KeepColor Landscape {Pat9} {Pat6} ifelse setpattern} bind def
+/Pattern7 {PatternBgnd KeepColor Landscape {Pat8} {Pat7} ifelse setpattern} bind def
+} def
+%
+%
+%End of PostScript Level 2 code
+%
+/PatternBgnd {
+  TransparentPatterns {} {gsave 1 setgray fill grestore} ifelse
+} def
+%
+% Substitute for Level 2 pattern fill codes with
+% grayscale if Level 2 support is not selected.
+%
+/Level1PatternFill {
+/Pattern1 {0.250 Density} bind def
+/Pattern2 {0.500 Density} bind def
+/Pattern3 {0.750 Density} bind def
+/Pattern4 {0.125 Density} bind def
+/Pattern5 {0.375 Density} bind def
+/Pattern6 {0.625 Density} bind def
+/Pattern7 {0.875 Density} bind def
+} def
+%
+% Now test for support of Level 2 code
+%
+Level1 {Level1PatternFill} {Level2PatternFill} ifelse
+%
+/Symbol-Oblique /Symbol findfont [1 0 .167 1 0 0] makefont
+dup length dict begin {1 index /FID eq {pop pop} {def} ifelse} forall
+currentdict end definefont pop
+%
+/Metrics {ExtendTextBox Gswidth} def
+/Lwidth {currentpoint stroke M 0 vshift R Metrics} def
+/Rwidth {currentpoint stroke M dup stringwidth pop neg vshift R Metrics} def
+/Cwidth {currentpoint stroke M dup stringwidth pop -2 div vshift R Metrics} def
+/GLwidth {currentpoint stroke M 0 vshift R {ExtendTextBox} forall} def
+/GRwidth {currentpoint stroke M dup Gwidth vshift R {ExtendTextBox} forall} def
+/GCwidth {currentpoint stroke M dup Gwidth 2 div vshift R {ExtendTextBox} forall} def
+/GLwidth2 {0 Gwidth AddGlyphWidth} def
+/GRwidth2 {Gwidth -1 mul 0 AddGlyphWidth} def
+/GCwidth2 {Gwidth 2 div dup -1 mul AddGlyphWidth} def
+/AddGlyphWidth { dup TBx2 gt {userdict /TBx2 3 -1 roll put} {pop} ifelse
+                 dup TBx1 lt {userdict /TBx1 3 -1 roll put} {pop} ifelse } def
+/MFshow {
+   { dup 5 get 3 ge
+     { 5 get 3 eq {gsave} {grestore} ifelse }
+     {dup dup 0 get findfont exch 1 get scalefont setfont
+     [ currentpoint ] exch dup 2 get 0 exch R dup 5 get 2 ne {dup dup 6
+     get exch 4 get {textshow} {Metrics pop 0 R} ifelse }if dup 5 get 0 eq
+     {dup 3 get {2 get neg 0 exch R pop} {pop aload pop M} ifelse} {dup 5
+     get 1 eq {dup 2 get exch dup 3 get exch 6 get Gswidth pop -2 div
+     dup 0 R} {dup 6 get Gswidth pop -2 div 0 R 6 get
+     textshow 2 index {aload pop M neg 3 -1 roll neg R pop pop} {pop pop pop
+     pop aload pop M} ifelse }ifelse }ifelse }
+     ifelse }
+   forall} def
+/Gswidth {dup type /stringtype eq {stringwidth} {pop (n) stringwidth} ifelse} def
+/MFwidth {0 exch { dup 5 get 3 ge { 5 get 3 eq { 0 } { pop } ifelse }
+ {dup 3 get{dup dup 0 get findfont exch 1 get scalefont setfont
+     6 get Gswidth pop add} {pop} ifelse} ifelse} forall} def
+/MLshow { currentpoint stroke M
+  0 exch R
+  Blacktext {gsave 0 setgray MFshow grestore} {MFshow} ifelse } bind def
+/MRshow { currentpoint stroke M
+  exch dup MFwidth neg 3 -1 roll R
+  Blacktext {gsave 0 setgray MFshow grestore} {MFshow} ifelse } bind def
+/MCshow { currentpoint stroke M
+  exch dup MFwidth -2 div 3 -1 roll R
+  Blacktext {gsave 0 setgray MFshow grestore} {MFshow} ifelse } bind def
+/XYsave    { [( ) 1 2 true false 3 ()] } bind def
+/XYrestore { [( ) 1 2 true false 4 ()] } bind def
+Level1 SuppressPDFMark or 
+{} {
+/SDict 10 dict def
+systemdict /pdfmark known not {
+  userdict /pdfmark systemdict /cleartomark get put
+} if
+SDict begin [
+  /Title (/home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/blast/chrI-x-SRR6130428/chrI-x-SRR6130428_megablast.dnadiff.ps)
+  /Subject (gnuplot plot)
+  /Creator (gnuplot 5.4 patchlevel 2)
+%  /Producer (gnuplot)
+%  /Keywords ()
+  /CreationDate (Mon Nov  4 20:32:29 2024)
+  /DOCINFO pdfmark
+end
+} ifelse
+%
+% Support for boxed text - Ethan A Merritt Sep 2016
+%
+/InitTextBox { userdict /TBy2 3 -1 roll put userdict /TBx2 3 -1 roll put
+           userdict /TBy1 3 -1 roll put userdict /TBx1 3 -1 roll put
+	   /Boxing true def } def
+/ExtendTextBox { dup type /stringtype eq
+    { Boxing { gsave dup false charpath pathbbox
+      dup TBy2 gt {userdict /TBy2 3 -1 roll put} {pop} ifelse
+      dup TBx2 gt {userdict /TBx2 3 -1 roll put} {pop} ifelse
+      dup TBy1 lt {userdict /TBy1 3 -1 roll put} {pop} ifelse
+      dup TBx1 lt {userdict /TBx1 3 -1 roll put} {pop} ifelse
+      grestore } if }
+    {} ifelse} def
+/PopTextBox { newpath TBx1 TBxmargin sub TBy1 TBymargin sub M
+               TBx1 TBxmargin sub TBy2 TBymargin add L
+	       TBx2 TBxmargin add TBy2 TBymargin add L
+	       TBx2 TBxmargin add TBy1 TBymargin sub L closepath } def
+/DrawTextBox { PL PopTextBox stroke /Boxing false def} def
+/FillTextBox { gsave PopTextBox fill grestore /Boxing false def} def
+0 0 0 0 InitTextBox
+/TBxmargin 20 def
+/TBymargin 20 def
+/Boxing false def
+/textshow { ExtendTextBox Gshow } def
+%
+end
+%%EndProlog
+%%Page: 1 1
+gnudict begin
+gsave
+doclip
+50 50 translate
+0.100 0.100 scale
+90 rotate
+0 -5040 translate
+0 setgray
+newpath
+(Courier) findfont 80 scalefont setfont
+BackgroundColor 0 lt 3 1 roll 0 lt exch 0 lt or or not {gsave BackgroundColor C clippath fill grestore} if
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 336 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 336 M
+21013 0 R
+stroke
+392 336 M
+[ [(Courier) 80.0 0.0 true true 0 (7310)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+/vshift -26 def
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 358 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 358 M
+21013 0 R
+stroke
+392 358 M
+[ [(Courier) 80.0 0.0 true true 0 (6314)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 363 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 363 M
+21013 0 R
+stroke
+392 363 M
+[ [(Courier) 80.0 0.0 true true 0 (*6116)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 368 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 368 M
+21013 0 R
+stroke
+392 368 M
+[ [(Courier) 80.0 0.0 true true 0 (*4212)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 370 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 370 M
+21013 0 R
+stroke
+392 370 M
+[ [(Courier) 80.0 0.0 true true 0 (5278)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 373 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 373 M
+21013 0 R
+stroke
+392 373 M
+[ [(Courier) 80.0 0.0 true true 0 (5544)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 376 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 376 M
+21013 0 R
+stroke
+392 376 M
+[ [(Courier) 80.0 0.0 true true 0 (*4868)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 379 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 379 M
+21013 0 R
+stroke
+392 379 M
+[ [(Courier) 80.0 0.0 true true 0 (*4484)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 381 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 381 M
+21013 0 R
+stroke
+392 381 M
+[ [(Courier) 80.0 0.0 true true 0 (*4032)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 383 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 383 M
+21013 0 R
+stroke
+392 383 M
+[ [(Courier) 80.0 0.0 true true 0 (*6664)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 391 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 391 M
+21013 0 R
+stroke
+392 391 M
+[ [(Courier) 80.0 0.0 true true 0 (*8170)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 469 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 469 M
+21013 0 R
+stroke
+392 469 M
+[ [(Courier) 80.0 0.0 true true 0 (8342)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 563 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 563 M
+21013 0 R
+stroke
+392 563 M
+[ [(Courier) 80.0 0.0 true true 0 (*5640)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 566 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 566 M
+21013 0 R
+stroke
+392 566 M
+[ [(Courier) 80.0 0.0 true true 0 (5152)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 569 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 569 M
+21013 0 R
+stroke
+392 569 M
+[ [(Courier) 80.0 0.0 true true 0 (5752)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 573 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 573 M
+21013 0 R
+stroke
+392 573 M
+[ [(Courier) 80.0 0.0 true true 0 (*3950)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 575 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 575 M
+21013 0 R
+stroke
+392 575 M
+[ [(Courier) 80.0 0.0 true true 0 (*4854)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 577 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 577 M
+21013 0 R
+stroke
+392 577 M
+[ [(Courier) 80.0 0.0 true true 0 (*6430)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 583 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 583 M
+21013 0 R
+stroke
+392 583 M
+[ [(Courier) 80.0 0.0 true true 0 (*6958)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 595 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 595 M
+21013 0 R
+stroke
+392 595 M
+[ [(Courier) 80.0 0.0 true true 0 (5272)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 598 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 598 M
+21013 0 R
+stroke
+392 598 M
+[ [(Courier) 80.0 0.0 true true 0 (7510)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 629 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 629 M
+21013 0 R
+stroke
+392 629 M
+[ [(Courier) 80.0 0.0 true true 0 (5870)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 634 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 634 M
+21013 0 R
+stroke
+392 634 M
+[ [(Courier) 80.0 0.0 true true 0 (6872)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 643 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 643 M
+21013 0 R
+stroke
+392 643 M
+[ [(Courier) 80.0 0.0 true true 0 (*7500)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 674 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 674 M
+21013 0 R
+stroke
+392 674 M
+[ [(Courier) 80.0 0.0 true true 0 (6602)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 681 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 681 M
+21013 0 R
+stroke
+392 681 M
+[ [(Courier) 80.0 0.0 true true 0 (6844)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 691 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 691 M
+21013 0 R
+stroke
+392 691 M
+[ [(Courier) 80.0 0.0 true true 0 (*5228)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 693 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 693 M
+21013 0 R
+stroke
+392 693 M
+[ [(Courier) 80.0 0.0 true true 0 (6688)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 701 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 701 M
+21013 0 R
+stroke
+392 701 M
+[ [(Courier) 80.0 0.0 true true 0 (*6932)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 712 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 712 M
+21013 0 R
+stroke
+392 712 M
+[ [(Courier) 80.0 0.0 true true 0 (5646)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 715 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 715 M
+21013 0 R
+stroke
+392 715 M
+[ [(Courier) 80.0 0.0 true true 0 (6792)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 724 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 724 M
+21013 0 R
+stroke
+392 724 M
+[ [(Courier) 80.0 0.0 true true 0 (*5760)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 728 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 728 M
+21013 0 R
+stroke
+392 728 M
+[ [(Courier) 80.0 0.0 true true 0 (7102)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 743 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 743 M
+21013 0 R
+stroke
+392 743 M
+[ [(Courier) 80.0 0.0 true true 0 (*6210)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 748 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 748 M
+21013 0 R
+stroke
+392 748 M
+[ [(Courier) 80.0 0.0 true true 0 (*7026)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 761 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 761 M
+21013 0 R
+stroke
+392 761 M
+[ [(Courier) 80.0 0.0 true true 0 (*5918)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 765 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 765 M
+21013 0 R
+stroke
+392 765 M
+[ [(Courier) 80.0 0.0 true true 0 (6948)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 776 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 776 M
+21013 0 R
+stroke
+392 776 M
+[ [(Courier) 80.0 0.0 true true 0 (5952)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 780 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 780 M
+21013 0 R
+stroke
+392 780 M
+[ [(Courier) 80.0 0.0 true true 0 (*3851)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 782 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 782 M
+21013 0 R
+stroke
+392 782 M
+[ [(Courier) 80.0 0.0 true true 0 (*3914)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 784 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 784 M
+21013 0 R
+stroke
+392 784 M
+[ [(Courier) 80.0 0.0 true true 0 (6454)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 790 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 790 M
+21013 0 R
+stroke
+392 790 M
+[ [(Courier) 80.0 0.0 true true 0 (4908)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 793 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 793 M
+21013 0 R
+stroke
+392 793 M
+[ [(Courier) 80.0 0.0 true true 0 (*5882)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 797 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 797 M
+21013 0 R
+stroke
+392 797 M
+[ [(Courier) 80.0 0.0 true true 0 (6488)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 803 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 803 M
+21013 0 R
+stroke
+392 803 M
+[ [(Courier) 80.0 0.0 true true 0 (*5438)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 806 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 806 M
+21013 0 R
+stroke
+392 806 M
+[ [(Courier) 80.0 0.0 true true 0 (6004)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 811 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 811 M
+21013 0 R
+stroke
+392 811 M
+[ [(Courier) 80.0 0.0 true true 0 (*4564)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 813 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 813 M
+21013 0 R
+stroke
+392 813 M
+[ [(Courier) 80.0 0.0 true true 0 (4962)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 816 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 816 M
+21013 0 R
+stroke
+392 816 M
+[ [(Courier) 80.0 0.0 true true 0 (*6830)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 824 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 824 M
+21013 0 R
+stroke
+392 824 M
+[ [(Courier) 80.0 0.0 true true 0 (*6254)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 830 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 830 M
+21013 0 R
+stroke
+392 830 M
+[ [(Courier) 80.0 0.0 true true 0 (8712)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 969 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 969 M
+21013 0 R
+stroke
+392 969 M
+[ [(Courier) 80.0 0.0 true true 0 (8640)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 1098 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 1098 M
+21013 0 R
+stroke
+392 1098 M
+[ [(Courier) 80.0 0.0 true true 0 (7090)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 1113 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 1113 M
+21013 0 R
+stroke
+392 1113 M
+[ [(Courier) 80.0 0.0 true true 0 (*7840)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 1165 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 1165 M
+21013 0 R
+stroke
+392 1165 M
+[ [(Courier) 80.0 0.0 true true 0 (*9450)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 1534 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 1534 M
+21013 0 R
+stroke
+392 1534 M
+[ [(Courier) 80.0 0.0 true true 0 (*7780)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 1581 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 1581 M
+21013 0 R
+stroke
+392 1581 M
+[ [(Courier) 80.0 0.0 true true 0 (*7504)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 1613 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 1613 M
+21013 0 R
+stroke
+392 1613 M
+[ [(Courier) 80.0 0.0 true true 0 (*6198)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 1618 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 1618 M
+21013 0 R
+stroke
+392 1618 M
+[ [(Courier) 80.0 0.0 true true 0 (7112)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 1633 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 1633 M
+21013 0 R
+stroke
+392 1633 M
+[ [(Courier) 80.0 0.0 true true 0 (6984)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 1645 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 1645 M
+21013 0 R
+stroke
+392 1645 M
+[ [(Courier) 80.0 0.0 true true 0 (*7990)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 1710 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 1710 M
+21013 0 R
+stroke
+392 1710 M
+[ [(Courier) 80.0 0.0 true true 0 (9372)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 2034 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 2034 M
+21013 0 R
+stroke
+392 2034 M
+[ [(Courier) 80.0 0.0 true true 0 (*8816)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 2194 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 2194 M
+21013 0 R
+stroke
+392 2194 M
+[ [(Courier) 80.0 0.0 true true 0 (8692)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 2332 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 2332 M
+21013 0 R
+stroke
+392 2332 M
+[ [(Courier) 80.0 0.0 true true 0 (*9388)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 2663 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 2663 M
+21013 0 R
+stroke
+392 2663 M
+[ [(Courier) 80.0 0.0 true true 0 (6006)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 2668 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 2668 M
+21013 0 R
+stroke
+392 2668 M
+[ [(Courier) 80.0 0.0 true true 0 (*7328)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 2690 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 2690 M
+21013 0 R
+stroke
+392 2690 M
+[ [(Courier) 80.0 0.0 true true 0 (9036)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 2895 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 2895 M
+21013 0 R
+stroke
+392 2895 M
+[ [(Courier) 80.0 0.0 true true 0 (*8364)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 2992 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 2992 M
+21013 0 R
+stroke
+392 2992 M
+[ [(Courier) 80.0 0.0 true true 0 (*6862)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3001 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3001 M
+21013 0 R
+stroke
+392 3001 M
+[ [(Courier) 80.0 0.0 true true 0 (*6606)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3008 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3008 M
+21013 0 R
+stroke
+392 3008 M
+[ [(Courier) 80.0 0.0 true true 0 (5226)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3011 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3011 M
+21013 0 R
+stroke
+392 3011 M
+[ [(Courier) 80.0 0.0 true true 0 (*7202)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3030 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3030 M
+21013 0 R
+stroke
+392 3030 M
+[ [(Courier) 80.0 0.0 true true 0 (7326)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3052 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3052 M
+21013 0 R
+stroke
+392 3052 M
+[ [(Courier) 80.0 0.0 true true 0 (*7358)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3076 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3076 M
+21013 0 R
+stroke
+392 3076 M
+[ [(Courier) 80.0 0.0 true true 0 (7344)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3099 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3099 M
+21013 0 R
+stroke
+392 3099 M
+[ [(Courier) 80.0 0.0 true true 0 (*8678)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3235 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3235 M
+21013 0 R
+stroke
+392 3235 M
+[ [(Courier) 80.0 0.0 true true 0 (*7812)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3285 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3285 M
+21013 0 R
+stroke
+392 3285 M
+[ [(Courier) 80.0 0.0 true true 0 (*8402)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3385 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3385 M
+21013 0 R
+stroke
+392 3385 M
+[ [(Courier) 80.0 0.0 true true 0 (*3893)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3387 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3387 M
+21013 0 R
+stroke
+392 3387 M
+[ [(Courier) 80.0 0.0 true true 0 (*4568)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3390 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3390 M
+21013 0 R
+stroke
+392 3390 M
+[ [(Courier) 80.0 0.0 true true 0 (4724)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3392 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3392 M
+21013 0 R
+stroke
+392 3392 M
+[ [(Courier) 80.0 0.0 true true 0 (*3853)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3394 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3394 M
+21013 0 R
+stroke
+392 3394 M
+[ [(Courier) 80.0 0.0 true true 0 (3979)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3396 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3396 M
+21013 0 R
+stroke
+392 3396 M
+[ [(Courier) 80.0 0.0 true true 0 (4594)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3399 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3399 M
+21013 0 R
+stroke
+392 3399 M
+[ [(Courier) 80.0 0.0 true true 0 (*4011)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3401 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3401 M
+21013 0 R
+stroke
+392 3401 M
+[ [(Courier) 80.0 0.0 true true 0 (*4560)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3403 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3403 M
+21013 0 R
+stroke
+392 3403 M
+[ [(Courier) 80.0 0.0 true true 0 (*4508)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3405 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3405 M
+21013 0 R
+stroke
+392 3405 M
+[ [(Courier) 80.0 0.0 true true 0 (*3928)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3407 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3407 M
+21013 0 R
+stroke
+392 3407 M
+[ [(Courier) 80.0 0.0 true true 0 (*4482)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3410 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3410 M
+21013 0 R
+stroke
+392 3410 M
+[ [(Courier) 80.0 0.0 true true 0 (*3885)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3412 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3412 M
+21013 0 R
+stroke
+392 3412 M
+[ [(Courier) 80.0 0.0 true true 0 (4019)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3414 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3414 M
+21013 0 R
+stroke
+392 3414 M
+[ [(Courier) 80.0 0.0 true true 0 (*4160)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3416 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3416 M
+21013 0 R
+stroke
+392 3416 M
+[ [(Courier) 80.0 0.0 true true 0 (*4680)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3419 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3419 M
+21013 0 R
+stroke
+392 3419 M
+[ [(Courier) 80.0 0.0 true true 0 (*4704)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3421 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3421 M
+21013 0 R
+stroke
+392 3421 M
+[ [(Courier) 80.0 0.0 true true 0 (5508)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3424 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3424 M
+21013 0 R
+stroke
+392 3424 M
+[ [(Courier) 80.0 0.0 true true 0 (*4910)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3427 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3427 M
+21013 0 R
+stroke
+392 3427 M
+[ [(Courier) 80.0 0.0 true true 0 (4278)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3429 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3429 M
+21013 0 R
+stroke
+392 3429 M
+[ [(Courier) 80.0 0.0 true true 0 (3985)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3431 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3431 M
+21013 0 R
+stroke
+392 3431 M
+[ [(Courier) 80.0 0.0 true true 0 (*5402)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3434 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3434 M
+21013 0 R
+stroke
+392 3434 M
+[ [(Courier) 80.0 0.0 true true 0 (5012)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3437 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3437 M
+21013 0 R
+stroke
+392 3437 M
+[ [(Courier) 80.0 0.0 true true 0 (5104)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3440 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3440 M
+21013 0 R
+stroke
+392 3440 M
+[ [(Courier) 80.0 0.0 true true 0 (*4774)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3442 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3442 M
+21013 0 R
+stroke
+392 3442 M
+[ [(Courier) 80.0 0.0 true true 0 (5360)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3445 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3445 M
+21013 0 R
+stroke
+392 3445 M
+[ [(Courier) 80.0 0.0 true true 0 (*4544)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3448 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3448 M
+21013 0 R
+stroke
+392 3448 M
+[ [(Courier) 80.0 0.0 true true 0 (5414)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3451 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3451 M
+21013 0 R
+stroke
+392 3451 M
+[ [(Courier) 80.0 0.0 true true 0 (*5160)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3454 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3454 M
+21013 0 R
+stroke
+392 3454 M
+[ [(Courier) 80.0 0.0 true true 0 (4622)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3456 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3456 M
+21013 0 R
+stroke
+392 3456 M
+[ [(Courier) 80.0 0.0 true true 0 (*5426)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3459 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3459 M
+21013 0 R
+stroke
+392 3459 M
+[ [(Courier) 80.0 0.0 true true 0 (*3973)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3462 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3462 M
+21013 0 R
+stroke
+392 3462 M
+[ [(Courier) 80.0 0.0 true true 0 (*3811)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3464 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3464 M
+21013 0 R
+stroke
+392 3464 M
+[ [(Courier) 80.0 0.0 true true 0 (*4344)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3466 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3466 M
+21013 0 R
+stroke
+392 3466 M
+[ [(Courier) 80.0 0.0 true true 0 (*4690)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3468 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3468 M
+21013 0 R
+stroke
+392 3468 M
+[ [(Courier) 80.0 0.0 true true 0 (5058)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3471 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3471 M
+21013 0 R
+stroke
+392 3471 M
+[ [(Courier) 80.0 0.0 true true 0 (*4730)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3473 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3473 M
+21013 0 R
+stroke
+392 3473 M
+[ [(Courier) 80.0 0.0 true true 0 (*5818)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3477 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3477 M
+21013 0 R
+stroke
+392 3477 M
+[ [(Courier) 80.0 0.0 true true 0 (4266)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3479 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3479 M
+21013 0 R
+stroke
+392 3479 M
+[ [(Courier) 80.0 0.0 true true 0 (*4236)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3482 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3482 M
+21013 0 R
+stroke
+392 3482 M
+[ [(Courier) 80.0 0.0 true true 0 (4444)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3484 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3484 M
+21013 0 R
+stroke
+392 3484 M
+[ [(Courier) 80.0 0.0 true true 0 (6152)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3489 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3489 M
+21013 0 R
+stroke
+392 3489 M
+[ [(Courier) 80.0 0.0 true true 0 (*5138)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3492 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3492 M
+21013 0 R
+stroke
+392 3492 M
+[ [(Courier) 80.0 0.0 true true 0 (*5400)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3495 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3495 M
+21013 0 R
+stroke
+392 3495 M
+[ [(Courier) 80.0 0.0 true true 0 (*4546)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3497 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3497 M
+21013 0 R
+stroke
+392 3497 M
+[ [(Courier) 80.0 0.0 true true 0 (*6654)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3505 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3505 M
+21013 0 R
+stroke
+392 3505 M
+[ [(Courier) 80.0 0.0 true true 0 (*4392)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3507 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3507 M
+21013 0 R
+stroke
+392 3507 M
+[ [(Courier) 80.0 0.0 true true 0 (4374)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3509 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3509 M
+21013 0 R
+stroke
+392 3509 M
+[ [(Courier) 80.0 0.0 true true 0 (5184)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3512 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3512 M
+21013 0 R
+stroke
+392 3512 M
+[ [(Courier) 80.0 0.0 true true 0 (*5724)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3516 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3516 M
+21013 0 R
+stroke
+392 3516 M
+[ [(Courier) 80.0 0.0 true true 0 (*5328)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3519 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3519 M
+21013 0 R
+stroke
+392 3519 M
+[ [(Courier) 80.0 0.0 true true 0 (*4028)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3521 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3521 M
+21013 0 R
+stroke
+392 3521 M
+[ [(Courier) 80.0 0.0 true true 0 (*3981)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3523 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3523 M
+21013 0 R
+stroke
+392 3523 M
+[ [(Courier) 80.0 0.0 true true 0 (4666)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3526 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3526 M
+21013 0 R
+stroke
+392 3526 M
+[ [(Courier) 80.0 0.0 true true 0 (*4356)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3528 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3528 M
+21013 0 R
+stroke
+392 3528 M
+[ [(Courier) 80.0 0.0 true true 0 (5914)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3532 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3532 M
+21013 0 R
+stroke
+392 3532 M
+[ [(Courier) 80.0 0.0 true true 0 (*8450)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3639 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3639 M
+21013 0 R
+stroke
+392 3639 M
+[ [(Courier) 80.0 0.0 true true 0 (8274)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3727 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3727 M
+21013 0 R
+stroke
+392 3727 M
+[ [(Courier) 80.0 0.0 true true 0 (*4764)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3729 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3729 M
+21013 0 R
+stroke
+392 3729 M
+[ [(Courier) 80.0 0.0 true true 0 (*6208)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3734 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3734 M
+21013 0 R
+stroke
+392 3734 M
+[ [(Courier) 80.0 0.0 true true 0 (8176)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3813 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3813 M
+21013 0 R
+stroke
+392 3813 M
+[ [(Courier) 80.0 0.0 true true 0 (*7388)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3838 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3838 M
+21013 0 R
+stroke
+392 3838 M
+[ [(Courier) 80.0 0.0 true true 0 (4952)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3841 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3841 M
+21013 0 R
+stroke
+392 3841 M
+[ [(Courier) 80.0 0.0 true true 0 (5072)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3843 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3843 M
+21013 0 R
+stroke
+392 3843 M
+[ [(Courier) 80.0 0.0 true true 0 (*4448)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3846 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3846 M
+21013 0 R
+stroke
+392 3846 M
+[ [(Courier) 80.0 0.0 true true 0 (6346)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3851 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3851 M
+21013 0 R
+stroke
+392 3851 M
+[ [(Courier) 80.0 0.0 true true 0 (6352)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3857 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3857 M
+21013 0 R
+stroke
+392 3857 M
+[ [(Courier) 80.0 0.0 true true 0 (*4976)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3860 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3860 M
+21013 0 R
+stroke
+392 3860 M
+[ [(Courier) 80.0 0.0 true true 0 (5738)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3863 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3863 M
+21013 0 R
+stroke
+392 3863 M
+[ [(Courier) 80.0 0.0 true true 0 (5294)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3866 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3866 M
+21013 0 R
+stroke
+392 3866 M
+[ [(Courier) 80.0 0.0 true true 0 (8076)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3936 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3936 M
+21013 0 R
+stroke
+392 3936 M
+[ [(Courier) 80.0 0.0 true true 0 (*6392)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3942 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3942 M
+21013 0 R
+stroke
+392 3942 M
+[ [(Courier) 80.0 0.0 true true 0 (6874)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3951 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3951 M
+21013 0 R
+stroke
+392 3951 M
+[ [(Courier) 80.0 0.0 true true 0 (5580)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3955 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3955 M
+21013 0 R
+stroke
+392 3955 M
+[ [(Courier) 80.0 0.0 true true 0 (*6092)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3959 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3959 M
+21013 0 R
+stroke
+392 3959 M
+[ [(Courier) 80.0 0.0 true true 0 (*6546)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3966 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3966 M
+21013 0 R
+stroke
+392 3966 M
+[ [(Courier) 80.0 0.0 true true 0 (6632)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3973 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3973 M
+21013 0 R
+stroke
+392 3973 M
+[ [(Courier) 80.0 0.0 true true 0 (6370)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3979 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3979 M
+21013 0 R
+stroke
+392 3979 M
+[ [(Courier) 80.0 0.0 true true 0 (*5642)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3982 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3982 M
+21013 0 R
+stroke
+392 3982 M
+[ [(Courier) 80.0 0.0 true true 0 (*5396)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 3986 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 3986 M
+21013 0 R
+stroke
+392 3986 M
+[ [(Courier) 80.0 0.0 true true 0 (7870)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4040 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4040 M
+21013 0 R
+stroke
+392 4040 M
+[ [(Courier) 80.0 0.0 true true 0 (8682)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4176 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4176 M
+21013 0 R
+stroke
+392 4176 M
+[ [(Courier) 80.0 0.0 true true 0 (*8024)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4242 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4242 M
+21013 0 R
+stroke
+392 4242 M
+[ [(Courier) 80.0 0.0 true true 0 (6544)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4249 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4249 M
+21013 0 R
+stroke
+392 4249 M
+[ [(Courier) 80.0 0.0 true true 0 (6824)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4258 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4258 M
+21013 0 R
+stroke
+392 4258 M
+[ [(Courier) 80.0 0.0 true true 0 (*5284)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4261 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4261 M
+21013 0 R
+stroke
+392 4261 M
+[ [(Courier) 80.0 0.0 true true 0 (4108)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4263 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4263 M
+21013 0 R
+stroke
+392 4263 M
+[ [(Courier) 80.0 0.0 true true 0 (*5588)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4267 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4267 M
+21013 0 R
+stroke
+392 4267 M
+[ [(Courier) 80.0 0.0 true true 0 (*5174)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4270 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4270 M
+21013 0 R
+stroke
+392 4270 M
+[ [(Courier) 80.0 0.0 true true 0 (6120)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4274 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4274 M
+21013 0 R
+stroke
+392 4274 M
+[ [(Courier) 80.0 0.0 true true 0 (*5658)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4278 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4278 M
+21013 0 R
+stroke
+392 4278 M
+[ [(Courier) 80.0 0.0 true true 0 (*4994)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4280 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4280 M
+21013 0 R
+stroke
+392 4280 M
+[ [(Courier) 80.0 0.0 true true 0 (6016)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4285 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4285 M
+21013 0 R
+stroke
+392 4285 M
+[ [(Courier) 80.0 0.0 true true 0 (6656)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4292 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4292 M
+21013 0 R
+stroke
+392 4292 M
+[ [(Courier) 80.0 0.0 true true 0 (6322)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4298 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4298 M
+21013 0 R
+stroke
+392 4298 M
+[ [(Courier) 80.0 0.0 true true 0 (*5550)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4301 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4301 M
+21013 0 R
+stroke
+392 4301 M
+[ [(Courier) 80.0 0.0 true true 0 (*6410)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4307 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4307 M
+21013 0 R
+stroke
+392 4307 M
+[ [(Courier) 80.0 0.0 true true 0 (4972)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4309 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4309 M
+21013 0 R
+stroke
+392 4309 M
+[ [(Courier) 80.0 0.0 true true 0 (5158)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4312 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4312 M
+21013 0 R
+stroke
+392 4312 M
+[ [(Courier) 80.0 0.0 true true 0 (*6490)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4319 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4319 M
+21013 0 R
+stroke
+392 4319 M
+[ [(Courier) 80.0 0.0 true true 0 (*5374)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4322 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4322 M
+21013 0 R
+stroke
+392 4322 M
+[ [(Courier) 80.0 0.0 true true 0 (6206)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4327 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4327 M
+21013 0 R
+stroke
+392 4327 M
+[ [(Courier) 80.0 0.0 true true 0 (6444)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4333 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4333 M
+21013 0 R
+stroke
+392 4333 M
+[ [(Courier) 80.0 0.0 true true 0 (*5892)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4337 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4337 M
+21013 0 R
+stroke
+392 4337 M
+[ [(Courier) 80.0 0.0 true true 0 (6908)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4347 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4347 M
+21013 0 R
+stroke
+392 4347 M
+[ [(Courier) 80.0 0.0 true true 0 (*4206)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4349 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4349 M
+21013 0 R
+stroke
+392 4349 M
+[ [(Courier) 80.0 0.0 true true 0 (*5866)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4353 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4353 M
+21013 0 R
+stroke
+392 4353 M
+[ [(Courier) 80.0 0.0 true true 0 (4102)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4356 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4356 M
+21013 0 R
+stroke
+392 4356 M
+[ [(Courier) 80.0 0.0 true true 0 (7092)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4370 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4370 M
+21013 0 R
+stroke
+392 4370 M
+[ [(Courier) 80.0 0.0 true true 0 (5986)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4375 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4375 M
+21013 0 R
+stroke
+392 4375 M
+[ [(Courier) 80.0 0.0 true true 0 (*5422)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4378 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4378 M
+21013 0 R
+stroke
+392 4378 M
+[ [(Courier) 80.0 0.0 true true 0 (4934)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4380 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4380 M
+21013 0 R
+stroke
+392 4380 M
+[ [(Courier) 80.0 0.0 true true 0 (5762)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4384 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4384 M
+21013 0 R
+stroke
+392 4384 M
+[ [(Courier) 80.0 0.0 true true 0 (*6066)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4389 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4389 M
+21013 0 R
+stroke
+392 4389 M
+[ [(Courier) 80.0 0.0 true true 0 (*6796)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4397 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4397 M
+21013 0 R
+stroke
+392 4397 M
+[ [(Courier) 80.0 0.0 true true 0 (*5734)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4401 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4401 M
+21013 0 R
+stroke
+392 4401 M
+[ [(Courier) 80.0 0.0 true true 0 (6930)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4412 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4412 M
+21013 0 R
+stroke
+392 4412 M
+[ [(Courier) 80.0 0.0 true true 0 (6696)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4419 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4419 M
+21013 0 R
+stroke
+392 4419 M
+[ [(Courier) 80.0 0.0 true true 0 (5230)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4422 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4422 M
+21013 0 R
+stroke
+392 4422 M
+[ [(Courier) 80.0 0.0 true true 0 (6834)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4431 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4431 M
+21013 0 R
+stroke
+392 4431 M
+[ [(Courier) 80.0 0.0 true true 0 (*6594)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4438 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4438 M
+21013 0 R
+stroke
+392 4438 M
+[ [(Courier) 80.0 0.0 true true 0 (*7584)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4473 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4473 M
+21013 0 R
+stroke
+392 4473 M
+[ [(Courier) 80.0 0.0 true true 0 (6836)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4482 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4482 M
+21013 0 R
+stroke
+392 4482 M
+[ [(Courier) 80.0 0.0 true true 0 (*5868)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4486 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4486 M
+21013 0 R
+stroke
+392 4486 M
+[ [(Courier) 80.0 0.0 true true 0 (7516)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4519 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4519 M
+21013 0 R
+stroke
+392 4519 M
+[ [(Courier) 80.0 0.0 true true 0 (5690)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4522 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4522 M
+21013 0 R
+stroke
+392 4522 M
+[ [(Courier) 80.0 0.0 true true 0 (*5262)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4525 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4525 M
+21013 0 R
+stroke
+392 4525 M
+[ [(Courier) 80.0 0.0 true true 0 (5988)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4530 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4530 M
+21013 0 R
+stroke
+392 4530 M
+[ [(Courier) 80.0 0.0 true true 0 (*7430)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4557 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4557 M
+21013 0 R
+stroke
+392 4557 M
+[ [(Courier) 80.0 0.0 true true 0 (*5828)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4561 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4561 M
+21013 0 R
+stroke
+392 4561 M
+[ [(Courier) 80.0 0.0 true true 0 (*7802)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4610 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4610 M
+21013 0 R
+stroke
+392 4610 M
+[ [(Courier) 80.0 0.0 true true 0 (*5574)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4614 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4614 M
+21013 0 R
+stroke
+392 4614 M
+[ [(Courier) 80.0 0.0 true true 0 (*6940)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4624 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4624 M
+21013 0 R
+stroke
+392 4624 M
+[ [(Courier) 80.0 0.0 true true 0 (7258)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4644 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4644 M
+21013 0 R
+stroke
+392 4644 M
+[ [(Courier) 80.0 0.0 true true 0 (5386)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4647 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4647 M
+21013 0 R
+stroke
+392 4647 M
+[ [(Courier) 80.0 0.0 true true 0 (*6154)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4652 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4652 M
+21013 0 R
+stroke
+392 4652 M
+[ [(Courier) 80.0 0.0 true true 0 (7498)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4683 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4683 M
+21013 0 R
+stroke
+392 4683 M
+[ [(Courier) 80.0 0.0 true true 0 (4096)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4686 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4686 M
+21013 0 R
+stroke
+392 4686 M
+[ [(Courier) 80.0 0.0 true true 0 (7360)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4710 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4710 M
+21013 0 R
+stroke
+392 4710 M
+[ [(Courier) 80.0 0.0 true true 0 (6394)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4716 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4716 M
+21013 0 R
+stroke
+392 4716 M
+[ [(Courier) 80.0 0.0 true true 0 (*6426)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4721 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4721 M
+21013 0 R
+stroke
+392 4721 M
+[ [(Courier) 80.0 0.0 true true 0 (*6692)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4729 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4729 M
+21013 0 R
+stroke
+392 4729 M
+[ [(Courier) 80.0 0.0 true true 0 (*4896)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4732 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4732 M
+21013 0 R
+stroke
+392 4732 M
+[ [(Courier) 80.0 0.0 true true 0 (*7330)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4754 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4754 M
+21013 0 R
+stroke
+392 4754 M
+[ [(Courier) 80.0 0.0 true true 0 (*7082)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4769 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4769 M
+21013 0 R
+stroke
+392 4769 M
+[ [(Courier) 80.0 0.0 true true 0 (9096)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4987 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4987 M
+21013 0 R
+stroke
+392 4987 M
+[ [(Courier) 80.0 0.0 true true 0 (4116)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4989 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4989 M
+21013 0 R
+stroke
+392 4989 M
+[ [(Courier) 80.0 0.0 true true 0 (6258)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 4994 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 4994 M
+21013 0 R
+stroke
+392 4994 M
+[ [(Courier) 80.0 0.0 true true 0 (7464)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 5023 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 5023 M
+21013 0 R
+stroke
+392 5023 M
+[ [(Courier) 80.0 0.0 true true 0 (8852)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 5190 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 5190 M
+21013 0 R
+stroke
+392 5190 M
+[ [(Courier) 80.0 0.0 true true 0 (6974)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 5202 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 5202 M
+21013 0 R
+stroke
+392 5202 M
+[ [(Courier) 80.0 0.0 true true 0 (4518)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 5204 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 5204 M
+21013 0 R
+stroke
+392 5204 M
+[ [(Courier) 80.0 0.0 true true 0 (4668)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 5206 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 5206 M
+21013 0 R
+stroke
+392 5206 M
+[ [(Courier) 80.0 0.0 true true 0 (5332)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 5209 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 5209 M
+21013 0 R
+stroke
+392 5209 M
+[ [(Courier) 80.0 0.0 true true 0 (5142)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 5212 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 5212 M
+21013 0 R
+stroke
+392 5212 M
+[ [(Courier) 80.0 0.0 true true 0 (6728)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 5220 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 5220 M
+21013 0 R
+stroke
+392 5220 M
+[ [(Courier) 80.0 0.0 true true 0 (5096)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 5223 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 5223 M
+21013 0 R
+stroke
+392 5223 M
+[ [(Courier) 80.0 0.0 true true 0 (7296)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 5244 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 5244 M
+21013 0 R
+stroke
+392 5244 M
+[ [(Courier) 80.0 0.0 true true 0 (5178)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 5247 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 5247 M
+21013 0 R
+stroke
+392 5247 M
+[ [(Courier) 80.0 0.0 true true 0 (5394)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 5250 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 5250 M
+21013 0 R
+stroke
+392 5250 M
+[ [(Courier) 80.0 0.0 true true 0 (5938)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 5254 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 5254 M
+21013 0 R
+stroke
+392 5254 M
+[ [(Courier) 80.0 0.0 true true 0 (4670)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 5257 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 5257 M
+21013 0 R
+stroke
+392 5257 M
+[ [(Courier) 80.0 0.0 true true 0 (7930)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 5317 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 5317 M
+21013 0 R
+stroke
+392 5317 M
+[ [(Courier) 80.0 0.0 true true 0 (4094)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 5319 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 5319 M
+21013 0 R
+stroke
+392 5319 M
+[ [(Courier) 80.0 0.0 true true 0 (5114)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 5321 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 5321 M
+21013 0 R
+stroke
+392 5321 M
+[ [(Courier) 80.0 0.0 true true 0 (9476)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 5711 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 5711 M
+21013 0 R
+stroke
+392 5711 M
+[ [(Courier) 80.0 0.0 true true 0 (6312)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 5716 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 5716 M
+21013 0 R
+stroke
+392 5716 M
+[ [(Courier) 80.0 0.0 true true 0 (7304)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 5737 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 5737 M
+21013 0 R
+stroke
+392 5737 M
+[ [(Courier) 80.0 0.0 true true 0 (9298)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 6020 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 6020 M
+21013 0 R
+stroke
+392 6020 M
+[ [(Courier) 80.0 0.0 true true 0 (4480)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 6023 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 6023 M
+21013 0 R
+stroke
+392 6023 M
+[ [(Courier) 80.0 0.0 true true 0 (6054)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 6027 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 6027 M
+21013 0 R
+stroke
+392 6027 M
+[ [(Courier) 80.0 0.0 true true 0 (4580)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 6030 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 6030 M
+21013 0 R
+stroke
+392 6030 M
+[ [(Courier) 80.0 0.0 true true 0 (4152)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 6032 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 6032 M
+21013 0 R
+stroke
+392 6032 M
+[ [(Courier) 80.0 0.0 true true 0 (7844)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 6084 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 6084 M
+21013 0 R
+stroke
+392 6084 M
+[ [(Courier) 80.0 0.0 true true 0 (6638)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 6091 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 6091 M
+21013 0 R
+stroke
+392 6091 M
+[ [(Courier) 80.0 0.0 true true 0 (7098)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 6106 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 6106 M
+21013 0 R
+stroke
+392 6106 M
+[ [(Courier) 80.0 0.0 true true 0 (8736)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 6251 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 6251 M
+21013 0 R
+stroke
+392 6251 M
+[ [(Courier) 80.0 0.0 true true 0 (9580)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 6717 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 6717 M
+21013 0 R
+stroke
+392 6717 M
+[ [(Courier) 80.0 0.0 true true 0 (8860)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 6886 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 6886 M
+21013 0 R
+stroke
+392 6886 M
+[ [(Courier) 80.0 0.0 true true 0 (8128)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 6960 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 6960 M
+21013 0 R
+stroke
+392 6960 M
+[ [(Courier) 80.0 0.0 true true 0 (4360)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 6963 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 6963 M
+21013 0 R
+stroke
+392 6963 M
+[ [(Courier) 80.0 0.0 true true 0 (4132)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 6965 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 6965 M
+21013 0 R
+stroke
+392 6965 M
+[ [(Courier) 80.0 0.0 true true 0 (5196)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 6968 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 6968 M
+21013 0 R
+stroke
+392 6968 M
+[ [(Courier) 80.0 0.0 true true 0 (5322)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 6971 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 6971 M
+21013 0 R
+stroke
+392 6971 M
+[ [(Courier) 80.0 0.0 true true 0 (5838)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 6975 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 6975 M
+21013 0 R
+stroke
+392 6975 M
+[ [(Courier) 80.0 0.0 true true 0 (4268)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 6977 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 6977 M
+21013 0 R
+stroke
+392 6977 M
+[ [(Courier) 80.0 0.0 true true 0 (4802)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 6979 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 6979 M
+21013 0 R
+stroke
+392 6979 M
+[ [(Courier) 80.0 0.0 true true 0 (4600)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 6982 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 6982 M
+21013 0 R
+stroke
+392 6982 M
+[ [(Courier) 80.0 0.0 true true 0 (7222)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 7000 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 7000 M
+21013 0 R
+stroke
+392 7000 M
+[ [(Courier) 80.0 0.0 true true 0 (5598)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 7004 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 7004 M
+21013 0 R
+stroke
+392 7004 M
+[ [(Courier) 80.0 0.0 true true 0 (5972)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 7008 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 7008 M
+21013 0 R
+stroke
+392 7008 M
+[ [(Courier) 80.0 0.0 true true 0 (4322)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 7011 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 7011 M
+21013 0 R
+stroke
+392 7011 M
+[ [(Courier) 80.0 0.0 true true 0 (5776)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 7014 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 7014 M
+21013 0 R
+stroke
+392 7014 M
+[ [(Courier) 80.0 0.0 true true 0 (8058)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 7083 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 7083 M
+21013 0 R
+stroke
+392 7083 M
+[ [(Courier) 80.0 0.0 true true 0 (7242)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 7102 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 7102 M
+21013 0 R
+stroke
+392 7102 M
+[ [(Courier) 80.0 0.0 true true 0 (6448)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 7108 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 7108 M
+21013 0 R
+stroke
+392 7108 M
+[ [(Courier) 80.0 0.0 true true 0 (5928)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 7113 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 7113 M
+21013 0 R
+stroke
+392 7113 M
+[ [(Courier) 80.0 0.0 true true 0 (5078)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 7115 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 7115 M
+21013 0 R
+stroke
+392 7115 M
+[ [(Courier) 80.0 0.0 true true 0 (4378)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 7118 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 7118 M
+21013 0 R
+stroke
+392 7118 M
+[ [(Courier) 80.0 0.0 true true 0 (7920)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 7176 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 7176 M
+21013 0 R
+stroke
+392 7176 M
+[ [(Courier) 80.0 0.0 true true 0 (5364)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 7180 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 7180 M
+21013 0 R
+stroke
+392 7180 M
+[ [(Courier) 80.0 0.0 true true 0 (9284)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 7460 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 7460 M
+21013 0 R
+stroke
+392 7460 M
+[ [(Courier) 80.0 0.0 true true 0 (5606)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 7463 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 7463 M
+21013 0 R
+stroke
+392 7463 M
+[ [(Courier) 80.0 0.0 true true 0 (4310)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 7466 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 7466 M
+21013 0 R
+stroke
+392 7466 M
+[ [(Courier) 80.0 0.0 true true 0 (5366)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 7469 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 7469 M
+21013 0 R
+stroke
+392 7469 M
+[ [(Courier) 80.0 0.0 true true 0 (3993)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 7471 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 7471 M
+21013 0 R
+stroke
+392 7471 M
+[ [(Courier) 80.0 0.0 true true 0 (6458)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 7477 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 7477 M
+21013 0 R
+stroke
+392 7477 M
+[ [(Courier) 80.0 0.0 true true 0 (5604)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 7481 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 7481 M
+21013 0 R
+stroke
+392 7481 M
+[ [(Courier) 80.0 0.0 true true 0 (6648)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 7488 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 7488 M
+21013 0 R
+stroke
+392 7488 M
+[ [(Courier) 80.0 0.0 true true 0 (4352)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 7490 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 7490 M
+21013 0 R
+stroke
+392 7490 M
+[ [(Courier) 80.0 0.0 true true 0 (7106)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 7505 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 7505 M
+21013 0 R
+stroke
+392 7505 M
+[ [(Courier) 80.0 0.0 true true 0 (9276)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 7784 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 7784 M
+21013 0 R
+stroke
+392 7784 M
+[ [(Courier) 80.0 0.0 true true 0 (3744)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 7786 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 7786 M
+21013 0 R
+stroke
+392 7786 M
+[ [(Courier) 80.0 0.0 true true 0 (8072)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 7855 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 7855 M
+21013 0 R
+stroke
+392 7855 M
+[ [(Courier) 80.0 0.0 true true 0 (8718)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 7996 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 7996 M
+21013 0 R
+stroke
+392 7996 M
+[ [(Courier) 80.0 0.0 true true 0 (6294)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 8001 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 8001 M
+21013 0 R
+stroke
+392 8001 M
+[ [(Courier) 80.0 0.0 true true 0 (4246)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 8004 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 8004 M
+21013 0 R
+stroke
+392 8004 M
+[ [(Courier) 80.0 0.0 true true 0 (5754)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 8007 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 8007 M
+21013 0 R
+stroke
+392 8007 M
+[ [(Courier) 80.0 0.0 true true 0 (5224)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 8010 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 8010 M
+21013 0 R
+stroke
+392 8010 M
+[ [(Courier) 80.0 0.0 true true 0 (4250)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 8013 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 8013 M
+21013 0 R
+stroke
+392 8013 M
+[ [(Courier) 80.0 0.0 true true 0 (5636)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 8016 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 8016 M
+21013 0 R
+stroke
+392 8016 M
+[ [(Courier) 80.0 0.0 true true 0 (5964)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 8020 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 8020 M
+21013 0 R
+stroke
+392 8020 M
+[ [(Courier) 80.0 0.0 true true 0 (7502)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 8052 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 8052 M
+21013 0 R
+stroke
+392 8052 M
+[ [(Courier) 80.0 0.0 true true 0 (4226)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 8055 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 8055 M
+21013 0 R
+stroke
+392 8055 M
+[ [(Courier) 80.0 0.0 true true 0 (7538)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 8087 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 8087 M
+21013 0 R
+stroke
+392 8087 M
+[ [(Courier) 80.0 0.0 true true 0 (6622)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 8094 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 8094 M
+21013 0 R
+stroke
+392 8094 M
+[ [(Courier) 80.0 0.0 true true 0 (6564)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 8101 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 8101 M
+21013 0 R
+stroke
+392 8101 M
+[ [(Courier) 80.0 0.0 true true 0 (6464)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 8107 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 8107 M
+21013 0 R
+stroke
+392 8107 M
+[ [(Courier) 80.0 0.0 true true 0 (5890)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 8111 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 8111 M
+21013 0 R
+stroke
+392 8111 M
+[ [(Courier) 80.0 0.0 true true 0 (7136)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 8128 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 8128 M
+21013 0 R
+stroke
+392 8128 M
+[ [(Courier) 80.0 0.0 true true 0 (6184)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 8132 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 8132 M
+21013 0 R
+stroke
+392 8132 M
+[ [(Courier) 80.0 0.0 true true 0 (6560)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 8139 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 8139 M
+21013 0 R
+stroke
+392 8139 M
+[ [(Courier) 80.0 0.0 true true 0 (7362)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 8163 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 8163 M
+21013 0 R
+stroke
+392 8163 M
+[ [(Courier) 80.0 0.0 true true 0 (4832)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 8166 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 8166 M
+21013 0 R
+stroke
+392 8166 M
+[ [(Courier) 80.0 0.0 true true 0 (5382)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 8169 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 8169 M
+21013 0 R
+stroke
+392 8169 M
+[ [(Courier) 80.0 0.0 true true 0 (4048)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 8171 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 8171 M
+21013 0 R
+stroke
+392 8171 M
+[ [(Courier) 80.0 0.0 true true 0 (4220)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 8173 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 8173 M
+21013 0 R
+stroke
+392 8173 M
+[ [(Courier) 80.0 0.0 true true 0 (4534)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 8176 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 8176 M
+21013 0 R
+stroke
+392 8176 M
+[ [(Courier) 80.0 0.0 true true 0 (6176)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 8181 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 8181 M
+21013 0 R
+stroke
+392 8181 M
+[ [(Courier) 80.0 0.0 true true 0 (5492)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 8184 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 8184 M
+21013 0 R
+stroke
+392 8184 M
+[ [(Courier) 80.0 0.0 true true 0 (6522)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 8190 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 8190 M
+21013 0 R
+stroke
+392 8190 M
+[ [(Courier) 80.0 0.0 true true 0 (6936)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 8201 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 8201 M
+21013 0 R
+stroke
+392 8201 M
+[ [(Courier) 80.0 0.0 true true 0 (6732)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 8209 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 8209 M
+21013 0 R
+stroke
+392 8209 M
+[ [(Courier) 80.0 0.0 true true 0 (6478)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 8215 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 8215 M
+21013 0 R
+stroke
+392 8215 M
+[ [(Courier) 80.0 0.0 true true 0 (9328)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 8513 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 8513 M
+21013 0 R
+stroke
+392 8513 M
+[ [(Courier) 80.0 0.0 true true 0 (6516)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 8519 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 8519 M
+21013 0 R
+stroke
+392 8519 M
+[ [(Courier) 80.0 0.0 true true 0 (4005)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 8522 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 8522 M
+21013 0 R
+stroke
+392 8522 M
+[ [(Courier) 80.0 0.0 true true 0 (6694)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 8529 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 8529 M
+21013 0 R
+stroke
+392 8529 M
+[ [(Courier) 80.0 0.0 true true 0 (5626)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 8533 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 8533 M
+21013 0 R
+stroke
+392 8533 M
+[ [(Courier) 80.0 0.0 true true 0 (6608)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 8540 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 8540 M
+21013 0 R
+stroke
+392 8540 M
+[ [(Courier) 80.0 0.0 true true 0 (4864)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 8542 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 8542 M
+21013 0 R
+stroke
+392 8542 M
+[ [(Courier) 80.0 0.0 true true 0 (6368)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 8548 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 8548 M
+21013 0 R
+stroke
+392 8548 M
+[ [(Courier) 80.0 0.0 true true 0 (7150)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 8565 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 8565 M
+21013 0 R
+stroke
+392 8565 M
+[ [(Courier) 80.0 0.0 true true 0 (8576)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 8685 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 8685 M
+21013 0 R
+stroke
+392 8685 M
+[ [(Courier) 80.0 0.0 true true 0 (5612)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 8689 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 8689 M
+21013 0 R
+stroke
+392 8689 M
+[ [(Courier) 80.0 0.0 true true 0 (9556)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 9139 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 9139 M
+21013 0 R
+stroke
+392 9139 M
+[ [(Courier) 80.0 0.0 true true 0 (4462)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 9141 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 9141 M
+21013 0 R
+stroke
+392 9141 M
+[ [(Courier) 80.0 0.0 true true 0 (6962)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 9153 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 9153 M
+21013 0 R
+stroke
+392 9153 M
+[ [(Courier) 80.0 0.0 true true 0 (7572)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 9187 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 9187 M
+21013 0 R
+stroke
+392 9187 M
+[ [(Courier) 80.0 0.0 true true 0 (7392)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 9213 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 9213 M
+21013 0 R
+stroke
+392 9213 M
+[ [(Courier) 80.0 0.0 true true 0 (7472)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 9242 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 9242 M
+21013 0 R
+stroke
+392 9242 M
+[ [(Courier) 80.0 0.0 true true 0 (5644)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 9246 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 9246 M
+21013 0 R
+stroke
+392 9246 M
+[ [(Courier) 80.0 0.0 true true 0 (5292)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 9249 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 9249 M
+21013 0 R
+stroke
+392 9249 M
+[ [(Courier) 80.0 0.0 true true 0 (4562)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 9251 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 9251 M
+21013 0 R
+stroke
+392 9251 M
+[ [(Courier) 80.0 0.0 true true 0 (6950)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 9262 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 9262 M
+21013 0 R
+stroke
+392 9262 M
+[ [(Courier) 80.0 0.0 true true 0 (8700)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 9401 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 9401 M
+21013 0 R
+stroke
+392 9401 M
+[ [(Courier) 80.0 0.0 true true 0 (9524)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 9817 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 9817 M
+21013 0 R
+stroke
+392 9817 M
+[ [(Courier) 80.0 0.0 true true 0 (6944)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 9827 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 9827 M
+21013 0 R
+stroke
+392 9827 M
+[ [(Courier) 80.0 0.0 true true 0 (5512)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 9831 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 9831 M
+21013 0 R
+stroke
+392 9831 M
+[ [(Courier) 80.0 0.0 true true 0 (4446)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 9833 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 9833 M
+21013 0 R
+stroke
+392 9833 M
+[ [(Courier) 80.0 0.0 true true 0 (5662)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 9837 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 9837 M
+21013 0 R
+stroke
+392 9837 M
+[ [(Courier) 80.0 0.0 true true 0 (9656)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 10429 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 10429 M
+21013 0 R
+stroke
+392 10429 M
+[ [(Courier) 80.0 0.0 true true 0 (5654)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 10433 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 10433 M
+21013 0 R
+stroke
+392 10433 M
+[ [(Courier) 80.0 0.0 true true 0 (4822)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 10435 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 10435 M
+21013 0 R
+stroke
+392 10435 M
+[ [(Courier) 80.0 0.0 true true 0 (4338)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 10438 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 10438 M
+21013 0 R
+stroke
+392 10438 M
+[ [(Courier) 80.0 0.0 true true 0 (7120)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 10453 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 10453 M
+21013 0 R
+stroke
+392 10453 M
+[ [(Courier) 80.0 0.0 true true 0 (6788)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 10462 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 10462 M
+21013 0 R
+stroke
+392 10462 M
+[ [(Courier) 80.0 0.0 true true 0 (6924)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 10472 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 10472 M
+21013 0 R
+stroke
+392 10472 M
+[ [(Courier) 80.0 0.0 true true 0 (6690)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 10479 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 10479 M
+21013 0 R
+stroke
+392 10479 M
+[ [(Courier) 80.0 0.0 true true 0 (9544)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 10918 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 10918 M
+21013 0 R
+stroke
+392 10918 M
+[ [(Courier) 80.0 0.0 true true 0 (4736)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 10921 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 10921 M
+21013 0 R
+stroke
+392 10921 M
+[ [(Courier) 80.0 0.0 true true 0 (6386)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 10926 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 10926 M
+21013 0 R
+stroke
+392 10926 M
+[ [(Courier) 80.0 0.0 true true 0 (5182)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 10929 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 10929 M
+21013 0 R
+stroke
+392 10929 M
+[ [(Courier) 80.0 0.0 true true 0 (4640)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 10932 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 10932 M
+21013 0 R
+stroke
+392 10932 M
+[ [(Courier) 80.0 0.0 true true 0 (6926)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 10942 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 10942 M
+21013 0 R
+stroke
+392 10942 M
+[ [(Courier) 80.0 0.0 true true 0 (5446)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 10945 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 10945 M
+21013 0 R
+stroke
+392 10945 M
+[ [(Courier) 80.0 0.0 true true 0 (4524)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 10948 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 10948 M
+21013 0 R
+stroke
+392 10948 M
+[ [(Courier) 80.0 0.0 true true 0 (4426)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 10950 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 10950 M
+21013 0 R
+stroke
+392 10950 M
+[ [(Courier) 80.0 0.0 true true 0 (4888)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 10953 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 10953 M
+21013 0 R
+stroke
+392 10953 M
+[ [(Courier) 80.0 0.0 true true 0 (3997)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 10955 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 10955 M
+21013 0 R
+stroke
+392 10955 M
+[ [(Courier) 80.0 0.0 true true 0 (5112)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 10957 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 10957 M
+21013 0 R
+stroke
+392 10957 M
+[ [(Courier) 80.0 0.0 true true 0 (6270)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 10963 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 10963 M
+21013 0 R
+stroke
+392 10963 M
+[ [(Courier) 80.0 0.0 true true 0 (4150)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 10965 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 10965 M
+21013 0 R
+stroke
+392 10965 M
+[ [(Courier) 80.0 0.0 true true 0 (4015)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 10967 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 10967 M
+21013 0 R
+stroke
+392 10967 M
+[ [(Courier) 80.0 0.0 true true 0 (6982)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 10979 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 10979 M
+21013 0 R
+stroke
+392 10979 M
+[ [(Courier) 80.0 0.0 true true 0 (8000)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 11044 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 11044 M
+21013 0 R
+stroke
+392 11044 M
+[ [(Courier) 80.0 0.0 true true 0 (6316)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 11050 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 11050 M
+21013 0 R
+stroke
+392 11050 M
+[ [(Courier) 80.0 0.0 true true 0 (4336)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 11052 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 11052 M
+21013 0 R
+stroke
+392 11052 M
+[ [(Courier) 80.0 0.0 true true 0 (6022)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 11056 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 11056 M
+21013 0 R
+stroke
+392 11056 M
+[ [(Courier) 80.0 0.0 true true 0 (4034)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 11058 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 11058 M
+21013 0 R
+stroke
+392 11058 M
+[ [(Courier) 80.0 0.0 true true 0 (6014)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 11063 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 11063 M
+21013 0 R
+stroke
+392 11063 M
+[ [(Courier) 80.0 0.0 true true 0 (4658)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 11065 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 11065 M
+21013 0 R
+stroke
+392 11065 M
+[ [(Courier) 80.0 0.0 true true 0 (6078)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 11070 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 11070 M
+21013 0 R
+stroke
+392 11070 M
+[ [(Courier) 80.0 0.0 true true 0 (4572)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 11072 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 11072 M
+21013 0 R
+stroke
+392 11072 M
+[ [(Courier) 80.0 0.0 true true 0 (5448)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 11075 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 11075 M
+21013 0 R
+stroke
+392 11075 M
+[ [(Courier) 80.0 0.0 true true 0 (7440)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 11103 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 11103 M
+21013 0 R
+stroke
+392 11103 M
+[ [(Courier) 80.0 0.0 true true 0 (7544)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 11136 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 11136 M
+21013 0 R
+stroke
+392 11136 M
+[ [(Courier) 80.0 0.0 true true 0 (4682)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 11138 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 11138 M
+21013 0 R
+stroke
+392 11138 M
+[ [(Courier) 80.0 0.0 true true 0 (6284)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 11143 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 11143 M
+21013 0 R
+stroke
+392 11143 M
+[ [(Courier) 80.0 0.0 true true 0 (7230)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 11162 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 11162 M
+21013 0 R
+stroke
+392 11162 M
+[ [(Courier) 80.0 0.0 true true 0 (8824)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 11323 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 11323 M
+21013 0 R
+stroke
+392 11323 M
+[ [(Courier) 80.0 0.0 true true 0 (6768)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 11332 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 11332 M
+21013 0 R
+stroke
+392 11332 M
+[ [(Courier) 80.0 0.0 true true 0 (6780)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 11340 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 11340 M
+21013 0 R
+stroke
+392 11340 M
+[ [(Courier) 80.0 0.0 true true 0 (4870)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 11343 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 11343 M
+21013 0 R
+stroke
+392 11343 M
+[ [(Courier) 80.0 0.0 true true 0 (5346)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 11346 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 11346 M
+21013 0 R
+stroke
+392 11346 M
+[ [(Courier) 80.0 0.0 true true 0 (5136)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 11349 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 11349 M
+21013 0 R
+stroke
+392 11349 M
+[ [(Courier) 80.0 0.0 true true 0 (6094)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 11353 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 11353 M
+21013 0 R
+stroke
+392 11353 M
+[ [(Courier) 80.0 0.0 true true 0 (5772)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 11357 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 11357 M
+21013 0 R
+stroke
+392 11357 M
+[ [(Courier) 80.0 0.0 true true 0 (4192)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 11359 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 11359 M
+21013 0 R
+stroke
+392 11359 M
+[ [(Courier) 80.0 0.0 true true 0 (6484)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 11366 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 11366 M
+21013 0 R
+stroke
+392 11366 M
+[ [(Courier) 80.0 0.0 true true 0 (6828)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 11374 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 11374 M
+21013 0 R
+stroke
+392 11374 M
+[ [(Courier) 80.0 0.0 true true 0 (6142)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 11379 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 11379 M
+21013 0 R
+stroke
+392 11379 M
+[ [(Courier) 80.0 0.0 true true 0 (5502)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 11383 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 11383 M
+21013 0 R
+stroke
+392 11383 M
+[ [(Courier) 80.0 0.0 true true 0 (3764)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 11385 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 11385 M
+21013 0 R
+stroke
+392 11385 M
+[ [(Courier) 80.0 0.0 true true 0 (5984)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 11389 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 11389 M
+21013 0 R
+stroke
+392 11389 M
+[ [(Courier) 80.0 0.0 true true 0 (7212)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 11407 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 11407 M
+21013 0 R
+stroke
+392 11407 M
+[ [(Courier) 80.0 0.0 true true 0 (6576)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 11414 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 11414 M
+21013 0 R
+stroke
+392 11414 M
+[ [(Courier) 80.0 0.0 true true 0 (4974)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 11417 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 11417 M
+21013 0 R
+stroke
+392 11417 M
+[ [(Courier) 80.0 0.0 true true 0 (6882)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 11426 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 11426 M
+21013 0 R
+stroke
+392 11426 M
+[ [(Courier) 80.0 0.0 true true 0 (7592)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 11462 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 11462 M
+21013 0 R
+stroke
+392 11462 M
+[ [(Courier) 80.0 0.0 true true 0 (9638)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12025 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12025 M
+21013 0 R
+stroke
+392 12025 M
+[ [(Courier) 80.0 0.0 true true 0 (4602)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12027 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12027 M
+21013 0 R
+stroke
+392 12027 M
+[ [(Courier) 80.0 0.0 true true 0 (6686)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12035 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12035 M
+21013 0 R
+stroke
+392 12035 M
+[ [(Courier) 80.0 0.0 true true 0 (4340)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12037 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12037 M
+21013 0 R
+stroke
+392 12037 M
+[ [(Courier) 80.0 0.0 true true 0 (6204)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12042 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12042 M
+21013 0 R
+stroke
+392 12042 M
+[ [(Courier) 80.0 0.0 true true 0 (5062)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12045 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12045 M
+21013 0 R
+stroke
+392 12045 M
+[ [(Courier) 80.0 0.0 true true 0 (5040)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12048 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12048 M
+21013 0 R
+stroke
+392 12048 M
+[ [(Courier) 80.0 0.0 true true 0 (5638)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12051 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12051 M
+21013 0 R
+stroke
+392 12051 M
+[ [(Courier) 80.0 0.0 true true 0 (5320)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12054 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12054 M
+21013 0 R
+stroke
+392 12054 M
+[ [(Courier) 80.0 0.0 true true 0 (7434)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12082 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12082 M
+21013 0 R
+stroke
+392 12082 M
+[ [(Courier) 80.0 0.0 true true 0 (4056)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12084 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12084 M
+21013 0 R
+stroke
+392 12084 M
+[ [(Courier) 80.0 0.0 true true 0 (6480)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12090 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12090 M
+21013 0 R
+stroke
+392 12090 M
+[ [(Courier) 80.0 0.0 true true 0 (6166)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12095 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12095 M
+21013 0 R
+stroke
+392 12095 M
+[ [(Courier) 80.0 0.0 true true 0 (5340)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12098 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12098 M
+21013 0 R
+stroke
+392 12098 M
+[ [(Courier) 80.0 0.0 true true 0 (4638)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12101 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12101 M
+21013 0 R
+stroke
+392 12101 M
+[ [(Courier) 80.0 0.0 true true 0 (4590)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12103 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12103 M
+21013 0 R
+stroke
+392 12103 M
+[ [(Courier) 80.0 0.0 true true 0 (7132)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12119 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12119 M
+21013 0 R
+stroke
+392 12119 M
+[ [(Courier) 80.0 0.0 true true 0 (5380)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12122 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12122 M
+21013 0 R
+stroke
+392 12122 M
+[ [(Courier) 80.0 0.0 true true 0 (7014)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12135 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12135 M
+21013 0 R
+stroke
+392 12135 M
+[ [(Courier) 80.0 0.0 true true 0 (5214)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12138 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12138 M
+21013 0 R
+stroke
+392 12138 M
+[ [(Courier) 80.0 0.0 true true 0 (5954)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12142 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12142 M
+21013 0 R
+stroke
+392 12142 M
+[ [(Courier) 80.0 0.0 true true 0 (8346)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12237 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12237 M
+21013 0 R
+stroke
+392 12237 M
+[ [(Courier) 80.0 0.0 true true 0 (5590)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12240 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12240 M
+21013 0 R
+stroke
+392 12240 M
+[ [(Courier) 80.0 0.0 true true 0 (4242)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12242 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12242 M
+21013 0 R
+stroke
+392 12242 M
+[ [(Courier) 80.0 0.0 true true 0 (5216)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12245 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12245 M
+21013 0 R
+stroke
+392 12245 M
+[ [(Courier) 80.0 0.0 true true 0 (7322)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12268 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12268 M
+21013 0 R
+stroke
+392 12268 M
+[ [(Courier) 80.0 0.0 true true 0 (6644)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12275 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12275 M
+21013 0 R
+stroke
+392 12275 M
+[ [(Courier) 80.0 0.0 true true 0 (3999)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12277 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12277 M
+21013 0 R
+stroke
+392 12277 M
+[ [(Courier) 80.0 0.0 true true 0 (6650)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12284 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12284 M
+21013 0 R
+stroke
+392 12284 M
+[ [(Courier) 80.0 0.0 true true 0 (7190)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12302 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12302 M
+21013 0 R
+stroke
+392 12302 M
+[ [(Courier) 80.0 0.0 true true 0 (5086)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12305 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12305 M
+21013 0 R
+stroke
+392 12305 M
+[ [(Courier) 80.0 0.0 true true 0 (6302)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12311 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12311 M
+21013 0 R
+stroke
+392 12311 M
+[ [(Courier) 80.0 0.0 true true 0 (4532)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12313 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12313 M
+21013 0 R
+stroke
+392 12313 M
+[ [(Courier) 80.0 0.0 true true 0 (6038)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12317 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12317 M
+21013 0 R
+stroke
+392 12317 M
+[ [(Courier) 80.0 0.0 true true 0 (4384)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12320 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12320 M
+21013 0 R
+stroke
+392 12320 M
+[ [(Courier) 80.0 0.0 true true 0 (5596)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12323 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12323 M
+21013 0 R
+stroke
+392 12323 M
+[ [(Courier) 80.0 0.0 true true 0 (5408)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12326 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12326 M
+21013 0 R
+stroke
+392 12326 M
+[ [(Courier) 80.0 0.0 true true 0 (4950)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12329 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12329 M
+21013 0 R
+stroke
+392 12329 M
+[ [(Courier) 80.0 0.0 true true 0 (6816)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12338 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12338 M
+21013 0 R
+stroke
+392 12338 M
+[ [(Courier) 80.0 0.0 true true 0 (9018)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12538 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12538 M
+21013 0 R
+stroke
+392 12538 M
+[ [(Courier) 80.0 0.0 true true 0 (5264)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12541 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12541 M
+21013 0 R
+stroke
+392 12541 M
+[ [(Courier) 80.0 0.0 true true 0 (4106)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12544 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12544 M
+21013 0 R
+stroke
+392 12544 M
+[ [(Courier) 80.0 0.0 true true 0 (4760)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12546 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12546 M
+21013 0 R
+stroke
+392 12546 M
+[ [(Courier) 80.0 0.0 true true 0 (5384)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12549 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12549 M
+21013 0 R
+stroke
+392 12549 M
+[ [(Courier) 80.0 0.0 true true 0 (8054)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12618 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12618 M
+21013 0 R
+stroke
+392 12618 M
+[ [(Courier) 80.0 0.0 true true 0 (4376)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12620 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12620 M
+21013 0 R
+stroke
+392 12620 M
+[ [(Courier) 80.0 0.0 true true 0 (5722)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12624 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12624 M
+21013 0 R
+stroke
+392 12624 M
+[ [(Courier) 80.0 0.0 true true 0 (5266)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12627 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12627 M
+21013 0 R
+stroke
+392 12627 M
+[ [(Courier) 80.0 0.0 true true 0 (6822)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12635 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12635 M
+21013 0 R
+stroke
+392 12635 M
+[ [(Courier) 80.0 0.0 true true 0 (4318)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12638 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12638 M
+21013 0 R
+stroke
+392 12638 M
+[ [(Courier) 80.0 0.0 true true 0 (5510)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12641 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12641 M
+21013 0 R
+stroke
+392 12641 M
+[ [(Courier) 80.0 0.0 true true 0 (5660)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12645 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12645 M
+21013 0 R
+stroke
+392 12645 M
+[ [(Courier) 80.0 0.0 true true 0 (5862)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12649 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12649 M
+21013 0 R
+stroke
+392 12649 M
+[ [(Courier) 80.0 0.0 true true 0 (3983)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12651 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12651 M
+21013 0 R
+stroke
+392 12651 M
+[ [(Courier) 80.0 0.0 true true 0 (8904)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12828 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12828 M
+21013 0 R
+stroke
+392 12828 M
+[ [(Courier) 80.0 0.0 true true 0 (3891)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12830 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12830 M
+21013 0 R
+stroke
+392 12830 M
+[ [(Courier) 80.0 0.0 true true 0 (7518)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12862 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12862 M
+21013 0 R
+stroke
+392 12862 M
+[ [(Courier) 80.0 0.0 true true 0 (6634)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12869 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12869 M
+21013 0 R
+stroke
+392 12869 M
+[ [(Courier) 80.0 0.0 true true 0 (4566)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12872 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12872 M
+21013 0 R
+stroke
+392 12872 M
+[ [(Courier) 80.0 0.0 true true 0 (5856)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 12876 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 12876 M
+21013 0 R
+stroke
+392 12876 M
+[ [(Courier) 80.0 0.0 true true 0 (9642)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 13442 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 13442 M
+21013 0 R
+stroke
+392 13442 M
+[ [(Courier) 80.0 0.0 true true 0 (5552)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 13446 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 13446 M
+21013 0 R
+stroke
+392 13446 M
+[ [(Courier) 80.0 0.0 true true 0 (3775)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 13448 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 13448 M
+21013 0 R
+stroke
+392 13448 M
+[ [(Courier) 80.0 0.0 true true 0 (4688)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 13450 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 13450 M
+21013 0 R
+stroke
+392 13450 M
+[ [(Courier) 80.0 0.0 true true 0 (5564)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 13454 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 13454 M
+21013 0 R
+stroke
+392 13454 M
+[ [(Courier) 80.0 0.0 true true 0 (9232)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 13719 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 13719 M
+21013 0 R
+stroke
+392 13719 M
+[ [(Courier) 80.0 0.0 true true 0 (5232)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 13722 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 13722 M
+21013 0 R
+stroke
+392 13722 M
+[ [(Courier) 80.0 0.0 true true 0 (6890)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 13732 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 13732 M
+21013 0 R
+stroke
+392 13732 M
+[ [(Courier) 80.0 0.0 true true 0 (5000)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 13735 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 13735 M
+21013 0 R
+stroke
+392 13735 M
+[ [(Courier) 80.0 0.0 true true 0 (7008)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 13747 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 13747 M
+21013 0 R
+stroke
+392 13747 M
+[ [(Courier) 80.0 0.0 true true 0 (6348)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 13753 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 13753 M
+21013 0 R
+stroke
+392 13753 M
+[ [(Courier) 80.0 0.0 true true 0 (6138)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 13758 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 13758 M
+21013 0 R
+stroke
+392 13758 M
+[ [(Courier) 80.0 0.0 true true 0 (4290)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 13760 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 13760 M
+21013 0 R
+stroke
+392 13760 M
+[ [(Courier) 80.0 0.0 true true 0 (5992)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 13764 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 13764 M
+21013 0 R
+stroke
+392 13764 M
+[ [(Courier) 80.0 0.0 true true 0 (4652)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 13767 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 13767 M
+21013 0 R
+stroke
+392 13767 M
+[ [(Courier) 80.0 0.0 true true 0 (4478)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 13769 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 13769 M
+21013 0 R
+stroke
+392 13769 M
+[ [(Courier) 80.0 0.0 true true 0 (5004)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 13772 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 13772 M
+21013 0 R
+stroke
+392 13772 M
+[ [(Courier) 80.0 0.0 true true 0 (4516)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 13774 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 13774 M
+21013 0 R
+stroke
+392 13774 M
+[ [(Courier) 80.0 0.0 true true 0 (5098)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 13777 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 13777 M
+21013 0 R
+stroke
+392 13777 M
+[ [(Courier) 80.0 0.0 true true 0 (5826)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 13781 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 13781 M
+21013 0 R
+stroke
+392 13781 M
+[ [(Courier) 80.0 0.0 true true 0 (4422)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 13783 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 13783 M
+21013 0 R
+stroke
+392 13783 M
+[ [(Courier) 80.0 0.0 true true 0 (7858)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 13836 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 13836 M
+21013 0 R
+stroke
+392 13836 M
+[ [(Courier) 80.0 0.0 true true 0 (5176)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 13839 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 13839 M
+21013 0 R
+stroke
+392 13839 M
+[ [(Courier) 80.0 0.0 true true 0 (6832)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 13848 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 13848 M
+21013 0 R
+stroke
+392 13848 M
+[ [(Courier) 80.0 0.0 true true 0 (6328)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 13854 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 13854 M
+21013 0 R
+stroke
+392 13854 M
+[ [(Courier) 80.0 0.0 true true 0 (8558)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 13973 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 13973 M
+21013 0 R
+stroke
+392 13973 M
+[ [(Courier) 80.0 0.0 true true 0 (9516)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 14383 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 14383 M
+21013 0 R
+stroke
+392 14383 M
+[ [(Courier) 80.0 0.0 true true 0 (4992)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 14386 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 14386 M
+21013 0 R
+stroke
+392 14386 M
+[ [(Courier) 80.0 0.0 true true 0 (9666)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 15008 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 15008 M
+21013 0 R
+stroke
+392 15008 M
+[ [(Courier) 80.0 0.0 true true 0 (6592)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 15015 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 15015 M
+21013 0 R
+stroke
+392 15015 M
+[ [(Courier) 80.0 0.0 true true 0 (6942)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 15025 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 15025 M
+21013 0 R
+stroke
+392 15025 M
+[ [(Courier) 80.0 0.0 true true 0 (4826)]
+] -26.7 MRshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 15037 M
+21013 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 15037 M
+21013 0 R
+stroke
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+440 336 M
+0 14701 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+440 336 M
+0 14701 R
+stroke
+440 256 M
+[ [(Courier) 80.0 0.0 true true 0 (0)]
+] -26.7 MCshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+5004 336 M
+0 14701 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+5004 336 M
+0 14701 R
+stroke
+5004 256 M
+[ [(Courier) 80.0 0.0 true true 0 (50000)]
+] -26.7 MCshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+9567 336 M
+0 14701 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+9567 336 M
+0 14701 R
+stroke
+9567 256 M
+[ [(Courier) 80.0 0.0 true true 0 (100000)]
+] -26.7 MCshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+14131 336 M
+0 14701 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+14131 336 M
+0 14701 R
+stroke
+14131 256 M
+[ [(Courier) 80.0 0.0 true true 0 (150000)]
+] -26.7 MCshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+18695 336 M
+0 14701 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+18695 336 M
+0 14701 R
+stroke
+18695 256 M
+[ [(Courier) 80.0 0.0 true true 0 (200000)]
+] -26.7 MCshow
+/Courier findfont 80 scalefont setfont
+1.000 UL
+LTb
+LCb setrgbcolor
+1.000 UL
+LTB
+LCb setrgbcolor
+440 15037 M
+440 336 L
+21013 0 R
+0 14701 V
+-21013 0 R
+1.000 UP
+stroke
+LTb
+LCb setrgbcolor
+LCb setrgbcolor
+76 7686 M
+currentpoint gsave translate -270 rotate 0 0 moveto
+[ [(Courier) 80.0 0.0 true true 0 (QRY)]
+] -26.7 MCshow
+grestore
+/Courier findfont 80 scalefont setfont
+LTb
+LCb setrgbcolor
+10946 136 M
+[ [(Courier) 80.0 0.0 true true 0 (Scer)]
+[(Courier) 64.0 -24.0 true true 0 (c)]
+[(Courier) 80.0 0.0 true true 0 (hrI)]
+] -18.7 MCshow
+/Courier findfont 80 scalefont setfont
+LTb
+% Begin plot #1
+0.500 UP
+2.000 UL
+LTb
+0.58 0.00 0.83 C
+21446 4764 M
+7 1 V
+2931 824 M
+26 6 V
+15206 3419 M
+12 2 V
+-28 -7 R
+11 2 V
+2748 806 M
+22 5 V
+15220 3424 M
+13 3 V
+2909 816 M
+44 8 V
+587 368 M
+12 2 V
+15231 3427 M
+11 2 V
+-120 -33 R
+12 3 V
+4104 871 R
+23 4 V
+15571 3521 M
+10 2 V
+-437 -120 R
+11 2 V
+437 121 R
+12 2 V
+-443 -121 R
+11 3 V
+2801 811 M
+11 2 V
+15197 3416 M
+12 3 V
+75 21 R
+12 2 V
+83 26 R
+13 3 V
+5953 1261 R
+108 21 V
+15546 3516 M
+16 3 V
+2254 712 M
+18 3 V
+19793 4397 M
+18 4 V
+13141 2932 M
+9 2 V
+630 381 M
+10 2 V
+-37 -9 R
+12 2 V
+15362 3464 M
+11 2 V
+151 41 R
+12 2 V
+1587 334 R
+12 3 V
+15306 3445 M
+11 3 V
+-217 -61 R
+11 3 V
+470 133 R
+11 3 V
+-219 -60 R
+12 2 V
+-283 -78 R
+12 2 V
+273 79 R
+11 2 V
+5858 1237 R
+29 6 V
+19951 4431 M
+33 7 V
+-455 -105 R
+21 4 V
+2521 761 M
+20 4 V
+19690 4370 M
+22 5 V
+17157 3851 M
+28 6 V
+514 116 R
+28 6 V
+13234 3011 M
+92 19 V
+4316 929 R
+33 7 V
+4279 1098 M
+73 15 V
+19909 4422 M
+44 9 V
+199 42 R
+44 9 V
+-390 -81 R
+52 11 V
+950 202 R
+52 10 V
+2536 765 M
+54 11 V
+2462 748 M
+64 13 V
+19618 4356 M
+73 14 V
+6969 1645 M
+319 65 V
+6032 1320 R
+112 22 V
+6979 1478 R
+136 27 V
+8 4 R
+240 48 V
+18015 4040 M
+672 136 V
+4605 1165 M
+1827 369 V
+8925 1928 R
+10 2 V
+2635 780 M
+10 2 V
+15112 3392 M
+10 2 V
+50 16 R
+10 2 V
+-91 -27 R
+10 2 V
+2642 782 M
+10 2 V
+15154 3405 M
+10 2 V
+1554 573 M
+10 2 V
+15350 3459 M
+11 3 V
+-245 -68 R
+11 2 V
+110 33 R
+11 2 V
+-116 -32 R
+11 2 V
+39 11 R
+10 2 V
+370 105 R
+10 2 V
+5564 1162 R
+11 3 V
+19612 4353 M
+11 3 V
+-517 -95 R
+11 2 V
+475 84 R
+11 2 V
+15418 3479 M
+11 3 V
+-22 -5 R
+11 2 V
+95 26 R
+11 2 V
+-101 -25 R
+12 2 V
+619 379 M
+12 2 V
+15476 3495 M
+12 2 V
+-347 -96 R
+12 2 V
+181 51 R
+11 2 V
+1225 271 R
+12 2 V
+1577 575 M
+12 2 V
+609 376 M
+13 3 V
+21338 4729 M
+12 3 V
+2689 790 M
+12 3 V
+19716 4378 M
+13 2 V
+17101 3838 M
+13 3 V
+2899 813 M
+13 3 V
+19410 4307 M
+12 2 V
+17180 3857 M
+13 3 V
+2083 418 R
+13 2 V
+15263 3434 M
+13 3 V
+1837 404 R
+13 2 V
+15271 3437 M
+13 3 V
+167 49 R
+14 3 V
+1527 566 M
+14 3 V
+19417 4309 M
+14 3 V
+15325 3451 M
+15 3 V
+3887 813 R
+14 3 V
+15530 3509 M
+15 3 V
+13226 3008 M
+14 3 V
+2157 691 M
+15 2 V
+19894 4419 M
+15 3 V
+467 100 R
+15 3 V
+1691 595 M
+15 3 V
+593 370 M
+15 3 V
+19094 4258 M
+15 3 V
+17200 3863 M
+16 3 V
+15294 3442 M
+16 3 V
+4146 874 R
+16 3 V
+1479 322 R
+16 3 V
+17734 3982 M
+16 4 V
+15461 3492 M
+16 3 V
+-230 -64 R
+16 3 V
+52 14 R
+16 3 V
+4375 924 R
+16 3 V
+15340 3456 M
+16 3 V
+2736 803 M
+16 3 V
+15210 3421 M
+17 3 V
+4136 874 R
+18 3 V
+1413 311 R
+12 2 V
+stroke 20806 4614 M
+17613 3951 M
+18 4 V
+1578 308 R
+18 4 V
+1514 563 M
+18 3 V
+17721 3979 M
+18 3 V
+1523 292 R
+19 4 V
+1083 241 R
+18 3 V
+15539 3512 M
+19 4 V
+1629 344 R
+19 3 V
+1539 569 M
+19 4 V
+764 151 R
+19 4 V
+19723 4380 M
+20 4 V
+15393 3473 M
+19 4 V
+5129 1080 R
+20 4 V
+-964 -212 R
+21 4 V
+574 129 R
+20 4 V
+1870 629 M
+20 5 V
+805 159 R
+21 4 V
+15601 3528 M
+20 4 V
+2608 776 M
+21 4 V
+20390 4525 M
+22 5 V
+12001 2663 M
+21 5 V
+7266 1612 R
+22 5 V
+427 99 R
+22 5 V
+17625 3955 M
+23 4 V
+570 363 M
+23 5 V
+15429 3484 M
+24 5 V
+5508 1158 R
+24 5 V
+6814 1613 M
+25 5 V
+19466 4322 M
+25 5 V
+16576 3729 M
+25 5 V
+2413 743 M
+25 5 V
+545 358 M
+27 5 V
+19340 4292 M
+27 6 V
+17134 3846 M
+28 5 V
+387 85 R
+29 6 V
+1801 359 R
+29 6 V
+1871 409 R
+30 5 V
+1602 577 M
+29 6 V
+19489 4327 M
+30 6 V
+2661 784 M
+30 6 V
+19 7 R
+31 6 V
+19425 4312 M
+31 7 V
+-445 -77 R
+32 7 V
+2080 674 M
+34 7 V
+13197 3001 M
+34 7 V
+4438 958 R
+35 7 V
+15482 3497 M
+36 8 V
+3788 780 R
+37 7 V
+636 383 M
+37 8 V
+2172 693 M
+38 8 V
+21306 4721 M
+38 8 V
+19856 4412 M
+38 7 V
+2269 715 M
+42 9 V
+19753 4389 M
+43 8 V
+-751 -148 R
+44 9 V
+2112 681 M
+45 10 V
+13156 2992 M
+47 9 V
+1885 634 M
+47 9 V
+17572 3942 M
+47 9 V
+1925 386 R
+50 10 V
+2208 701 M
+52 11 V
+1636 583 M
+56 12 V
+6912 1634 M
+58 11 V
+2342 728 M
+75 15 V
+4419 875 R
+75 15 V
+20859 4624 M
+98 20 V
+440 336 M
+107 22 V
+12022 2668 M
+112 22 V
+1411 386 R
+115 23 V
+-232 -47 R
+118 24 V
+7596 1610 R
+119 24 V
+16979 3813 M
+125 25 V
+3880 814 R
+155 31 V
+1927 643 M
+156 31 V
+4575 907 R
+157 32 V
+1713 598 M
+158 31 V
+20210 4486 M
+159 33 V
+-387 -81 R
+174 35 V
+6428 1534 M
+233 47 V
+7664 1654 R
+249 50 V
+4348 1113 M
+258 52 V
+17746 3986 M
+269 54 V
+672 136 R
+330 66 V
+17210 3866 M
+345 70 V
+672 391 M
+384 77 V
+16596 3734 M
+388 79 V
+-845 -174 R
+437 88 V
+1055 469 M
+462 94 V
+14574 3285 M
+497 100 V
+546 147 R
+527 107 V
+3645 969 M
+638 129 V
+9372 2001 R
+670 136 V
+9686 2194 M
+681 138 V
+2955 830 M
+691 139 V
+8891 2034 M
+791 160 V
+2450 496 R
+1015 205 V
+7286 1710 M
+1607 324 V
+1472 298 R
+1640 331 V
+21446 4764 Circle
+21453 4765 Circle
+2931 824 Circle
+2957 830 Circle
+15206 3419 Circle
+15218 3421 Circle
+15190 3414 Circle
+15201 3416 Circle
+2748 806 Circle
+2770 811 Circle
+15220 3424 Circle
+15233 3427 Circle
+2909 816 Circle
+2953 824 Circle
+587 368 Circle
+599 370 Circle
+15231 3427 Circle
+15242 3429 Circle
+15122 3396 Circle
+15134 3399 Circle
+19238 4270 Circle
+19261 4274 Circle
+15571 3521 Circle
+15581 3523 Circle
+15144 3403 Circle
+15155 3405 Circle
+15592 3526 Circle
+15604 3528 Circle
+15161 3407 Circle
+15172 3410 Circle
+2801 811 Circle
+2812 813 Circle
+15197 3416 Circle
+15209 3419 Circle
+15284 3440 Circle
+15296 3442 Circle
+15379 3468 Circle
+15392 3471 Circle
+21345 4732 Circle
+21453 4753 Circle
+15546 3516 Circle
+15562 3519 Circle
+2254 712 Circle
+2272 715 Circle
+19793 4397 Circle
+19811 4401 Circle
+13141 2932 Circle
+13150 2934 Circle
+630 381 Circle
+640 383 Circle
+603 374 Circle
+615 376 Circle
+15362 3464 Circle
+15373 3466 Circle
+15524 3507 Circle
+15536 3509 Circle
+17123 3843 Circle
+17135 3846 Circle
+15306 3445 Circle
+15317 3448 Circle
+15100 3387 Circle
+15111 3390 Circle
+15581 3523 Circle
+15592 3526 Circle
+15373 3466 Circle
+15385 3468 Circle
+15102 3390 Circle
+15114 3392 Circle
+15387 3471 Circle
+15398 3473 Circle
+21256 4710 Circle
+21285 4716 Circle
+19951 4431 Circle
+19984 4438 Circle
+19529 4333 Circle
+19550 4337 Circle
+2521 761 Circle
+2541 765 Circle
+19690 4370 Circle
+19712 4375 Circle
+17157 3851 Circle
+17185 3857 Circle
+17699 3973 Circle
+17727 3979 Circle
+13234 3011 Circle
+13326 3030 Circle
+17642 3959 Circle
+17675 3966 Circle
+4279 1098 Circle
+4352 1113 Circle
+19909 4422 Circle
+19953 4431 Circle
+20152 4473 Circle
+20196 4482 Circle
+19806 4401 Circle
+19858 4412 Circle
+20808 4614 Circle
+20860 4624 Circle
+2536 765 Circle
+2590 776 Circle
+2462 748 Circle
+2526 761 Circle
+19618 4356 Circle
+19691 4370 Circle
+6969 1645 Circle
+7288 1710 Circle
+13320 3030 Circle
+13432 3052 Circle
+20411 4530 Circle
+20547 4557 Circle
+20555 4561 Circle
+20795 4609 Circle
+18015 4040 Circle
+18687 4176 Circle
+4605 1165 Circle
+6432 1534 Circle
+15357 3462 Circle
+15367 3464 Circle
+2635 780 Circle
+2645 782 Circle
+15112 3392 Circle
+15122 3394 Circle
+15172 3410 Circle
+15182 3412 Circle
+15091 3385 Circle
+15101 3387 Circle
+2642 782 Circle
+2652 784 Circle
+15154 3405 Circle
+15164 3407 Circle
+1554 573 Circle
+1564 575 Circle
+15350 3459 Circle
+15361 3462 Circle
+15116 3394 Circle
+15127 3396 Circle
+15237 3429 Circle
+15248 3431 Circle
+15132 3399 Circle
+15143 3401 Circle
+15182 3412 Circle
+15192 3414 Circle
+15562 3519 Circle
+15572 3521 Circle
+21136 4683 Circle
+21147 4686 Circle
+19612 4353 Circle
+19623 4356 Circle
+19106 4261 Circle
+19117 4263 Circle
+19592 4347 Circle
+19603 4349 Circle
+15418 3479 Circle
+15429 3482 Circle
+15407 3477 Circle
+15418 3479 Circle
+15513 3505 Circle
+15524 3507 Circle
+15423 3482 Circle
+15435 3484 Circle
+619 379 Circle
+631 381 Circle
+15476 3495 Circle
+15488 3497 Circle
+15141 3401 Circle
+15153 3403 Circle
+15334 3454 Circle
+15345 3456 Circle
+16570 3727 Circle
+16582 3729 Circle
+1577 575 Circle
+1589 577 Circle
+609 376 Circle
+622 379 Circle
+21338 4729 Circle
+21350 4732 Circle
+2689 790 Circle
+2701 793 Circle
+19716 4378 Circle
+19729 4380 Circle
+17101 3838 Circle
+17114 3841 Circle
+2899 813 Circle
+2912 816 Circle
+19410 4307 Circle
+19422 4309 Circle
+17180 3857 Circle
+17193 3860 Circle
+19276 4278 Circle
+19289 4280 Circle
+15263 3434 Circle
+15276 3437 Circle
+17113 3841 Circle
+17126 3843 Circle
+15271 3437 Circle
+15284 3440 Circle
+15451 3489 Circle
+15465 3492 Circle
+1527 566 Circle
+1541 569 Circle
+19417 4309 Circle
+19431 4312 Circle
+15325 3451 Circle
+15340 3454 Circle
+19227 4267 Circle
+19241 4270 Circle
+15530 3509 Circle
+15545 3512 Circle
+13226 3008 Circle
+13240 3011 Circle
+2157 691 Circle
+2172 693 Circle
+19894 4419 Circle
+19909 4422 Circle
+20376 4522 Circle
+20391 4525 Circle
+1691 595 Circle
+1706 598 Circle
+593 370 Circle
+608 373 Circle
+19094 4258 Circle
+19109 4261 Circle
+17200 3863 Circle
+17216 3866 Circle
+15294 3442 Circle
+15310 3445 Circle
+19456 4319 Circle
+19472 4322 Circle
+20951 4644 Circle
+20967 4647 Circle
+17734 3982 Circle
+17750 3986 Circle
+15461 3492 Circle
+15477 3495 Circle
+15247 3431 Circle
+15263 3434 Circle
+15315 3448 Circle
+15331 3451 Circle
+19706 4375 Circle
+19722 4378 Circle
+15340 3456 Circle
+15356 3459 Circle
+2736 803 Circle
+2752 806 Circle
+15210 3421 Circle
+15227 3424 Circle
+19363 4298 Circle
+19381 4301 Circle
+20794 4612 Circle
+20806 4614 Circle
+17613 3951 Circle
+17631 3955 Circle
+19209 4263 Circle
+19227 4267 Circle
+1514 563 Circle
+1532 566 Circle
+17721 3979 Circle
+17739 3982 Circle
+19262 4274 Circle
+19281 4278 Circle
+20364 4519 Circle
+20382 4522 Circle
+15539 3512 Circle
+15558 3516 Circle
+17187 3860 Circle
+17206 3863 Circle
+1539 569 Circle
+1558 573 Circle
+2322 724 Circle
+2341 728 Circle
+19723 4380 Circle
+19743 4384 Circle
+15393 3473 Circle
+15412 3477 Circle
+20541 4557 Circle
+20561 4561 Circle
+19597 4349 Circle
+19618 4353 Circle
+20192 4482 Circle
+20212 4486 Circle
+1870 629 Circle
+1890 634 Circle
+2695 793 Circle
+2716 797 Circle
+15601 3528 Circle
+15621 3532 Circle
+2608 776 Circle
+2629 780 Circle
+20390 4525 Circle
+20412 4530 Circle
+12001 2663 Circle
+12022 2668 Circle
+19288 4280 Circle
+19310 4285 Circle
+19737 4384 Circle
+19759 4389 Circle
+17625 3955 Circle
+17648 3959 Circle
+570 363 Circle
+593 368 Circle
+15429 3484 Circle
+15453 3489 Circle
+20961 4647 Circle
+20985 4652 Circle
+6814 1613 Circle
+6839 1618 Circle
+19466 4322 Circle
+19491 4327 Circle
+16576 3729 Circle
+16601 3734 Circle
+2413 743 Circle
+2438 748 Circle
+545 358 Circle
+572 363 Circle
+19340 4292 Circle
+19367 4298 Circle
+17134 3846 Circle
+17162 3851 Circle
+17549 3936 Circle
+17578 3942 Circle
+19379 4301 Circle
+19408 4307 Circle
+21279 4716 Circle
+21309 4721 Circle
+1602 577 Circle
+1631 583 Circle
+19489 4327 Circle
+19519 4333 Circle
+2661 784 Circle
+2691 790 Circle
+2710 797 Circle
+2741 803 Circle
+19425 4312 Circle
+19456 4319 Circle
+19011 4242 Circle
+19043 4249 Circle
+2080 674 Circle
+2114 681 Circle
+13197 3001 Circle
+13231 3008 Circle
+17669 3966 Circle
+17704 3973 Circle
+15482 3497 Circle
+15518 3505 Circle
+19306 4285 Circle
+19343 4292 Circle
+636 383 Circle
+673 391 Circle
+2172 693 Circle
+2210 701 Circle
+21306 4721 Circle
+21344 4729 Circle
+19856 4412 Circle
+19894 4419 Circle
+2269 715 Circle
+2311 724 Circle
+19753 4389 Circle
+19796 4397 Circle
+19045 4249 Circle
+19089 4258 Circle
+2112 681 Circle
+2157 691 Circle
+13156 2992 Circle
+13203 3001 Circle
+1885 634 Circle
+1932 643 Circle
+17572 3942 Circle
+17619 3951 Circle
+19544 4337 Circle
+19594 4347 Circle
+2208 701 Circle
+2260 712 Circle
+1636 583 Circle
+1692 595 Circle
+6912 1634 Circle
+6970 1645 Circle
+2342 728 Circle
+2417 743 Circle
+6836 1618 Circle
+6911 1633 Circle
+20859 4624 Circle
+20957 4644 Circle
+440 336 Circle
+547 358 Circle
+12022 2668 Circle
+12134 2690 Circle
+13545 3076 Circle
+13660 3099 Circle
+13428 3052 Circle
+13546 3076 Circle
+21142 4686 Circle
+21261 4710 Circle
+16979 3813 Circle
+17104 3838 Circle
+20984 4652 Circle
+21139 4683 Circle
+1927 643 Circle
+2083 674 Circle
+6658 1581 Circle
+6815 1613 Circle
+1713 598 Circle
+1871 629 Circle
+20210 4486 Circle
+20369 4519 Circle
+19982 4438 Circle
+20156 4473 Circle
+6428 1534 Circle
+6661 1581 Circle
+14325 3235 Circle
+14574 3285 Circle
+4348 1113 Circle
+4606 1165 Circle
+17746 3986 Circle
+18015 4040 Circle
+18687 4176 Circle
+19017 4242 Circle
+17210 3866 Circle
+17555 3936 Circle
+672 391 Circle
+1056 468 Circle
+16596 3734 Circle
+16984 3813 Circle
+16139 3639 Circle
+16576 3727 Circle
+1055 469 Circle
+1517 563 Circle
+14574 3285 Circle
+15071 3385 Circle
+15617 3532 Circle
+16144 3639 Circle
+3645 969 Circle
+4283 1098 Circle
+13655 3099 Circle
+14325 3235 Circle
+9686 2194 Circle
+10367 2332 Circle
+2955 830 Circle
+3646 969 Circle
+8891 2034 Circle
+9682 2194 Circle
+12132 2690 Circle
+13147 2895 Circle
+7286 1710 Circle
+8893 2034 Circle
+10365 2332 Circle
+12005 2663 Circle
+% End plot #1
+% Begin plot #2
+0.500 UP
+2.000 UL
+LTb
+0.34 0.71 0.91 C
+% End plot #2
+2.000 UL
+LTb
+LCb setrgbcolor
+1.000 UL
+LTB
+LCb setrgbcolor
+440 15037 M
+440 336 L
+21013 0 R
+0 14701 V
+-21013 0 R
+1.000 UP
+stroke
+LTb
+LCb setrgbcolor
+stroke
+grestore
+end
+showpage
+%%Trailer
+%%DocumentFonts: Courier
+%%Pages: 1

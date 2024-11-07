@@ -1,0 +1,26 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+8960:5168-6850       -            561 8330at4891           -            477  1.2e-254  842.6   0.7   1   2  4.5e-169  1.7e-166  551.9   0.0     6   312    14   350     9   358 0.94 -
+8960:5168-6850       -            561 8330at4891           -            477  1.2e-254  842.6   0.7   2   2   1.7e-89   6.7e-87  289.4   0.1   311   477   383   561   371   561 0.96 -
+8762:4895-6241       -            449 8330at4891           -            477   3.1e-44  148.7   0.3   1   2   8.9e-32   3.4e-29   99.1   0.0    48   311     4   270     1   277 0.87 -
+8762:4895-6241       -            449 8330at4891           -            477   3.1e-44  148.7   0.3   2   2   4.1e-16   1.6e-13   47.5   0.6   310   445   295   434   291   449 0.79 -
+9212:12641-13957     -            439 8330at4891           -            477   6.1e-41  137.9   2.2   1   2   6.3e-27   2.4e-24   83.1   0.0    61   313     2   255     1   273 0.86 -
+9212:12641-13957     -            439 8330at4891           -            477   6.1e-41  137.9   2.2   2   2   4.1e-18   1.6e-15   54.1   1.0   310   458   277   428   274   436 0.83 -
+9328:3242-4699       -            486 8330at4891           -            477   6.2e-40  134.5   0.6   1   2   2.3e-27   8.9e-25   84.6   0.0    38   313    33   310    25   325 0.88 -
+9328:3242-4699       -            486 8330at4891           -            477   6.2e-40  134.5   0.6   2   2   2.2e-16   8.6e-14   48.3   0.5   309   441   331   467   316   486 0.81 -
+9354:6844-8124       -            427 8330at4891           -            477   1.3e-22   77.4   0.1   1   1   1.7e-22   6.4e-20   68.5   0.1   158   444    93   411    85   422 0.77 -
+9562:3104-4468       -            455 8330at4891           -            477   2.4e-21   73.2   0.1   1   2   3.7e-18   1.4e-15   54.2   0.0    96   311    56   270     2   277 0.76 -
+9562:3104-4468       -            455 8330at4891           -            477   2.4e-21   73.2   0.1   2   2   6.7e-07   0.00026   17.1   0.0   313   407   297   397   292   434 0.83 -
+8960:8033-9961       -            643 8330at4891           -            477   7.4e-21   71.6   0.0   1   2   1.4e-08   5.2e-06   22.7   0.0    48   313   120   402   108   411 0.63 -
+8960:8033-9961       -            643 8330at4891           -            477   7.4e-21   71.6   0.0   2   2   8.5e-16   3.2e-13   46.4   0.0   313   451   431   578   422   588 0.80 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/busco_downloads/lineages/saccharomycetes_odb10/hmms/8330at4891.hmm
+# Target file:     /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/./busco/SRR6130428/SRR6130428_k63_contigs/run_saccharomycetes_odb10/metaeuk_output/initial_results/SRR6130428_k63_graph.contig.fa.modified.fas
+# Option settings: hmmsearch --domtblout /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/./busco/SRR6130428/SRR6130428_k63_contigs/run_saccharomycetes_odb10/hmmer_output/initial_run_results/8330at4891.out --cpu 1 /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/busco_downloads/lineages/saccharomycetes_odb10/hmms/8330at4891.hmm /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/./busco/SRR6130428/SRR6130428_k63_contigs/run_saccharomycetes_odb10/metaeuk_output/initial_results/SRR6130428_k63_graph.contig.fa.modified.fas 
+# Current dir:     /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04
+# Date:            Tue Nov  5 18:39:26 2024
+# [ok]

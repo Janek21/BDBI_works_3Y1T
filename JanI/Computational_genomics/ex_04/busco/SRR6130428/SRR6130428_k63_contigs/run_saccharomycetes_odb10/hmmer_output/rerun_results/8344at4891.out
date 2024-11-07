@@ -1,0 +1,18 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+8100:36-845          -            270 8344at4891           -            398   9.5e-99  323.2   9.2   1   2   2.8e-56   7.6e-55  178.7   3.9     1   141     1   174     1   181 0.87 -
+8100:36-845          -            270 8344at4891           -            398   9.5e-99  323.2   9.2   2   2     6e-47   1.7e-45  147.9   0.3   129   207   187   270   173   270 0.94 -
+9146:11650-12537     -            296 8344at4891           -            398     2e-36  118.0   0.1   1   1   3.5e-37   9.7e-36  115.8   0.1   150   396     2   295     1   296 0.76 -
+9656:3345-4352       -            336 8344at4891           -            398   1.3e-29   95.6   0.2   1   2   4.3e-11   1.2e-09   29.9   0.1   153   226     1    81     1    90 0.84 -
+9656:3345-4352       -            336 8344at4891           -            398   1.3e-29   95.6   0.2   2   2   9.7e-21   2.7e-19   61.6   0.0   251   398   151   317   146   317 0.77 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/busco_downloads/lineages/saccharomycetes_odb10/hmms/8344at4891.hmm
+# Target file:     /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/./busco/SRR6130428/SRR6130428_k63_contigs/run_saccharomycetes_odb10/metaeuk_output/rerun_results/SRR6130428_k63_graph.contig.fa.modified.fas
+# Option settings: hmmsearch --domtblout /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/./busco/SRR6130428/SRR6130428_k63_contigs/run_saccharomycetes_odb10/hmmer_output/rerun_results/8344at4891.out --cpu 1 /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/busco_downloads/lineages/saccharomycetes_odb10/hmms/8344at4891.hmm /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/./busco/SRR6130428/SRR6130428_k63_contigs/run_saccharomycetes_odb10/metaeuk_output/rerun_results/SRR6130428_k63_graph.contig.fa.modified.fas 
+# Current dir:     /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04
+# Date:            Tue Nov  5 18:43:45 2024
+# [ok]

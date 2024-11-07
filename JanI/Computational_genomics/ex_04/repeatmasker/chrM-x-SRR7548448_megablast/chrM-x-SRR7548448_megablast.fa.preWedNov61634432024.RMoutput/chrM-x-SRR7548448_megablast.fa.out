@@ -1,0 +1,6 @@
+  bit   perc perc perc  query     position in query    matching repeat           position in repeat
+score   div. del. ins.  sequence  begin end   (left)   repeat   class/family   begin  end    (left)  ID
+
+   12   13.1  0.0 10.8  115595      124   164   (40) + A-rich   Low_complexity      1     37    (0)   1  
+   13   20.9  3.8  3.8  133191       27    79  (273) + A-rich   Low_complexity      1     53    (0)   2  
+   15   34.9  2.1  2.1  140327       97   190  (335) + (TAA)n   Simple_repeat       1     94    (0)   3  

@@ -1,0 +1,5 @@
+Writing filtered delta file /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/blast/chrI-x-SRR6130428/chrI-x-SRR6130428_megablast.dnadiff.filter
+Reading delta file /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/blast/chrI-x-SRR6130428/chrI-x-SRR6130428_megablast.dnadiff.1delta
+Writing plot files /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/blast/chrI-x-SRR6130428/chrI-x-SRR6130428_megablast.dnadiff.fplot, /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/blast/chrI-x-SRR6130428/chrI-x-SRR6130428_megablast.dnadiff.rplot
+Writing gnuplot script /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/blast/chrI-x-SRR6130428/chrI-x-SRR6130428_megablast.dnadiff.gp
+Rendering plot /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/blast/chrI-x-SRR6130428/chrI-x-SRR6130428_megablast.dnadiff.ps

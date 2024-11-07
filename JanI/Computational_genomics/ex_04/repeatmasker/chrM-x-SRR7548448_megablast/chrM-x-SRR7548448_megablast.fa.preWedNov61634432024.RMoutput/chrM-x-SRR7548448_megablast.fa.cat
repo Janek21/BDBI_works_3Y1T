@@ -1,0 +1,55 @@
+12 13.13 0.00 10.81 115595 124 164 (40) (TATTAAA)n#Simple_repeat 1 37 (0) m_b1s252i3
+
+  115595               124 TATTAATACATTAAAAGCTATTAAATCTTATGTATTAAATA 164
+                                 - i   -   --        v   vi         
+  (TATTAAA)n#Si          1 TATTAA-ATATT-AAA--TATTAAATATTAAATATTAAATA 37
+
+Matrix = Unknown
+Transitions / transversions = 1.00 (2/2)
+Gap_init rate = 0.10 (4 / 40), avg. gap size = 1.00 (4 / 4)
+
+13 20.91 3.77 3.77 133191 27 79 (273) (TAAAA)n#Simple_repeat 1 53 (0) m_b1s252i1
+
+  133191                27 TAAAGT-AAAT-AAATTAATTAACATAAAATTAAATAGTAAACCAGCTAA 74
+                               i -    -    v  v   v       v     --   iv iv   
+  (TAAAA)n#Simp          1 TAAAATAAAATAAAATAAAATAAAATAAAATAAAATA--AAATAAAATAA 48
+
+  133191                75 AATAA 79
+                                
+  (TAAAA)n#Simp         49 AATAA 53
+
+Matrix = Unknown
+Transitions / transversions = 0.50 (3/6)
+Gap_init rate = 0.08 (4 / 52), avg. gap size = 1.00 (4 / 4)
+
+15 6.55 5.88 2.86 133191 27 60 (292) (TAAAT)n#Simple_repeat 1 35 (0) m_b1s252i2
+
+  133191                27 TAAAGTAAA-TAAATT-AATTAACATAAAATTAAAT 60
+                               v    -      -      -  v         
+  (TAAAT)n#Simp          1 TAAATTAAATTAAATTAAATTAA-ATTAAATTAAAT 35
+
+Matrix = Unknown
+Transitions / transversions = 0.00 (0/2)
+Gap_init rate = 0.09 (3 / 33), avg. gap size = 1.00 (3 / 3)
+
+15 34.94 2.13 2.13 140327 97 190 (335) (TAA)n#Simple_repeat 1 94 (0) m_b1s252i0
+
+  140327                97 TAATAATAA-CATTGTAATACCAGCAGATAATACAGGTAATGATAATAAT 145
+                                    -v  vi     vi ii -      vvii    i        
+  (TAA)n#Simple          1 TAATAATAATAATAATAATAATAATA-ATAATAATAATAATAATAATAAT 49
+
+  140327               146 AATAAGAACGCT-GTAATGAAAATTGATCATACAAATAATGGTAAT 190
+                                v  iiv -i    -  v v i  v   vv      ii    
+  (TAA)n#Simple         50 AATAATAATAATAATAAT-AATAATAATAATAATAATAATAATAAT 94
+
+Matrix = Unknown
+Transitions / transversions = 1.08 (13/12)
+Gap_init rate = 0.04 (4 / 93), avg. gap size = 1.00 (4 / 4)
+
+## Total Sequences: 26
+## Total Length: 8815
+## Total NonMask ( excluding >20bp runs of N/X bases ): 8815
+## Total NonSub ( excluding all non ACGT bases ):8815
+RepeatMasker version 4.1.3-p1 , rushjob mode
+run with nhmmscan version 3.3.2 (Nov 2020)
+RM Library: HMM-Dfam_3.6

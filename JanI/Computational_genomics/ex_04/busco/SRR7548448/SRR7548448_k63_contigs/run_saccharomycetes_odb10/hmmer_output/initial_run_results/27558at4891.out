@@ -1,0 +1,25 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+140151:0-479         -            160 27558at4891          -            164   9.1e-63  207.1   0.4   1   1   1.4e-64   1.1e-62  206.8   0.4     1   137     5   160     5   160 0.90 -
+138385:5-457         -            151 27558at4891          -            164   7.7e-13   44.7   0.0   1   1   1.2e-14     9e-13   44.5   0.0    14   129     1   132     1   149 0.77 -
+141163:84-560        -            159 27558at4891          -            164   1.6e-12   43.7   0.0   1   1     3e-14   2.3e-12   43.2   0.0     3   132    14   156    12   158 0.81 -
+140899:61-546        -            162 27558at4891          -            164   3.8e-11   39.2   0.1   1   1   5.9e-13   4.6e-11   38.9   0.1    42   142    11   119     2   134 0.82 -
+138703:2-424         -            141 27558at4891          -            164     3e-10   36.3   0.0   1   1   4.3e-12   3.4e-10   36.1   0.0     3    89     9   104     7   133 0.81 -
+140719:39-389        -            117 27558at4891          -            164     4e-09   32.6   0.1   1   1   6.6e-11   5.2e-09   32.3   0.1    47   142     3   106     2   113 0.84 -
+131625:2-328         -            109 27558at4891          -            164   1.3e-06   24.5   0.0   1   1     2e-08   1.5e-06   24.2   0.0    66   147    11    95     2   105 0.83 -
+134503:25-372        -            116 27558at4891          -            164   2.1e-06   23.8   0.0   1   1   3.1e-08   2.4e-06   23.6   0.0    73   151     1    83     1    95 0.79 -
+131231:7-294         -             96 27558at4891          -            164   1.6e-05   20.9   0.0   1   2       2.4   1.9e+02   -2.1   0.0    34    48     2    16     1    28 0.76 -
+131231:7-294         -             96 27558at4891          -            164   1.6e-05   20.9   0.0   2   2   3.4e-07   2.6e-05   20.2   0.0    47    94    31    79    20    96 0.78 -
+137665:23-379        -            119 27558at4891          -            164   3.5e-05   19.8   0.0   1   1     5e-07     4e-05   19.6   0.0    47   106     6    69     2   107 0.80 -
+131179:4-321         -            106 27558at4891          -            164   4.3e-05   19.5   0.0   1   1   5.7e-07   4.5e-05   19.5   0.0    46   107    25    91     1   101 0.76 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/busco_downloads/lineages/saccharomycetes_odb10/hmms/27558at4891.hmm
+# Target file:     /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/./busco/SRR7548448/SRR7548448_k63_contigs/run_saccharomycetes_odb10/metaeuk_output/initial_results/SRR7548448_k63_graph.contig.fa.modified.fas
+# Option settings: hmmsearch --domtblout /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/./busco/SRR7548448/SRR7548448_k63_contigs/run_saccharomycetes_odb10/hmmer_output/initial_run_results/27558at4891.out --cpu 1 /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/busco_downloads/lineages/saccharomycetes_odb10/hmms/27558at4891.hmm /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/./busco/SRR7548448/SRR7548448_k63_contigs/run_saccharomycetes_odb10/metaeuk_output/initial_results/SRR7548448_k63_graph.contig.fa.modified.fas 
+# Current dir:     /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04
+# Date:            Tue Nov  5 18:47:57 2024
+# [ok]

@@ -1,0 +1,113 @@
+# hmmsearch :: search profile(s) against a sequence database
+# HMMER 3.1b2 (February 2015); http://hmmer.org/
+# Copyright (C) 2015 Howard Hughes Medical Institute.
+# Freely distributed under the GNU General Public License (GPLv3).
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# query HMM file:                  /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/busco_downloads/lineages/saccharomycetes_odb10/hmms/8344at4891.hmm
+# target sequence database:        /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/./busco/SRR6130428/SRR6130428_k63_contigs/run_saccharomycetes_odb10/metaeuk_output/rerun_results/SRR6130428_k63_graph.contig.fa.modified.fas
+# per-dom hits tabular output:     /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/./busco/SRR6130428/SRR6130428_k63_contigs/run_saccharomycetes_odb10/hmmer_output/rerun_results/8344at4891.out
+# number of worker threads:        1
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Query:       8344at4891  [M=398]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence         Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------         -----------
+    9.5e-99  323.2   9.2    7.6e-55  178.7   3.9    2.0  2  8100:36-845       
+      2e-36  118.0   0.1    9.7e-36  115.8   0.1    1.9  1  9146:11650-12537  
+    1.3e-29   95.6   0.2    2.7e-19   61.6   0.0    2.9  2  9656:3345-4352    
+
+
+Domain annotation for each sequence (and alignments):
+>> 8100:36-845  
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  178.7   3.9   2.8e-56   7.6e-55       1     141 [.       1     174 [.       1     181 [. 0.87
+   2 !  147.9   0.3     6e-47   1.7e-45     129     207 ..     187     270 .]     173     270 .] 0.94
+
+  Alignments for each domain:
+  == domain 1  score: 178.7 bits;  conditional E-value: 2.8e-56
+   8344at4891   1 mgtakkekqrrvre....dgnlrvkGenfyrdakkvkklnmyk.....rnakgeiikaaalq....ptarvdpnrrwfgntrvisqdalthfrealg. 84 
+                  mgt+kkek+rr+re    dgnlrvkGenfyrd+k+vk+lnmy+     rn+kg++i+aa++q    p+arv+p+rrwfgntrvisqdal+hfr+alg 
+  8100:36-845   1 MGTGKKEKSRRIREgdtkDGNLRVKGENFYRDSKRVKFLNMYTsgkeiRNKKGNLIRAASFQdstiPDARVQPDRRWFGNTRVISQDALQHFRSALGe 98 
+                  9***********9655559***********************7666779************9888899****************************95 PP
+
+   8344at4891  85 ...dsyqvllkrnklpmslldekd........iletesy...fgpkaqrkk.....ssleelyeekqeldstleak 141
+                     d+yqvll+rnklpmsll+ekd        il+tesy   fgpkaqrk+     s+le+l +  +e  ++ e k
+  8100:36-845  99 tqkDTYQVLLRRNKLPMSLLEEKDadespkarILDTESYadaFGPKAQRKRprlaaSNLEDLVKATNEDITKYEEK 174
+                  55568*****************986677777789****98889*******85555567888887777766665555 PP
+
+  == domain 2  score: 147.9 bits;  conditional E-value: 6e-47
+   8344at4891 129 eekqeldstleakeaifskGqskriwnelykvidssdvvihvldardplGtrcksveey.....phkhliyvlnkcdlvptwva 207
+                  +e +e+  t +akeaifskGqskriwnelykvidssdvvihvldardplGtrcksveey     phkhliyvlnkcdlvptwva
+  8100:36-845 187 QEDKENGWTSAAKEAIFSKGQSKRIWNELYKVIDSSDVVIHVLDARDPLGTRCKSVEEYmkketPHKHLIYVLNKCDLVPTWVA 270
+                  5777888899***********************************************99888778******************7 PP
+
+>> 9146:11650-12537  
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  115.8   0.1   3.5e-37   9.7e-36     150     396 ..       2     295 ..       1     296 [] 0.76
+
+  Alignments for each domain:
+  == domain 1  score: 115.8 bits;  conditional E-value: 3.5e-37
+        8344at4891 150 skriwnelyk.vidssdvvihvldardplGtrcksveey....phkhliyvlnkcdlvptwvaa..akhlskeyptlafhas....itnsfgk 231
+                       s++ +++++k vid+sdv++ vldardp  tr ++vee       k li +lnk+dl+p  v     ++l++++pt+ + as       sf++
+  9146:11650-12537   2 SRKAYDKIFKsVIDASDVILYVLDARDPESTRSRKVEEAvlqsQGKRLILILNKVDLIPPHVLEqwLNYLKSSFPTIPLRASsgavNGTSFNR 94 
+                       778888888879**********************999752222679*************999652258999******9988733321234432 PP
+
+        8344at4891 232 ........gsliqllrqfsqlhkdrkqisvgfigypntgkssiintlr.....kkkvcqvapipgetkvwqyitlmkriflidcpgivppssk 311
+                               ++l++ l+ +s+  + +++i vg+igypn+gkss+in+l      + k c v    g t   + i++ +++ ++d+pgi  ps++
+  9146:11650-12537  95 klsqtttaSALLESLKTYSNNSNLKRSIVVGVIGYPNVGKSSVINALLarrggQSKACPVGNEAGVTTSLREIKIDNKLKILDSPGICFPSEN 187
+                       22222222679999********9**********************985222335699******************************988754 PP
+
+        8344at4891 312 ......dteedilfrgvvrvehvsnpeq....yipelkrckr..khlertyei...........sgwfiellarkqgrllkggepdesgvakq 381
+                             + e+++ + + +  +h+ +p       ++ l + ++  + +++ yei           +++f+  +ark+grl kgg p+ ++    
+  9146:11650-12537 188 kkrskvEHEAELALLNALPAKHIVDPYPavlmLVKRLAKSDEmtESFKKLYEIppipandadtfTKHFLIHVARKRGRLGKGGIPNLASAGLS 280
+                       12222245778888899999999998751111345555554322567899998555554444334689999********************** PP
+
+        8344at4891 382 vlndfnrgkipwfva 396
+                       vlnd+  gki  +v 
+  9146:11650-12537 281 VLNDWRDGKILGWVL 295
+                       *********976665 PP
+
+>> 9656:3345-4352  
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   29.9   0.1   4.3e-11   1.2e-09     153     226 ..       1      81 [.       1      90 [. 0.84
+   2 !   61.6   0.0   9.7e-21   2.7e-19     251     398 .]     151     317 ..     146     317 .. 0.77
+
+  Alignments for each domain:
+  == domain 1  score: 29.9 bits;  conditional E-value: 4.3e-11
+      8344at4891 153 iwnelykvidssdvvihvldardplGtrcksveeyph.....khliyvlnkcdlvpt..wvaaakhlskeyptlafhasit 226
+                     +w++l++v++ sd+v++++dar+pl  r   +e+y +     k  + ++nk+dl+     +a ak++ +++ +++f+++++
+  9656:3345-4352   1 VWKQLWRVVERSDLVVQIVDARNPLLFRSVDLERYVKesddrKANLLLVNKADLLTKkqRIAWAKYFISKNISFTFYSALR 81 
+                     7*********************************96433333888999******975226899999988888888887765 PP
+
+  == domain 2  score: 61.6 bits;  conditional E-value: 9.7e-21
+      8344at4891 251 isvgfigypntgkssiintlrkkkvcqvapipgetkvwqyitlmkriflidcpgivppsskdteedilfrgvvrvehvsn............peq 333
+                     i++g++gypn+gkss in+l   k  +v+  pg+tk +q i+l   ++l dcpg+v p+   ++ +++  gv+ ++++ +            p+ 
+  9656:3345-4352 151 INIGLVGYPNVGKSSTINSLVGAKKVSVSSTPGKTKHFQTIKLSDSVMLCDCPGLVFPNFAYNKGELVCNGVLPIDQLRDyigpaglvaeriPKY 245
+                     89***********************************************************************9998764222222222222455 PP
+
+      8344at4891 334 yipelkrckrkhlerty....ei..sgwfiellarkqgrllkg.gepdesgvakqvlndfnrgkipwfvapp 398
+                     yi+++  ++ +   r      +i  ++ ++   ar +g + +g g +de   ++ +l+d+  gk+ +  +pp
+  9656:3345-4352 246 YIEAIYGIHIQTKSRDEggngDIptAQELLVAYARARGYMTQGyGSADEPRASRYILKDYVNGKLLYVNPPP 317
+                     666555443333333221111231135577788999**999987899*****************98777776 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                              1  (398 nodes)
+Target sequences:                           83  (30724 residues searched)
+Passed MSV filter:                         8  (0.0963855); expected 1.7 (0.02)
+Passed bias filter:                        6  (0.0722892); expected 1.7 (0.02)
+Passed Vit filter:                         3  (0.0361446); expected 0.1 (0.001)
+Passed Fwd filter:                         3  (0.0361446); expected 0.0 (1e-05)
+Initial search space (Z):                 83  [actual number of targets]
+Domain search space  (domZ):               3  [number of targets reported over threshold]
+# CPU time: 0.02u 0.00s 00:00:00.02 Elapsed: 00:00:00.02
+# Mc/sec: 611.41
+//
+[ok]

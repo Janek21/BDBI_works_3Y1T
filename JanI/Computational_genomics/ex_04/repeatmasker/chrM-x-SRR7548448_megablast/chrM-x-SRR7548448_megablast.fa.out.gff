@@ -1,0 +1,7 @@
+##gff-version 3
+##sequence-region 115595 1 204
+115595	RepeatMasker	dispersed_repeat	124	164	13.1	+	.	ID=1;Target "Motif:A-rich" 1 37
+##sequence-region 133191 1 352
+133191	RepeatMasker	dispersed_repeat	27	79	20.9	+	.	ID=2;Target "Motif:A-rich" 1 53
+##sequence-region 140327 1 525
+140327	RepeatMasker	dispersed_repeat	97	190	34.9	+	.	ID=3;Target "Motif:(TAA)n" 1 94

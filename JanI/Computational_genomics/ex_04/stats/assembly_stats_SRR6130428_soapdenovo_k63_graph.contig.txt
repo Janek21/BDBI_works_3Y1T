@@ -1,0 +1,60 @@
+
+---------------- Information for assembly '/home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/soapdenovo/SRR6130428/SRR6130428_k63_graph.contig.fa' ----------------
+
+                                   Assumed genome size (Mbp)      12.16
+
+                                         Number of scaffolds       4867
+                                     Total size of scaffolds   11905871
+  Total scaffold length as percentage of assumed genome size      97.9%
+                                            Longest scaffold      69946
+                                           Shortest scaffold         64
+                                 Number of scaffolds > 1K nt       1265  26.0%
+                                Number of scaffolds > 10K nt        393   8.1%
+                               Number of scaffolds > 100K nt          0   0.0%
+                                 Number of scaffolds > 1M nt          0   0.0%
+                                Number of scaffolds > 10M nt          0   0.0%
+                                          Mean scaffold size       2446
+                                        Median scaffold size        135
+                                         N50 scaffold length      14236
+                                          L50 scaffold count        256
+                                        NG50 scaffold length      13798
+                                         LG50 scaffold count        265
+              N50 scaffold - NG50 scaffold length difference        438
+                                                 scaffold %A      31.13
+                                                 scaffold %C      19.09
+                                                 scaffold %G      19.03
+                                                 scaffold %T      30.76
+                                                 scaffold %N       0.00
+                                         scaffold %non-ACGTN       0.00
+                             Number of scaffold non-ACGTN nt          0
+
+                Percentage of assembly in scaffolded contigs       0.0%
+              Percentage of assembly in unscaffolded contigs     100.0%
+                      Average number of contigs per scaffold        1.0
+Average length of break (>25 Ns) between contigs in scaffold          0
+
+                                           Number of contigs       4867
+                              Number of contigs in scaffolds          0
+                          Number of contigs not in scaffolds       4867
+                                       Total size of contigs   11905871
+                                              Longest contig      69946
+                                             Shortest contig         64
+                                   Number of contigs > 1K nt       1265  26.0%
+                                  Number of contigs > 10K nt        393   8.1%
+                                 Number of contigs > 100K nt          0   0.0%
+                                   Number of contigs > 1M nt          0   0.0%
+                                  Number of contigs > 10M nt          0   0.0%
+                                            Mean contig size       2446
+                                          Median contig size        135
+                                           N50 contig length      14236
+                                            L50 contig count        256
+                                          NG50 contig length      13798
+                                           LG50 contig count        265
+                  N50 contig - NG50 contig length difference        438
+                                                   contig %A      31.13
+                                                   contig %C      19.09
+                                                   contig %G      19.03
+                                                   contig %T      30.76
+                                                   contig %N       0.00
+                                           contig %non-ACGTN       0.00
+                               Number of contig non-ACGTN nt          0

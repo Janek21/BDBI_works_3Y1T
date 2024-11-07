@@ -1,0 +1,39 @@
+RepeatMasker version 4.1.3-p1
+Search Engine: HMMER [ 3.3.2 (Nov 2020) ]
+
+Using Master RepeatMasker Database: /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/bin/RepeatMasker-4.1.3/Libraries/RepeatMaskerLib.h5
+  Title    : Dfam
+  Version  : 3.6
+  Date     : 2022-04-12
+  Families : 19,025
+
+Species/Taxa Search:
+  Saccharomyces [NCBI Taxonomy ID: 4930]
+  Lineage: root;cellular organisms;Eukaryota;Opisthokonta;Fungi;
+           Dikarya;Ascomycota;saccharomyceta;Saccharomycotina
+  9 families in ancestor taxa; 0 lineage-specific families
+
+Building species libraries in: /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/bin/RepeatMasker-4.1.3/Libraries/HMM-Dfam_3.6/Saccharomyces
+
+analyzing file /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/blast/chrM-x-SRR7548448/chrM-x-SRR7548448_megablast.fa
+
+Some previous RepeatMasker output files were moved to the directory 
+/home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/repeatmasker/chrM-x-SRR7548448_megablast/chrM-x-SRR7548448_megablast.fa.preWedNov61634432024.RMoutput 
+in order not to overwrite them.
+
+identifying Simple Repeats in batch 1 of 1
+identifying Simple Repeats in batch 1 of 1
+processing output: 
+cycle 1 
+cycle 2 
+cycle 3 
+cycle 4 
+cycle 5 
+cycle 6 
+cycle 7 
+cycle 8 
+cycle 9 
+cycle 10 
+Generating output... 
+masking
+done

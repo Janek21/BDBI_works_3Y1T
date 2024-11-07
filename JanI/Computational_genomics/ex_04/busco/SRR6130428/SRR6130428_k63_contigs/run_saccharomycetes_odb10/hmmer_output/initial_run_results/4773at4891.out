@@ -1,0 +1,24 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+8796:4903-8187       -           1095 4773at4891           -            569   1.1e-64  216.5  49.3   1   8   6.2e-12   8.3e-09   32.0   4.5    18    94   127   229   107   235 0.71 -
+8796:4903-8187       -           1095 4773at4891           -            569   1.1e-64  216.5  49.3   2   8      0.14   1.9e+02   -2.2   0.3    96   130   269   305   259   336 0.68 -
+8796:4903-8187       -           1095 4773at4891           -            569   1.1e-64  216.5  49.3   3   8   6.3e-30   8.4e-27   91.4   8.1   154   245   385   482   275   500 0.87 -
+8796:4903-8187       -           1095 4773at4891           -            569   1.1e-64  216.5  49.3   4   8    0.0076        10    2.0   0.1   254   292   528   563   491   580 0.83 -
+8796:4903-8187       -           1095 4773at4891           -            569   1.1e-64  216.5  49.3   5   8   5.1e-10   6.9e-07   25.7   0.9   288   380   593   688   564   711 0.77 -
+8796:4903-8187       -           1095 4773at4891           -            569   1.1e-64  216.5  49.3   6   8   4.5e-11     6e-08   29.1   0.2   367   407   755   799   748   803 0.87 -
+8796:4903-8187       -           1095 4773at4891           -            569   1.1e-64  216.5  49.3   7   8   2.8e-05     0.037   10.0   2.0   422   483   844   905   829   922 0.88 -
+8796:4903-8187       -           1095 4773at4891           -            569   1.1e-64  216.5  49.3   8   8     2e-15   2.6e-12   43.5   0.0   516   569  1029  1095  1025  1095 0.83 -
+9168:234-1514        -            427 4773at4891           -            569   0.00021   17.5   8.1   1   3      0.12   1.5e+02   -1.9   0.0   158   189    61    92    55    96 0.87 -
+9168:234-1514        -            427 4773at4891           -            569   0.00021   17.5   8.1   2   3   3.2e-06    0.0042   13.1   0.2   186   217   129   160   107   193 0.83 -
+9168:234-1514        -            427 4773at4891           -            569   0.00021   17.5   8.1   3   3   9.5e-05      0.13    8.3   0.4   179   217   203   241   176   246 0.82 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/busco_downloads/lineages/saccharomycetes_odb10/hmms/4773at4891.hmm
+# Target file:     /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/./busco/SRR6130428/SRR6130428_k63_contigs/run_saccharomycetes_odb10/metaeuk_output/initial_results/SRR6130428_k63_graph.contig.fa.modified.fas
+# Option settings: hmmsearch --domtblout /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/./busco/SRR6130428/SRR6130428_k63_contigs/run_saccharomycetes_odb10/hmmer_output/initial_run_results/4773at4891.out --cpu 1 /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/busco_downloads/lineages/saccharomycetes_odb10/hmms/4773at4891.hmm /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/./busco/SRR6130428/SRR6130428_k63_contigs/run_saccharomycetes_odb10/metaeuk_output/initial_results/SRR6130428_k63_graph.contig.fa.modified.fas 
+# Current dir:     /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04
+# Date:            Tue Nov  5 18:39:00 2024
+# [ok]

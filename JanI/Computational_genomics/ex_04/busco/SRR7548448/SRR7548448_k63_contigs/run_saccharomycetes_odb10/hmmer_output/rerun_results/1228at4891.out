@@ -1,0 +1,33 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+140077:5-511         -            169 1228at4891           -           1049     2e-05   18.2   0.0   1   1   3.4e-07   2.8e-05   17.7   0.0   908   970    63   134    42   166 0.76 -
+145769:0-1415        -            472 1228at4891           -           1049   0.00013   15.6   1.5   1   3     0.075       6.2    0.0   0.0   926   965    54    94    47   102 0.83 -
+145769:0-1415        -            472 1228at4891           -           1049   0.00013   15.6   1.5   2   3      0.13        11   -0.8   0.0   916   957   180   222   120   225 0.77 -
+145769:0-1415        -            472 1228at4891           -           1049   0.00013   15.6   1.5   3   3   1.7e-05    0.0014   12.1   0.1   908   965   359   426   336   429 0.83 -
+143663:88-690        -            201 1228at4891           -           1049   0.00042   13.8   0.2   1   2     0.028       2.3    1.5   0.1   941   971     2    32     1    53 0.77 -
+143663:88-690        -            201 1228at4891           -           1049   0.00042   13.8   0.2   2   2   4.8e-05     0.004   10.6   0.0   908  1020    65   198    48   201 0.62 -
+144489:26-847        -            274 1228at4891           -           1049    0.0005   13.6   0.2   1   2    0.0019      0.15    5.4   0.1   936   985     6    55     2    70 0.85 -
+144489:26-847        -            274 1228at4891           -           1049    0.0005   13.6   0.2   2   2   0.00094     0.078    6.3   0.0   920   958   139   179   124   192 0.84 -
+145821:41-862        -            274 1228at4891           -           1049   0.00088   12.8   5.9   1   5      0.53        44   -2.8   0.0   948   965     6    23     3    32 0.85 -
+145821:41-862        -            274 1228at4891           -           1049   0.00088   12.8   5.9   2   5     0.014       1.2    2.4   0.2   908   956    38    94    17    98 0.74 -
+145821:41-862        -            274 1228at4891           -           1049   0.00088   12.8   5.9   3   5   0.00065     0.054    6.9   0.5   908   975    78   154    64   171 0.73 -
+145821:41-862        -            274 1228at4891           -           1049   0.00088   12.8   5.9   4   5      0.25        20   -1.7   0.0   940   963   208   231   197   233 0.87 -
+145821:41-862        -            274 1228at4891           -           1049   0.00088   12.8   5.9   5   5    0.0018      0.15    5.4   0.1   924   964   233   272   225   273 0.89 -
+145583:484-1188      -            235 1228at4891           -           1049    0.0021   11.5   0.1   1   2   0.00031     0.026    7.9   0.0   911   958    25    75    15   126 0.84 -
+145583:484-1188      -            235 1228at4891           -           1049    0.0021   11.5   0.1   2   2     0.019       1.6    2.0   0.0   896   945   149   198   129   219 0.88 -
+145301:241-942       -            234 1228at4891           -           1049    0.0039   10.7   0.3   1   3      0.24        20   -1.6   0.0   907   930    20    43     3    53 0.75 -
+145301:241-942       -            234 1228at4891           -           1049    0.0039   10.7   0.3   2   3      0.22        18   -1.5   0.0   923   964    87   129    62   144 0.73 -
+145301:241-942       -            234 1228at4891           -           1049    0.0039   10.7   0.3   3   3   0.00022     0.018    8.4   0.1   909   958   148   208   144   211 0.76 -
+144137:68-793        -            242 1228at4891           -           1049    0.0039   10.7   1.2   1   2   0.00015     0.012    9.0   0.5   923   994   116   187    93   193 0.82 -
+144137:68-793        -            242 1228at4891           -           1049    0.0039   10.7   1.2   2   2     0.014       1.2    2.5   0.1   908   962   176   240   172   242 0.76 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/busco_downloads/lineages/saccharomycetes_odb10/hmms/1228at4891.hmm
+# Target file:     /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/./busco/SRR7548448/SRR7548448_k63_contigs/run_saccharomycetes_odb10/metaeuk_output/rerun_results/SRR7548448_k63_graph.contig.fa.modified.fas
+# Option settings: hmmsearch --domtblout /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/./busco/SRR7548448/SRR7548448_k63_contigs/run_saccharomycetes_odb10/hmmer_output/rerun_results/1228at4891.out --cpu 1 /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/busco_downloads/lineages/saccharomycetes_odb10/hmms/1228at4891.hmm /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/./busco/SRR7548448/SRR7548448_k63_contigs/run_saccharomycetes_odb10/metaeuk_output/rerun_results/SRR7548448_k63_graph.contig.fa.modified.fas 
+# Current dir:     /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04
+# Date:            Tue Nov  5 18:54:32 2024
+# [ok]

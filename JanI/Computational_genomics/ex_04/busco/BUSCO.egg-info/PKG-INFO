@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: BUSCO
+Version: 5.4.3
+Home-page: https://busco.ezlab.org/
+Author: ezlab
+Author-email: ez@ezlab.org
+License: Licensed under the MIT license. See LICENSE.md file.
+Platform: Unix like
+License-File: LICENSE
+
+Assessing genome assembly and annotation completeness with Benchmarking Universal Single-Copy Orthologs 

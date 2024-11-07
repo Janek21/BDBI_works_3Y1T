@@ -1,0 +1,21 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+8906:8570-9529       -            320 31429at4891          -            265   6.7e-98  324.7  14.4   1   1     3e-97   1.4e-94  313.8  14.4     2   262     3   316     2   319 0.85 -
+9556:8484-9101       -            206 31429at4891          -            265   6.1e-30  101.8   5.5   1   1   1.6e-32     7e-30  101.7   5.5    64   219    46   204    21   206 0.87 -
+9378:10466-11599     -            378 31429at4891          -            265   7.8e-27   91.7  16.6   1   1   8.8e-29   3.9e-26   89.4  16.6    73   195    78   208    26   223 0.79 -
+9722:28968-29540     -            191 31429at4891          -            265   3.1e-23   79.9   6.8   1   1   1.1e-25   4.7e-23   79.3   6.8    45   188    44   190     1   191 0.75 -
+9144:3388-4368       -            327 31429at4891          -            265   2.9e-22   76.7  13.7   1   2       0.3   1.3e+02   -0.9   0.4   122   169    48    92    36    99 0.59 -
+9144:3388-4368       -            327 31429at4891          -            265   2.9e-22   76.7  13.7   2   2   6.5e-25   2.9e-22   76.7  13.7    75   195   128   244   124   268 0.91 -
+8724:3448-4146       -            233 31429at4891          -            265   4.4e-13   46.6   3.4   1   2   1.1e-15   4.8e-13   46.5   0.2    22   147     4   128     1   153 0.78 -
+8724:3448-4146       -            233 31429at4891          -            265   4.4e-13   46.6   3.4   2   2     0.094        42    0.8   0.4    13   189   156   188   149   202 0.51 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/busco_downloads/lineages/saccharomycetes_odb10/hmms/31429at4891.hmm
+# Target file:     /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/./busco/SRR6130428/SRR6130428_k63_contigs/run_saccharomycetes_odb10/metaeuk_output/initial_results/SRR6130428_k63_graph.contig.fa.modified.fas
+# Option settings: hmmsearch --domtblout /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/./busco/SRR6130428/SRR6130428_k63_contigs/run_saccharomycetes_odb10/hmmer_output/initial_run_results/31429at4891.out --cpu 1 /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/busco_downloads/lineages/saccharomycetes_odb10/hmms/31429at4891.hmm /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/./busco/SRR6130428/SRR6130428_k63_contigs/run_saccharomycetes_odb10/metaeuk_output/initial_results/SRR6130428_k63_graph.contig.fa.modified.fas 
+# Current dir:     /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04
+# Date:            Tue Nov  5 18:38:32 2024
+# [ok]

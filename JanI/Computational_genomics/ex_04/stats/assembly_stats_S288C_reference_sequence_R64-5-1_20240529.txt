@@ -1,0 +1,60 @@
+
+---------------- Information for assembly '-' ----------------
+
+                                   Assumed genome size (Mbp)      12.16
+
+                                         Number of scaffolds         17
+                                     Total size of scaffolds   12157105
+  Total scaffold length as percentage of assumed genome size     100.0%
+                                            Longest scaffold    1531933
+                                           Shortest scaffold      85779
+                                 Number of scaffolds > 1K nt         17 100.0%
+                                Number of scaffolds > 10K nt         17 100.0%
+                               Number of scaffolds > 100K nt         16  94.1%
+                                 Number of scaffolds > 1M nt          4  23.5%
+                                Number of scaffolds > 10M nt          0   0.0%
+                                          Mean scaffold size     715124
+                                        Median scaffold size     745751
+                                         N50 scaffold length     924431
+                                          L50 scaffold count          6
+                                        NG50 scaffold length     924431
+                                         LG50 scaffold count          6
+              N50 scaffold - NG50 scaffold length difference          0
+                                                 scaffold %A      30.98
+                                                 scaffold %C      19.09
+                                                 scaffold %G      19.06
+                                                 scaffold %T      30.87
+                                                 scaffold %N       0.00
+                                         scaffold %non-ACGTN       0.00
+                             Number of scaffold non-ACGTN nt          0
+
+                Percentage of assembly in scaffolded contigs       0.0%
+              Percentage of assembly in unscaffolded contigs     100.0%
+                      Average number of contigs per scaffold        1.0
+Average length of break (>25 Ns) between contigs in scaffold          0
+
+                                           Number of contigs         17
+                              Number of contigs in scaffolds          0
+                          Number of contigs not in scaffolds         17
+                                       Total size of contigs   12157105
+                                              Longest contig    1531933
+                                             Shortest contig      85779
+                                   Number of contigs > 1K nt         17 100.0%
+                                  Number of contigs > 10K nt         17 100.0%
+                                 Number of contigs > 100K nt         16  94.1%
+                                   Number of contigs > 1M nt          4  23.5%
+                                  Number of contigs > 10M nt          0   0.0%
+                                            Mean contig size     715124
+                                          Median contig size     745751
+                                           N50 contig length     924431
+                                            L50 contig count          6
+                                          NG50 contig length     924431
+                                           LG50 contig count          6
+                  N50 contig - NG50 contig length difference          0
+                                                   contig %A      30.98
+                                                   contig %C      19.09
+                                                   contig %G      19.06
+                                                   contig %T      30.87
+                                                   contig %N       0.00
+                                           contig %non-ACGTN       0.00
+                               Number of contig non-ACGTN nt          0

@@ -1,0 +1,36 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+9334:13206-13745     -            180 27330at4891          -            164   2.5e-92  304.3   0.0   1   1   2.4e-94     3e-92  304.1   0.0     3   164     1   180     1   180 0.94 -
+9360:15235-15768     -            178 27330at4891          -            164   1.4e-26   90.5   0.0   1   1   1.3e-28   1.7e-26   90.3   0.0    10   162    12   175     3   177 0.87 -
+8432:4086-4625       -            180 27330at4891          -            164   5.9e-26   88.5   0.0   1   1   5.7e-28   7.3e-26   88.2   0.0    11   162    13   175     4   177 0.87 -
+8780:4884-5432       -            183 27330at4891          -            164   6.9e-26   88.3   0.0   1   1   6.7e-28   8.6e-26   88.0   0.0     8   162    11   176     4   178 0.88 -
+9260:2621-3145       -            175 27330at4891          -            164     2e-24   83.5   0.0   1   1   1.8e-26   2.3e-24   83.3   0.0    13   153    15   166     4   175 0.81 -
+9434:16912-17505     -            198 27330at4891          -            164   1.2e-20   71.2   0.0   1   1   1.1e-22   1.4e-20   71.0   0.0     9   141     9   157     1   182 0.80 -
+9494:6635-7150       -            172 27330at4891          -            164   8.1e-13   45.8   0.0   1   1   9.1e-15   1.2e-12   45.3   0.0    14   133     2   135     1   168 0.72 -
+9394:464-982         -            173 27330at4891          -            164   9.6e-08   29.3   0.0   1   1   9.1e-10   1.2e-07   29.0   0.0    17   149     9   149     5   165 0.75 -
+8032:1817-2311       -            165 27330at4891          -            164   1.5e-07   28.6   0.0   1   1   1.3e-09   1.7e-07   28.5   0.0    17   149     1   141     1   157 0.74 -
+9652:7994-8617       -            208 27330at4891          -            164   3.9e-07   27.3   0.0   1   1   6.1e-09   7.8e-07   26.3   0.0    17   129    10   138     3   170 0.73 -
+9038:8471-9886       -            472 27330at4891          -            164   4.3e-07   27.1   0.5   1   2     0.034       4.3    4.4   0.1    15    36    41    62    25    71 0.85 -
+9038:8471-9886       -            472 27330at4891          -            164   4.3e-07   27.1   0.5   2   2   2.3e-06    0.0003   17.9   0.0    46   101   300   355   288   405 0.74 -
+7992:884-1501        -            206 27330at4891          -            164   7.3e-07   26.4   0.0   1   1     8e-09     1e-06   25.9   0.0    17   121    10   125     3   147 0.81 -
+8012:204-749         -            182 27330at4891          -            164   1.8e-05   21.9   0.0   1   1   1.9e-07   2.5e-05   21.4   0.0    16   126     7   128     3   140 0.80 -
+9376:16802-17530     -            243 27330at4891          -            164   3.5e-05   20.9   0.0   1   1   5.2e-07   6.6e-05   20.0   0.0    17   100    40   127    23   158 0.79 -
+8672:6060-7157       -            366 27330at4891          -            164   3.6e-05   20.9   0.4   1   2     0.011       1.4    5.9   0.1     8    36    34    62    30    69 0.89 -
+8672:6060-7157       -            366 27330at4891          -            164   3.6e-05   20.9   0.4   2   2   8.5e-05     0.011   12.8   0.0    58   103   207   252   184   294 0.83 -
+9306:13782-15263     -            494 27330at4891          -            164   4.6e-05   20.5   0.1   1   1     7e-06   0.00089   16.4   0.1    11   154   238   400   229   408 0.67 -
+9718:43474-44961     -            496 27330at4891          -            164   6.5e-05   20.1   0.0   1   1   1.4e-06   0.00018   18.6   0.0    16   125   326   454   316   471 0.69 -
+9176:12388-12873     -            162 27330at4891          -            164    0.0001   19.5   0.0   1   1   9.5e-07   0.00012   19.2   0.0    17   130     2   126     1   155 0.75 -
+9570:23807-24448     -            214 27330at4891          -            164    0.0004   17.5   0.0   1   1   7.2e-06   0.00092   16.3   0.0    17   125     2   130     1   160 0.73 -
+9406:6563-7207       -            215 27330at4891          -            164     0.004   14.3   0.0   1   1   4.6e-05    0.0059   13.7   0.0    15   120    20   136     6   152 0.74 -
+9616:2514-3011       -            166 27330at4891          -            164     0.016   12.3   0.0   1   1   0.00015     0.019   12.0   0.0    64   133    53   129     1   146 0.59 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/busco_downloads/lineages/saccharomycetes_odb10/hmms/27330at4891.hmm
+# Target file:     /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/./busco/SRR6130428/SRR6130428_k63_contigs/run_saccharomycetes_odb10/metaeuk_output/initial_results/SRR6130428_k63_graph.contig.fa.modified.fas
+# Option settings: hmmsearch --domtblout /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/./busco/SRR6130428/SRR6130428_k63_contigs/run_saccharomycetes_odb10/hmmer_output/initial_run_results/27330at4891.out --cpu 1 /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/busco_downloads/lineages/saccharomycetes_odb10/hmms/27330at4891.hmm /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/./busco/SRR6130428/SRR6130428_k63_contigs/run_saccharomycetes_odb10/metaeuk_output/initial_results/SRR6130428_k63_graph.contig.fa.modified.fas 
+# Current dir:     /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04
+# Date:            Tue Nov  5 18:38:18 2024
+# [ok]

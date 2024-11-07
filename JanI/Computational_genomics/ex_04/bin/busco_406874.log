@@ -1,0 +1,5 @@
+2024-11-05 18:12:53 INFO:__main__	****************** Start plot generation at 11/05/2024 18:12:53 ******************
+2024-11-05 18:12:53 INFO:__main__	Load data ...
+2024-11-05 18:12:53 WARNING:__main__	No files matching the pattern short_summary.[generic|specific]* were found in ./busco/SRR6130428/SRR6130428_k63_contigs/
+2024-11-05 18:12:53 ERROR:__main__	Plot generation failed !
+2024-11-05 18:12:53 INFO:__main__	Check the logs, read the user guide, and check the BUSCO issue board on https://gitlab.com/ezlab/busco/issues

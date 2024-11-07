@@ -1,0 +1,189 @@
+##gff-version 3
+##sequence-region 6234 1 280
+6234	RepeatMasker	dispersed_repeat	37	125	21.7	+	.	ID=1;Target "Motif:A-rich" 1 86
+6234	RepeatMasker	dispersed_repeat	160	246	19.5	+	.	ID=1;Target "Motif:A-rich" 1 86
+##sequence-region 6336 1 303
+6336	RepeatMasker	dispersed_repeat	59	152	19.7	+	.	ID=2;Target "Motif:(AT)n" 1 103
+##sequence-region 6370 1 308
+6370	RepeatMasker	dispersed_repeat	133	159	 3.8	+	.	ID=3;Target "Motif:(AATA)n" 1 29
+##sequence-region 6600 1 371
+6600	RepeatMasker	dispersed_repeat	134	216	19.1	+	.	ID=4;Target "Motif:A-rich" 1 82
+##sequence-region 6636 1 387
+6636	RepeatMasker	dispersed_repeat	269	306	 8.9	+	.	ID=5;Target "Motif:(ATA)n" 1 39
+##sequence-region 6752 1 445
+6752	RepeatMasker	dispersed_repeat	9	38	 0.0	+	.	ID=6;Target "Motif:(AATAT)n" 1 29
+6752	RepeatMasker	dispersed_repeat	104	227	16.9	+	.	ID=7;Target "Motif:(AT)n" 1 135
+6752	RepeatMasker	dispersed_repeat	407	443	14.9	+	.	ID=8;Target "Motif:(TATTTTA)n" 1 37
+##sequence-region 6806 1 470
+6806	RepeatMasker	dispersed_repeat	76	144	13.0	+	.	ID=9;Target "Motif:(AATA)n" 1 65
+##sequence-region 6988 1 664
+6988	RepeatMasker	dispersed_repeat	208	233	 0.0	+	.	ID=10;Target "Motif:(TATTT)n" 1 26
+6988	RepeatMasker	dispersed_repeat	315	348	 0.0	+	.	ID=11;Target "Motif:(ATATA)n" 1 34
+6988	RepeatMasker	dispersed_repeat	443	473	 0.0	+	.	ID=12;Target "Motif:(ATATAAA)n" 1 32
+6988	RepeatMasker	dispersed_repeat	483	557	 4.2	+	.	ID=13;Target "Motif:(TA)n" 1 80
+##sequence-region 7100 1 812
+7100	RepeatMasker	dispersed_repeat	60	112	20.2	+	.	ID=14;Target "Motif:(TAA)n" 1 55
+7100	RepeatMasker	dispersed_repeat	402	433	 3.2	+	.	ID=15;Target "Motif:(TATT)n" 1 32
+##sequence-region 7306 1 1158
+7306	RepeatMasker	dispersed_repeat	435	473	 2.9	+	.	ID=16;Target "Motif:(ATAA)n" 1 37
+7306	RepeatMasker	dispersed_repeat	896	935	 5.2	+	.	ID=17;Target "Motif:(AAATATT)n" 1 40
+##sequence-region 7352 1 1279
+7352	RepeatMasker	dispersed_repeat	295	354	 5.2	+	.	ID=18;Target "Motif:(TA)n" 1 64
+7352	RepeatMasker	dispersed_repeat	438	468	 3.8	+	.	ID=19;Target "Motif:(TAA)n" 1 29
+##sequence-region 7414 1 1443
+7414	RepeatMasker	dispersed_repeat	1085	1112	 0.0	+	.	ID=20;Target "Motif:(TAAT)n" 1 28
+7414	RepeatMasker	dispersed_repeat	1383	1441	15.2	+	.	ID=21;Target "Motif:(TTATA)n" 1 63
+##sequence-region 7564 1 1853
+7564	RepeatMasker	dispersed_repeat	896	920	 0.0	+	.	ID=22;Target "Motif:(TTA)n" 1 25
+7564	RepeatMasker	dispersed_repeat	939	1011	17.4	+	.	ID=23;Target "Motif:(ATATA)n" 1 75
+7564	RepeatMasker	dispersed_repeat	1064	1110	 0.0	+	.	ID=24;Target "Motif:(TTTAA)n" 1 47
+##sequence-region 7590 1 1923
+7590	RepeatMasker	dispersed_repeat	12	130	25.9	+	.	ID=25;Target "Motif:A-rich" 1 121
+7590	RepeatMasker	dispersed_repeat	450	494	 4.6	+	.	ID=26;Target "Motif:(TAA)n" 1 47
+##sequence-region 7694 1 2285
+7694	RepeatMasker	dispersed_repeat	54	105	19.6	+	.	ID=27;Target "Motif:(ATTTA)n" 1 50
+7694	RepeatMasker	dispersed_repeat	121	178	 3.9	+	.	ID=28;Target "Motif:(ATT)n" 1 58
+7694	RepeatMasker	dispersed_repeat	892	950	 0.0	+	.	ID=29;Target "Motif:(TTTTAT)n" 1 59
+7694	RepeatMasker	dispersed_repeat	1344	1388	21.8	+	.	ID=30;Target "Motif:(ATAAT)n" 1 45
+##sequence-region 7708 1 2306
+7708	RepeatMasker	dispersed_repeat	1	45	 0.0	+	.	ID=31;Target "Motif:(AATA)n" 1 45
+7708	RepeatMasker	dispersed_repeat	827	901	 2.7	+	.	ID=32;Target "Motif:(TAAAA)n" 1 75
+7708	RepeatMasker	dispersed_repeat	1010	1104	23.6	+	.	ID=33;Target "Motif:(TA)n" 1 99
+7708	RepeatMasker	dispersed_repeat	1397	1441	 0.0	+	.	ID=34;Target "Motif:(ATTA)n" 1 45
+7708	RepeatMasker	dispersed_repeat	1584	1660	19.6	+	.	ID=35;Target "Motif:A-rich" 1 77
+7708	RepeatMasker	dispersed_repeat	1686	1758	 8.5	+	.	ID=36;Target "Motif:(TTA)n" 1 74
+7708	RepeatMasker	dispersed_repeat	1928	2032	 2.0	+	.	ID=37;Target "Motif:(TATATT)n" 1 107
+##sequence-region 7730 1 2402
+7730	RepeatMasker	dispersed_repeat	15	83	23.0	+	.	ID=38;Target "Motif:(AAT)n" 1 70
+7730	RepeatMasker	dispersed_repeat	84	200	 7.2	+	.	ID=39;Target "Motif:(AT)n" 1 127
+7730	RepeatMasker	dispersed_repeat	201	273	23.0	+	.	ID=40;Target "Motif:(AAT)n" 2 76
+7730	RepeatMasker	dispersed_repeat	400	442	 0.0	+	.	ID=41;Target "Motif:(TAATA)n" 1 40
+7730	RepeatMasker	dispersed_repeat	554	729	14.4	+	.	ID=42;Target "Motif:(ATAAT)n" 1 177
+7730	RepeatMasker	dispersed_repeat	731	769	 5.3	+	.	ID=43;Target "Motif:(TAA)n" 1 39
+7730	RepeatMasker	dispersed_repeat	1427	1605	21.7	+	.	ID=44;Target "Motif:(ATAAT)n" 1 182
+7730	RepeatMasker	dispersed_repeat	1733	1775	25.3	+	.	ID=45;Target "Motif:(ATTATTA)n" 1 43
+7730	RepeatMasker	dispersed_repeat	1828	1882	13.2	+	.	ID=46;Target "Motif:(TAATAT)n" 1 55
+7730	RepeatMasker	dispersed_repeat	1883	1907	 0.0	+	.	ID=47;Target "Motif:(TTAA)n" 1 25
+7730	RepeatMasker	dispersed_repeat	1908	1945	13.2	+	.	ID=48;Target "Motif:(TAATAT)n" 2 40
+##sequence-region 7978 1 3453
+7978	RepeatMasker	dispersed_repeat	1	65	13.6	+	.	ID=49;Target "Motif:A-rich" 1 69
+7978	RepeatMasker	dispersed_repeat	90	159	 1.6	+	.	ID=50;Target "Motif:(ATT)n" 1 70
+7978	RepeatMasker	dispersed_repeat	382	449	 7.8	+	.	ID=51;Target "Motif:(TAT)n" 1 68
+7978	RepeatMasker	dispersed_repeat	1338	1379	 0.0	+	.	ID=52;Target "Motif:(ATAAATA)n" 1 42
+7978	RepeatMasker	dispersed_repeat	1819	1895	15.9	+	.	ID=53;Target "Motif:(TA)n" 1 83
+7978	RepeatMasker	dispersed_repeat	1916	1959	 0.0	+	.	ID=54;Target "Motif:(TAATAAT)n" 1 44
+7978	RepeatMasker	dispersed_repeat	2069	2179	14.8	+	.	ID=55;Target "Motif:(TAATA)n" 1 115
+7978	RepeatMasker	dispersed_repeat	2251	2277	 0.0	+	.	ID=56;Target "Motif:(TTAT)n" 1 28
+##sequence-region 8048 1 3687
+8048	RepeatMasker	dispersed_repeat	450	550	 9.7	+	.	ID=57;Target "Motif:(TATACGTAAG)n" 1 101
+8048	RepeatMasker	dispersed_repeat	566	680	18.7	+	.	ID=58;Target "Motif:(ATTAATT)n" 1 121
+8048	RepeatMasker	dispersed_repeat	812	918	20.3	+	.	ID=59;Target "Motif:(AAT)n" 1 104
+8048	RepeatMasker	dispersed_repeat	975	1303	20.7	+	.	ID=60;Target "Motif:(ATT)n" 1 328
+8048	RepeatMasker	dispersed_repeat	1721	1749	21.3	+	.	ID=61;Target "Motif:(TAATATA)n" 1 80
+8048	RepeatMasker	dispersed_repeat	1750	1800	 8.3	+	.	ID=62;Target "Motif:(AT)n" 1 56
+8048	RepeatMasker	dispersed_repeat	1856	1900	20.5	+	.	ID=63;Target "Motif:(AATT)n" 1 48
+8048	RepeatMasker	dispersed_repeat	1957	2029	10.7	+	.	ID=64;Target "Motif:(TA)n" 1 80
+##sequence-region 8164 1 4195
+8164	RepeatMasker	dispersed_repeat	305	372	 4.6	+	.	ID=65;Target "Motif:(TA)n" 1 74
+8164	RepeatMasker	dispersed_repeat	1124	1154	 0.0	+	.	ID=66;Target "Motif:(TAATAT)n" 1 32
+8164	RepeatMasker	dispersed_repeat	1209	1405	24.1	+	.	ID=67;Target "Motif:(ATAT)n" 1 212
+8164	RepeatMasker	dispersed_repeat	1726	1790	15.6	+	.	ID=68;Target "Motif:(TA)n" 1 70
+8164	RepeatMasker	dispersed_repeat	1834	1880	 2.3	+	.	ID=69;Target "Motif:(TATTTA)n" 1 46
+8164	RepeatMasker	dispersed_repeat	2230	2274	 7.0	+	.	ID=70;Target "Motif:(TA)n" 1 45
+##sequence-region 8344 1 5108
+8344	RepeatMasker	dispersed_repeat	1	45	 0.0	+	.	ID=71;Target "Motif:(TTAT)n" 1 45
+8344	RepeatMasker	dispersed_repeat	56	130	21.4	+	.	ID=72;Target "Motif:(TAT)n" 1 72
+8344	RepeatMasker	dispersed_repeat	292	499	18.4	+	.	ID=73;Target "Motif:(TA)n" 1 225
+8344	RepeatMasker	dispersed_repeat	1146	1183	12.1	+	.	ID=74;Target "Motif:(ATTA)n" 1 40
+8344	RepeatMasker	dispersed_repeat	1504	1529	 0.0	+	.	ID=75;Target "Motif:(ATTA)n" 1 26
+8344	RepeatMasker	dispersed_repeat	4650	4720	22.8	+	.	ID=76;Target "Motif:(ATAA)n" 1 67
+##sequence-region 8496 1 6073
+8496	RepeatMasker	dispersed_repeat	242	275	12.8	+	.	ID=77;Target "Motif:(AT)n" 1 37
+8496	RepeatMasker	dispersed_repeat	1686	1745	23.9	+	.	ID=78;Target "Motif:(TATA)n" 1 63
+8496	RepeatMasker	dispersed_repeat	1910	1944	13.3	+	.	ID=79;Target "Motif:(ATT)n" 1 35
+8496	RepeatMasker	dispersed_repeat	3381	3419	 2.6	+	.	ID=80;Target "Motif:(AT)n" 1 43
+8496	RepeatMasker	dispersed_repeat	3907	3954	18.7	+	.	ID=81;Target "Motif:(ATTA)n" 1 45
+8496	RepeatMasker	dispersed_repeat	5662	5694	 6.3	+	.	ID=82;Target "Motif:(ATAATT)n" 1 34
+8496	RepeatMasker	dispersed_repeat	5773	6025	24.4	+	.	ID=83;Target "Motif:A-rich" 1 257
+##sequence-region 8510 1 6130
+8510	RepeatMasker	dispersed_repeat	1950	2016	 3.0	+	.	ID=84;Target "Motif:(TA)n" 1 75
+8510	RepeatMasker	dispersed_repeat	3572	3620	 0.0	+	.	ID=85;Target "Motif:(TTAAATA)n" 1 49
+8510	RepeatMasker	dispersed_repeat	3713	3742	 0.0	+	.	ID=86;Target "Motif:(TAATT)n" 1 30
+8510	RepeatMasker	dispersed_repeat	4581	4607	 4.1	+	.	ID=87;Target "Motif:(ATAT)n" 1 27
+8510	RepeatMasker	dispersed_repeat	4749	4773	 0.0	+	.	ID=88;Target "Motif:(TAATT)n" 1 25
+8510	RepeatMasker	dispersed_repeat	5012	5061	 0.0	+	.	ID=89;Target "Motif:(TATAA)n" 1 51
+8510	RepeatMasker	dispersed_repeat	5533	5576	16.9	+	.	ID=90;Target "Motif:(ATT)n" 1 43
+8510	RepeatMasker	dispersed_repeat	5664	5737	22.2	+	.	ID=91;Target "Motif:(TTA)n" 1 72
+8510	RepeatMasker	dispersed_repeat	5748	5800	 3.9	+	.	ID=92;Target "Motif:(TTATAG)n" 1 53
+##sequence-region 8524 1 6244
+8524	RepeatMasker	dispersed_repeat	188	212	 0.0	+	.	ID=93;Target "Motif:(TTAT)n" 1 25
+8524	RepeatMasker	dispersed_repeat	738	804	 0.0	+	.	ID=94;Target "Motif:(TAAGTA)n" 1 68
+8524	RepeatMasker	dispersed_repeat	2356	2384	 0.0	+	.	ID=95;Target "Motif:(TTAT)n" 1 29
+8524	RepeatMasker	dispersed_repeat	3102	3228	14.7	+	.	ID=96;Target "Motif:(ATT)n" 1 127
+8524	RepeatMasker	dispersed_repeat	3326	3359	 6.2	+	.	ID=97;Target "Motif:(AT)n" 1 36
+8524	RepeatMasker	dispersed_repeat	3923	3973	 2.1	+	.	ID=98;Target "Motif:(TTAATAT)n" 1 51
+8524	RepeatMasker	dispersed_repeat	4067	4149	21.0	+	.	ID=99;Target "Motif:(AT)n" 1 85
+8524	RepeatMasker	dispersed_repeat	4314	4401	 4.0	+	.	ID=100;Target "Motif:(AAT)n" 1 84
+8524	RepeatMasker	dispersed_repeat	4408	4457	15.2	+	.	ID=101;Target "Motif:(TAA)n" 1 47
+8524	RepeatMasker	dispersed_repeat	4595	4627	 3.5	+	.	ID=102;Target "Motif:(TAA)n" 1 33
+8524	RepeatMasker	dispersed_repeat	4749	4788	 0.0	+	.	ID=103;Target "Motif:(TTATA)n" 1 41
+##sequence-region 8560 1 6478
+8560	RepeatMasker	dispersed_repeat	1318	1374	 3.6	+	.	ID=104;Target "Motif:(AATATTA)n" 1 57
+8560	RepeatMasker	dispersed_repeat	1940	2236	20.7	+	.	ID=105;Target "Motif:(ATAT)n" 1 319
+8560	RepeatMasker	dispersed_repeat	2407	2473	13.6	+	.	ID=106;Target "Motif:(AT)n" 1 71
+8560	RepeatMasker	dispersed_repeat	3138	3171	 9.5	+	.	ID=107;Target "Motif:(TATA)n" 1 37
+8560	RepeatMasker	dispersed_repeat	3732	3798	18.7	+	.	ID=108;Target "Motif:(TAT)n" 1 67
+8560	RepeatMasker	dispersed_repeat	3868	3934	17.3	+	.	ID=109;Target "Motif:(TATTAA)n" 1 68
+8560	RepeatMasker	dispersed_repeat	5039	5073	 0.0	+	.	ID=110;Target "Motif:(ATAATAA)n" 1 35
+8560	RepeatMasker	dispersed_repeat	5504	5537	 3.0	+	.	ID=111;Target "Motif:(AATATATA)n" 1 34
+8560	RepeatMasker	dispersed_repeat	5693	5750	 5.4	+	.	ID=112;Target "Motif:(TA)n" 1 62
+8560	RepeatMasker	dispersed_repeat	5985	6016	 3.2	+	.	ID=113;Target "Motif:(TATAAA)n" 1 32
+##sequence-region 8842 1 8985
+8842	RepeatMasker	dispersed_repeat	562	663	26.6	+	.	ID=114;Target "Motif:(AT)n" 1 105
+8842	RepeatMasker	dispersed_repeat	682	712	 0.0	+	.	ID=115;Target "Motif:(TTATAT)n" 1 32
+8842	RepeatMasker	dispersed_repeat	1024	1106	 6.3	+	.	ID=116;Target "Motif:(TA)n" 1 91
+8842	RepeatMasker	dispersed_repeat	1210	1271	10.5	+	.	ID=117;Target "Motif:(TA)n" 1 64
+8842	RepeatMasker	dispersed_repeat	1367	1456	23.9	+	.	ID=118;Target "Motif:(ATA)n" 1 90
+8842	RepeatMasker	dispersed_repeat	1457	1498	 0.0	+	.	ID=119;Target "Motif:(TTAT)n" 1 41
+8842	RepeatMasker	dispersed_repeat	1499	1553	23.9	+	.	ID=120;Target "Motif:(ATA)n" 1 55
+8842	RepeatMasker	dispersed_repeat	1572	1619	 2.1	+	.	ID=121;Target "Motif:(CCGTAT)n" 1 48
+8842	RepeatMasker	dispersed_repeat	1653	1711	 5.7	+	.	ID=122;Target "Motif:(TATTA)n" 1 57
+8842	RepeatMasker	dispersed_repeat	2809	2865	22.1	+	.	ID=123;Target "Motif:(TATTAT)n" 1 56
+8842	RepeatMasker	dispersed_repeat	3844	3874	 3.3	+	.	ID=124;Target "Motif:(TAT)n" 1 31
+8842	RepeatMasker	dispersed_repeat	4335	4393	20.9	+	.	ID=125;Target "Motif:A-rich" 1 55
+8842	RepeatMasker	dispersed_repeat	5115	5151	 0.0	+	.	ID=126;Target "Motif:(TTA)n" 1 36
+8842	RepeatMasker	dispersed_repeat	5152	5191	12.1	+	.	ID=127;Target "Motif:(ATATAAT)n" 1 40
+8842	RepeatMasker	dispersed_repeat	5223	5265	18.1	+	.	ID=128;Target "Motif:(TA)n" 1 45
+8842	RepeatMasker	dispersed_repeat	5347	5372	 0.0	+	.	ID=129;Target "Motif:(TTAT)n" 1 28
+8842	RepeatMasker	dispersed_repeat	5671	5720	14.3	+	.	ID=130;Target "Motif:(ATT)n" 1 49
+8842	RepeatMasker	dispersed_repeat	6179	6224	 2.3	+	.	ID=131;Target "Motif:(TAATA)n" 1 47
+8842	RepeatMasker	dispersed_repeat	7307	7337	 3.3	+	.	ID=132;Target "Motif:(TAATTA)n" 1 31
+8842	RepeatMasker	dispersed_repeat	8445	8500	 3.7	+	.	ID=133;Target "Motif:(AT)n" 1 61
+##sequence-region 9364 1 17463
+9364	RepeatMasker	dispersed_repeat	370	433	 4.9	+	.	ID=134;Target "Motif:(AT)n" 1 69
+9364	RepeatMasker	dispersed_repeat	4873	4896	13.9	+	.	ID=135;Target "Motif:(ATA)n" 1 24
+9364	RepeatMasker	dispersed_repeat	6244	6306	11.7	+	.	ID=136;Target "Motif:(TAATAA)n" 1 63
+9364	RepeatMasker	dispersed_repeat	6611	6678	25.4	+	.	ID=137;Target "Motif:(AAT)n" 1 65
+9364	RepeatMasker	dispersed_repeat	6821	6856	23.1	+	.	ID=138;Target "Motif:(AAT)n" 1 36
+9364	RepeatMasker	dispersed_repeat	7203	7237	12.4	+	.	ID=139;Target "Motif:A-rich" 1 37
+9364	RepeatMasker	dispersed_repeat	7610	7644	 9.1	+	.	ID=140;Target "Motif:(AT)n" 1 39
+9364	RepeatMasker	dispersed_repeat	8041	8134	35.2	+	.	ID=141;Target "Motif:(ATT)n" 1 94
+9364	RepeatMasker	dispersed_repeat	9162	9223	14.7	+	.	ID=142;Target "Motif:(AT)n" 1 65
+9364	RepeatMasker	dispersed_repeat	9500	9524	 0.0	+	.	ID=143;Target "Motif:(ATAAAA)n" 1 25
+9364	RepeatMasker	dispersed_repeat	10393	10419	 0.0	+	.	ID=144;Target "Motif:(ATTA)n" 1 27
+9364	RepeatMasker	dispersed_repeat	10578	10602	 0.0	+	.	ID=145;Target "Motif:(AT)n" 1 25
+9364	RepeatMasker	dispersed_repeat	12839	12872	10.1	+	.	ID=146;Target "Motif:(ATT)n" 1 35
+9364	RepeatMasker	dispersed_repeat	13260	13292	 7.8	+	.	ID=147;Target "Motif:(TTA)n" 1 30
+9364	RepeatMasker	dispersed_repeat	13285	13316	17.6	+	.	ID=148;Target "Motif:A-rich" 1 32
+9364	RepeatMasker	dispersed_repeat	14379	14415	 2.8	+	.	ID=149;Target "Motif:(ATTAAT)n" 1 37
+9364	RepeatMasker	dispersed_repeat	16023	16056	17.5	+	.	ID=150;Target "Motif:(ATTTTT)n" 1 33
+9364	RepeatMasker	dispersed_repeat	16304	16368	 6.5	+	.	ID=151;Target "Motif:(ATTTA)n" 1 66
+9364	RepeatMasker	dispersed_repeat	16492	16561	23.5	+	.	ID=152;Target "Motif:A-rich" 1 71
+##sequence-region 9638 1 30539
+9638	RepeatMasker	dispersed_repeat	10406	10467	27.3	+	.	ID=153;Target "Motif:(GAAGAT)n" 1 62
+9638	RepeatMasker	dispersed_repeat	11177	11220	17.9	+	.	ID=154;Target "Motif:(ATT)n" 1 44
+9638	RepeatMasker	dispersed_repeat	12899	12926	 7.5	+	.	ID=155;Target "Motif:(AAGCC)n" 1 28
+9638	RepeatMasker	dispersed_repeat	14476	14556	22.4	+	.	ID=156;Target "Motif:GA-rich" 1 84
+9638	RepeatMasker	dispersed_repeat	23948	23982	17.0	+	.	ID=157;Target "Motif:(GTATA)n" 1 34
+9638	RepeatMasker	dispersed_repeat	25678	25716	19.4	+	.	ID=158;Target "Motif:(AATTT)n" 1 37
+9638	RepeatMasker	dispersed_repeat	26285	26324	27.6	+	.	ID=159;Target "Motif:(AATAAT)n" 1 40

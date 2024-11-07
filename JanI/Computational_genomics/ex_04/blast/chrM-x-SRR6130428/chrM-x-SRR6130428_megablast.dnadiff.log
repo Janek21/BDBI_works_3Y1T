@@ -1,0 +1,19 @@
+Building alignments
+1: PREPARING DATA
+2,3: RUNNING mummer AND CREATING CLUSTERS
+# reading input file "/home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/blast/chrM-x-SRR6130428/chrM-x-SRR6130428_megablast.dnadiff.ntref" of length 85780
+# construct suffix tree for sequence of length 85780
+# (maximum reference length is 2305843009213693948)
+# (maximum query length is 18446744073709551615)
+# CONSTRUCTIONTIME /home/jj/anaconda3/envs/CG_exercises/opt/mummer-3.23/mummer /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/blast/chrM-x-SRR6130428/chrM-x-SRR6130428_megablast.dnadiff.ntref 0.01
+# reading input file "/home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/blast/chrM-x-SRR6130428/chrM-x-SRR6130428_megablast.fa" of length 119743
+# matching query-file "/home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/blast/chrM-x-SRR6130428/chrM-x-SRR6130428_megablast.fa"
+# against subject-file "/home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/blast/chrM-x-SRR6130428/chrM-x-SRR6130428_megablast.dnadiff.ntref"
+# COMPLETETIME /home/jj/anaconda3/envs/CG_exercises/opt/mummer-3.23/mummer /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/blast/chrM-x-SRR6130428/chrM-x-SRR6130428_megablast.dnadiff.ntref 0.04
+# SPACE /home/jj/anaconda3/envs/CG_exercises/opt/mummer-3.23/mummer /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_04/blast/chrM-x-SRR6130428/chrM-x-SRR6130428_megablast.dnadiff.ntref 0.20
+4: FINISHING DATA
+Filtering alignments
+Extracting alignment coordinates
+Analyzing SNPs
+Extracting alignment breakpoints
+Generating report file

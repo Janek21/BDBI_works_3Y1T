@@ -41,9 +41,9 @@ author-meta: !!str 'Name SURNAME @ BScBI Computational Genomics'
 #
 # authors to appear on the title page...
 author:
-- name: Name SURNAME
-  myemail: your.email.user
-  mydomain: your.email.domain
+- name: Jan Izquierdo
+  myemail: jan.izquierdo
+  mydomain: alum.esci.upf.edu
 #
 # IMPORTANT: we need to define email as two fields (user/domain)
 #            to avoid parsing email by YAML, as in the following example.
@@ -53,7 +53,7 @@ author:
 #   mydomain: ub.edu  # the real complete email address was in this case: jabril@ub.edu
 #
 # authorshort defines a brief list of authors for headings, i.e.: Abril, JF
-authorshort: Surname, NameInitials
+authorshort: Izquierdo, Jan
 #
 # template formating variables...
 papersize: a4paper

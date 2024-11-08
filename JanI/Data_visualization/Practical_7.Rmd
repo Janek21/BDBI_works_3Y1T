@@ -444,7 +444,7 @@ Normalizing the data results in better clusters even tough some groups are still
 
 library(plotly)
 
-Dnorm_df<-data.frame(x=Dnorm$Y[,1], y=Dnorm$Y[,2], Treatment=metadata$treatment, Texpression=rowSums(Xnorm_f), Exp=metadata$exp_label)
+Dnorm_df<-data.frame(x=Dnorm$Y[,1], y=Dnorm$Y[,2], Treatment=metadata$treatment, Texpression=rowSums(X), Exp=metadata$exp_label)
 
 fplot<-ggplot(Dnorm_df, aes(x=x, y=y, color=Texpression, shape=Exp, size=Treatment), size=5)+
     geom_point()+
@@ -467,7 +467,7 @@ ggplotly(fplot)
 ```
 
 
-3 main groups, one untreated and 2 treated groups, wich must have different expression patterns.
+3 main groups, one untreated and 2 treated groups, a highly expressed one and a lowly expressed one.
 
 ::::
 

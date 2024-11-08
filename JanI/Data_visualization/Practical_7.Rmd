@@ -1,0 +1,495 @@
+---
+title: "**Practical Session tSNE<br><font color='#F48225' size='5'>Data visualization (Course 2023/2024)**</font>"
+author: "<font color='#A8A8A8' size='3'>Bachelor’s Degree in Bioinformatics</font>"
+date: "<font color='#A8A8A8' size='3'>November 2023</font>"
+output:
+  html_document:
+    theme: yeti
+    css: https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css
+    self_contained: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, fig.width = 6, fig.height = 4, fig.align = "center")
+```
+
+
+```{=html}
+<style>
+  .fig {width: 50%}
+  @import url(https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,500,500i,700,700i);
+  @import url(https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css);
+
+.center {
+  text-align: center;
+}
+
+.code_box {
+  padding: 1em 1em 1em 1em;
+  background: white;
+  color: #222222;
+  border: 2px solid #222222;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.alternative_box {
+  padding: 1em;
+  background: white;
+  color: red4;
+  border: 2px solid red;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.question_box {
+  padding: 1em;
+  background: white;
+  color: red4;
+  border: 2px solid blue;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+</style>
+```
+
+
+Please, complete all the code proposed and answer to questions. You will find these on the slides as (#) and (Q). 
+You are not expected to include your answer to the check questions (C) or (K) knowledge thoughts. These are only to guide your progress. 
+
+Change the code appropriately or add new lines if necessary.
+
+
+:::: {.code_box data-latex=""}
+**CODE #1: Load, adapt the data and create metadata**
+
+Load the 2 different replicates provided as separate files into separate data frames. Check data is correctly loaded and all samples have the same dimensions. Each file corresponds to a single sample with many genes (rows) and individual cells (columns). 
+
+Column names are single cells ID names corresponding each to a the same sample.
+
+Load the meta data file (*treatment.txt*) containing information regarding type of samples for each replicate. The order of the *treatment.txt* file corresponds to the original order in the *P1.tsv.gz* and *P2.tsv.gz* files.
+
+Remember to adapt the data accordingly. We need columns of the tables to represent variables (genes) and rows to be cells. Also, we need to merge all tables of observations. 
+
+What are column names in each dataframe?
+
+Provide code alternatives if any.
+
+::::
+
+### Load data into variables: 
+First of all, you can use applications external to R to inspect what type of data you are going to be using and how to deal with it.
+
+Once you have inspected and decided, go for it!
+
+Once loaded into R, check if the data matches what you expected and take a brief view of the data.
+
+```{r libraries, message=F}
+library(ggplot2)
+library(ggfortify)
+library(factoextra)
+```
+
+```{r message=FALSE, cache=TRUE}
+# --------------------------
+## [#1] Read the data
+# --------------------------
+
+#get data from previous practical to current folder
+#system("ln -vs ../P6_PCA/data ./")
+
+## Read data into separate variables
+P1_data<-read.table(gzfile("./data/P1.tsv.gz"), header = T)
+P2_data<-read.table(gzfile("./data/P2.tsv.gz"), header = T)
+
+```
+
+### Adapt the data accordingly and merge both tables of observations
+
+Since we need columns of the tables to represent variables and rows to be samples, individuals, we need to **transpose** the data of the matrices. Then, we merged experiments into a single data.frame.
+
+```{r, cache=TRUE}
+# --------------------------
+## [#2] Adapt the data
+# --------------------------
+
+rownames(P1_data)<-P1_data$gene
+P1_data$gene<-NULL
+
+rownames(P2_data)<-P2_data$gene
+P2_data$gene<-NULL
+
+#Transposing
+X1 <- as.matrix(t(P1_data))
+X2 <- as.matrix(t(P2_data))
+
+## Merge
+X <- rbind(X1, X2)
+
+```
+
+
+### Get metadata associated:
+Create a dataframe with metadata. We might like to include the names of the samples as rows, the replicates IDs (1,2 or A,B,...) and the type of sample as described in the treatment file: T: treated, U: untreated, N: non-treated.
+
+
+```{r get_data}
+# --------------------------
+## [#3] Load the metadata
+# --------------------------
+## Read metadata as a vector and as a factor
+treat_file<-as.vector(t(read.table("./data/treatment.txt")))
+
+#Treatment has 2 values that are the same (N and U), join them
+system("cp ./data/treatment.txt ./data/F_treatment.txt")
+system("sed -i 's/N/U/g' ./data/F_treatment.txt")
+#Re-read the table
+treat_file<-as.vector(t(read.table("./data/F_treatment.txt")))
+
+## create dataframe: add rownames, experiment A & B, and treatment for each cell
+
+## HINT:
+## create a vector with 96 treatment types
+treatment<-rep(treat_file, 2)
+
+## HINT:
+## create a vector with 96 As and 96 Bs
+exp_label<-rep(c("A","B"), each=96)
+
+metadata<-cbind(treatment, exp_label)
+
+rownames(metadata)<-rownames(X)
+metadata<-data.frame(metadata)
+```
+
+
+### Get some information for tSNE algorithm function
+
+Load package `Rtsne` and check the help. Run `install.packages("Rtsne")` if required.
+
+```{r load_tSNE, cache=FALSE}
+library(Rtsne)
+#help(Rtsne)
+```
+
+:::: {.question_box data-latex=""}
+
+**Q1. What are default values for perplexity, initial dimensions and iterations?**  
+```{r Ex1}
+```
+
+Perplexity=30
+Initial_dims=50
+Iterations=1000
+
+::::
+
+### Create a simple example
+
+A simple example of tSNE plot.
+
+```{r simple_tSNE, cache=TRUE}
+# --------------------------
+## [#4] Create a quick tSNE
+# --------------------------
+## Default parameters for Rtsne
+tsne1 <- Rtsne(X)
+names(tsne1)
+
+head(tsne1$Y)
+
+```
+
+## Explore reproducibility of results
+
+:::: {.question_box data-latex=""}
+
+**Q2 Run tSNE a couple of times and compare results. Are they the same? Why?**
+
+::::
+
+Run a second tSNE with the same dataset and parameters:
+
+```{r test_repro, cache=TRUE}
+# --------------------------
+## [#5] Run tSNE several times and compare results
+# --------------------------
+
+tsne2 <- Rtsne(X)
+
+head(tsne2$Y)
+```
+
+:::: {.question_box data-latex=""}
+
+**ANSWER Q2**
+```{r Ex2}
+head(tsne1$Y)
+head(tsne2$Y)
+```
+
+The results are different every run. This is because tSNE is stochastic, which means randomness in the data points.
+
+::::
+
+
+:::: {.question_box data-latex=""}
+
+**Q3 How can you set R to reproduce tSNE results? Why? Why is it important?**
+```{r Ex3}
+
+```
+
+You can stop inherent randomness by setting a seed (`r cat(set.seed(42))`), this is important for reproducibility of the results.
+
+::::
+
+
+## Explore `pca=TRUE`
+
+**Challenge: In the `Rtsne` function, what does the `pca` option mean?**
+
+Run tSNE again and test the effect of setting `pca` to `TRUE/FALSE`. 
+Use `system.time()` to check time for each process.
+
+```{r pcaInTSNE}
+system.time(Rtsne(X, pca = T))
+system.time(Rtsne(X, pca = F))
+```
+
+The `pca` option is to perform an initial PCA step.
+
+## Explore `perplexity`:
+
+:::: {.question_box data-latex=""}
+
+**Q4 What is the effect of perplexity? How does the resulting plot change depending on the perplexity values? Which one would do you use in this case**
+
+::::
+
+Create different tSNE with different perplexity values.
+
+```{r perplexity, cache=TRUE}
+set.seed(42) ## allows us to reproduce results
+# --------------------------
+## [#6] Explore the effect of perplexity
+# --------------------------
+maxPeVal<-(nrow(X)-1)/3
+
+maxPer<-Rtsne(X, perplexity=maxPeVal) #Max perplexity Rtsne
+minPer<-Rtsne(X, perplexity=1) #Min perplexity Rtsne
+```
+
+
+```{r perplexityPlot, cache=TRUE}
+set.seed(42)
+
+PerplexityPlotter<-function(PerData, metadata){
+  plt<-ggplot(PerData$Y, aes(x=PerData$Y[,1], y=PerData$Y[,2], color=metadata$treatment))+
+    geom_point()+labs(x="tSNE 1", y="tSNE 2", color="Treatment")
+  return(plt)
+}
+
+MxPe<-PerplexityPlotter(maxPer, metadata)+ggtitle("Plot with maximum perplexity")
+
+mnPe<-PerplexityPlotter(minPer, metadata)+ggtitle("Plot with minimum perplexity")
+
+MxPe
+mnPe
+
+```
+
+
+:::: {.question_box data-latex=""}
+
+**ANSWER Q4**
+```{r Ex4}
+
+```
+
+With low perplexity values clusters are not well defined, the groups are too small to make sense. 
+And with a large perplexity value the clusters are too disperse.
+
+The best point would probably be somewhere in the middle (around `r round(maxPeVal/2, 5)`)
+
+::::
+
+:::: {.question_box data-latex=""}
+
+**Q5 What happens when you use a very big value of perplexity? Which value would be the limit? [Check ?Rtsne for details]**
+
+::::
+
+Try to set a very big perplexity value.
+
+```{r, error=TRUE}
+set.seed(42) ## allows us to reproduce results
+tsne_test <- Rtsne(X, perplexity = 200)
+```
+
+
+:::: {.question_box data-latex=""}
+
+**ANSWER Q5**
+```{r Ex5, eval=FALSE}
+```
+
+With a very big perplexity value the clusters are too disperse and overlap each other.
+
+The limit value for perplexity would be the number of rows in the data frame -1, all divided by 3, in this case its `r round(maxPeVal, 5)`
+
+With this value we would obtain the previous maximum perplexity plot.
+
+::::
+
+
+
+## Test iterations parameter
+
+
+:::: {.question_box data-latex=""}
+
+**Q6 What is the effect of the number of iterations?**
+
+::::
+
+Create different tSNE with different iterations values.
+
+
+```{r iter}
+# --------------------------
+## [#7] Explore the effect of iterations
+# --------------------------
+set.seed(42)
+
+IterPlotter<-function(X, metadata, iterNum){
+  
+  data<-Rtsne(X, perplexity=maxPeVal/2, iterations=iterNum)
+  
+  
+  ggplot(data$Y, aes(x=data$Y[,1], y=data$Y[,2], color=metadata$treatment))+
+    geom_point()+
+    labs(x="tSNE 1", y="tSNE 2", color="Treatment", title=paste0("tSNE with ", iterNum, " iterations"))
+  
+}
+
+
+IterPlotter(X, metadata, 2)
+IterPlotter(X, metadata, 100)
+IterPlotter(X, metadata, 2000)
+IterPlotter(X, metadata, 10000)
+```
+
+
+
+:::: {.question_box data-latex=""}
+
+**ANSWER Q6**
+```{r Ex6}
+```
+
+Determines for how long the algorithm runsfor the embedding.
+Fewer iterations can lead to an incomplete ebedding, so more iterations allow for more refinement in point placement.
+
+::::
+
+
+## Fix batch effect
+
+Remember the effect when exploring using PCA, batch B had smaller total expression than A experiment. Normalize each cell by the total expression.
+
+
+```{r norm_data, cache=TRUE}
+# --------------------------
+## [#8] Explore the effect of the normalization
+# --------------------------
+
+set.seed(42)
+
+X_no0<-X[, colSums(X)>0]
+Xnorm_f<-X_no0/rowSums(X_no0)
+
+Dnorm<-Rtsne(Xnorm_f, perplexity=maxPeVal/2) #Same perpelexity values as we haven't changed number of rows
+
+tSNE_norm<-ggplot(Dnorm$Y, aes(x=Dnorm$Y[,1], y=Dnorm$Y[,2], color=metadata$treatment))+
+    geom_point()+
+    labs(x="tSNE 1", y="tSNE 2", color="Treatment", title="tSNE for normalized data")
+
+tSNE_norm
+```
+
+:::: {.question_box data-latex=""}
+
+**Q7 Has the batch effect been corrected?**
+```{r Ex7}
+```
+
+
+Normalizing the data results in better clusters even tough some groups are still separated, this may be due to batch effect.
+
+::::
+
+
+
+## Final plots
+```{r final_plot, cache=TRUE}
+# ------------------------
+## [#10] Create a final representation with the normalized tSNE results,
+##       using:
+##       - color for total expression: Green - Low; Red - High
+##       - shape for experiment 
+##       - add some additional information: treatment
+# ------------------------
+
+library(plotly)
+
+Dnorm_df<-data.frame(x=Dnorm$Y[,1], y=Dnorm$Y[,2], Treatment=metadata$treatment, Texpression=rowSums(Xnorm_f), Exp=metadata$exp_label)
+
+fplot<-ggplot(Dnorm_df, aes(x=x, y=y, color=Texpression, shape=Exp, size=Treatment), size=5)+
+    geom_point()+
+    labs(x="tSNE 1", y="tSNE 2", color="Expression", shape="Experiment", title="tSNE for normalized data", 
+         caption="The expression should be colored, but I can't find how to fix the error")+
+    scale_color_gradient(low="green", high="red")+
+    scale_size_manual(values = c(2, 3))
+
+fplot
+ggplotly(fplot)
+```
+
+
+
+
+:::: {.question_box data-latex=""}
+
+**Q8 According to the final normalized plot, explain the groups the can be distinguished?**
+```{r Ex8}
+```
+
+
+3 main groups, one untreated and 2 treated groups, wich must have different expression patterns.
+
+::::
+
+
+:::: {.question_box data-latex=""}
+
+**Q9 Can you find any correlation with some variable and dim1 or dim2 axis in the tSNE plot?**
+```{r Ex9}
+```
+
+
+The plots seems to show relation between treatment and the axis.
+
+::::
+
+
+:::: {.question_box data-latex=""}
+
+**Q10 Did you get similar conclusions using tSNE and PCA? Why?**
+```{r Ex10}
+```
+Yes, as there are 3 clusters in both, this is because both capture the primary variance and structure in the data. The resulting plots are very similar, but we can sicer that tSNE is a little bit better.
+
+::::
+

@@ -1,0 +1,77 @@
+---
+title: "Exploratory_analysis_and_visualization"
+author: "Bruno Álvarez"
+date: "2024-11-08"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+rep1 <- read.csv("./data/rep1.csv")
+rep2 <- read.csv("./data/rep2.csv")
+rep3 <- read.csv("./data/rep3.csv")
+rep4 <- read.csv("./data/rep4.csv")
+```
+
+```{r}
+dimensions <- function(x) {
+  var_name <- deparse(substitute(x))
+  rows <- nrow(x)
+  columns <- ncol(x)
+  
+  message <- paste("The data set",  var_name, "has", rows, "rows and", columns, "columns.")
+  print(message)
+}
+
+dimensions(rep1)
+dimensions(rep2)
+dimensions(rep3)
+dimensions(rep4)
+```
+
+```{r}
+head(rep1)
+head(rep2)
+head(rep3)
+head(rep4)
+
+rownames(rep1) <- rep1$X
+rep1$X <- NULL
+
+rownames(rep2) <- rep1$X
+rep2$X <- NULL
+
+rownames(rep3) <- rep1$X
+rep3$X <- NULL
+
+rownames(rep4) <- rep1$X
+rep4$X <- NULL
+```
+
+```{r}
+rep1 <- t(rep1)
+rep2 <- t(rep2)
+rep3 <- t(rep3)
+rep4 <- t(rep4)
+```
+
+```{r}
+rep1$origin <- 
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+v

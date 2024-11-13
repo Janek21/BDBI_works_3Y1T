@@ -365,7 +365,7 @@ set.seed(42)
 
 IterPlotter<-function(X, metadata, iterNum){
   
-  data<-Rtsne(X, perplexity=maxPeVal/2, iterations=iterNum)
+  data<-Rtsne(X, perplexity=maxPeVal/2, max_iter=iterNum)
   
   
   ggplot(data$Y, aes(x=data$Y[,1], y=data$Y[,2], color=metadata$treatment))+

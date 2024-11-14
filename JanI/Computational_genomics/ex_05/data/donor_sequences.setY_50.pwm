@@ -1,0 +1,16 @@
+##
+## A simple Position Weight Matrix
+## derived from a set of sequences
+## from /home/jj/Desktop/Bioinformatics/3rd_year/1term/Computational_genomics/Seminars/exercise_05/ex_seqs/donor_sequences.setY_50.tbl
+##
+P0         A         C         G         T         N
+01     0.057    -3.644    -1.059     1.263 -9999.000
+02     0.941    -1.059    -0.184    -0.474 -9999.000
+03     0.816    -1.644     0.163    -0.322 -9999.000
+04    -0.837    -2.644     1.401    -0.644 -9999.000
+05    -0.837    -0.322    -2.059     1.263 -9999.000
+06     1.057    -0.837    -0.474    -0.644 -9999.000
+07    -0.059    -0.837    -1.322     1.057 -9999.000
+08    -0.474    -2.644     1.310    -0.644 -9999.000
+09    -0.644    -0.644    -1.322     1.214 -9999.000
+XX 4

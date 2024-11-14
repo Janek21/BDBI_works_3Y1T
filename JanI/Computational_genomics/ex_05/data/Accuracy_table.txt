@@ -1,0 +1,190 @@
+Type is: donor
+
+  For setALL:
+  
+    Predicted: 217526
+    Annotated: 12
+    TP: 8
+    FP: 217518
+    FN: 4
+    Sensitivity: .666666
+    Specificity: .000036
+  --------------------------------------
+  For setA:
+  
+    Predicted: 21642
+    Annotated: 12
+    TP: 3
+    FP: 21639
+    FN: 9
+    Sensitivity: .250000
+    Specificity: .000138
+  --------------------------------------
+  For setB:
+  
+    Predicted: 56613
+    Annotated: 12
+    TP: 3
+    FP: 56610
+    FN: 9
+    Sensitivity: .250000
+    Specificity: .000052
+  --------------------------------------
+  For setX_100:
+  
+    Predicted: 173635
+    Annotated: 12
+    TP: 7
+    FP: 173628
+    FN: 5
+    Sensitivity: .583333
+    Specificity: .000040
+  --------------------------------------
+  For setX_50:
+  
+    Predicted: 236951
+    Annotated: 12
+    TP: 8
+    FP: 236943
+    FN: 4
+    Sensitivity: .666666
+    Specificity: .000033
+  --------------------------------------
+  For setY_100:
+  
+    Predicted: 189587
+    Annotated: 12
+    TP: 7
+    FP: 189580
+    FN: 5
+    Sensitivity: .583333
+    Specificity: .000036
+  --------------------------------------
+  For setY_50:
+  
+    Predicted: 222108
+    Annotated: 12
+    TP: 7
+    FP: 222101
+    FN: 5
+    Sensitivity: .583333
+    Specificity: .000031
+  --------------------------------------
+  For setZ_100:
+  
+    Predicted: 227654
+    Annotated: 12
+    TP: 8
+    FP: 227646
+    FN: 4
+    Sensitivity: .666666
+    Specificity: .000035
+  --------------------------------------
+  For setZ_50:
+  
+    Predicted: 218400
+    Annotated: 12
+    TP: 7
+    FP: 218393
+    FN: 5
+    Sensitivity: .583333
+    Specificity: .000032
+  --------------------------------------
+
+################################################
+
+Type is: acceptor
+
+  For setALL:
+  
+    Predicted: 344203
+    Annotated: 12
+    TP: 4
+    FP: 344199
+    FN: 8
+    Sensitivity: .333333
+    Specificity: .000011
+  --------------------------------------
+  For setA:
+  
+    Predicted: 17475
+    Annotated: 12
+    TP: 3
+    FP: 17472
+    FN: 9
+    Sensitivity: .250000
+    Specificity: .000171
+  --------------------------------------
+  For setB:
+  
+    Predicted: 57960
+    Annotated: 12
+    TP: 0
+    FP: 57960
+    FN: 12
+    Sensitivity: 0
+    Specificity: 0
+  --------------------------------------
+  For setX_100:
+  
+    Predicted: 297971
+    Annotated: 12
+    TP: 4
+    FP: 297967
+    FN: 8
+    Sensitivity: .333333
+    Specificity: .000013
+  --------------------------------------
+  For setX_50:
+  
+    Predicted: 216192
+    Annotated: 12
+    TP: 3
+    FP: 216189
+    FN: 9
+    Sensitivity: .250000
+    Specificity: .000013
+  --------------------------------------
+  For setY_100:
+  
+    Predicted: 299059
+    Annotated: 12
+    TP: 4
+    FP: 299055
+    FN: 8
+    Sensitivity: .333333
+    Specificity: .000013
+  --------------------------------------
+  For setY_50:
+  
+    Predicted: 246931
+    Annotated: 12
+    TP: 2
+    FP: 246929
+    FN: 10
+    Sensitivity: .166666
+    Specificity: .000008
+  --------------------------------------
+  For setZ_100:
+  
+    Predicted: 316952
+    Annotated: 12
+    TP: 5
+    FP: 316947
+    FN: 7
+    Sensitivity: .416666
+    Specificity: .000015
+  --------------------------------------
+  For setZ_50:
+  
+    Predicted: 209367
+    Annotated: 12
+    TP: 3
+    FP: 209364
+    FN: 9
+    Sensitivity: .250000
+    Specificity: .000014
+  --------------------------------------
+
+################################################
+

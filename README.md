@@ -1,6 +1,6 @@
-# Bioinfo_share 1rst Term
+# Bachelors degree in bioinformatics 1st term (3d year)
 
-This repository is to be used for sharing and working in community in projects and assignments
+This repository is to be used for working in community in projects and assignments
 
 ## Github desktop for linux
 
@@ -12,7 +12,7 @@ https://www.linuxcapable.com/how-to-install-github-desktop-on-ubuntu-linux/
 
 ## Instruccions
 Once you have github desktop installed
-  Clone repository https://github.com/Janek21/Bioinfo_share_3Y_1T to local
+  Clone repository https://github.com/Janek21/BDBI_works_3Y1T to local
 #### Managed by: Janek21
 
 ##### Commit regularly, Before commiting: fetch>pull>commit>push
